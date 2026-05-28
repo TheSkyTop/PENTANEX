@@ -78,31 +78,41 @@ const tabOverviewPanels: Record<
     eyebrow: string;
     title: string;
     body: string;
+    metric: string;
+    metricLabel: string;
     highlights: string[];
   }
 > = {
   capacity: {
     eyebrow: "Capacity Strategy",
     title: "Deployable capacity for AI and hyperscale growth.",
-    body: "PENTANEX is planning capacity as a staged infrastructure product: power availability, cooling pathways, fibre diversity, data hall repeatability, and customer expansion options aligned to high-density AI and cloud requirements.",
+    body: "PENTANEX is planning capacity as a staged infrastructure product, aligning power availability, cooling pathways, fibre diversity, and repeatable data hall modules with high-density AI and cloud requirements.",
+    metric: "560MW",
+    metricLabel: "masterplanned campus capacity",
     highlights: ["Power block sequencing", "High-density rack environments", "Multi-stage customer expansion"],
   },
   delivery: {
     eyebrow: "Delivery Pathway",
     title: "From masterplan to customer-ready infrastructure.",
-    body: "Our delivery approach is built around the practical workstreams that matter to hyperscale customers: approvals, utility interfaces, civil enabling works, data hall design standards, procurement readiness, and transparent milestone control.",
+    body: "Our delivery model is structured around approvals, utility interfaces, civil enabling works, data hall design standards, procurement readiness, and transparent milestone control.",
+    metric: "Staged",
+    metricLabel: "delivery and readiness pathway",
     highlights: ["Planning and approvals", "Grid and energy interfaces", "Procurement and build sequencing"],
   },
   sustainability: {
     eyebrow: "Resilience And Sustainability",
     title: "Efficient infrastructure designed for long-term operation.",
-    body: "The campus is being shaped around resilient and measurable infrastructure principles, including renewable and firmed energy integration, efficient operating envelopes, water-conscious cooling optionality, and responsible community interface.",
+    body: "The campus is being shaped around measurable infrastructure principles: renewable and firmed energy integration, efficient operating envelopes, water-conscious cooling optionality, and responsible community interface.",
+    metric: "Resilient",
+    metricLabel: "long-term operating strategy",
     highlights: ["Energy integration pathway", "Efficient operating envelope", "Water-conscious cooling options"],
   },
   contact: {
     eyebrow: "Project Engagement",
     title: "A direct path for capacity and partnership conversations.",
     body: "PENTANEX welcomes qualified engagement from hyperscale operators, cloud platforms, enterprise AI customers, energy partners, infrastructure investors, and stakeholders seeking to understand the Melbourne North campus opportunity.",
+    metric: "Melbourne",
+    metricLabel: "Australia project engagement",
     highlights: ["Capacity enquiries", "Partnership alignment", "Stakeholder engagement"],
   },
 };
@@ -373,28 +383,34 @@ export default function Home() {
           <div className="grid min-h-0 gap-4">
             <div className="rounded-sm border border-white/70 bg-white/56 p-3 shadow-glow backdrop-blur-2xl xl:p-4">
               {activeOverview ? (
-                <div className="rounded-sm border border-slate-200/70 bg-white/66 p-4">
-                  <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
-                    <div className="max-w-2xl">
-                      <p className="text-xs font-semibold uppercase tracking-[0.2em] text-signal">
-                        {activeOverview.eyebrow}
-                      </p>
-                      <h2 className="mt-2 text-[clamp(1.1rem,1.8vw,1.35rem)] font-semibold leading-tight text-graphite">
-                        {activeOverview.title}
-                      </h2>
-                      <p className="mt-2 text-sm leading-6 text-steel">{activeOverview.body}</p>
-                    </div>
+                <div className="grid gap-2 rounded-sm border border-slate-200/70 bg-white/66 p-3 sm:grid-cols-[0.72fr_1.42fr_1fr]">
+                  <div className="rounded-sm border border-slate-200/70 bg-white/70 p-3">
+                    <p className="text-xs font-semibold uppercase tracking-[0.2em] text-signal">
+                      {activeOverview.eyebrow}
+                    </p>
+                    <p className="mt-2 text-[clamp(1.05rem,1.55vw,1.25rem)] font-semibold leading-tight text-graphite">
+                      {activeOverview.metric}
+                    </p>
+                    <p className="mt-1 text-[11px] leading-4 text-steel">{activeOverview.metricLabel}</p>
+                  </div>
 
-                    <div className="grid min-w-0 gap-2 sm:w-[42%]">
-                      {activeOverview.highlights.map((highlight) => (
-                        <div
-                          className="rounded-sm border border-slate-200/80 bg-white/72 px-3 py-2 text-sm font-medium text-graphite"
-                          key={highlight}
-                        >
-                          {highlight}
-                        </div>
-                      ))}
-                    </div>
+                  <div className="rounded-sm border border-slate-200/70 bg-[#f8fbfd]/70 p-3">
+                    <h2 className="text-[clamp(1rem,1.55vw,1.2rem)] font-semibold leading-tight text-graphite">
+                      {activeOverview.title}
+                    </h2>
+                    <p className="mt-1.5 text-[12px] leading-5 text-steel">{activeOverview.body}</p>
+                  </div>
+
+                  <div className="grid gap-2">
+                    {activeOverview.highlights.map((highlight) => (
+                      <div
+                        className="flex items-center gap-2 rounded-sm border border-slate-200/80 bg-white/72 px-3 py-2 text-[12px] font-medium leading-4 text-graphite"
+                        key={highlight}
+                      >
+                        <CheckCircle2 className="shrink-0 text-power" size={15} />
+                        <span>{highlight}</span>
+                      </div>
+                    ))}
                   </div>
                 </div>
               ) : (
