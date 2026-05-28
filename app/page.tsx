@@ -10,7 +10,7 @@ import {
   ShieldCheck,
   Trees,
 } from "lucide-react";
-import { geoMercator, geoPath } from "d3-geo";
+import { geoMercator, geoNaturalEarth1, geoPath } from "d3-geo";
 import { feature } from "topojson-client";
 import type { Feature, FeatureCollection, Geometry } from "geojson";
 import countries from "world-atlas/countries-50m.json";
@@ -92,20 +92,25 @@ const footerGroups = [
 ];
 
 function AustraliaLocationMap() {
-  const { australiaPath, sitePoint } = useMemo(() => {
-    const australia = feature(
+  const { australiaPath, sitePoint, worldPaths } = useMemo(() => {
+    const world = feature(
       countries as never,
       (countries as { objects: { countries: unknown } }).objects.countries as never,
     ) as unknown as FeatureCollection<Geometry, { name?: string }>;
-    const australiaFeature = australia.features.find(
+    const australiaFeature = world.features.find(
       (country) => country.id === "036" || country.properties?.name === "Australia",
     ) as Feature<Geometry>;
-    const projection = geoMercator().fitSize([520, 330], australiaFeature);
+    const projection = geoMercator().fitExtent([[50, 28], [570, 332]], australiaFeature);
     const path = geoPath(projection);
+    const worldProjection = geoNaturalEarth1().fitExtent([[18, 36], [602, 324]], world);
+    const worldPath = geoPath(worldProjection);
 
     return {
       australiaPath: path(australiaFeature) ?? "",
       sitePoint: projection(project.coordinates) ?? [0, 0],
+      worldPaths: world.features
+        .map((country) => worldPath(country))
+        .filter((countryPath): countryPath is string => Boolean(countryPath)),
     };
   }, []);
 
@@ -114,9 +119,6 @@ function AustraliaLocationMap() {
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-white/82 via-white/32 to-signal/12" />
       <div className="pointer-events-none absolute inset-x-8 top-1/2 h-px bg-gradient-to-r from-transparent via-signal/25 to-transparent" />
       <div className="pointer-events-none absolute inset-y-8 left-1/2 w-px bg-gradient-to-b from-transparent via-signal/20 to-transparent" />
-      <span className="absolute right-4 top-4 z-10 rounded-sm border border-signal/30 bg-signal/10 px-3 py-1.5 text-xs font-semibold text-signal shadow-sm backdrop-blur">
-        VIC
-      </span>
 
       <div className="relative">
         <svg
@@ -131,9 +133,12 @@ function AustraliaLocationMap() {
               <stop offset="100%" stopColor="#dff2ef" />
             </linearGradient>
             <linearGradient id="locationTag" x1="0" x2="1" y1="0" y2="1">
-              <stop offset="0%" stopColor="#f6fffc" />
-              <stop offset="100%" stopColor="#d9f5ea" />
+              <stop offset="0%" stopColor="#f8fffd" />
+              <stop offset="100%" stopColor="#e4f8df" />
             </linearGradient>
+            <filter id="softGlass" height="180%" width="180%" x="-40%" y="-40%">
+              <feDropShadow dx="0" dy="7" floodColor="#0faea6" floodOpacity="0.12" stdDeviation="8" />
+            </filter>
             <filter id="markerGlow" height="240%" width="240%" x="-70%" y="-70%">
               <feGaussianBlur result="blur" stdDeviation="7" />
               <feMerge>
@@ -153,7 +158,17 @@ function AustraliaLocationMap() {
               <path d="M0 0L8 4L0 8Z" fill="#0faea6" />
             </marker>
           </defs>
-          <path d={australiaPath} fill="url(#mapFill)" stroke="#88c7c1" strokeWidth="1.5" />
+          <g opacity="0.16">
+            {worldPaths.map((countryPath, index) => (
+              <path
+                d={countryPath}
+                fill="#d8efec"
+                key={`world-${index}`}
+                stroke="#95cac4"
+                strokeWidth="0.45"
+              />
+            ))}
+          </g>
           <path
             d="M46 58H548M46 126H548M46 194H548M46 262H548M46 330H548M96 32V336M196 32V336M296 32V336M396 32V336M496 32V336"
             fill="none"
@@ -163,7 +178,17 @@ function AustraliaLocationMap() {
             strokeWidth="1"
           />
           <path
-            d={`M${sitePoint[0] + 142} ${sitePoint[1] - 24} C${sitePoint[0] + 112} ${sitePoint[1] - 10} ${sitePoint[0] + 72} ${sitePoint[1] + 12} ${sitePoint[0] + 13} ${sitePoint[1] + 1}`}
+            d="M100 224C176 190 232 204 304 184C386 162 444 126 530 136"
+            fill="none"
+            stroke="#0faea6"
+            strokeDasharray="2 10"
+            strokeLinecap="round"
+            strokeOpacity="0.35"
+            strokeWidth="1.6"
+          />
+          <path d={australiaPath} fill="url(#mapFill)" stroke="#88c7c1" strokeWidth="1.6" />
+          <path
+            d={`M${sitePoint[0] + 74} ${sitePoint[1] - 24} C${sitePoint[0] + 54} ${sitePoint[1] - 8} ${sitePoint[0] + 42} ${sitePoint[1] + 9} ${sitePoint[0] + 13} ${sitePoint[1] + 1}`}
             fill="none"
             markerEnd="url(#dashedArrow)"
             stroke="#0faea6"
@@ -176,15 +201,16 @@ function AustraliaLocationMap() {
           <circle cx={sitePoint[0]} cy={sitePoint[1]} fill="none" r="17" stroke="#0faea6" strokeOpacity="0.42" strokeWidth="9" />
           <rect
             fill="url(#locationTag)"
+            filter="url(#softGlass)"
             height="34"
             rx="4"
-            stroke="#0faea6"
-            strokeOpacity="0.42"
+            stroke="#54c86f"
+            strokeOpacity="0.62"
             width="142"
-            x={sitePoint[0] + 150}
+            x={sitePoint[0] + 82}
             y={sitePoint[1] - 44}
           />
-          <text fill="#087d78" fontSize="12" fontWeight="800" x={sitePoint[0] + 166} y={sitePoint[1] - 22}>
+          <text fill="#15804d" fontSize="12" fontWeight="800" x={sitePoint[0] + 98} y={sitePoint[1] - 22}>
             Craigieburn VIC
           </text>
           <path
