@@ -138,8 +138,6 @@ function AustraliaLocationMap() {
   return (
     <div className="relative overflow-hidden rounded-sm border border-white/70 bg-white/58 p-4 shadow-glow backdrop-blur-2xl xl:p-5">
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-white/82 via-white/32 to-signal/12" />
-      <div className="pointer-events-none absolute inset-x-8 top-1/2 h-px bg-gradient-to-r from-transparent via-signal/25 to-transparent" />
-      <div className="pointer-events-none absolute inset-y-8 left-1/2 w-px bg-gradient-to-b from-transparent via-signal/20 to-transparent" />
 
       <div className="relative">
         <svg
@@ -156,6 +154,16 @@ function AustraliaLocationMap() {
             <linearGradient id="locationTag" x1="0" x2="1" y1="0" y2="1">
               <stop offset="0%" stopColor="#ffffff" />
               <stop offset="100%" stopColor="#e9fbfa" />
+            </linearGradient>
+            <linearGradient id="mapAxisX" x1="0" x2="1" y1="0" y2="0">
+              <stop offset="0%" stopColor="#0faea6" stopOpacity="0" />
+              <stop offset="50%" stopColor="#0faea6" stopOpacity="0.28" />
+              <stop offset="100%" stopColor="#0faea6" stopOpacity="0" />
+            </linearGradient>
+            <linearGradient id="mapAxisY" x1="0" x2="0" y1="0" y2="1">
+              <stop offset="0%" stopColor="#0faea6" stopOpacity="0" />
+              <stop offset="50%" stopColor="#0faea6" stopOpacity="0.22" />
+              <stop offset="100%" stopColor="#0faea6" stopOpacity="0" />
             </linearGradient>
             <filter id="softGlass" height="180%" width="180%" x="-40%" y="-40%">
               <feDropShadow dx="0" dy="7" floodColor="#0faea6" floodOpacity="0.12" stdDeviation="8" />
@@ -179,6 +187,8 @@ function AustraliaLocationMap() {
               <path d="M0 0L8 4L0 8Z" fill="#0faea6" />
             </marker>
           </defs>
+          <path d="M36 180H584" stroke="url(#mapAxisX)" strokeWidth="1.4" />
+          <path d="M310 38V326" stroke="url(#mapAxisY)" strokeWidth="1.2" />
           <g opacity="0.24">
             {worldPaths.map((countryPath, index) => (
               <path
