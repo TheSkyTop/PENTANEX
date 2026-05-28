@@ -192,10 +192,10 @@ export default function Home() {
           >
             {tabs.map((tab) => (
               <button
-                className={`rounded-sm px-3.5 py-2 text-sm font-semibold transition ${
+                className={`rounded-sm border px-3.5 py-2 text-sm font-semibold transition ${
                   activeTab.id === tab.id
-                    ? "bg-graphite text-white shadow-sm"
-                    : "text-steel hover:bg-white/80 hover:text-graphite"
+                    ? "border-signal bg-signal text-white shadow-sm"
+                    : "border-slate-200/70 bg-white/62 text-steel hover:border-signal/45 hover:bg-white/90 hover:text-signal"
                 }`}
                 key={tab.id}
                 onClick={() => setActiveTab(tab)}
@@ -211,7 +211,11 @@ export default function Home() {
               560MW Campus
             </span>
             <button
-              className="inline-flex items-center gap-2 rounded-sm bg-graphite px-4 py-2 text-sm font-medium text-white transition hover:bg-signal"
+              className={`inline-flex items-center gap-2 rounded-sm border px-4 py-2 text-sm font-semibold transition ${
+                activeTab.id === "contact"
+                  ? "border-signal bg-signal text-white shadow-sm"
+                  : "border-signal/35 bg-white/72 text-signal hover:border-signal hover:bg-signal hover:text-white"
+              }`}
               onClick={() => setActiveTab(tabs[4])}
               type="button"
             >
@@ -229,8 +233,8 @@ export default function Home() {
             <button
               className={`shrink-0 rounded-sm border px-3 py-2 text-xs font-semibold transition ${
                 activeTab.id === tab.id
-                  ? "border-graphite bg-graphite text-white"
-                  : "border-white/70 bg-white/60 text-steel"
+                  ? "border-signal bg-signal text-white shadow-sm"
+                  : "border-slate-200/70 bg-white/62 text-steel hover:border-signal/45 hover:text-signal"
               }`}
               key={tab.id}
               onClick={() => setActiveTab(tab)}
