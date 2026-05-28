@@ -24,7 +24,7 @@ const project = {
 
 const metrics = [
   { value: project.capacity, label: "masterplanned hyperscale campus capacity" },
-  { value: "Craigieburn VIC", label: "strategic Melbourne North location" },
+  { value: "Melbourne", label: "strategic Melbourne North, VIC Australia" },
   { value: "AI-ready", label: "high-density compute infrastructure" },
   { value: "Hyperscale", label: "scalable cloud and AI compute capacity" },
 ];
