@@ -35,29 +35,37 @@ Observed patterns from the reference category:
 - AirTrunk leans into hyperscale campuses, sustainability, speed of delivery, and regional digital growth.
 - AWS and Microsoft infrastructure pages focus on trust, security, global operating discipline, AI infrastructure, and compliance.
 
-PENTANEX should borrow the professionalism and clarity, but differentiate through a more cinematic, infrastructure-led visual identity:
+PENTANEX should borrow the professionalism and clarity, but differentiate through a brighter, more precise infrastructure-led visual identity:
 
-- Less corporate brochure, more high-precision engineering.
-- Less generic blue cloud language, more physical site, power, fibre, cooling, and compute density.
-- Use dark technical surfaces, precise grid systems, topographic/site-plan inspired graphics, and restrained high-energy accents.
+- Less corporate brochure, more high-precision engineering and institutional credibility.
+- Less generic blue cloud language, more physical site, power, fibre, cooling, land, delivery, and compute density.
+- Use bright architectural surfaces, precise grid systems, site-plan inspired graphics, and restrained energy accents.
+- Make the site feel suitable for investors, hyperscale customers, government stakeholders, utilities, and community audiences.
 
 ## 4. Visual System
 
 Recommended style:
 
-- Base: near-black, graphite, off-white, steel grey.
-- Accent: electric cyan or blue-green, with a restrained amber or lime accent for energy/power indicators.
-- Layout: editorial infrastructure feel, dense but calm.
-- Typography: modern sans-serif, strong numeric treatments, clear hierarchy.
-- Motion: subtle grid scanning, line tracing, data flow, facility module reveals.
-- Imagery: real or realistic data centre exterior/interior, transmission infrastructure, aerial land/campus view, cooling/mechanical plant, secure operations.
+- Base: white, cool off-white, pale steel, and light blue-grey.
+- Accent: deep infrastructure blue, clean teal, and a restrained energy green for power indicators.
+- Layout: bright, spacious, editorial, and highly structured; clear enough for a board presentation.
+- Typography: modern sans-serif, strong numeric treatments, generous line height, and calm hierarchy.
+- Motion: subtle line tracing, modular campus reveals, light data flow, and scroll-based transitions rather than dark animated effects.
+- Imagery: real or realistic data centre exterior/interior, transmission infrastructure, aerial land/campus view, cooling/mechanical plant, secure operations, and engineering/site-plan visuals.
+- UI feeling: premium but practical; closer to infrastructure advisory, clean architecture, and hyperscale campus delivery than a dark technology showcase.
 
 Avoid:
 
 - Overused purple-blue gradient SaaS style.
 - Cartoon cloud illustrations.
 - Empty abstract tech backgrounds with no infrastructure signal.
+- Heavy black backgrounds as the dominant look.
+- Excessive neon effects that reduce trust or readability.
 - Claims like Tier IV, 100% uptime, renewable energy, or specific certifications unless verified.
+
+Design principle:
+
+> Bright, credible, precise, and infrastructure-specific. The website should make PENTANEX feel investable, technically competent, and ready for serious enterprise conversations.
 
 ## 5. Initial Site Map
 
@@ -104,13 +112,19 @@ Future expansion:
    - Security, resilience, and operational readiness.
    - Sustainability pathway.
 
-5. Why PENTANEX
+5. Delivery model
+   - Feasibility and power-led site selection.
+   - Planning, approvals, and stakeholder coordination.
+   - Campus masterplanning and staged delivery.
+   - Customer, utility, and investment readiness.
+
+6. Why PENTANEX
    - Australian market focus.
    - Large-scale infrastructure mindset.
    - Enterprise and cloud customer alignment.
    - Long-term delivery discipline.
 
-6. Contact band
+7. Contact band
    - General enquiries.
    - Customer support.
    - Partnerships / investment.
@@ -192,12 +206,14 @@ Minimum required before launch:
 - Build one-page high-fidelity homepage.
 - Add responsive navigation, hero, project section, capabilities, sustainability, and contact.
 - Use placeholder but polished imagery/visuals where real assets are missing.
+- Establish the bright visual system: white/off-white base, infrastructure blue, teal, energy green, site-plan graphics, and strong metrics.
 
 ### Phase 2: Full Website
 
 - Expand to multi-page website.
 - Add SEO metadata, structured content, contact forms, privacy page, and accessibility checks.
 - Add performance optimization and production build.
+- Add credibility pages for project status, delivery model, stakeholder engagement, and downloadable project profile.
 
 ### Phase 3: Public Launch
 
