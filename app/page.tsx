@@ -34,41 +34,41 @@ const tabs = [
     id: "campus",
     label: "Campus",
     icon: Factory,
-    title: "A 560MW data centre campus planned for staged hyperscale growth.",
-    body: "The Craigieburn campus should be framed as a capacity platform: staged data halls, utility coordination, cooling optionality, secure operations, and customer due diligence from the earliest planning phase.",
-    points: ["560MW planned capacity envelope", "Staged data hall expansion", "Craigieburn / Hume Freeway location"],
+    title: "A masterplanned hyperscale campus for staged AI and cloud growth.",
+    body: "The 980 Hume Freeway campus should be positioned as a long-term digital infrastructure platform, not a single facility. The site narrative should focus on expandable data hall zones, customer-ready utility corridors, secure campus operations, fibre pathways, and staged delivery optionality for hyperscale and sovereign enterprise customers.",
+    points: ["Masterplanned 560MW campus capacity", "Staged data hall and utility zones", "Melbourne North growth corridor"],
   },
   {
     id: "capacity",
     label: "Capacity",
     icon: CircuitBoard,
-    title: "Capacity planning for AI, cloud, and enterprise workload demand.",
-    body: "For data centre customers, capacity is not just land or megawatts. The offer must translate into future data hall blocks, density pathways, fibre strategy, cooling readiness, and predictable expansion sequencing.",
-    points: ["High-density data hall planning", "Customer-ready capacity blocks", "AI and cloud infrastructure readiness"],
+    title: "Capacity planning for high-density AI, accelerated compute, and cloud platforms.",
+    body: "Capacity should be communicated as a deployable pathway: power block sequencing, high-density rack planning, cooling optionality, fibre diversity, and repeatable data hall modules. For AI customers, the most important message is that future capacity can support dense compute clusters, resilient operations, and predictable growth.",
+    points: ["High-density AI compute infrastructure", "Scalable power and cooling pathways", "Repeatable customer capacity blocks"],
   },
   {
     id: "delivery",
     label: "Delivery",
     icon: ShieldCheck,
-    title: "A delivery pathway from capacity strategy to customer readiness.",
-    body: "The strongest positioning is not simply ownership of a location. It is the ability to coordinate planning, approvals, utility interfaces, data hall design, stakeholder engagement, and delivery milestones.",
-    points: ["Capacity-led site feasibility", "Planning and approvals pathway", "Customer and utility readiness"],
+    title: "A delivery model built around approvals, utilities, and customer readiness.",
+    body: "The delivery story should show disciplined execution: planning approvals, grid and energy interfaces, civil enabling works, data hall design standards, procurement sequencing, and stakeholder coordination. This helps customers understand how the campus can move from masterplan to ready capacity with lower delivery ambiguity.",
+    points: ["Planning and approvals pathway", "Utility and energy interface strategy", "Customer-ready delivery milestones"],
   },
   {
     id: "sustainability",
     label: "Sustainability",
     icon: Trees,
-    title: "A sustainability pathway that stays evidence-led and buildable.",
-    body: "Until formal targets are confirmed, the site should communicate credible planning principles: efficient operating envelopes, water-conscious cooling options, grid-aware development, and clear community interface.",
-    points: ["Efficient operating envelope", "Water-conscious cooling options", "Community and grid interface"],
+    title: "An evidence-led sustainability pathway for resilient digital infrastructure.",
+    body: "The sustainability position should stay practical and verifiable: efficient operating envelopes, renewable and firmed energy integration, water-conscious cooling options, heat and environmental management, and transparent community interface. The message is long-term resilience, not unsubstantiated claims.",
+    points: ["Renewable and firmed energy integration", "Water-conscious cooling optionality", "Long-term operational resilience"],
   },
   {
     id: "contact",
     label: "Contact",
     icon: Mail,
-    title: "Clear channels for customers, partners, investors, and stakeholders.",
-    body: "The contact experience should separate customer capacity enquiries, partnerships, media, and support once the domain, email, and phone systems are confirmed.",
-    points: ["enquiries@pentanex.com.au", "support@pentanex.com.au", "+61 3 0000 0000"],
+    title: "A direct enquiry pathway for capacity, partnerships, and stakeholder engagement.",
+    body: "The contact panel should support serious inbound conversations: hyperscale capacity enquiries, enterprise AI workload requirements, energy and infrastructure partnerships, investor discussions, and local stakeholder engagement. Keep the channel simple until dedicated support workflows are confirmed.",
+    points: ["enquiries@pentanex.com.au", "Melbourne, Australia", "Capacity and partnership enquiries"],
   },
 ];
 
@@ -101,6 +101,16 @@ const infrastructureNarrative = [
   "The project is being designed for high-density AI and accelerated computing environments, supported by scalable power infrastructure, renewable and firmed energy integration, operational resilience, and long-term sustainability.",
   "Positioned to support the rapid growth of AI training, inference, and large-scale cloud deployment across Australia and the Asia-Pacific region, PENTANEX aims to deliver a future-ready hyperscale platform for the next compute cycle driven by artificial intelligence and digital transformation.",
 ];
+
+function PentanexLogo() {
+  return (
+    <img
+      alt=""
+      className="h-11 w-11 shrink-0 object-contain"
+      src="/pentanex-logo.png"
+    />
+  );
+}
 
 function AustraliaLocationMap() {
   const { australiaPath, sitePoint, worldPaths } = useMemo(() => {
@@ -232,11 +242,7 @@ export default function Home() {
       <header className="sticky top-0 z-50 px-5 pt-4 sm:px-8">
         <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 rounded-sm border border-white/80 bg-white/78 px-4 py-3 shadow-[0_18px_60px_rgba(16,32,51,0.12)] backdrop-blur-2xl">
           <a className="flex items-center gap-3" href="#top" aria-label="PENTANEX home">
-            <img
-              alt=""
-              className="h-11 w-11 object-contain"
-              src="/pentanex-logo.png"
-            />
+            <PentanexLogo />
             <span>
               <span className="block text-sm font-semibold tracking-[0.22em] text-graphite">
                 PENTANEX
@@ -381,11 +387,7 @@ export default function Home() {
           <div className="grid gap-5 lg:grid-cols-[1.05fr_2.1fr] lg:items-start">
             <div>
               <div className="flex items-center gap-3">
-                <img
-                  alt=""
-                  className="h-11 w-11 object-contain"
-                  src="/pentanex-logo.png"
-                />
+                <PentanexLogo />
                 <div>
                   <p className="text-sm font-semibold tracking-[0.22em] text-graphite">PENTANEX</p>
                   <p className="mt-1 text-[10px] font-medium uppercase tracking-[0.16em] text-steel">
