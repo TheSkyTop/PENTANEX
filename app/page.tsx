@@ -102,7 +102,7 @@ function AustraliaLocationMap() {
     ) as Feature<Geometry>;
     const projection = geoMercator().fitExtent([[24, 8], [596, 352]], australiaFeature);
     const path = geoPath(projection);
-    const worldProjection = geoNaturalEarth1().fitExtent([[18, 36], [602, 324]], world);
+    const worldProjection = geoNaturalEarth1().fitExtent([[0, 0], [620, 360]], world);
     const worldPath = geoPath(worldProjection);
 
     return {
@@ -140,12 +140,17 @@ function AustraliaLocationMap() {
               <feDropShadow dx="0" dy="7" floodColor="#0faea6" floodOpacity="0.12" stdDeviation="8" />
             </filter>
             <filter id="markerGlow" height="240%" width="240%" x="-70%" y="-70%">
-              <feGaussianBlur result="blur" stdDeviation="7" />
+              <feGaussianBlur result="blur" stdDeviation="10" />
               <feMerge>
                 <feMergeNode in="blur" />
                 <feMergeNode in="SourceGraphic" />
               </feMerge>
             </filter>
+            <radialGradient id="locationLight" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stopColor="#0faea6" stopOpacity="0.5" />
+              <stop offset="48%" stopColor="#74c947" stopOpacity="0.22" />
+              <stop offset="100%" stopColor="#0faea6" stopOpacity="0" />
+            </radialGradient>
             <marker
               id="dashedArrow"
               markerHeight="8"
@@ -188,7 +193,7 @@ function AustraliaLocationMap() {
           />
           <path d={australiaPath} fill="url(#mapFill)" stroke="#88c7c1" strokeWidth="1.6" />
           <path
-            d={`M${sitePoint[0] + 44} ${sitePoint[1] - 13} C${sitePoint[0] + 30} ${sitePoint[1] - 5} ${sitePoint[0] + 23} ${sitePoint[1] + 4} ${sitePoint[0] + 13} ${sitePoint[1] + 1}`}
+            d={`M${sitePoint[0] + 44} ${sitePoint[1] + 8} C${sitePoint[0] + 30} ${sitePoint[1] + 5} ${sitePoint[0] + 23} ${sitePoint[1] + 4} ${sitePoint[0] + 13} ${sitePoint[1] + 1}`}
             fill="none"
             markerEnd="url(#dashedArrow)"
             stroke="#0faea6"
@@ -196,9 +201,11 @@ function AustraliaLocationMap() {
             strokeLinecap="round"
             strokeWidth="2.2"
           />
+          <circle cx={sitePoint[0]} cy={sitePoint[1]} fill="url(#locationLight)" r="44" />
           <circle cx={sitePoint[0]} cy={sitePoint[1]} fill="none" r="27" stroke="#74c947" strokeDasharray="4 7" strokeOpacity="0.5" strokeWidth="2" />
           <circle cx={sitePoint[0]} cy={sitePoint[1]} fill="#0faea6" filter="url(#markerGlow)" r="6" />
-          <circle cx={sitePoint[0]} cy={sitePoint[1]} fill="none" r="17" stroke="#0faea6" strokeOpacity="0.42" strokeWidth="9" />
+          <circle cx={sitePoint[0]} cy={sitePoint[1]} fill="none" r="17" stroke="#0faea6" strokeOpacity="0.48" strokeWidth="9" />
+          <circle cx={sitePoint[0]} cy={sitePoint[1]} fill="none" r="34" stroke="#0faea6" strokeOpacity="0.18" strokeWidth="12" />
           <rect
             fill="url(#locationTag)"
             filter="url(#softGlass)"
@@ -208,9 +215,9 @@ function AustraliaLocationMap() {
             strokeOpacity="0.9"
             width="188"
             x={sitePoint[0] + 50}
-            y={sitePoint[1] - 34}
+            y={sitePoint[1] - 12}
           />
-          <text fill="#0faea6" fontSize="11.5" fontWeight="800" letterSpacing="0.7" x={sitePoint[0] + 64} y={sitePoint[1] - 12}>
+          <text fill="#0faea6" fontSize="11.5" fontWeight="800" letterSpacing="0.7" x={sitePoint[0] + 64} y={sitePoint[1] + 10}>
             Craigieburn VIC, Australia
           </text>
           <path
