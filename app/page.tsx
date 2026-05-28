@@ -87,7 +87,7 @@ const footerGroups = [
   },
   {
     heading: "Contact",
-    items: ["enquiries@pentanex.com.au", "infrastructure@pentanex.com.au", "Melbourne, Australia"],
+    items: ["enquiries@pentanex.com.au", "Melbourne, Australia"],
   },
 ];
 
