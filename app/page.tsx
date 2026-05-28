@@ -75,21 +75,24 @@ const tabs = [
 const footerGroups = [
   {
     heading: "Campus",
-    items: ["980 Hume Freeway", "Craigieburn VIC 3064", "Melbourne northern growth corridor"],
+    items: ["980 Hume Freeway", "Craigieburn VIC", "Melbourne North infrastructure corridor"],
   },
   {
     heading: "Capacity",
-    items: ["560MW planned capacity envelope", "AI-ready data hall planning", "Hyperscale customer demand"],
+    items: ["560MW masterplanned campus capacity", "High-density AI compute infrastructure", "Scalable multi-stage deployment"],
   },
   {
-    heading: "Company",
-    items: ["Australian digital infrastructure", "Cloud, AI, and enterprise workloads", "Staged delivery pathway"],
+    heading: "Platform",
+    items: ["Australian digital infrastructure platform", "Long-term scalable development strategy", "Energy and compute infrastructure integration"],
   },
   {
     heading: "Contact",
-    items: ["enquiries@pentanex.com.au", "support@pentanex.com.au", "+61 3 0000 0000"],
+    items: ["enquiries@pentanex.com.au", "infrastructure@pentanex.com.au", "Melbourne, Australia"],
   },
 ];
+
+const footerIntro =
+  "Developing scalable AI-ready digital infrastructure for hyperscale cloud, accelerated compute, and sovereign enterprise workloads across Australia.";
 
 const australiaMapYOffset = 34;
 
@@ -396,8 +399,7 @@ export default function Home() {
                 </div>
               </div>
               <p className="mt-4 max-w-md text-sm leading-6 text-steel">
-                Planning AI-ready data centre capacity for cloud platforms, enterprise workloads,
-                and sovereign digital infrastructure in Australia.
+                {footerIntro}
               </p>
             </div>
 
@@ -424,7 +426,7 @@ export default function Home() {
 
           <div className="mt-5 flex flex-col gap-2 border-t border-slate-200/80 pt-4 text-xs text-steel sm:flex-row sm:items-center sm:justify-between">
             <p>(c) 2026 PENTANEX. Project information is subject to planning and delivery confirmation.</p>
-            <p>Flagship campus: {project.address}</p>
+            <p>AI-ready hyperscale infrastructure platform.</p>
           </div>
         </div>
       </footer>
