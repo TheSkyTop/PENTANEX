@@ -111,28 +111,28 @@ function AustraliaLocationMap() {
 
   return (
     <div className="relative overflow-hidden rounded-sm border border-white/70 bg-white/58 p-4 shadow-glow backdrop-blur-2xl xl:p-5">
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-white/80 via-white/35 to-signal/10" />
-      <div className="relative flex items-start justify-between gap-4">
-        <div>
-          <p className="text-xs font-semibold uppercase tracking-[0.22em] text-steel">Location</p>
-          <p className="mt-1 text-sm font-semibold text-graphite">{project.address}</p>
-        </div>
-        <span className="rounded-sm border border-signal/20 bg-signal/10 px-2.5 py-1 text-xs font-semibold text-signal">
-          VIC
-        </span>
-      </div>
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-white/82 via-white/32 to-signal/12" />
+      <div className="pointer-events-none absolute inset-x-8 top-1/2 h-px bg-gradient-to-r from-transparent via-signal/25 to-transparent" />
+      <div className="pointer-events-none absolute inset-y-8 left-1/2 w-px bg-gradient-to-b from-transparent via-signal/20 to-transparent" />
+      <span className="absolute right-4 top-4 z-10 rounded-sm border border-signal/30 bg-signal/10 px-3 py-1.5 text-xs font-semibold text-signal shadow-sm backdrop-blur">
+        VIC
+      </span>
 
-      <div className="relative mt-3 grid gap-3 lg:grid-cols-[1fr_0.68fr] lg:items-center xl:mt-4 xl:gap-4">
+      <div className="relative">
         <svg
           aria-label="Accurate Australia map with PENTANEX campus location marker near Craigieburn, Victoria"
-          className="h-[clamp(150px,24vh,220px)] w-full"
+          className="h-[clamp(230px,32vh,300px)] w-full"
           role="img"
-          viewBox="0 0 520 330"
+          viewBox="0 0 620 360"
         >
           <defs>
             <linearGradient id="mapFill" x1="0" x2="1" y1="0" y2="1">
               <stop offset="0%" stopColor="#f8fffe" />
               <stop offset="100%" stopColor="#dff2ef" />
+            </linearGradient>
+            <linearGradient id="locationTag" x1="0" x2="1" y1="0" y2="1">
+              <stop offset="0%" stopColor="#f6fffc" />
+              <stop offset="100%" stopColor="#d9f5ea" />
             </linearGradient>
             <filter id="markerGlow" height="240%" width="240%" x="-70%" y="-70%">
               <feGaussianBlur result="blur" stdDeviation="7" />
@@ -141,10 +141,21 @@ function AustraliaLocationMap() {
                 <feMergeNode in="SourceGraphic" />
               </feMerge>
             </filter>
+            <marker
+              id="dashedArrow"
+              markerHeight="8"
+              markerWidth="8"
+              orient="auto"
+              refX="7"
+              refY="4"
+              viewBox="0 0 8 8"
+            >
+              <path d="M0 0L8 4L0 8Z" fill="#0faea6" />
+            </marker>
           </defs>
           <path d={australiaPath} fill="url(#mapFill)" stroke="#88c7c1" strokeWidth="1.5" />
           <path
-            d="M52 64H470M52 132H470M52 200H470M52 268H470M105 36V298M210 36V298M315 36V298M420 36V298"
+            d="M46 58H548M46 126H548M46 194H548M46 262H548M46 330H548M96 32V336M196 32V336M296 32V336M396 32V336M496 32V336"
             fill="none"
             stroke="#cde3e8"
             strokeDasharray="3 10"
@@ -152,31 +163,40 @@ function AustraliaLocationMap() {
             strokeWidth="1"
           />
           <path
-            d={`M${sitePoint[0]} ${sitePoint[1]} 294 190`}
+            d={`M${sitePoint[0] + 142} ${sitePoint[1] - 24} C${sitePoint[0] + 112} ${sitePoint[1] - 10} ${sitePoint[0] + 72} ${sitePoint[1] + 12} ${sitePoint[0] + 13} ${sitePoint[1] + 1}`}
+            fill="none"
+            markerEnd="url(#dashedArrow)"
             stroke="#0faea6"
+            strokeDasharray="7 8"
             strokeLinecap="round"
-            strokeWidth="2"
+            strokeWidth="2.2"
           />
+          <circle cx={sitePoint[0]} cy={sitePoint[1]} fill="none" r="27" stroke="#74c947" strokeDasharray="4 7" strokeOpacity="0.5" strokeWidth="2" />
           <circle cx={sitePoint[0]} cy={sitePoint[1]} fill="#0faea6" filter="url(#markerGlow)" r="6" />
           <circle cx={sitePoint[0]} cy={sitePoint[1]} fill="none" r="17" stroke="#0faea6" strokeOpacity="0.42" strokeWidth="9" />
-          <rect fill="#102033" height="30" rx="3" width="126" x="214" y="174" />
-          <text fill="#ffffff" fontSize="11" fontWeight="700" x="228" y="193">
+          <rect
+            fill="url(#locationTag)"
+            height="34"
+            rx="4"
+            stroke="#0faea6"
+            strokeOpacity="0.42"
+            width="142"
+            x={sitePoint[0] + 150}
+            y={sitePoint[1] - 44}
+          />
+          <text fill="#087d78" fontSize="12" fontWeight="800" x={sitePoint[0] + 166} y={sitePoint[1] - 22}>
             Craigieburn VIC
           </text>
+          <path
+            d={`M${sitePoint[0] - 64} ${sitePoint[1] + 48} H${sitePoint[0] - 22} V${sitePoint[1] + 18}`}
+            fill="none"
+            stroke="#74c947"
+            strokeDasharray="3 7"
+            strokeLinecap="round"
+            strokeOpacity="0.65"
+            strokeWidth="1.5"
+          />
         </svg>
-
-        <div className="rounded-sm border border-slate-200/70 bg-white/70 p-3 backdrop-blur xl:p-4">
-          <p className="text-[clamp(1.75rem,3vw,2.5rem)] font-semibold leading-none text-graphite">
-            {project.capacity}
-          </p>
-          <p className="mt-2 text-sm leading-6 text-steel">
-            Planned campus capacity envelope in {project.corridor}.
-          </p>
-          <p className="mt-2 text-[11px] leading-5 text-steel">
-            Map outline uses Natural Earth geodata via world-atlas. Marker uses approximate
-            Craigieburn coordinates.
-          </p>
-        </div>
       </div>
     </div>
   );
