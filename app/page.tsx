@@ -250,7 +250,7 @@ export default function Home() {
 
       <section
         id="top"
-        className="relative flex items-start justify-center px-5 pb-4 pt-[132px] sm:px-8 lg:pt-[112px]"
+        className="relative flex items-start justify-center px-5 pb-4 pt-[132px] sm:px-8 lg:pt-[96px]"
       >
         <div className="site-grid absolute inset-0 opacity-80" />
         <div className="pointer-events-none absolute left-[8%] top-[16%] h-72 w-72 rounded-full bg-signal/10 blur-3xl" />
