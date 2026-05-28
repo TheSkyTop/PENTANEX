@@ -14,22 +14,22 @@ import {
 } from "lucide-react";
 
 const metrics = [
-  { value: "560MW", label: "planned power-scale campus" },
+  { value: "560MW", label: "planned campus capacity envelope" },
   { value: "980", label: "Hume Freeway flagship location" },
-  { value: "AI-ready", label: "planned for high-density workloads" },
-  { value: "Australia", label: "focused digital infrastructure" },
+  { value: "AI-ready", label: "high-density data hall planning" },
+  { value: "Hyperscale", label: "capacity for cloud and enterprise demand" },
 ];
 
 const capabilities = [
   {
     icon: Factory,
-    title: "Campus Development",
-    body: "Power-scale site strategy, masterplanning, staged delivery, and customer-ready infrastructure pathways.",
+    title: "Hyperscale Campus Planning",
+    body: "Large-format data hall strategy, staged campus growth, customer-ready capacity blocks, and long-term expansion pathways.",
   },
   {
     icon: Zap,
-    title: "Energy Coordination",
-    body: "Grid-aware planning for resilient capacity, future load growth, and responsible long-term operations.",
+    title: "Capacity Enablement",
+    body: "Infrastructure planning that aligns data hall capacity, utility readiness, cooling strategy, and future load growth.",
   },
   {
     icon: CircuitBoard,
@@ -44,9 +44,9 @@ const capabilities = [
 ];
 
 const delivery = [
-  "Power-led site feasibility",
+  "Capacity-led site feasibility",
   "Planning and approvals pathway",
-  "Hyperscale campus masterplanning",
+  "Data hall and campus masterplanning",
   "Customer and utility readiness",
 ];
 
@@ -55,6 +55,66 @@ const contactRoutes = [
   { label: "Customer support", value: "support@pentanex.com.au", icon: Mail },
   { label: "Phone", value: "+61 3 0000 0000", icon: Phone },
 ];
+
+function AustraliaLocationMap() {
+  return (
+    <div className="rounded-sm border border-slate-200 bg-white p-4 shadow-sm">
+      <div className="flex items-start justify-between gap-4">
+        <div>
+          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-steel">
+            Location
+          </p>
+          <p className="mt-1 text-sm font-semibold text-graphite">980 Hume Freeway Campus</p>
+        </div>
+        <span className="rounded-sm bg-signal/10 px-2.5 py-1 text-xs font-semibold text-signal">
+          VIC
+        </span>
+      </div>
+      <div className="mt-4 grid gap-4 sm:grid-cols-[0.95fr_1.05fr] sm:items-center">
+        <svg
+          aria-label="Australia map with PENTANEX campus location marker in Victoria"
+          className="h-44 w-full"
+          role="img"
+          viewBox="0 0 360 260"
+        >
+          <path
+            d="M67 142 54 111l15-39 40-28 62-12 62 15 37 24 31 4 27 34-5 46-28 42-45 18-56-4-43 15-48-18-18-38Z"
+            fill="#eef6f5"
+            stroke="#b7d8d5"
+            strokeWidth="2"
+          />
+          <path
+            d="M274 209c11 4 21 12 28 23-18 5-34 1-47-9 4-9 10-13 19-14Z"
+            fill="#eef6f5"
+            stroke="#b7d8d5"
+            strokeWidth="2"
+          />
+          <path
+            d="M79 147h228M103 82l163 109M162 38l22 178"
+            fill="none"
+            stroke="#d7e4ea"
+            strokeDasharray="4 8"
+            strokeWidth="1.5"
+          />
+          <circle cx="248" cy="187" fill="#0faea6" r="8" />
+          <circle cx="248" cy="187" fill="none" r="17" stroke="#0faea6" strokeOpacity="0.35" strokeWidth="8" />
+          <path d="M248 187 213 156" stroke="#0faea6" strokeLinecap="round" strokeWidth="2" />
+          <rect fill="#102033" height="28" rx="2" width="98" x="126" y="135" />
+          <text fill="#ffffff" fontSize="11" fontWeight="700" x="138" y="153">
+            Hume corridor
+          </text>
+        </svg>
+        <div className="border-l border-slate-200 pl-4">
+          <p className="text-3xl font-semibold text-graphite">560MW</p>
+          <p className="mt-2 text-sm leading-6 text-steel">
+            Planned campus capacity envelope for high-density data centre development in
+            Australia&apos;s south-east growth corridor.
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+}
 
 export default function Home() {
   return (
@@ -99,9 +159,10 @@ export default function Home() {
           <div className="scan-line h-px w-full" />
         </div>
 
-        <div className="relative mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-[1.02fr_0.98fr]">
+        <div className="relative mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-[1.08fr_0.92fr]">
           <div className="max-w-3xl">
-            <div className="mb-6 inline-flex items-center gap-2 rounded-sm border border-signal/20 bg-white px-3 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-signal shadow-sm">
+            <AustraliaLocationMap />
+            <div className="mb-6 mt-6 inline-flex items-center gap-2 rounded-sm border border-signal/20 bg-white px-3 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-signal shadow-sm">
               <Globe2 size={15} />
               Australian Digital Infrastructure
             </div>
@@ -112,8 +173,9 @@ export default function Home() {
               AI-ready data centre infrastructure for Australia&apos;s next era of compute.
             </p>
             <p className="mt-6 max-w-2xl text-base leading-7 text-steel">
-              Led by the 980 Hume Freeway 560MW campus, PENTANEX develops power-scale
-              infrastructure for cloud, AI, enterprise, and sovereign digital growth.
+              Led by the 980 Hume Freeway 560MW campus, PENTANEX is planning scalable
+              data centre capacity for cloud platforms, AI compute, enterprise workloads, and
+              sovereign digital infrastructure.
             </p>
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
               <a
@@ -141,7 +203,7 @@ export default function Home() {
                 <p className="mt-1 text-lg font-semibold text-graphite">980 Hume Freeway</p>
               </div>
               <span className="rounded-sm bg-power/15 px-3 py-2 text-sm font-semibold text-[#347022]">
-                560MW
+                560MW capacity
               </span>
             </div>
 
@@ -149,7 +211,7 @@ export default function Home() {
               <div className="col-span-4 row-span-3 rounded-sm border border-slate-200 bg-panel p-4">
                 <div className="flex items-center justify-between text-xs text-steel">
                   <span>Campus module A</span>
-                  <span>HV pathway</span>
+                  <span>Data hall block</span>
                 </div>
                 <div className="mt-11 h-2 w-2/3 rounded-full bg-signal" />
                 <div className="mt-3 h-2 w-1/2 rounded-full bg-slate-300" />
@@ -161,10 +223,10 @@ export default function Home() {
               </div>
               <div className="col-span-2 row-span-2 rounded-sm border border-signal/25 bg-signal/10 p-4">
                 <Zap className="text-signal" size={24} />
-                <p className="mt-8 text-2xl font-semibold text-graphite">Power</p>
+                <p className="mt-8 text-2xl font-semibold text-graphite">Capacity</p>
               </div>
               <div className="col-span-2 row-span-4 rounded-sm border border-slate-200 bg-white p-4">
-                <p className="text-xs uppercase tracking-[0.2em] text-steel">Delivery spine</p>
+                <p className="text-xs uppercase tracking-[0.2em] text-steel">Campus spine</p>
                 <div className="mt-7 space-y-3">
                   <div className="h-16 rounded-full border-l-4 border-signal" />
                   <div className="h-16 rounded-full border-l-4 border-power" />
@@ -173,12 +235,12 @@ export default function Home() {
               </div>
               <div className="col-span-2 row-span-2 rounded-sm border border-slate-200 bg-white p-4">
                 <MapPin className="text-signal" size={22} />
-                <p className="mt-9 text-sm text-steel">Hume Freeway corridor</p>
+                <p className="mt-9 text-sm text-steel">Victoria growth corridor</p>
               </div>
               <div className="col-span-4 row-span-3 rounded-sm border border-slate-200 bg-panel p-4">
                 <div className="flex items-center gap-2 text-xs uppercase tracking-[0.2em] text-steel">
                   <Building2 size={15} />
-                  staged halls
+                  staged data halls
                 </div>
                 <div className="mt-8 grid grid-cols-5 gap-2">
                   {Array.from({ length: 15 }).map((_, index) => (
@@ -217,13 +279,14 @@ export default function Home() {
           </div>
           <div className="grid gap-6 text-lg leading-8 text-slate-700">
             <p>
-              The first PENTANEX project is planned as a power-scale campus for sovereign cloud,
-              AI compute, hyperscale, and enterprise digital infrastructure in Australia.
+              The first PENTANEX project is planned as a high-capacity data centre campus for
+              sovereign cloud, AI compute, hyperscale, and enterprise digital infrastructure in
+              Australia.
             </p>
             <p>
-              The public narrative should stay concrete: power strategy, transport access, staged
-              delivery, connectivity, security, environmental pathway, and readiness for serious
-              customer due diligence.
+              The public narrative should stay concrete: data hall capacity, staged campus
+              delivery, connectivity, cooling readiness, security, environmental pathway, and
+              serious customer due diligence.
             </p>
           </div>
         </div>
@@ -236,7 +299,7 @@ export default function Home() {
               Capabilities
             </p>
             <h2 className="mt-4 text-3xl font-semibold leading-tight text-graphite sm:text-5xl">
-              Infrastructure planned around power, certainty, and long-term customer value.
+              Data centre capacity planned around scale, certainty, and long-term customer value.
             </h2>
           </div>
           <div className="mt-12 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
@@ -258,11 +321,11 @@ export default function Home() {
               Delivery Model
             </p>
             <h2 className="mt-4 text-3xl font-semibold leading-tight text-graphite sm:text-4xl">
-              A disciplined pathway from site strategy to hyperscale readiness.
+              A disciplined pathway from capacity strategy to hyperscale readiness.
             </h2>
             <p className="mt-5 leading-7 text-steel">
               The website should help stakeholders understand that PENTANEX is not only presenting
-              a site, but a delivery platform for major digital infrastructure.
+              a site, but a scalable capacity platform for major digital infrastructure.
             </p>
           </div>
           <div className="grid gap-4 sm:grid-cols-2">
