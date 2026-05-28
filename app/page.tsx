@@ -234,7 +234,7 @@ export default function Home() {
           <a className="flex items-center gap-3" href="#top" aria-label="PENTANEX home">
             <img
               alt=""
-              className="h-12 w-12 object-contain"
+              className="h-11 w-11 object-contain"
               src="/pentanex-logo.png"
             />
             <span>
@@ -383,7 +383,7 @@ export default function Home() {
               <div className="flex items-center gap-3">
                 <img
                   alt=""
-                  className="h-12 w-12 object-contain"
+                  className="h-11 w-11 object-contain"
                   src="/pentanex-logo.png"
                 />
                 <div>
