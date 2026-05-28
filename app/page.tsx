@@ -244,7 +244,7 @@ export default function Home() {
 
       <section
         id="top"
-        className="relative flex min-h-screen items-center justify-center px-5 pb-5 pt-[136px] sm:px-8 lg:pt-[104px]"
+        className="relative flex min-h-screen items-start justify-center px-5 pb-5 pt-[118px] sm:px-8 lg:pt-[92px]"
       >
         <div className="site-grid absolute inset-0 opacity-80" />
         <div className="pointer-events-none absolute left-[8%] top-[16%] h-72 w-72 rounded-full bg-signal/10 blur-3xl" />
