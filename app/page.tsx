@@ -110,7 +110,7 @@ function AustraliaLocationMap() {
     ) as Feature<Geometry>;
     const projection = geoMercator().fitExtent([[24, 8], [596, 352]], australiaFeature);
     const path = geoPath(projection);
-    const worldProjection = geoNaturalEarth1().fitExtent([[-34, -28], [654, 388]], world);
+    const worldProjection = geoNaturalEarth1().fitExtent([[-78, -58], [698, 418]], world);
     const worldPath = geoPath(worldProjection);
 
     return {
@@ -222,15 +222,6 @@ function AustraliaLocationMap() {
             <text fill="#0faea6" fontSize="11.5" fontWeight="800" letterSpacing="0.7" x={sitePoint[0] + 64} y={sitePoint[1] + 10}>
               Craigieburn VIC, Australia
             </text>
-            <path
-              d={`M${sitePoint[0] - 64} ${sitePoint[1] + 48} H${sitePoint[0] - 22} V${sitePoint[1] + 18}`}
-              fill="none"
-              stroke="#74c947"
-              strokeDasharray="3 7"
-              strokeLinecap="round"
-              strokeOpacity="0.65"
-              strokeWidth="1.5"
-            />
           </g>
         </svg>
       </div>
