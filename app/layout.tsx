@@ -4,7 +4,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "PENTANEX | AI-ready Australian Data Centre Infrastructure",
   description:
-    "PENTANEX develops AI-ready digital infrastructure for Australia's next era of compute, led by the 980 Hume Freeway 560MW campus.",
+    "PENTANEX is planning AI-ready data centre capacity in Australia, led by the 980 Hume Freeway, Craigieburn VIC 3064 560MW campus capacity envelope.",
 };
 
 export default function RootLayout({

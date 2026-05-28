@@ -3,17 +3,13 @@
 import { useMemo, useState } from "react";
 import {
   ArrowRight,
-  Building2,
   CheckCircle2,
   CircuitBoard,
   Factory,
   Globe2,
   Mail,
-  MapPin,
-  Phone,
   ShieldCheck,
   Trees,
-  Zap,
 } from "lucide-react";
 import { geoMercator, geoPath } from "d3-geo";
 import { feature } from "topojson-client";
@@ -39,40 +35,40 @@ const tabs = [
     id: "campus",
     label: "Campus",
     icon: Factory,
-    title: "A flagship data centre campus positioned for large-scale digital demand.",
-    body: "PENTANEX is planning a 560MW campus capacity envelope at 980 Hume Freeway, Craigieburn VIC 3064. The site narrative is focused on data hall capacity, staging, connectivity, cooling readiness, and customer due diligence.",
+    title: "A 560MW data centre campus planned for staged hyperscale growth.",
+    body: "The Craigieburn campus should be framed as a capacity platform: staged data halls, utility coordination, cooling optionality, secure operations, and customer due diligence from the earliest planning phase.",
     points: ["560MW planned capacity envelope", "Staged data hall expansion", "Craigieburn / Hume Freeway location"],
   },
   {
     id: "capacity",
     label: "Capacity",
     icon: CircuitBoard,
-    title: "Capacity planning for AI, cloud, and enterprise workloads.",
-    body: "The website should communicate capacity as a product: scalable blocks of future-ready infrastructure for dense compute, resilient operations, and long-term customer growth.",
+    title: "Capacity planning for AI, cloud, and enterprise workload demand.",
+    body: "For data centre customers, capacity is not just land or megawatts. The offer must translate into future data hall blocks, density pathways, fibre strategy, cooling readiness, and predictable expansion sequencing.",
     points: ["High-density data hall planning", "Customer-ready capacity blocks", "AI and cloud infrastructure readiness"],
   },
   {
     id: "delivery",
     label: "Delivery",
     icon: ShieldCheck,
-    title: "A disciplined pathway from site strategy to hyperscale readiness.",
-    body: "PENTANEX should be presented as a delivery platform, not simply a landholding. The message should connect planning, approvals, utility readiness, campus design, and stakeholder confidence.",
+    title: "A delivery pathway from capacity strategy to customer readiness.",
+    body: "The strongest positioning is not simply ownership of a location. It is the ability to coordinate planning, approvals, utility interfaces, data hall design, stakeholder engagement, and delivery milestones.",
     points: ["Capacity-led site feasibility", "Planning and approvals pathway", "Customer and utility readiness"],
   },
   {
     id: "sustainability",
     label: "Sustainability",
     icon: Trees,
-    title: "A credible sustainability pathway for long-life digital infrastructure.",
-    body: "Sustainability language should stay precise and evidence-led until formal targets and certifications are confirmed. The site can still communicate responsible planning, efficient operations, and community interface.",
-    points: ["Energy strategy", "Water-conscious cooling", "Efficient operations"],
+    title: "A sustainability pathway that stays evidence-led and buildable.",
+    body: "Until formal targets are confirmed, the site should communicate credible planning principles: efficient operating envelopes, water-conscious cooling options, grid-aware development, and clear community interface.",
+    points: ["Efficient operating envelope", "Water-conscious cooling options", "Community and grid interface"],
   },
   {
     id: "contact",
     label: "Contact",
     icon: Mail,
-    title: "Structured contact channels for customers, partners, and stakeholders.",
-    body: "Dedicated contact details will be activated after the domain, email, and phone providers are confirmed. The current site uses placeholder contact details for prototype continuity.",
+    title: "Clear channels for customers, partners, investors, and stakeholders.",
+    body: "The contact experience should separate customer capacity enquiries, partnerships, media, and support once the domain, email, and phone systems are confirmed.",
     points: ["enquiries@pentanex.com.au", "support@pentanex.com.au", "+61 3 0000 0000"],
   },
 ];
@@ -96,7 +92,7 @@ function AustraliaLocationMap() {
   }, []);
 
   return (
-    <div className="relative overflow-hidden rounded-sm border border-white/70 bg-white/58 p-5 shadow-glow backdrop-blur-2xl">
+    <div className="relative overflow-hidden rounded-sm border border-white/70 bg-white/58 p-4 shadow-glow backdrop-blur-2xl xl:p-5">
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-white/80 via-white/35 to-signal/10" />
       <div className="relative flex items-start justify-between gap-4">
         <div>
@@ -108,10 +104,10 @@ function AustraliaLocationMap() {
         </span>
       </div>
 
-      <div className="relative mt-4 grid gap-4 lg:grid-cols-[1fr_0.7fr] lg:items-center">
+      <div className="relative mt-3 grid gap-3 lg:grid-cols-[1fr_0.68fr] lg:items-center xl:mt-4 xl:gap-4">
         <svg
           aria-label="Accurate Australia map with PENTANEX campus location marker near Craigieburn, Victoria"
-          className="h-[220px] w-full"
+          className="h-[clamp(150px,24vh,220px)] w-full"
           role="img"
           viewBox="0 0 520 330"
         >
@@ -151,12 +147,14 @@ function AustraliaLocationMap() {
           </text>
         </svg>
 
-        <div className="rounded-sm border border-slate-200/70 bg-white/70 p-4 backdrop-blur">
-          <p className="text-4xl font-semibold text-graphite">{project.capacity}</p>
-          <p className="mt-3 text-sm leading-6 text-steel">
+        <div className="rounded-sm border border-slate-200/70 bg-white/70 p-3 backdrop-blur xl:p-4">
+          <p className="text-[clamp(1.75rem,3vw,2.5rem)] font-semibold leading-none text-graphite">
+            {project.capacity}
+          </p>
+          <p className="mt-2 text-sm leading-6 text-steel">
             Planned campus capacity envelope in {project.corridor}.
           </p>
-          <p className="mt-3 text-[11px] leading-5 text-steel">
+          <p className="mt-2 text-[11px] leading-5 text-steel">
             Map outline uses Natural Earth geodata via world-atlas. Marker uses approximate
             Craigieburn coordinates.
           </p>
@@ -203,32 +201,35 @@ export default function Home() {
         </div>
       </header>
 
-      <section id="top" className="relative min-h-screen px-5 pt-[68px] sm:px-8">
+      <section
+        id="top"
+        className="relative flex min-h-screen items-center justify-center px-5 pb-5 pt-[64px] sm:px-8"
+      >
         <div className="site-grid absolute inset-0 opacity-80" />
         <div className="pointer-events-none absolute left-[8%] top-[16%] h-72 w-72 rounded-full bg-signal/10 blur-3xl" />
         <div className="pointer-events-none absolute bottom-[12%] right-[6%] h-80 w-80 rounded-full bg-power/12 blur-3xl" />
 
-        <div className="relative mx-auto grid h-[calc(100vh-68px)] max-w-7xl items-center gap-5 py-5 lg:grid-cols-[1.08fr_0.92fr]">
+        <div className="relative mx-auto grid w-full max-w-7xl items-stretch gap-4 lg:grid-cols-[1.05fr_0.95fr] xl:gap-5">
           <div className="grid min-h-0 gap-4">
             <AustraliaLocationMap />
 
-            <div className="rounded-sm border border-white/70 bg-white/58 p-6 shadow-glow backdrop-blur-2xl">
+            <div className="rounded-sm border border-white/70 bg-white/58 p-5 shadow-glow backdrop-blur-2xl xl:p-6">
               <div className="inline-flex items-center gap-2 rounded-sm border border-signal/20 bg-white/70 px-3 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-signal">
                 <Globe2 size={15} />
                 Australian Digital Infrastructure
               </div>
-              <h1 className="mt-5 text-5xl font-semibold leading-[1] text-graphite sm:text-6xl">
+              <h1 className="mt-4 text-[clamp(2.6rem,5.2vw,4rem)] font-semibold leading-[1] text-graphite">
                 PENTANEX
               </h1>
-              <p className="mt-4 max-w-2xl text-xl leading-8 text-slate-700">
-                AI-ready data centre capacity for Australia&apos;s next era of compute.
+              <p className="mt-3 max-w-2xl text-[clamp(1.05rem,2vw,1.35rem)] leading-8 text-slate-700">
+                AI-ready data centre capacity for Australia&apos;s next compute cycle.
               </p>
               <p className="mt-3 max-w-2xl text-sm leading-6 text-steel">
                 Led by the {project.address} {project.capacity} campus capacity envelope,
-                PENTANEX is planning scalable infrastructure for cloud platforms, AI compute,
-                enterprise workloads, and sovereign digital growth.
+                PENTANEX is planning scalable infrastructure for AI compute, cloud platforms,
+                enterprise workloads, and sovereign digital infrastructure.
               </p>
-              <div className="mt-5 flex flex-col gap-3 sm:flex-row">
+              <div className="mt-4 flex flex-col gap-3 sm:flex-row xl:mt-5">
                 <button
                   className="inline-flex items-center justify-center gap-2 rounded-sm bg-signal px-5 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-graphite"
                   onClick={() => setActiveTab(tabs[0])}
@@ -249,18 +250,20 @@ export default function Home() {
           </div>
 
           <div className="grid min-h-0 gap-4">
-            <div className="rounded-sm border border-white/70 bg-white/56 p-4 shadow-glow backdrop-blur-2xl">
+            <div className="rounded-sm border border-white/70 bg-white/56 p-3 shadow-glow backdrop-blur-2xl xl:p-4">
               <div className="grid gap-2 sm:grid-cols-4">
                 {metrics.map((metric) => (
                   <div className="rounded-sm border border-slate-200/70 bg-white/66 p-3" key={metric.label}>
-                    <p className="text-lg font-semibold text-graphite">{metric.value}</p>
+                    <p className="text-[clamp(0.95rem,1.35vw,1.125rem)] font-semibold text-graphite">
+                      {metric.value}
+                    </p>
                     <p className="mt-1 text-[11px] leading-4 text-steel">{metric.label}</p>
                   </div>
                 ))}
               </div>
             </div>
 
-            <div className="rounded-sm border border-white/70 bg-white/58 p-5 shadow-glow backdrop-blur-2xl">
+            <div className="rounded-sm border border-white/70 bg-white/58 p-4 shadow-glow backdrop-blur-2xl xl:p-5">
               <div className="flex flex-wrap gap-2">
                 {tabs.map((tab) => (
                   <button
@@ -279,22 +282,22 @@ export default function Home() {
                 ))}
               </div>
 
-              <div className="mt-5 grid gap-5 lg:grid-cols-[0.95fr_1.05fr]">
-                <div className="rounded-sm border border-slate-200/70 bg-white/68 p-5">
-                  <div className="flex h-11 w-11 items-center justify-center rounded-sm bg-signal/10 text-signal">
+              <div className="mt-4 grid gap-4 lg:grid-cols-[0.95fr_1.05fr] xl:mt-5 xl:gap-5">
+                <div className="rounded-sm border border-slate-200/70 bg-white/68 p-4 xl:p-5">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-sm bg-signal/10 text-signal">
                     <ActiveIcon size={22} />
                   </div>
-                  <h2 className="mt-5 text-2xl font-semibold leading-tight text-graphite">
+                  <h2 className="mt-4 text-[clamp(1.25rem,2.2vw,1.5rem)] font-semibold leading-tight text-graphite">
                     {activeTab.title}
                   </h2>
-                  <p className="mt-4 text-sm leading-6 text-steel">{activeTab.body}</p>
+                  <p className="mt-3 text-sm leading-6 text-steel">{activeTab.body}</p>
                 </div>
 
-                <div className="rounded-sm border border-slate-200/70 bg-[#f8fbfd]/76 p-5">
+                <div className="rounded-sm border border-slate-200/70 bg-[#f8fbfd]/76 p-4 xl:p-5">
                   <p className="text-xs font-semibold uppercase tracking-[0.2em] text-steel">
                     Current focus
                   </p>
-                  <div className="mt-5 space-y-3">
+                  <div className="mt-4 space-y-2 xl:mt-5 xl:space-y-3">
                     {activeTab.points.map((point) => (
                       <div className="flex gap-3 rounded-sm border border-slate-200 bg-white/72 p-3" key={point}>
                         <CheckCircle2 className="mt-0.5 shrink-0 text-power" size={18} />
@@ -303,7 +306,7 @@ export default function Home() {
                     ))}
                   </div>
 
-                  <div className="mt-5 grid grid-cols-5 gap-2">
+                  <div className="mt-4 grid grid-cols-5 gap-2 xl:mt-5">
                     {Array.from({ length: 15 }).map((_, index) => (
                       <span
                         className="h-7 rounded-sm border border-slate-200 bg-white/80"
