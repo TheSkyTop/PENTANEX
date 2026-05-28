@@ -2,7 +2,6 @@
 
 import { useMemo, useState } from "react";
 import {
-  ArrowRight,
   CheckCircle2,
   CircuitBoard,
   Factory,
@@ -206,23 +205,7 @@ export default function Home() {
             ))}
           </nav>
 
-          <div className="flex items-center gap-2">
-            <span className="hidden rounded-sm border border-signal/25 bg-signal/12 px-3 py-2 text-xs font-semibold text-signal md:inline-flex">
-              560MW Campus
-            </span>
-            <button
-              className={`inline-flex items-center gap-2 rounded-sm border px-4 py-2 text-sm font-semibold transition ${
-                activeTab.id === "contact"
-                  ? "border-signal bg-signal text-white shadow-sm"
-                  : "border-signal/35 bg-white/72 text-signal hover:border-signal hover:bg-signal hover:text-white"
-              }`}
-              onClick={() => setActiveTab(tabs[4])}
-              type="button"
-            >
-              Contact
-              <ArrowRight size={16} />
-            </button>
-          </div>
+          <div className="hidden w-[210px] lg:block" aria-hidden="true" />
         </div>
 
         <nav
@@ -274,23 +257,6 @@ export default function Home() {
                 PENTANEX is planning scalable infrastructure for AI compute, cloud platforms,
                 enterprise workloads, and sovereign digital infrastructure.
               </p>
-              <div className="mt-4 flex flex-col gap-3 sm:flex-row xl:mt-5">
-                <button
-                  className="inline-flex items-center justify-center gap-2 rounded-sm bg-signal px-5 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-graphite"
-                  onClick={() => setActiveTab(tabs[0])}
-                  type="button"
-                >
-                  View Campus
-                  <ArrowRight size={17} />
-                </button>
-                <button
-                  className="inline-flex items-center justify-center rounded-sm border border-slate-300 bg-white/72 px-5 py-3 text-sm font-semibold text-graphite transition hover:border-signal hover:text-signal"
-                  onClick={() => setActiveTab(tabs[1])}
-                  type="button"
-                >
-                  Capacity Strategy
-                </button>
-              </div>
             </div>
           </div>
 
@@ -309,25 +275,7 @@ export default function Home() {
             </div>
 
             <div className="rounded-sm border border-white/70 bg-white/58 p-4 shadow-glow backdrop-blur-2xl xl:p-5">
-              <div className="flex flex-wrap gap-2">
-                {tabs.map((tab) => (
-                  <button
-                    className={`inline-flex items-center gap-2 rounded-sm border px-3 py-2 text-sm font-semibold transition ${
-                      activeTab.id === tab.id
-                        ? "border-signal bg-signal text-white"
-                        : "border-slate-200 bg-white/72 text-steel hover:border-signal hover:text-signal"
-                    }`}
-                    key={tab.id}
-                    onClick={() => setActiveTab(tab)}
-                    type="button"
-                  >
-                    <tab.icon size={16} />
-                    {tab.label}
-                  </button>
-                ))}
-              </div>
-
-              <div className="mt-4 grid gap-4 lg:grid-cols-[0.95fr_1.05fr] xl:mt-5 xl:gap-5">
+              <div className="grid gap-4 lg:grid-cols-[0.95fr_1.05fr] xl:gap-5">
                 <div className="rounded-sm border border-slate-200/70 bg-white/68 p-4 xl:p-5">
                   <div className="flex h-10 w-10 items-center justify-center rounded-sm bg-signal/10 text-signal">
                     <ActiveIcon size={22} />
