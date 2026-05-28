@@ -171,17 +171,32 @@ export default function Home() {
   return (
     <main className="min-h-screen overflow-hidden bg-[#eef4f8] text-graphite">
       <header className="fixed inset-x-0 top-0 z-50 border-b border-white/70 bg-white/62 backdrop-blur-2xl">
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-3 sm:px-8">
+        <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-5 py-3 sm:px-8">
           <a className="flex items-center gap-3" href="#top" aria-label="PENTANEX home">
             <span className="flex h-9 w-9 items-center justify-center rounded-sm border border-signal/35 bg-white/80 text-xs font-semibold text-signal">
               PX
             </span>
-            <span className="text-sm font-semibold tracking-[0.22em] text-graphite">PENTANEX</span>
+            <span>
+              <span className="block text-sm font-semibold tracking-[0.22em] text-graphite">
+                PENTANEX
+              </span>
+              <span className="hidden text-[10px] font-medium uppercase tracking-[0.16em] text-steel sm:block">
+                Data Centre Infrastructure
+              </span>
+            </span>
           </a>
-          <nav className="hidden items-center gap-6 text-sm text-steel md:flex">
-            {tabs.slice(0, 4).map((tab) => (
+
+          <nav
+            aria-label="Primary navigation"
+            className="hidden items-center gap-1 rounded-sm border border-white/70 bg-white/58 p-1 shadow-sm backdrop-blur-2xl lg:flex"
+          >
+            {tabs.map((tab) => (
               <button
-                className="transition hover:text-graphite"
+                className={`rounded-sm px-3.5 py-2 text-sm font-semibold transition ${
+                  activeTab.id === tab.id
+                    ? "bg-graphite text-white shadow-sm"
+                    : "text-steel hover:bg-white/80 hover:text-graphite"
+                }`}
                 key={tab.id}
                 onClick={() => setActiveTab(tab)}
                 type="button"
@@ -190,20 +205,46 @@ export default function Home() {
               </button>
             ))}
           </nav>
-          <button
-            className="inline-flex items-center gap-2 rounded-sm bg-graphite px-4 py-2 text-sm font-medium text-white transition hover:bg-signal"
-            onClick={() => setActiveTab(tabs[4])}
-            type="button"
-          >
-            Contact
-            <ArrowRight size={16} />
-          </button>
+
+          <div className="flex items-center gap-2">
+            <span className="hidden rounded-sm border border-signal/20 bg-signal/10 px-3 py-2 text-xs font-semibold text-signal md:inline-flex">
+              560MW Campus
+            </span>
+            <button
+              className="inline-flex items-center gap-2 rounded-sm bg-graphite px-4 py-2 text-sm font-medium text-white transition hover:bg-signal"
+              onClick={() => setActiveTab(tabs[4])}
+              type="button"
+            >
+              Contact
+              <ArrowRight size={16} />
+            </button>
+          </div>
         </div>
+
+        <nav
+          aria-label="Mobile navigation"
+          className="flex gap-2 overflow-x-auto border-t border-white/60 px-5 py-2 sm:px-8 lg:hidden"
+        >
+          {tabs.map((tab) => (
+            <button
+              className={`shrink-0 rounded-sm border px-3 py-2 text-xs font-semibold transition ${
+                activeTab.id === tab.id
+                  ? "border-graphite bg-graphite text-white"
+                  : "border-white/70 bg-white/60 text-steel"
+              }`}
+              key={tab.id}
+              onClick={() => setActiveTab(tab)}
+              type="button"
+            >
+              {tab.label}
+            </button>
+          ))}
+        </nav>
       </header>
 
       <section
         id="top"
-        className="relative flex min-h-screen items-center justify-center px-5 pb-5 pt-[64px] sm:px-8"
+        className="relative flex min-h-screen items-center justify-center px-5 pb-5 pt-[108px] sm:px-8 lg:pt-[72px]"
       >
         <div className="site-grid absolute inset-0 opacity-80" />
         <div className="pointer-events-none absolute left-[8%] top-[16%] h-72 w-72 rounded-full bg-signal/10 blur-3xl" />
