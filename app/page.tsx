@@ -72,6 +72,25 @@ const tabs = [
   },
 ];
 
+const footerGroups = [
+  {
+    heading: "Campus",
+    items: ["980 Hume Freeway", "Craigieburn VIC 3064", "Melbourne northern growth corridor"],
+  },
+  {
+    heading: "Capacity",
+    items: ["560MW planned capacity envelope", "AI-ready data hall planning", "Hyperscale customer demand"],
+  },
+  {
+    heading: "Company",
+    items: ["Australian digital infrastructure", "Cloud, AI, and enterprise workloads", "Staged delivery pathway"],
+  },
+  {
+    heading: "Contact",
+    items: ["enquiries@pentanex.com.au", "support@pentanex.com.au", "+61 3 0000 0000"],
+  },
+];
+
 function AustraliaLocationMap() {
   const { australiaPath, sitePoint } = useMemo(() => {
     const australia = feature(
@@ -316,6 +335,56 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <footer className="relative px-5 pb-6 sm:px-8">
+        <div className="site-grid absolute inset-x-0 bottom-0 top-[-40px] opacity-50" />
+        <div className="relative mx-auto max-w-7xl rounded-sm border border-white/70 bg-white/62 p-5 shadow-glow backdrop-blur-2xl xl:p-6">
+          <div className="grid gap-5 lg:grid-cols-[1.05fr_2.1fr] lg:items-start">
+            <div>
+              <div className="flex items-center gap-3">
+                <span className="flex h-9 w-9 items-center justify-center rounded-sm border border-signal/35 bg-white/80 text-xs font-semibold text-signal">
+                  PX
+                </span>
+                <div>
+                  <p className="text-sm font-semibold tracking-[0.22em] text-graphite">PENTANEX</p>
+                  <p className="mt-1 text-[10px] font-medium uppercase tracking-[0.16em] text-steel">
+                    Data Centre Infrastructure
+                  </p>
+                </div>
+              </div>
+              <p className="mt-4 max-w-md text-sm leading-6 text-steel">
+                Planning AI-ready data centre capacity for cloud platforms, enterprise workloads,
+                and sovereign digital infrastructure in Australia.
+              </p>
+            </div>
+
+            <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
+              {footerGroups.map((group) => (
+                <div
+                  className="rounded-sm border border-slate-200/70 bg-white/68 p-4"
+                  key={group.heading}
+                >
+                  <p className="text-xs font-semibold uppercase tracking-[0.2em] text-signal">
+                    {group.heading}
+                  </p>
+                  <div className="mt-3 space-y-2">
+                    {group.items.map((item) => (
+                      <p className="text-sm leading-5 text-graphite" key={item}>
+                        {item}
+                      </p>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="mt-5 flex flex-col gap-2 border-t border-slate-200/80 pt-4 text-xs text-steel sm:flex-row sm:items-center sm:justify-between">
+            <p>(c) 2026 PENTANEX. Project information is subject to planning and delivery confirmation.</p>
+            <p>Flagship campus: {project.address}</p>
+          </div>
+        </div>
+      </footer>
     </main>
   );
 }
