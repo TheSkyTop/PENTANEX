@@ -91,7 +91,7 @@ const footerGroups = [
   },
 ];
 
-const australiaMapYOffset = 22;
+const australiaMapYOffset = 34;
 
 function AustraliaLocationMap() {
   const { australiaPath, sitePoint, worldPaths } = useMemo(() => {
