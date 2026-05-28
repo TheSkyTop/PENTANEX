@@ -102,7 +102,7 @@ function AustraliaLocationMap() {
     ) as Feature<Geometry>;
     const projection = geoMercator().fitExtent([[24, 8], [596, 352]], australiaFeature);
     const path = geoPath(projection);
-    const worldProjection = geoNaturalEarth1().fitExtent([[0, 0], [620, 360]], world);
+    const worldProjection = geoNaturalEarth1().fitExtent([[-34, -28], [654, 388]], world);
     const worldPath = geoPath(worldProjection);
 
     return {
@@ -146,11 +146,6 @@ function AustraliaLocationMap() {
                 <feMergeNode in="SourceGraphic" />
               </feMerge>
             </filter>
-            <radialGradient id="locationLight" cx="50%" cy="50%" r="50%">
-              <stop offset="0%" stopColor="#0faea6" stopOpacity="0.5" />
-              <stop offset="48%" stopColor="#74c947" stopOpacity="0.22" />
-              <stop offset="100%" stopColor="#0faea6" stopOpacity="0" />
-            </radialGradient>
             <marker
               id="dashedArrow"
               markerHeight="8"
@@ -201,11 +196,9 @@ function AustraliaLocationMap() {
             strokeLinecap="round"
             strokeWidth="2.2"
           />
-          <circle cx={sitePoint[0]} cy={sitePoint[1]} fill="url(#locationLight)" r="44" />
-          <circle cx={sitePoint[0]} cy={sitePoint[1]} fill="none" r="27" stroke="#74c947" strokeDasharray="4 7" strokeOpacity="0.5" strokeWidth="2" />
-          <circle cx={sitePoint[0]} cy={sitePoint[1]} fill="#0faea6" filter="url(#markerGlow)" r="6" />
-          <circle cx={sitePoint[0]} cy={sitePoint[1]} fill="none" r="17" stroke="#0faea6" strokeOpacity="0.48" strokeWidth="9" />
-          <circle cx={sitePoint[0]} cy={sitePoint[1]} fill="none" r="34" stroke="#0faea6" strokeOpacity="0.18" strokeWidth="12" />
+          <circle cx={sitePoint[0]} cy={sitePoint[1]} fill="none" r="15" stroke="#74c947" strokeDasharray="3 6" strokeOpacity="0.58" strokeWidth="1.6" />
+          <circle cx={sitePoint[0]} cy={sitePoint[1]} fill="#0faea6" r="4.5" />
+          <circle cx={sitePoint[0]} cy={sitePoint[1]} fill="none" r="9" stroke="#0faea6" strokeOpacity="0.5" strokeWidth="3" />
           <rect
             fill="url(#locationTag)"
             filter="url(#softGlass)"
