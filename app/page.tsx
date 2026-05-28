@@ -23,10 +23,10 @@ const project = {
 };
 
 const metrics = [
-  { value: project.capacity, label: "planned campus capacity envelope" },
-  { value: "Craigieburn", label: "Hume Freeway, Victoria location" },
-  { value: "AI-ready", label: "high-density data hall planning" },
-  { value: "Hyperscale", label: "capacity for cloud and enterprise demand" },
+  { value: project.capacity, label: "masterplanned hyperscale campus capacity" },
+  { value: "Craigieburn VIC", label: "strategic Melbourne North location" },
+  { value: "AI-ready", label: "high-density compute infrastructure" },
+  { value: "Hyperscale", label: "scalable cloud and AI compute capacity" },
 ];
 
 const tabs = [
