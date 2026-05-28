@@ -188,7 +188,7 @@ export default function Home() {
 
   return (
     <main className="min-h-screen overflow-hidden bg-[#eef4f8] text-graphite">
-      <header className="fixed inset-x-0 top-0 z-50 px-5 pt-4 sm:px-8">
+      <header className="sticky top-0 z-50 px-5 pt-4 sm:px-8">
         <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 rounded-sm border border-white/80 bg-white/78 px-4 py-3 shadow-[0_18px_60px_rgba(16,32,51,0.12)] backdrop-blur-2xl">
           <a className="flex items-center gap-3" href="#top" aria-label="PENTANEX home">
             <span className="flex h-9 w-9 items-center justify-center rounded-sm border border-signal/35 bg-white/80 text-xs font-semibold text-signal">
@@ -250,7 +250,7 @@ export default function Home() {
 
       <section
         id="top"
-        className="relative flex items-start justify-center px-5 pb-4 pt-[140px] sm:px-8 lg:pt-[104px]"
+        className="relative flex items-start justify-center px-5 pb-4 pt-4 sm:px-8"
       >
         <div className="site-grid absolute inset-0 opacity-80" />
         <div className="pointer-events-none absolute left-[8%] top-[16%] h-72 w-72 rounded-full bg-signal/10 blur-3xl" />
