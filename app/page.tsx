@@ -188,15 +188,6 @@ function AustraliaLocationMap() {
             strokeOpacity="0.75"
             strokeWidth="1"
           />
-          <path
-            d="M100 224C176 190 232 204 304 184C386 162 444 126 530 136"
-            fill="none"
-            stroke="#0faea6"
-            strokeDasharray="2 10"
-            strokeLinecap="round"
-            strokeOpacity="0.35"
-            strokeWidth="1.6"
-          />
           <g transform={`translate(0 ${australiaMapYOffset})`}>
             <path d={australiaPath} fill="url(#mapFill)" stroke="#88c7c1" strokeWidth="1.6" />
             <path
