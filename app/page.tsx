@@ -232,8 +232,12 @@ export default function Home() {
       <header className="sticky top-0 z-50 px-5 pt-4 sm:px-8">
         <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 rounded-sm border border-white/80 bg-white/78 px-4 py-3 shadow-[0_18px_60px_rgba(16,32,51,0.12)] backdrop-blur-2xl">
           <a className="flex items-center gap-3" href="#top" aria-label="PENTANEX home">
-            <span className="flex h-9 w-9 items-center justify-center rounded-sm border border-signal/35 bg-white/80 text-xs font-semibold text-signal">
-              PX
+            <span className="flex h-10 w-10 items-center justify-center rounded-sm border border-signal/25 bg-white/82 p-1 shadow-sm">
+              <img
+                alt=""
+                className="h-full w-full object-contain"
+                src="/pentanex-logo.png"
+              />
             </span>
             <span>
               <span className="block text-sm font-semibold tracking-[0.22em] text-graphite">
@@ -379,8 +383,12 @@ export default function Home() {
           <div className="grid gap-5 lg:grid-cols-[1.05fr_2.1fr] lg:items-start">
             <div>
               <div className="flex items-center gap-3">
-                <span className="flex h-9 w-9 items-center justify-center rounded-sm border border-signal/35 bg-white/80 text-xs font-semibold text-signal">
-                  PX
+                <span className="flex h-10 w-10 items-center justify-center rounded-sm border border-signal/25 bg-white/82 p-1 shadow-sm">
+                  <img
+                    alt=""
+                    className="h-full w-full object-contain"
+                    src="/pentanex-logo.png"
+                  />
                 </span>
                 <div>
                   <p className="text-sm font-semibold tracking-[0.22em] text-graphite">PENTANEX</p>
