@@ -100,7 +100,7 @@ function AustraliaLocationMap() {
     const australiaFeature = world.features.find(
       (country) => country.id === "036" || country.properties?.name === "Australia",
     ) as Feature<Geometry>;
-    const projection = geoMercator().fitExtent([[50, 28], [570, 332]], australiaFeature);
+    const projection = geoMercator().fitExtent([[24, 8], [596, 352]], australiaFeature);
     const path = geoPath(projection);
     const worldProjection = geoNaturalEarth1().fitExtent([[18, 36], [602, 324]], world);
     const worldPath = geoPath(worldProjection);
@@ -133,8 +133,8 @@ function AustraliaLocationMap() {
               <stop offset="100%" stopColor="#dff2ef" />
             </linearGradient>
             <linearGradient id="locationTag" x1="0" x2="1" y1="0" y2="1">
-              <stop offset="0%" stopColor="#f8fffd" />
-              <stop offset="100%" stopColor="#e4f8df" />
+              <stop offset="0%" stopColor="#ffffff" />
+              <stop offset="100%" stopColor="#e9fbfa" />
             </linearGradient>
             <filter id="softGlass" height="180%" width="180%" x="-40%" y="-40%">
               <feDropShadow dx="0" dy="7" floodColor="#0faea6" floodOpacity="0.12" stdDeviation="8" />
@@ -158,14 +158,14 @@ function AustraliaLocationMap() {
               <path d="M0 0L8 4L0 8Z" fill="#0faea6" />
             </marker>
           </defs>
-          <g opacity="0.16">
+          <g opacity="0.24">
             {worldPaths.map((countryPath, index) => (
               <path
                 d={countryPath}
-                fill="#d8efec"
+                fill="#c9e7e4"
                 key={`world-${index}`}
-                stroke="#95cac4"
-                strokeWidth="0.45"
+                stroke="#78b9b2"
+                strokeWidth="0.5"
               />
             ))}
           </g>
@@ -188,7 +188,7 @@ function AustraliaLocationMap() {
           />
           <path d={australiaPath} fill="url(#mapFill)" stroke="#88c7c1" strokeWidth="1.6" />
           <path
-            d={`M${sitePoint[0] + 74} ${sitePoint[1] - 24} C${sitePoint[0] + 54} ${sitePoint[1] - 8} ${sitePoint[0] + 42} ${sitePoint[1] + 9} ${sitePoint[0] + 13} ${sitePoint[1] + 1}`}
+            d={`M${sitePoint[0] + 44} ${sitePoint[1] - 13} C${sitePoint[0] + 30} ${sitePoint[1] - 5} ${sitePoint[0] + 23} ${sitePoint[1] + 4} ${sitePoint[0] + 13} ${sitePoint[1] + 1}`}
             fill="none"
             markerEnd="url(#dashedArrow)"
             stroke="#0faea6"
@@ -204,14 +204,14 @@ function AustraliaLocationMap() {
             filter="url(#softGlass)"
             height="34"
             rx="4"
-            stroke="#54c86f"
-            strokeOpacity="0.62"
-            width="142"
-            x={sitePoint[0] + 82}
-            y={sitePoint[1] - 44}
+            stroke="#7bdad4"
+            strokeOpacity="0.9"
+            width="188"
+            x={sitePoint[0] + 50}
+            y={sitePoint[1] - 34}
           />
-          <text fill="#15804d" fontSize="12" fontWeight="800" x={sitePoint[0] + 98} y={sitePoint[1] - 22}>
-            Craigieburn VIC
+          <text fill="#0faea6" fontSize="11.5" fontWeight="800" letterSpacing="0.7" x={sitePoint[0] + 64} y={sitePoint[1] - 12}>
+            Craigieburn VIC, Australia
           </text>
           <path
             d={`M${sitePoint[0] - 64} ${sitePoint[1] + 48} H${sitePoint[0] - 22} V${sitePoint[1] + 18}`}
