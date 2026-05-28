@@ -91,6 +91,8 @@ const footerGroups = [
   },
 ];
 
+const australiaMapYOffset = 22;
+
 function AustraliaLocationMap() {
   const { australiaPath, sitePoint, worldPaths } = useMemo(() => {
     const world = feature(
@@ -186,42 +188,44 @@ function AustraliaLocationMap() {
             strokeOpacity="0.35"
             strokeWidth="1.6"
           />
-          <path d={australiaPath} fill="url(#mapFill)" stroke="#88c7c1" strokeWidth="1.6" />
-          <path
-            d={`M${sitePoint[0] + 44} ${sitePoint[1] + 8} C${sitePoint[0] + 30} ${sitePoint[1] + 5} ${sitePoint[0] + 23} ${sitePoint[1] + 4} ${sitePoint[0] + 13} ${sitePoint[1] + 1}`}
-            fill="none"
-            markerEnd="url(#dashedArrow)"
-            stroke="#0faea6"
-            strokeDasharray="7 8"
-            strokeLinecap="round"
-            strokeWidth="2.2"
-          />
-          <circle cx={sitePoint[0]} cy={sitePoint[1]} fill="none" r="15" stroke="#74c947" strokeDasharray="3 6" strokeOpacity="0.58" strokeWidth="1.6" />
-          <circle cx={sitePoint[0]} cy={sitePoint[1]} fill="#0faea6" r="4.5" />
-          <circle cx={sitePoint[0]} cy={sitePoint[1]} fill="none" r="9" stroke="#0faea6" strokeOpacity="0.5" strokeWidth="3" />
-          <rect
-            fill="url(#locationTag)"
-            filter="url(#softGlass)"
-            height="34"
-            rx="4"
-            stroke="#7bdad4"
-            strokeOpacity="0.9"
-            width="188"
-            x={sitePoint[0] + 50}
-            y={sitePoint[1] - 12}
-          />
-          <text fill="#0faea6" fontSize="11.5" fontWeight="800" letterSpacing="0.7" x={sitePoint[0] + 64} y={sitePoint[1] + 10}>
-            Craigieburn VIC, Australia
-          </text>
-          <path
-            d={`M${sitePoint[0] - 64} ${sitePoint[1] + 48} H${sitePoint[0] - 22} V${sitePoint[1] + 18}`}
-            fill="none"
-            stroke="#74c947"
-            strokeDasharray="3 7"
-            strokeLinecap="round"
-            strokeOpacity="0.65"
-            strokeWidth="1.5"
-          />
+          <g transform={`translate(0 ${australiaMapYOffset})`}>
+            <path d={australiaPath} fill="url(#mapFill)" stroke="#88c7c1" strokeWidth="1.6" />
+            <path
+              d={`M${sitePoint[0] + 44} ${sitePoint[1] + 8} C${sitePoint[0] + 30} ${sitePoint[1] + 5} ${sitePoint[0] + 23} ${sitePoint[1] + 4} ${sitePoint[0] + 13} ${sitePoint[1] + 1}`}
+              fill="none"
+              markerEnd="url(#dashedArrow)"
+              stroke="#0faea6"
+              strokeDasharray="7 8"
+              strokeLinecap="round"
+              strokeWidth="2.2"
+            />
+            <circle cx={sitePoint[0]} cy={sitePoint[1]} fill="none" r="15" stroke="#74c947" strokeDasharray="3 6" strokeOpacity="0.58" strokeWidth="1.6" />
+            <circle cx={sitePoint[0]} cy={sitePoint[1]} fill="#0faea6" r="4.5" />
+            <circle cx={sitePoint[0]} cy={sitePoint[1]} fill="none" r="9" stroke="#0faea6" strokeOpacity="0.5" strokeWidth="3" />
+            <rect
+              fill="url(#locationTag)"
+              filter="url(#softGlass)"
+              height="34"
+              rx="4"
+              stroke="#7bdad4"
+              strokeOpacity="0.9"
+              width="188"
+              x={sitePoint[0] + 50}
+              y={sitePoint[1] - 12}
+            />
+            <text fill="#0faea6" fontSize="11.5" fontWeight="800" letterSpacing="0.7" x={sitePoint[0] + 64} y={sitePoint[1] + 10}>
+              Craigieburn VIC, Australia
+            </text>
+            <path
+              d={`M${sitePoint[0] - 64} ${sitePoint[1] + 48} H${sitePoint[0] - 22} V${sitePoint[1] + 18}`}
+              fill="none"
+              stroke="#74c947"
+              strokeDasharray="3 7"
+              strokeLinecap="round"
+              strokeOpacity="0.65"
+              strokeWidth="1.5"
+            />
+          </g>
         </svg>
       </div>
     </div>
