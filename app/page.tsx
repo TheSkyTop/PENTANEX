@@ -93,6 +93,12 @@ const footerGroups = [
 
 const australiaMapYOffset = 34;
 
+const infrastructureNarrative = [
+  "PENTANEX is developing AI-ready digital infrastructure designed to support Australia's next generation of hyperscale compute demand, cloud platforms, enterprise AI workloads, and sovereign digital capability.",
+  "The project is being designed for high-density AI and accelerated computing environments, supported by scalable power infrastructure, renewable and firmed energy integration, operational resilience, and long-term sustainability.",
+  "Positioned to support the rapid growth of AI training, inference, and large-scale cloud deployment across Australia and the Asia-Pacific region, PENTANEX aims to deliver a future-ready hyperscale platform for the next compute cycle driven by artificial intelligence and digital transformation.",
+];
+
 function AustraliaLocationMap() {
   const { australiaPath, sitePoint, worldPaths } = useMemo(() => {
     const world = feature(
@@ -315,17 +321,13 @@ export default function Home() {
                 <Globe2 size={15} />
                 Australian Digital Infrastructure
               </div>
-              <h1 className="mt-4 text-[clamp(2.6rem,5.2vw,4rem)] font-semibold leading-[1] text-graphite">
-                PENTANEX
-              </h1>
-              <p className="mt-3 max-w-2xl text-[clamp(1.05rem,2vw,1.35rem)] leading-8 text-slate-700">
-                AI-ready data centre capacity for Australia&apos;s next compute cycle.
-              </p>
-              <p className="mt-3 max-w-2xl text-sm leading-6 text-steel">
-                Led by the {project.address} {project.capacity} campus capacity envelope,
-                PENTANEX is planning scalable infrastructure for AI compute, cloud platforms,
-                enterprise workloads, and sovereign digital infrastructure.
-              </p>
+              <div className="mt-4 max-w-3xl space-y-3">
+                {infrastructureNarrative.map((paragraph) => (
+                  <p className="text-sm leading-6 text-steel" key={paragraph}>
+                    {paragraph}
+                  </p>
+                ))}
+              </div>
             </div>
           </div>
 
