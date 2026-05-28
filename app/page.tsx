@@ -170,8 +170,8 @@ export default function Home() {
 
   return (
     <main className="min-h-screen overflow-hidden bg-[#eef4f8] text-graphite">
-      <header className="fixed inset-x-0 top-0 z-50 border-b border-white/70 bg-white/62 backdrop-blur-2xl">
-        <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-5 py-3 sm:px-8">
+      <header className="fixed inset-x-0 top-0 z-50 px-5 pt-4 sm:px-8">
+        <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 rounded-sm border border-white/80 bg-white/78 px-4 py-3 shadow-[0_18px_60px_rgba(16,32,51,0.12)] backdrop-blur-2xl">
           <a className="flex items-center gap-3" href="#top" aria-label="PENTANEX home">
             <span className="flex h-9 w-9 items-center justify-center rounded-sm border border-signal/35 bg-white/80 text-xs font-semibold text-signal">
               PX
@@ -188,7 +188,7 @@ export default function Home() {
 
           <nav
             aria-label="Primary navigation"
-            className="hidden items-center gap-1 rounded-sm border border-white/70 bg-white/58 p-1 shadow-sm backdrop-blur-2xl lg:flex"
+            className="hidden items-center gap-1 rounded-sm border border-slate-200/75 bg-[#f8fbfd]/78 p-1 shadow-inner backdrop-blur-2xl lg:flex"
           >
             {tabs.map((tab) => (
               <button
@@ -207,7 +207,7 @@ export default function Home() {
           </nav>
 
           <div className="flex items-center gap-2">
-            <span className="hidden rounded-sm border border-signal/20 bg-signal/10 px-3 py-2 text-xs font-semibold text-signal md:inline-flex">
+            <span className="hidden rounded-sm border border-signal/25 bg-signal/12 px-3 py-2 text-xs font-semibold text-signal md:inline-flex">
               560MW Campus
             </span>
             <button
@@ -223,7 +223,7 @@ export default function Home() {
 
         <nav
           aria-label="Mobile navigation"
-          className="flex gap-2 overflow-x-auto border-t border-white/60 px-5 py-2 sm:px-8 lg:hidden"
+          className="mx-auto mt-2 flex max-w-7xl gap-2 overflow-x-auto rounded-sm border border-white/75 bg-white/70 p-2 shadow-sm backdrop-blur-2xl lg:hidden"
         >
           {tabs.map((tab) => (
             <button
@@ -244,7 +244,7 @@ export default function Home() {
 
       <section
         id="top"
-        className="relative flex min-h-screen items-center justify-center px-5 pb-5 pt-[108px] sm:px-8 lg:pt-[72px]"
+        className="relative flex min-h-screen items-center justify-center px-5 pb-5 pt-[136px] sm:px-8 lg:pt-[104px]"
       >
         <div className="site-grid absolute inset-0 opacity-80" />
         <div className="pointer-events-none absolute left-[8%] top-[16%] h-72 w-72 rounded-full bg-signal/10 blur-3xl" />
