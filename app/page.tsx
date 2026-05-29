@@ -145,13 +145,13 @@ function AustraliaLocationMap() {
   }, []);
 
   return (
-    <div className="relative overflow-hidden rounded-sm border border-white/70 bg-white/58 p-4 shadow-glow backdrop-blur-2xl xl:p-5">
+    <div className="relative overflow-hidden rounded-sm border border-white/70 bg-white/58 p-3 shadow-glow backdrop-blur-2xl xl:p-4">
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-white/82 via-white/32 to-signal/12" />
 
       <div className="relative">
         <svg
           aria-label="Accurate Australia map with PENTANEX campus location marker near Craigieburn, Victoria"
-          className="h-[clamp(230px,32vh,300px)] w-full"
+          className="h-[clamp(210px,28vh,270px)] w-full"
           role="img"
           viewBox="0 0 620 360"
         >
@@ -258,9 +258,9 @@ export default function Home() {
   const activeBodyParagraphs = Array.isArray(activeTab.body) ? activeTab.body : [activeTab.body];
 
   return (
-    <main className="min-h-screen overflow-hidden bg-[#eef4f8] text-graphite">
-      <header className="sticky top-0 z-50 px-5 pt-4 sm:px-8">
-        <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 rounded-sm border border-white/80 bg-white/78 px-4 py-3 shadow-[0_18px_60px_rgba(16,32,51,0.12)] backdrop-blur-2xl">
+    <main className="min-h-screen overflow-x-hidden bg-[#eef4f8] text-graphite">
+      <header className="sticky top-0 z-50 px-3 pt-3 sm:px-5">
+        <div className="mx-auto flex w-full max-w-[1180px] items-center justify-between gap-4 rounded-sm border border-white/80 bg-white/78 px-4 py-3 shadow-[0_18px_60px_rgba(16,32,51,0.12)] backdrop-blur-2xl">
           <a className="flex items-center gap-3" href="#top" aria-label="PENTANEX home">
             <PentanexLogo />
             <span>
@@ -298,7 +298,7 @@ export default function Home() {
 
         <nav
           aria-label="Mobile navigation"
-          className="mx-auto mt-2 flex max-w-7xl gap-2 overflow-x-auto rounded-sm border border-white/75 bg-white/70 p-2 shadow-sm backdrop-blur-2xl lg:hidden"
+          className="mx-auto mt-2 flex w-full max-w-[1180px] gap-2 overflow-x-auto rounded-sm border border-white/75 bg-white/70 p-2 shadow-sm backdrop-blur-2xl lg:hidden"
         >
           {tabs.map((tab) => (
             <button
@@ -319,18 +319,18 @@ export default function Home() {
 
       <section
         id="top"
-        className="relative flex items-start justify-center px-5 pb-4 pt-4 sm:px-8"
+        className="relative flex items-start justify-center px-3 pb-3 pt-3 sm:px-5"
       >
         <div className="site-grid absolute inset-0 opacity-80" />
         <div className="pointer-events-none absolute left-[8%] top-[16%] h-72 w-72 rounded-full bg-signal/10 blur-3xl" />
         <div className="pointer-events-none absolute bottom-[12%] right-[6%] h-80 w-80 rounded-full bg-power/12 blur-3xl" />
 
         {activeTab.id === "campus" ? (
-          <div className="relative mx-auto grid w-full max-w-7xl items-stretch gap-4 lg:grid-cols-[1.05fr_0.95fr] xl:gap-5">
-            <div className="grid min-h-0 gap-4">
+          <div className="relative mx-auto grid w-full max-w-[1180px] items-stretch gap-3 lg:grid-cols-[minmax(0,1.04fr)_minmax(0,0.96fr)] xl:gap-4">
+            <div className="grid min-h-0 gap-3 xl:gap-4">
               <AustraliaLocationMap />
 
-              <div className="rounded-sm border border-white/70 bg-white/58 p-5 shadow-glow backdrop-blur-2xl xl:p-6">
+              <div className="rounded-sm border border-white/70 bg-white/58 p-4 shadow-glow backdrop-blur-2xl xl:p-5">
                 <div className="inline-flex items-center gap-2 rounded-sm border border-signal/20 bg-white/70 px-3 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-signal">
                   <Globe2 size={15} />
                   Australian Digital Infrastructure
@@ -345,8 +345,8 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="grid min-h-0 gap-4">
-              <div className="rounded-sm border border-white/70 bg-white/56 p-3 shadow-glow backdrop-blur-2xl xl:p-4">
+            <div className="grid min-h-0 gap-3 xl:gap-4">
+              <div className="rounded-sm border border-white/70 bg-white/56 p-3 shadow-glow backdrop-blur-2xl">
                 <div className="grid gap-2 sm:grid-cols-4">
                   {metrics.map((metric) => (
                     <div className="rounded-sm border border-slate-200/70 bg-white/66 p-3" key={metric.label}>
@@ -359,8 +359,8 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="rounded-sm border border-white/70 bg-white/58 p-4 shadow-glow backdrop-blur-2xl xl:p-5">
-                <div className="rounded-sm border border-slate-200/70 bg-[#f8fbfd]/72 p-4 xl:p-5">
+              <div className="rounded-sm border border-white/70 bg-white/58 p-3 shadow-glow backdrop-blur-2xl xl:p-4">
+                <div className="rounded-sm border border-slate-200/70 bg-[#f8fbfd]/72 p-4">
                   <div className="inline-flex items-center gap-2 rounded-sm border border-signal/25 bg-white/62 px-3 py-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-signal shadow-[0_0_20px_rgba(15,174,166,0.08)]">
                     <ActiveIcon size={15} />
                     {activeTab.panelTitle}
@@ -395,9 +395,9 @@ export default function Home() {
             </div>
           </div>
         ) : (
-          <div className="relative mx-auto w-full max-w-7xl">
-            <div className="rounded-sm border border-white/70 bg-white/58 p-5 shadow-glow backdrop-blur-2xl xl:p-6">
-              <div className="grid gap-5 lg:grid-cols-[1.05fr_0.95fr] xl:gap-6">
+          <div className="relative mx-auto w-full max-w-[1180px]">
+            <div className="rounded-sm border border-white/70 bg-white/58 p-4 shadow-glow backdrop-blur-2xl xl:p-5">
+              <div className="grid gap-4 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] xl:gap-5">
                 <div className="rounded-sm border border-slate-200/70 bg-white/68 p-5 xl:p-6">
                   <div className="inline-flex items-center gap-2 rounded-sm border border-signal/25 bg-white/62 px-3 py-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-signal shadow-[0_0_20px_rgba(15,174,166,0.08)]">
                     <ActiveIcon size={15} />
@@ -446,10 +446,10 @@ export default function Home() {
         )}
       </section>
 
-      <footer className="relative px-5 pb-6 sm:px-8">
+      <footer className="relative px-3 pb-5 sm:px-5">
         <div className="site-grid absolute inset-x-0 bottom-0 top-[-40px] opacity-50" />
-        <div className="relative mx-auto max-w-7xl rounded-sm border border-white/70 bg-white/62 p-5 shadow-glow backdrop-blur-2xl xl:p-6">
-          <div className="grid gap-5 lg:grid-cols-[1.05fr_2.1fr] lg:items-start">
+        <div className="relative mx-auto w-full max-w-[1180px] rounded-sm border border-white/70 bg-white/62 p-4 shadow-glow backdrop-blur-2xl xl:p-5">
+          <div className="grid gap-4 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,2.1fr)] lg:items-start">
             <div>
               <div className="flex items-center gap-3">
                 <PentanexLogo />
