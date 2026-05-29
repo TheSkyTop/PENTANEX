@@ -370,19 +370,7 @@ export default function Home() {
                   </div>
 
                   <div className="rounded-sm border border-slate-200/70 bg-[#f8fbfd]/76 p-4 xl:p-5">
-                    <p className="text-xs font-semibold uppercase tracking-[0.2em] text-steel">
-                      Current focus
-                    </p>
-                    <div className="mt-4 space-y-2 xl:mt-5 xl:space-y-3">
-                      {activeTab.points.map((point) => (
-                        <div className="flex gap-3 rounded-sm border border-slate-200 bg-white/72 p-3" key={point}>
-                          <CheckCircle2 className="mt-0.5 shrink-0 text-power" size={18} />
-                          <span className="text-sm font-medium text-graphite">{point}</span>
-                        </div>
-                      ))}
-                    </div>
-
-                    <div className="mt-4 grid grid-cols-5 gap-2 xl:mt-5">
+                    <div className="grid grid-cols-5 gap-2">
                       {Array.from({ length: 15 }).map((_, index) => (
                         <span
                           className="h-7 rounded-sm border border-slate-200 bg-white/80"
