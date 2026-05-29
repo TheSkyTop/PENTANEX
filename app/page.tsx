@@ -35,7 +35,11 @@ const tabs = [
     label: "Campus",
     icon: Factory,
     title: "We are developing a masterplanned hyperscale campus for AI and cloud growth.",
-    body: "PENTANEX is planning the 980 Hume Freeway campus as a long-term digital infrastructure platform for hyperscale cloud, accelerated compute, enterprise AI, and sovereign workload demand. Our campus strategy is centred on expandable data hall zones, customer-ready utility corridors, secure operations, fibre pathways, and staged deployment flexibility.",
+    body: [
+      "PENTANEX is planning a long-term digital infrastructure platform designed for hyperscale cloud, accelerated compute, enterprise AI, and sovereign workload demand.",
+      "The campus strategy is centred on expandable data hall zones, customer-ready utility corridors, secure operations, fibre pathways, and staged deployment flexibility.",
+      "The objective is to provide a scalable foundation for high-density compute environments, resilient customer growth, and future-ready digital infrastructure across Australia and the Asia-Pacific region.",
+    ],
     points: ["560MW masterplanned campus capacity", "Expandable data hall precincts", "Melbourne North infrastructure corridor"],
   },
   {
@@ -246,6 +250,7 @@ function AustraliaLocationMap() {
 export default function Home() {
   const [activeTab, setActiveTab] = useState(tabs[0]);
   const ActiveIcon = activeTab.icon;
+  const activeBodyParagraphs = Array.isArray(activeTab.body) ? activeTab.body : [activeTab.body];
 
   return (
     <main className="min-h-screen overflow-hidden bg-[#eef4f8] text-graphite">
@@ -355,7 +360,13 @@ export default function Home() {
                     <div className="flex h-10 w-10 items-center justify-center rounded-sm bg-signal/10 text-signal">
                       <ActiveIcon size={22} />
                     </div>
-                    <p className="mt-4 text-sm leading-6 text-steel">{activeTab.body}</p>
+                    <div className="mt-4 space-y-3">
+                      {activeBodyParagraphs.map((paragraph) => (
+                        <p className="text-sm leading-6 text-steel" key={paragraph}>
+                          {paragraph}
+                        </p>
+                      ))}
+                    </div>
                   </div>
 
                   <div className="rounded-sm border border-slate-200/70 bg-[#f8fbfd]/76 p-4 xl:p-5">
@@ -401,7 +412,13 @@ export default function Home() {
                   <h1 className="mt-3 max-w-3xl text-[clamp(1.65rem,3vw,2.5rem)] font-semibold leading-tight text-graphite">
                     {activeTab.title}
                   </h1>
-                  <p className="mt-4 max-w-3xl text-base leading-8 text-steel">{activeTab.body}</p>
+                  <div className="mt-4 max-w-3xl space-y-3">
+                    {activeBodyParagraphs.map((paragraph) => (
+                      <p className="text-base leading-8 text-steel" key={paragraph}>
+                        {paragraph}
+                      </p>
+                    ))}
+                  </div>
                 </div>
 
                 <div className="rounded-sm border border-slate-200/70 bg-[#f8fbfd]/76 p-5 xl:p-6">
