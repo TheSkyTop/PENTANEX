@@ -22,6 +22,9 @@ const project = {
   coordinates: [144.934, -37.594] as [number, number],
 };
 
+const contactEmail = "enquiries@pentanex.com.au";
+const siteUrl = "https://pentanex.com.au";
+
 const metrics = [
   { value: project.capacity, label: "Masterplanned hyperscale campus capacity" },
   { value: "Melbourne", label: "Strategic Melbourne North, VIC Australia" },
@@ -77,7 +80,7 @@ const tabs = [
     panelTitle: "Strategic Engagement",
     title: "Speak with PENTANEX about capacity, partnerships, and project engagement.",
     body: "We welcome project-level conversations with hyperscale operators, cloud platforms, enterprise AI customers, energy and infrastructure partners, investors, and local stakeholders. Enquiries should focus on capacity requirements, partnership alignment, delivery pathway, and strategic infrastructure engagement for the Melbourne North campus.",
-    points: ["enquiries@pentanex.com.au", "Capacity and partnership enquiries", "Melbourne, Australia"],
+    points: [contactEmail, "Capacity and partnership enquiries", "Melbourne, Australia"],
   },
 ];
 
@@ -96,7 +99,7 @@ const footerGroups = [
   },
   {
     heading: "Contact",
-    items: ["Project enquiries", "enquiries@pentanex.com.au"],
+    items: ["Project enquiries", contactEmail],
   },
 ];
 
@@ -117,6 +120,50 @@ function PentanexLogo() {
       alt=""
       className="h-11 w-11 shrink-0 object-contain"
       src="/pentanex-logo.png"
+    />
+  );
+}
+
+function SiteStructuredData() {
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "PENTANEX",
+    url: siteUrl,
+    logo: `${siteUrl}/pentanex-logo.png`,
+    email: contactEmail,
+    areaServed: "Australia",
+    description:
+      "PENTANEX is developing AI-ready digital infrastructure for hyperscale cloud, accelerated compute, enterprise AI, and sovereign workload demand in Australia.",
+    makesOffer: {
+      "@type": "Offer",
+      name: "AI-ready hyperscale data centre campus capacity",
+      areaServed: "Australia",
+      category: "Digital infrastructure",
+    },
+    location: {
+      "@type": "Place",
+      name: "PENTANEX Melbourne North campus",
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: "980 Hume Freeway",
+        addressLocality: "Craigieburn",
+        addressRegion: "VIC",
+        postalCode: "3064",
+        addressCountry: "AU",
+      },
+      geo: {
+        "@type": "GeoCoordinates",
+        latitude: project.coordinates[1],
+        longitude: project.coordinates[0],
+      },
+    },
+  };
+
+  return (
+    <script
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      type="application/ld+json"
     />
   );
 }
@@ -258,7 +305,12 @@ export default function Home() {
   const activeBodyParagraphs = Array.isArray(activeTab.body) ? activeTab.body : [activeTab.body];
 
   return (
+    <>
+    <SiteStructuredData />
     <main className="min-h-screen overflow-x-hidden bg-[#eef4f8] text-graphite">
+      <a className="skip-link" href="#top">
+        Skip to main content
+      </a>
       <header className="sticky top-0 z-50 px-3 pt-3 sm:px-5">
         <div className="mx-auto flex w-full max-w-[1180px] items-center justify-between gap-4 rounded-sm border border-white/80 bg-white/78 px-4 py-3 shadow-[0_18px_60px_rgba(16,32,51,0.12)] backdrop-blur-2xl">
           <a className="flex items-center gap-3" href="#top" aria-label="PENTANEX home">
@@ -279,7 +331,8 @@ export default function Home() {
           >
             {tabs.map((tab) => (
               <button
-                className={`rounded-sm border px-3.5 py-2 text-sm font-semibold transition ${
+                aria-pressed={activeTab.id === tab.id}
+                className={`rounded-sm border px-3.5 py-2 text-sm font-semibold transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-signal ${
                   activeTab.id === tab.id
                     ? "border-signal bg-signal text-white shadow-sm"
                     : "border-slate-200/70 bg-white/62 text-steel hover:border-signal/45 hover:bg-white/90 hover:text-signal"
@@ -302,7 +355,8 @@ export default function Home() {
         >
           {tabs.map((tab) => (
             <button
-              className={`shrink-0 rounded-sm border px-3 py-2 text-xs font-semibold transition ${
+              aria-pressed={activeTab.id === tab.id}
+              className={`shrink-0 rounded-sm border px-3 py-2 text-xs font-semibold transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-signal ${
                 activeTab.id === tab.id
                   ? "border-signal bg-signal text-white shadow-sm"
                   : "border-slate-200/70 bg-white/62 text-steel hover:border-signal/45 hover:text-signal"
@@ -423,7 +477,13 @@ export default function Home() {
                     {activeTab.points.map((point) => (
                       <div className="flex gap-3 rounded-sm border border-slate-200 bg-white/72 p-4" key={point}>
                         <CheckCircle2 className="mt-0.5 shrink-0 text-power" size={18} />
-                        <span className="text-sm font-semibold leading-5 text-graphite">{point}</span>
+                        {point.includes("@") ? (
+                          <a className="break-words text-sm font-semibold leading-5 text-graphite transition hover:text-signal focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-signal" href={`mailto:${point}`}>
+                            {point}
+                          </a>
+                        ) : (
+                          <span className="text-sm font-semibold leading-5 text-graphite">{point}</span>
+                        )}
                       </div>
                     ))}
                   </div>
@@ -476,9 +536,19 @@ export default function Home() {
                   </p>
                   <div className="mt-3 space-y-2">
                     {group.items.map((item) => (
-                      <p className="break-words text-[12px] leading-5 text-graphite xl:text-[13px]" key={item}>
-                        {item}
-                      </p>
+                      item.includes("@") ? (
+                        <a
+                          className="block break-words text-[12px] leading-5 text-graphite transition hover:text-signal focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-signal xl:text-[13px]"
+                          href={`mailto:${item}`}
+                          key={item}
+                        >
+                          {item}
+                        </a>
+                      ) : (
+                        <p className="break-words text-[12px] leading-5 text-graphite xl:text-[13px]" key={item}>
+                          {item}
+                        </p>
+                      )
                     ))}
                   </div>
                 </div>
@@ -493,5 +563,6 @@ export default function Home() {
         </div>
       </footer>
     </main>
+    </>
   );
 }

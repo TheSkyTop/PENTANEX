@@ -35,6 +35,28 @@ a {
   background: rgba(15, 174, 166, 0.22);
 }
 
+.skip-link {
+  position: fixed;
+  left: 1rem;
+  top: 1rem;
+  z-index: 100;
+  transform: translateY(-160%);
+  border: 1px solid rgba(15, 174, 166, 0.35);
+  border-radius: 2px;
+  background: rgba(255, 255, 255, 0.92);
+  color: #0faea6;
+  font-size: 0.82rem;
+  font-weight: 700;
+  padding: 0.65rem 0.85rem;
+  transition: transform 160ms ease;
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+  outline: 2px solid #0faea6;
+  outline-offset: 3px;
+}
+
 .site-grid {
   background-image:
     linear-gradient(rgba(16, 32, 51, 0.06) 1px, transparent 1px),
