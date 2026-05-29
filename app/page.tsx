@@ -72,51 +72,6 @@ const tabs = [
   },
 ];
 
-const tabOverviewPanels: Record<
-  string,
-  {
-    eyebrow: string;
-    title: string;
-    body: string;
-    metric: string;
-    metricLabel: string;
-    highlights: string[];
-  }
-> = {
-  capacity: {
-    eyebrow: "Capacity Strategy",
-    title: "Deployable capacity for AI and hyperscale growth.",
-    body: "PENTANEX is planning capacity as a staged infrastructure product, aligning power availability, cooling pathways, fibre diversity, and repeatable data hall modules with high-density AI and cloud requirements.",
-    metric: "560MW",
-    metricLabel: "masterplanned campus capacity",
-    highlights: ["Power block sequencing", "High-density rack environments", "Multi-stage customer expansion"],
-  },
-  delivery: {
-    eyebrow: "Delivery Pathway",
-    title: "From masterplan to customer-ready infrastructure.",
-    body: "Our delivery model is structured around approvals, utility interfaces, civil enabling works, data hall design standards, procurement readiness, and transparent milestone control.",
-    metric: "Staged",
-    metricLabel: "delivery and readiness pathway",
-    highlights: ["Planning and approvals", "Grid and energy interfaces", "Procurement and build sequencing"],
-  },
-  sustainability: {
-    eyebrow: "Resilience And Sustainability",
-    title: "Efficient infrastructure designed for long-term operation.",
-    body: "The campus is being shaped around measurable infrastructure principles: renewable and firmed energy integration, efficient operating envelopes, water-conscious cooling optionality, and responsible community interface.",
-    metric: "Resilient",
-    metricLabel: "long-term operating strategy",
-    highlights: ["Energy integration pathway", "Efficient operating envelope", "Water-conscious cooling options"],
-  },
-  contact: {
-    eyebrow: "Project Engagement",
-    title: "A direct path for capacity and partnership conversations.",
-    body: "PENTANEX welcomes qualified engagement from hyperscale operators, cloud platforms, enterprise AI customers, energy partners, infrastructure investors, and stakeholders seeking to understand the Melbourne North campus opportunity.",
-    metric: "Melbourne",
-    metricLabel: "Australia project engagement",
-    highlights: ["Capacity enquiries", "Partnership alignment", "Stakeholder engagement"],
-  },
-};
-
 const footerGroups = [
   {
     heading: "Campus",
@@ -291,7 +246,6 @@ function AustraliaLocationMap() {
 export default function Home() {
   const [activeTab, setActiveTab] = useState(tabs[0]);
   const ActiveIcon = activeTab.icon;
-  const activeOverview = tabOverviewPanels[activeTab.id];
 
   return (
     <main className="min-h-screen overflow-hidden bg-[#eef4f8] text-graphite">
@@ -361,59 +315,28 @@ export default function Home() {
         <div className="pointer-events-none absolute left-[8%] top-[16%] h-72 w-72 rounded-full bg-signal/10 blur-3xl" />
         <div className="pointer-events-none absolute bottom-[12%] right-[6%] h-80 w-80 rounded-full bg-power/12 blur-3xl" />
 
-        <div className="relative mx-auto grid w-full max-w-7xl items-stretch gap-4 lg:grid-cols-[1.05fr_0.95fr] xl:gap-5">
-          <div className="grid min-h-0 gap-4">
-            <AustraliaLocationMap />
+        {activeTab.id === "campus" ? (
+          <div className="relative mx-auto grid w-full max-w-7xl items-stretch gap-4 lg:grid-cols-[1.05fr_0.95fr] xl:gap-5">
+            <div className="grid min-h-0 gap-4">
+              <AustraliaLocationMap />
 
-            <div className="rounded-sm border border-white/70 bg-white/58 p-5 shadow-glow backdrop-blur-2xl xl:p-6">
-              <div className="inline-flex items-center gap-2 rounded-sm border border-signal/20 bg-white/70 px-3 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-signal">
-                <Globe2 size={15} />
-                Australian Digital Infrastructure
-              </div>
-              <div className="mt-4 max-w-3xl space-y-3">
-                {infrastructureNarrative.map((paragraph) => (
-                  <p className="text-sm leading-6 text-steel" key={paragraph}>
-                    {paragraph}
-                  </p>
-                ))}
+              <div className="rounded-sm border border-white/70 bg-white/58 p-5 shadow-glow backdrop-blur-2xl xl:p-6">
+                <div className="inline-flex items-center gap-2 rounded-sm border border-signal/20 bg-white/70 px-3 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-signal">
+                  <Globe2 size={15} />
+                  Australian Digital Infrastructure
+                </div>
+                <div className="mt-4 max-w-3xl space-y-3">
+                  {infrastructureNarrative.map((paragraph) => (
+                    <p className="text-sm leading-6 text-steel" key={paragraph}>
+                      {paragraph}
+                    </p>
+                  ))}
+                </div>
               </div>
             </div>
-          </div>
 
-          <div className="grid min-h-0 gap-4">
-            <div className="rounded-sm border border-white/70 bg-white/56 p-3 shadow-glow backdrop-blur-2xl xl:p-4">
-              {activeOverview ? (
-                <div className="grid gap-2 rounded-sm border border-slate-200/70 bg-white/66 p-3 sm:grid-cols-[0.72fr_1.42fr_1fr]">
-                  <div className="rounded-sm border border-slate-200/70 bg-white/70 p-3">
-                    <p className="text-xs font-semibold uppercase tracking-[0.2em] text-signal">
-                      {activeOverview.eyebrow}
-                    </p>
-                    <p className="mt-2 text-[clamp(1.05rem,1.55vw,1.25rem)] font-semibold leading-tight text-graphite">
-                      {activeOverview.metric}
-                    </p>
-                    <p className="mt-1 text-[11px] leading-4 text-steel">{activeOverview.metricLabel}</p>
-                  </div>
-
-                  <div className="rounded-sm border border-slate-200/70 bg-[#f8fbfd]/70 p-3">
-                    <h2 className="text-[clamp(1rem,1.55vw,1.2rem)] font-semibold leading-tight text-graphite">
-                      {activeOverview.title}
-                    </h2>
-                    <p className="mt-1.5 text-[12px] leading-5 text-steel">{activeOverview.body}</p>
-                  </div>
-
-                  <div className="grid gap-2">
-                    {activeOverview.highlights.map((highlight) => (
-                      <div
-                        className="flex items-center gap-2 rounded-sm border border-slate-200/80 bg-white/72 px-3 py-2 text-[12px] font-medium leading-4 text-graphite"
-                        key={highlight}
-                      >
-                        <CheckCircle2 className="shrink-0 text-power" size={15} />
-                        <span>{highlight}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              ) : (
+            <div className="grid min-h-0 gap-4">
+              <div className="rounded-sm border border-white/70 bg-white/56 p-3 shadow-glow backdrop-blur-2xl xl:p-4">
                 <div className="grid gap-2 sm:grid-cols-4">
                   {metrics.map((metric) => (
                     <div className="rounded-sm border border-slate-200/70 bg-white/66 p-3" key={metric.label}>
@@ -424,50 +347,95 @@ export default function Home() {
                     </div>
                   ))}
                 </div>
-              )}
-            </div>
+              </div>
 
-            <div className="rounded-sm border border-white/70 bg-white/58 p-4 shadow-glow backdrop-blur-2xl xl:p-5">
-              <div className="grid gap-4 lg:grid-cols-[0.95fr_1.05fr] xl:gap-5">
-                <div className="rounded-sm border border-slate-200/70 bg-white/68 p-4 xl:p-5">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-sm bg-signal/10 text-signal">
-                    <ActiveIcon size={22} />
+              <div className="rounded-sm border border-white/70 bg-white/58 p-4 shadow-glow backdrop-blur-2xl xl:p-5">
+                <div className="grid gap-4 lg:grid-cols-[0.95fr_1.05fr] xl:gap-5">
+                  <div className="rounded-sm border border-slate-200/70 bg-white/68 p-4 xl:p-5">
+                    <div className="flex h-10 w-10 items-center justify-center rounded-sm bg-signal/10 text-signal">
+                      <ActiveIcon size={22} />
+                    </div>
+                    <h2 className="mt-4 text-[clamp(1.25rem,2.2vw,1.5rem)] font-semibold leading-tight text-graphite">
+                      {activeTab.title}
+                    </h2>
+                    <p className="mt-3 text-sm leading-6 text-steel">{activeTab.body}</p>
                   </div>
-                  <h2 className="mt-4 text-[clamp(1.25rem,2.2vw,1.5rem)] font-semibold leading-tight text-graphite">
+
+                  <div className="rounded-sm border border-slate-200/70 bg-[#f8fbfd]/76 p-4 xl:p-5">
+                    <p className="text-xs font-semibold uppercase tracking-[0.2em] text-steel">
+                      Current focus
+                    </p>
+                    <div className="mt-4 space-y-2 xl:mt-5 xl:space-y-3">
+                      {activeTab.points.map((point) => (
+                        <div className="flex gap-3 rounded-sm border border-slate-200 bg-white/72 p-3" key={point}>
+                          <CheckCircle2 className="mt-0.5 shrink-0 text-power" size={18} />
+                          <span className="text-sm font-medium text-graphite">{point}</span>
+                        </div>
+                      ))}
+                    </div>
+
+                    <div className="mt-4 grid grid-cols-5 gap-2 xl:mt-5">
+                      {Array.from({ length: 15 }).map((_, index) => (
+                        <span
+                          className="h-7 rounded-sm border border-slate-200 bg-white/80"
+                          key={`data-hall-${index}`}
+                        />
+                      ))}
+                    </div>
+                    <p className="mt-3 text-[11px] uppercase tracking-[0.18em] text-steel">
+                      staged data hall capacity
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        ) : (
+          <div className="relative mx-auto w-full max-w-7xl">
+            <div className="rounded-sm border border-white/70 bg-white/58 p-5 shadow-glow backdrop-blur-2xl xl:p-6">
+              <div className="grid gap-5 lg:grid-cols-[1.05fr_0.95fr] xl:gap-6">
+                <div className="rounded-sm border border-slate-200/70 bg-white/68 p-5 xl:p-6">
+                  <div className="flex h-11 w-11 items-center justify-center rounded-sm bg-signal/10 text-signal">
+                    <ActiveIcon size={23} />
+                  </div>
+                  <p className="mt-5 text-xs font-semibold uppercase tracking-[0.22em] text-signal">
+                    {activeTab.label}
+                  </p>
+                  <h1 className="mt-3 max-w-3xl text-[clamp(1.65rem,3vw,2.5rem)] font-semibold leading-tight text-graphite">
                     {activeTab.title}
-                  </h2>
-                  <p className="mt-3 text-sm leading-6 text-steel">{activeTab.body}</p>
+                  </h1>
+                  <p className="mt-4 max-w-3xl text-base leading-8 text-steel">{activeTab.body}</p>
                 </div>
 
-                <div className="rounded-sm border border-slate-200/70 bg-[#f8fbfd]/76 p-4 xl:p-5">
+                <div className="rounded-sm border border-slate-200/70 bg-[#f8fbfd]/76 p-5 xl:p-6">
                   <p className="text-xs font-semibold uppercase tracking-[0.2em] text-steel">
                     Current focus
                   </p>
-                  <div className="mt-4 space-y-2 xl:mt-5 xl:space-y-3">
+                  <div className="mt-5 grid gap-3">
                     {activeTab.points.map((point) => (
-                      <div className="flex gap-3 rounded-sm border border-slate-200 bg-white/72 p-3" key={point}>
+                      <div className="flex gap-3 rounded-sm border border-slate-200 bg-white/72 p-4" key={point}>
                         <CheckCircle2 className="mt-0.5 shrink-0 text-power" size={18} />
-                        <span className="text-sm font-medium text-graphite">{point}</span>
+                        <span className="text-sm font-semibold leading-5 text-graphite">{point}</span>
                       </div>
                     ))}
                   </div>
 
-                  <div className="mt-4 grid grid-cols-5 gap-2 xl:mt-5">
-                    {Array.from({ length: 15 }).map((_, index) => (
+                  <div className="mt-6 grid grid-cols-5 gap-2">
+                    {Array.from({ length: 20 }).map((_, index) => (
                       <span
-                        className="h-7 rounded-sm border border-slate-200 bg-white/80"
-                        key={`data-hall-${index}`}
+                        className="h-8 rounded-sm border border-slate-200 bg-white/80"
+                        key={`tab-capacity-${index}`}
                       />
                     ))}
                   </div>
                   <p className="mt-3 text-[11px] uppercase tracking-[0.18em] text-steel">
-                    staged data hall capacity
+                    integrated data hall planning
                   </p>
                 </div>
               </div>
             </div>
           </div>
-        </div>
+        )}
       </section>
 
       <footer className="relative px-5 pb-6 sm:px-8">
