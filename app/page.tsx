@@ -371,7 +371,11 @@ export default function Home() {
                     <div className="grid grid-cols-5 gap-2">
                       {Array.from({ length: 10 }).map((_, index) => (
                         <span
-                          className="h-7 rounded-sm border border-slate-200 bg-white/82"
+                          className={`h-7 rounded-sm border ${
+                            index === 0
+                              ? "border-signal/50 bg-signal/22 shadow-[0_0_16px_rgba(15,174,166,0.18)]"
+                              : "border-slate-200 bg-white/82"
+                          }`}
                           key={`data-hall-${index}`}
                         />
                       ))}
