@@ -356,32 +356,29 @@ export default function Home() {
 
               <div className="rounded-sm border border-white/70 bg-white/58 p-4 shadow-glow backdrop-blur-2xl xl:p-5">
                 <div className="rounded-sm border border-slate-200/70 bg-[#f8fbfd]/72 p-4 xl:p-5">
-                  <div className="flex items-start gap-4">
-                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-sm bg-signal/10 text-signal">
-                      <ActiveIcon size={22} />
-                    </div>
-
-                    <div className="min-w-0 flex-1">
-                      <div className="grid grid-cols-5 gap-2">
-                        {Array.from({ length: 15 }).map((_, index) => (
-                          <span
-                            className="h-7 rounded-sm border border-slate-200 bg-white/82"
-                            key={`data-hall-${index}`}
-                          />
-                        ))}
-                      </div>
-                      <p className="mt-3 text-[11px] uppercase tracking-[0.18em] text-steel">
-                        staged data hall capacity
-                      </p>
-                    </div>
+                  <div className="flex h-10 w-10 items-center justify-center rounded-sm bg-signal/10 text-signal">
+                    <ActiveIcon size={22} />
                   </div>
-
-                  <div className="mt-5 space-y-3 border-t border-slate-200/80 pt-4">
+                  <div className="mt-4 space-y-3">
                     {activeBodyParagraphs.map((paragraph) => (
                       <p className="text-sm leading-6 text-steel" key={paragraph}>
                         {paragraph}
                       </p>
                     ))}
+                  </div>
+
+                  <div className="mt-5 border-t border-slate-200/80 pt-4">
+                    <div className="grid grid-cols-5 gap-2">
+                      {Array.from({ length: 10 }).map((_, index) => (
+                        <span
+                          className="h-7 rounded-sm border border-slate-200 bg-white/82"
+                          key={`data-hall-${index}`}
+                        />
+                      ))}
+                    </div>
+                    <p className="mt-3 text-[11px] uppercase tracking-[0.18em] text-steel">
+                      staged data hall capacity
+                    </p>
                   </div>
                 </div>
               </div>
