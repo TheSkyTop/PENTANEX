@@ -373,8 +373,8 @@ export default function Home() {
                         <span
                           className={`h-7 rounded-sm border ${
                             index === 0
-                              ? "border-signal/50 bg-signal/22 shadow-[0_0_16px_rgba(15,174,166,0.18)]"
-                              : "border-slate-200 bg-white/82"
+                              ? "border-signal/50 bg-[repeating-linear-gradient(135deg,rgba(15,174,166,0.2)_0,rgba(15,174,166,0.2)_2px,rgba(15,174,166,0.06)_2px,rgba(15,174,166,0.06)_8px)] shadow-[0_0_16px_rgba(15,174,166,0.18)]"
+                              : "border-slate-200 bg-[repeating-linear-gradient(135deg,rgba(97,112,132,0.12)_0,rgba(97,112,132,0.12)_1px,rgba(255,255,255,0.72)_1px,rgba(255,255,255,0.72)_8px)]"
                           }`}
                           key={`data-hall-${index}`}
                         />
