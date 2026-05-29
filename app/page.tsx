@@ -91,7 +91,7 @@ const footerGroups = [
   },
   {
     heading: "Contact",
-    items: ["Project enquiries", "enquiries@pentanex.com.au", "Melbourne, Australia"],
+    items: ["Project enquiries", "enquiries@pentanex.com.au"],
   },
 ];
 
