@@ -34,6 +34,7 @@ const tabs = [
     id: "campus",
     label: "Campus",
     icon: Factory,
+    panelTitle: "Campus Development Strategy",
     title: "We are developing a masterplanned hyperscale campus for AI and cloud growth.",
     body: [
       "PENTANEX is planning a long-term digital infrastructure platform designed for hyperscale cloud, accelerated compute, enterprise AI, and sovereign workload demand.",
@@ -46,6 +47,7 @@ const tabs = [
     id: "capacity",
     label: "Capacity",
     icon: CircuitBoard,
+    panelTitle: "Capacity Strategy",
     title: "We are planning capacity for high-density AI and accelerated compute.",
     body: "Our capacity model is being shaped around deployable infrastructure blocks: staged power delivery, high-density rack environments, cooling optionality, fibre diversity, and repeatable data hall modules. For hyperscale and AI customers, the campus is intended to support dense compute clusters, resilient operations, and predictable expansion over multiple deployment phases.",
     points: ["High-density AI compute environments", "Scalable power and cooling pathways", "Repeatable hyperscale capacity blocks"],
@@ -54,6 +56,7 @@ const tabs = [
     id: "delivery",
     label: "Delivery",
     icon: ShieldCheck,
+    panelTitle: "Delivery Pathway",
     title: "We are building a delivery pathway from masterplan to customer-ready capacity.",
     body: "PENTANEX is approaching delivery through disciplined project controls: planning approvals, grid and energy interfaces, civil enabling works, data hall design standards, procurement sequencing, and stakeholder coordination. The objective is to convert a large-scale campus plan into staged, bankable, and customer-ready infrastructure capacity.",
     points: ["Planning and approvals workstream", "Grid and energy interface strategy", "Customer-ready delivery milestones"],
@@ -62,6 +65,7 @@ const tabs = [
     id: "sustainability",
     label: "Sustainability",
     icon: Trees,
+    panelTitle: "Resilient Infrastructure",
     title: "We are designing for resilient, efficient, and accountable digital infrastructure.",
     body: "Our sustainability pathway is focused on practical outcomes that can be engineered and verified: efficient operating envelopes, renewable and firmed energy integration, water-conscious cooling options, heat and environmental management, and a transparent community interface. The campus is being planned for long-term operational resilience as AI and cloud demand scales.",
     points: ["Renewable and firmed energy planning", "Efficient cooling and operating envelopes", "Long-term operational resilience"],
@@ -70,6 +74,7 @@ const tabs = [
     id: "contact",
     label: "Contact",
     icon: Mail,
+    panelTitle: "Strategic Engagement",
     title: "Speak with PENTANEX about capacity, partnerships, and project engagement.",
     body: "We welcome project-level conversations with hyperscale operators, cloud platforms, enterprise AI customers, energy and infrastructure partners, investors, and local stakeholders. Enquiries should focus on capacity requirements, partnership alignment, delivery pathway, and strategic infrastructure engagement for the Melbourne North campus.",
     points: ["enquiries@pentanex.com.au", "Capacity and partnership enquiries", "Melbourne, Australia"],
@@ -356,8 +361,9 @@ export default function Home() {
 
               <div className="rounded-sm border border-white/70 bg-white/58 p-4 shadow-glow backdrop-blur-2xl xl:p-5">
                 <div className="rounded-sm border border-slate-200/70 bg-[#f8fbfd]/72 p-4 xl:p-5">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-sm bg-signal/10 text-signal">
-                    <ActiveIcon size={22} />
+                  <div className="inline-flex items-center gap-2 rounded-sm border border-signal/25 bg-white/62 px-3 py-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-signal shadow-[0_0_20px_rgba(15,174,166,0.08)]">
+                    <ActiveIcon size={15} />
+                    {activeTab.panelTitle}
                   </div>
                   <div className="mt-4 space-y-3">
                     {activeBodyParagraphs.map((paragraph) => (
@@ -393,12 +399,10 @@ export default function Home() {
             <div className="rounded-sm border border-white/70 bg-white/58 p-5 shadow-glow backdrop-blur-2xl xl:p-6">
               <div className="grid gap-5 lg:grid-cols-[1.05fr_0.95fr] xl:gap-6">
                 <div className="rounded-sm border border-slate-200/70 bg-white/68 p-5 xl:p-6">
-                  <div className="flex h-11 w-11 items-center justify-center rounded-sm bg-signal/10 text-signal">
-                    <ActiveIcon size={23} />
+                  <div className="inline-flex items-center gap-2 rounded-sm border border-signal/25 bg-white/62 px-3 py-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-signal shadow-[0_0_20px_rgba(15,174,166,0.08)]">
+                    <ActiveIcon size={15} />
+                    {activeTab.panelTitle}
                   </div>
-                  <p className="mt-5 text-xs font-semibold uppercase tracking-[0.22em] text-signal">
-                    {activeTab.label}
-                  </p>
                   <h1 className="mt-3 max-w-3xl text-[clamp(1.65rem,3vw,2.5rem)] font-semibold leading-tight text-graphite">
                     {activeTab.title}
                   </h1>
