@@ -23,10 +23,10 @@ const project = {
 };
 
 const metrics = [
-  { value: project.capacity, label: "masterplanned hyperscale campus capacity" },
-  { value: "Melbourne", label: "strategic Melbourne North, VIC Australia" },
-  { value: "AI-ready", label: "high-density compute infrastructure" },
-  { value: "Hyperscale", label: "scalable cloud and AI compute capacity" },
+  { value: project.capacity, label: "Masterplanned hyperscale campus capacity" },
+  { value: "Melbourne", label: "Strategic Melbourne North, VIC Australia" },
+  { value: "AI-ready", label: "High-density compute infrastructure" },
+  { value: "Hyperscale", label: "Scalable cloud and AI compute capacity" },
 ];
 
 const tabs = [
@@ -79,19 +79,19 @@ const tabs = [
 const footerGroups = [
   {
     heading: "Campus",
-    items: ["980 Hume Freeway", "Craigieburn VIC", "Melbourne North infrastructure corridor"],
+    items: ["Craigieburn VIC", "Melbourne North", "Hume corridor"],
   },
   {
     heading: "Capacity",
-    items: ["560MW masterplanned campus capacity", "High-density AI compute infrastructure", "Scalable multi-stage deployment"],
+    items: ["560MW campus", "AI-ready compute", "Staged data halls"],
   },
   {
     heading: "Platform",
-    items: ["Australian digital infrastructure platform", "Long-term scalable development strategy", "Energy and compute infrastructure integration"],
+    items: ["Cloud and AI workloads", "Power, cooling, fibre", "Sovereign capability"],
   },
   {
     heading: "Contact",
-    items: ["enquiries@pentanex.com.au", "Melbourne, Australia"],
+    items: ["Project enquiries", "enquiries@pentanex.com.au", "Melbourne, Australia"],
   },
 ];
 
@@ -374,7 +374,7 @@ export default function Home() {
                           className={`h-7 rounded-sm border ${
                             index === 0
                               ? "border-signal/50 bg-[repeating-linear-gradient(135deg,rgba(15,174,166,0.2)_0,rgba(15,174,166,0.2)_2px,rgba(15,174,166,0.06)_2px,rgba(15,174,166,0.06)_8px)] shadow-[0_0_16px_rgba(15,174,166,0.18)]"
-                              : "border-slate-200 bg-[repeating-linear-gradient(135deg,rgba(97,112,132,0.12)_0,rgba(97,112,132,0.12)_1px,rgba(255,255,255,0.72)_1px,rgba(255,255,255,0.72)_8px)]"
+                              : "border-slate-200 bg-white/82"
                           }`}
                           key={`data-hall-${index}`}
                         />
@@ -461,7 +461,7 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
+            <div className="grid min-w-0 gap-3 sm:grid-cols-2 xl:grid-cols-4">
               {footerGroups.map((group) => (
                 <div
                   className="rounded-sm border border-slate-200/70 bg-white/68 p-4"
@@ -472,7 +472,7 @@ export default function Home() {
                   </p>
                   <div className="mt-3 space-y-2">
                     {group.items.map((item) => (
-                      <p className="text-sm leading-5 text-graphite" key={item}>
+                      <p className="break-words text-[12px] leading-5 text-graphite xl:text-[13px]" key={item}>
                         {item}
                       </p>
                     ))}
