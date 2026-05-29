@@ -355,10 +355,7 @@ export default function Home() {
                     <div className="flex h-10 w-10 items-center justify-center rounded-sm bg-signal/10 text-signal">
                       <ActiveIcon size={22} />
                     </div>
-                    <h2 className="mt-4 text-[clamp(1.25rem,2.2vw,1.5rem)] font-semibold leading-tight text-graphite">
-                      {activeTab.title}
-                    </h2>
-                    <p className="mt-3 text-sm leading-6 text-steel">{activeTab.body}</p>
+                    <p className="mt-4 text-sm leading-6 text-steel">{activeTab.body}</p>
                   </div>
 
                   <div className="rounded-sm border border-slate-200/70 bg-[#f8fbfd]/76 p-4 xl:p-5">
