@@ -497,10 +497,9 @@ export default function Home() {
     <SiteStructuredData />
     <main className="min-h-screen overflow-x-hidden bg-[#eef4f8] text-graphite">
       <div className="pointer-events-none fixed inset-0 overflow-hidden" aria-hidden="true">
-        <div className="absolute right-[-8rem] top-24 h-[38rem] w-[18rem] rotate-12 bg-signal/[0.055]" />
-        <div className="absolute right-[10%] top-[48%] h-56 w-72 -rotate-6 border border-signal/[0.08] bg-power/[0.035]" />
-        <div className="absolute left-[-7rem] bottom-20 h-72 w-80 rotate-6 border border-signal/[0.06] bg-signal/[0.04]" />
-        <div className="absolute right-[24%] bottom-[-8rem] h-64 w-[34rem] -rotate-3 bg-power/[0.045]" />
+        <div className="absolute right-[-9rem] top-20 h-[30rem] w-[30rem] rounded-full bg-signal/[0.075] blur-3xl" />
+        <div className="absolute left-[-10rem] bottom-10 h-[26rem] w-[26rem] rounded-full bg-power/[0.06] blur-3xl" />
+        <div className="absolute right-[22%] bottom-[-12rem] h-[28rem] w-[28rem] rounded-full bg-signal/[0.045] blur-3xl" />
       </div>
       <a className="skip-link" href="#top">
         Skip to main content
