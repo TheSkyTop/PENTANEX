@@ -1,21 +1,21 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="PENTANEX PX icon">
   <path
-    d="M32 4.8 58 23.8 48.2 59.2H15.8L6 23.8 32 4.8Z"
+    d="M32 5.2 59.4 24.2 50 58.8H14L4.6 24.2 32 5.2Z"
     fill="#f8fffe"
     stroke="#7eddd7"
     stroke-linejoin="round"
-    stroke-width="3.8"
+    stroke-width="4.3"
   />
   <text
     dominant-baseline="middle"
     fill="#2bc9bd"
     font-family="Arial Rounded MT Bold, Arial, Helvetica, sans-serif"
-    font-size="25.5"
+    font-size="24.8"
     font-weight="700"
-    letter-spacing="-2"
+    letter-spacing="-1.6"
     text-anchor="middle"
     x="32"
-    y="34.5"
+    y="35"
   >
     PX
   </text>

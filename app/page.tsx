@@ -582,7 +582,7 @@ function AustraliaLocationMap() {
     ) as Feature<Geometry>;
     const projection = geoMercator().fitExtent([[24, 8], [596, 352]], australiaFeature);
     const path = geoPath(projection);
-    const worldProjection = geoNaturalEarth1().fitExtent([[-108, -58], [728, 418]], world);
+    const worldProjection = geoNaturalEarth1().fitExtent([[-136, -108], [756, 468]], world);
     const worldPath = geoPath(worldProjection);
 
     return {
@@ -637,7 +637,7 @@ function AustraliaLocationMap() {
           </defs>
           <path d="M36 180H584" stroke="url(#mapAxisX)" strokeWidth="1.4" />
           <path d="M310 38V326" stroke="url(#mapAxisY)" strokeWidth="1.2" />
-          <g opacity="0.24" transform="translate(310 180) scale(1.08 1) translate(-310 -180)">
+          <g opacity="0.24" transform="translate(310 180) scale(1.12 1.16) translate(-310 -180)">
             {worldPaths.map((countryPath, index) => (
               <path
                 d={countryPath}
