@@ -486,7 +486,14 @@ export default function Home() {
   const [activeTab, setActiveTab] = useState(tabs[0]);
   const ActiveIcon = activeTab.icon;
   const activeBodyParagraphs = Array.isArray(activeTab.body) ? activeTab.body : [activeTab.body];
-  const focusLabel = "Planning focus";
+  const focusLabel =
+    activeTab.id === "capacity"
+      ? "Capacity priorities"
+      : activeTab.id === "delivery"
+        ? "Delivery milestones"
+        : activeTab.id === "sustainability"
+          ? "Sustainability priorities"
+          : "Engagement priorities";
 
   return (
     <>
@@ -661,7 +668,7 @@ export default function Home() {
                   <div className="mx-auto w-full max-w-md">
                     {activeTab.id !== "contact" ? (
                       <>
-                        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-steel">
+                        <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-signal">
                           {focusLabel}
                         </p>
                         <div className="mt-5 grid gap-3">
@@ -742,7 +749,7 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="grid min-w-0 gap-3 sm:grid-cols-2 xl:grid-cols-4">
+            <div className="grid min-w-0 gap-3 sm:grid-cols-2 xl:grid-cols-[0.9fr_0.9fr_1fr_1.35fr]">
               {footerGroups.map((group) => (
                 <div
                   className="rounded-sm border border-slate-200/70 bg-white/68 p-4"
@@ -755,7 +762,7 @@ export default function Home() {
                     {group.items.map((item) => (
                       item.includes("@") ? (
                         <a
-                          className="block break-words text-[12px] leading-5 text-graphite transition hover:text-signal focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-signal xl:text-[13px]"
+                          className="block whitespace-nowrap text-[10.5px] leading-5 text-graphite transition hover:text-signal focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-signal xl:text-[11px]"
                           href={`mailto:${contactEmail}`}
                           key={item}
                         >
