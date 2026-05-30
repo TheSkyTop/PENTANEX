@@ -33,7 +33,7 @@ type Language = "en" | "zh";
 
 const languageOptions: Array<{ id: Language; label: string; shortLabel: string }> = [
   { id: "en", label: "English", shortLabel: "EN" },
-  { id: "zh", label: "中文", shortLabel: "中文" },
+  { id: "zh", label: "Chinese", shortLabel: "CH" },
 ];
 
 const metrics = [
