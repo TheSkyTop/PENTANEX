@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import {
   CheckCircle2,
   CircuitBoard,
@@ -414,17 +414,6 @@ function AustraliaLocationMap() {
                 <feMergeNode in="SourceGraphic" />
               </feMerge>
             </filter>
-            <marker
-              id="dashedArrow"
-              markerHeight="8"
-              markerWidth="8"
-              orient="auto"
-              refX="7"
-              refY="4"
-              viewBox="0 0 8 8"
-            >
-              <path d="M0 0L8 4L0 8Z" fill="#0faea6" />
-            </marker>
           </defs>
           <path d="M36 180H584" stroke="url(#mapAxisX)" strokeWidth="1.4" />
           <path d="M310 38V326" stroke="url(#mapAxisY)" strokeWidth="1.2" />
@@ -452,11 +441,11 @@ function AustraliaLocationMap() {
             <path
               d={`M${sitePoint[0] + 44} ${sitePoint[1] + 8} C${sitePoint[0] + 30} ${sitePoint[1] + 5} ${sitePoint[0] + 23} ${sitePoint[1] + 4} ${sitePoint[0] + 13} ${sitePoint[1] + 1}`}
               fill="none"
-              markerEnd="url(#dashedArrow)"
               stroke="#0faea6"
-              strokeDasharray="7 8"
+              strokeDasharray="4 7"
               strokeLinecap="round"
-              strokeWidth="2.2"
+              strokeOpacity="0.72"
+              strokeWidth="1.25"
             />
             <circle cx={sitePoint[0]} cy={sitePoint[1]} fill="none" r="15" stroke="#74c947" strokeDasharray="3 6" strokeOpacity="0.58" strokeWidth="1.6" />
             <circle cx={sitePoint[0]} cy={sitePoint[1]} fill="#0faea6" r="4.5" />
@@ -495,6 +484,21 @@ export default function Home() {
           ? "Sustainability priorities"
           : "Engagement priorities";
 
+  useEffect(() => {
+    const savedTabId = window.location.hash.replace("#", "") || window.localStorage.getItem("pentanex-active-tab");
+    const savedTab = tabs.find((tab) => tab.id === savedTabId);
+
+    if (savedTab) {
+      setActiveTab(savedTab);
+    }
+  }, []);
+
+  const selectTab = (tab: (typeof tabs)[number]) => {
+    setActiveTab(tab);
+    window.localStorage.setItem("pentanex-active-tab", tab.id);
+    window.history.replaceState(null, "", `#${tab.id}`);
+  };
+
   return (
     <>
     <SiteStructuredData />
@@ -529,7 +533,7 @@ export default function Home() {
                     : "border-slate-200/70 bg-white/62 text-steel hover:border-signal/45 hover:bg-white/90 hover:text-signal"
                 }`}
                 key={tab.id}
-                onClick={() => setActiveTab(tab)}
+                onClick={() => selectTab(tab)}
                 type="button"
               >
                 {tab.label}
@@ -553,7 +557,7 @@ export default function Home() {
                   : "border-slate-200/70 bg-white/62 text-steel hover:border-signal/45 hover:text-signal"
               }`}
               key={tab.id}
-              onClick={() => setActiveTab(tab)}
+              onClick={() => selectTab(tab)}
               type="button"
             >
               {tab.label}
@@ -690,7 +694,7 @@ export default function Home() {
                     {activeTab.id === "delivery" ? <DeliveryRoadmap /> : null}
                     {activeTab.id === "sustainability" ? (
                       <div className="mt-5 border-t border-slate-200/80 pt-4">
-                        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-steel">
+                        <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-signal">
                           SDG alignment
                         </p>
                         <div className="mt-3 grid gap-2">
@@ -729,9 +733,8 @@ export default function Home() {
         )}
       </section>
 
-      <footer className="relative px-3 pb-5 sm:px-5">
-        <div className="site-grid absolute inset-x-0 bottom-0 top-[-40px] opacity-50" />
-        <div className="relative mx-auto w-full max-w-[1180px] rounded-sm border border-white/70 bg-white/62 p-4 shadow-glow backdrop-blur-2xl xl:p-5">
+      <footer className="relative bg-[#eef4f8] px-3 pb-5 sm:px-5">
+        <div className="relative mx-auto w-full max-w-[1180px] rounded-sm border border-white/70 bg-white/82 p-4 shadow-glow backdrop-blur-2xl xl:p-5">
           <div className="grid gap-4 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,2.1fr)] lg:items-start">
             <div>
               <div className="flex items-center gap-3">
