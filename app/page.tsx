@@ -508,8 +508,9 @@ export default function Home() {
     <SiteStructuredData />
     <main className="min-h-screen overflow-x-hidden bg-[#eef4f8] text-graphite">
       <div className="pointer-events-none fixed inset-0 overflow-hidden" aria-hidden="true">
-        <div className="absolute right-[-18rem] top-[8vh] h-[84vh] w-[38rem] rounded-full bg-signal/[0.085] blur-[90px]" />
-        <div className="absolute right-[-10rem] top-[22vh] h-[58vh] w-[24rem] rounded-full bg-power/[0.055] blur-[76px]" />
+        <div className="absolute right-[-11rem] top-[14vh] h-[24rem] w-[24rem] rounded-full bg-signal/[0.11] blur-[58px]" />
+        <div className="absolute right-[-7rem] top-[48vh] h-[18rem] w-[18rem] rounded-full bg-power/[0.075] blur-[54px]" />
+        <div className="absolute right-[4rem] top-[30vh] h-[12rem] w-[12rem] rounded-full bg-signal/[0.055] blur-[48px]" />
         <div className="absolute right-[-9rem] top-20 h-[30rem] w-[30rem] rounded-full bg-signal/[0.075] blur-3xl" />
         <div className="absolute left-[-10rem] bottom-10 h-[26rem] w-[26rem] rounded-full bg-power/[0.06] blur-3xl" />
         <div className="absolute right-[22%] bottom-[-12rem] h-[28rem] w-[28rem] rounded-full bg-signal/[0.045] blur-3xl" />
