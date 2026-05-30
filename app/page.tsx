@@ -463,7 +463,7 @@ export default function Home() {
   const [activeTab, setActiveTab] = useState(tabs[0]);
   const ActiveIcon = activeTab.icon;
   const activeBodyParagraphs = Array.isArray(activeTab.body) ? activeTab.body : [activeTab.body];
-  const focusLabel = activeTab.id === "contact" ? "Engagement channels" : "Planning focus";
+  const focusLabel = "Planning focus";
 
   return (
     <>
@@ -613,7 +613,7 @@ export default function Home() {
           <div className="relative mx-auto w-full max-w-[1180px]">
             <div className="rounded-sm border border-white/70 bg-white/58 p-4 shadow-glow backdrop-blur-2xl xl:p-5">
               <div className="grid items-center gap-4 lg:grid-cols-[minmax(0,1.22fr)_minmax(300px,0.78fr)] xl:gap-5">
-                <div className="flex rounded-sm border border-slate-200/70 bg-white/68 p-5 xl:p-7">
+                <div className="flex self-center rounded-sm border border-slate-200/70 bg-white/68 p-5 xl:p-7">
                   <div className="mx-auto w-full max-w-3xl">
                     <div className="inline-flex items-center gap-2 rounded-sm border border-signal/25 bg-white/62 px-3 py-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-signal shadow-[0_0_20px_rgba(15,174,166,0.08)]">
                       <ActiveIcon size={15} />
@@ -634,25 +634,29 @@ export default function Home() {
                   </div>
                 </div>
 
-                <aside className="flex rounded-sm border border-slate-200/70 bg-[#f8fbfd]/76 p-5 xl:p-6">
+                <aside className="flex self-center rounded-sm border border-slate-200/70 bg-[#f8fbfd]/76 p-5 xl:p-6">
                   <div className="mx-auto w-full max-w-md">
-                    <p className="text-xs font-semibold uppercase tracking-[0.2em] text-steel">
-                      {focusLabel}
-                    </p>
-                    <div className="mt-5 grid gap-3">
-                      {activeTab.points.map((point) => (
-                        <div className="flex gap-3 rounded-sm border border-slate-200 bg-white/72 p-4 shadow-[0_12px_28px_rgba(16,32,51,0.04)]" key={point}>
-                          <CheckCircle2 className="mt-0.5 shrink-0 text-power" size={18} />
-                          {point.includes("@") ? (
-                            <a className="break-words text-sm font-semibold leading-5 text-graphite transition hover:text-signal focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-signal" href={`mailto:${contactEmail}`}>
-                              {point}
-                            </a>
-                          ) : (
-                            <span className="text-sm font-semibold leading-5 text-graphite">{point}</span>
-                          )}
+                    {activeTab.id !== "contact" ? (
+                      <>
+                        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-steel">
+                          {focusLabel}
+                        </p>
+                        <div className="mt-5 grid gap-3">
+                          {activeTab.points.map((point) => (
+                            <div className="flex gap-3 rounded-sm border border-slate-200 bg-white/72 p-4 shadow-[0_12px_28px_rgba(16,32,51,0.04)]" key={point}>
+                              <CheckCircle2 className="mt-0.5 shrink-0 text-power" size={18} />
+                              {point.includes("@") ? (
+                                <a className="break-words text-sm font-semibold leading-5 text-graphite transition hover:text-signal focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-signal" href={`mailto:${contactEmail}`}>
+                                  {point}
+                                </a>
+                              ) : (
+                                <span className="text-sm font-semibold leading-5 text-graphite">{point}</span>
+                              )}
+                            </div>
+                          ))}
                         </div>
-                      ))}
-                    </div>
+                      </>
+                    ) : null}
                     {activeTab.id === "capacity" ? <CapacityPlatformGraphic /> : null}
                     {activeTab.id === "delivery" ? <DeliveryRoadmap /> : null}
                     {activeTab.id === "sustainability" ? (
