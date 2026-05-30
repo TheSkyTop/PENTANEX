@@ -114,7 +114,7 @@ a {
 
 .content-copy-xs {
   color: #53687f !important;
-  font-size: 0.75rem;
+  font-size: 0.72rem;
   font-weight: 400 !important;
   line-height: 1.65;
   letter-spacing: 0;
@@ -129,7 +129,7 @@ a {
 
 [data-language="zh"] .content-copy-xs {
   color: #53687f !important;
-  font-size: 0.78rem;
+  font-size: 0.76rem;
   font-weight: 400 !important;
   line-height: 1.78;
 }

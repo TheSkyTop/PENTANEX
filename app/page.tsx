@@ -6,7 +6,6 @@ import {
   CircuitBoard,
   Factory,
   Globe2,
-  Languages,
   Mail,
   MapPin,
   Phone,
@@ -129,7 +128,7 @@ type LocalizedTabCopy = {
 const footerGroups = [
   {
     heading: "Campus",
-    items: ["Melbourne North", "Victoria", "Infrastructure corridor"],
+    items: ["Melbourne North", "Victoria", "Infra corridor"],
   },
   {
     heading: "Capacity",
@@ -822,7 +821,6 @@ export default function Home() {
           </nav>
 
           <div className="hidden items-center justify-end gap-1 rounded-sm border border-slate-200/75 bg-[#f8fbfd]/78 p-1 shadow-inner backdrop-blur-2xl lg:flex">
-            <Languages className="ml-2 text-signal" size={15} aria-hidden="true" />
             <span className="sr-only">{copy.languageLabel}</span>
             {languageOptions.map((option) => (
               <button
@@ -1084,7 +1082,7 @@ export default function Home() {
                           {item}
                         </a>
                       ) : (
-                        <p className="content-copy-sm break-words" key={item}>
+                        <p className="content-copy-xs whitespace-nowrap" key={item}>
                           {item}
                         </p>
                       )
