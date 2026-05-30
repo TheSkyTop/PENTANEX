@@ -46,6 +46,7 @@ const tabs = [
       "The objective is to provide a scalable foundation for high-density compute environments, resilient customer growth, and future-ready digital infrastructure across Australia and the Asia-Pacific region.",
     ],
     points: ["560MW masterplanned campus capacity", "Expandable data hall precincts", "Melbourne North infrastructure corridor"],
+    sideNote: "Campus planning is structured around scalable data hall zones, customer-ready utility corridors, secure operations, and long-term expansion flexibility.",
   },
   {
     id: "capacity",
@@ -56,9 +57,12 @@ const tabs = [
     body: [
       "The PENTANEX capacity strategy is centred on a masterplanned 560MW hyperscale campus envelope, structured to support large-scale cloud platforms, AI training and inference clusters, accelerated compute environments, and sovereign enterprise workloads.",
       "Capacity is being planned as a staged infrastructure platform rather than a single building. The campus model allows data hall precincts, utility corridors, cooling pathways, fibre diversity, and customer-ready deployment zones to scale in line with demand.",
-      "For hyperscale and AI customers, the planning focus is resilient expansion: high-density rack environments, repeatable data hall modules, secure operations, energy and cooling optionality, and predictable delivery pathways across multiple deployment phases.",
+      "For hyperscale and AI customers, the capacity architecture prioritises resilient expansion: high-density rack environments, repeatable data hall modules, secure operations, energy and cooling optionality, and predictable delivery pathways across multiple deployment phases.",
+      "The capacity framework brings together data hall planning, power delivery, cooling plant strategy, network diversity, physical security, and operational readiness. Each element is intended to support scalable deployment while maintaining the discipline required for mission-critical digital infrastructure.",
+      "This approach gives customers a clearer pathway from early demand definition to staged capacity release: technical requirement mapping, utility interface planning, rack density assumptions, cooling configuration, resilience standards, and future expansion zones can be considered as part of one campus-scale platform.",
     ],
     points: ["560MW masterplanned campus capacity", "High-density AI and accelerated compute", "Scalable staged data hall deployment"],
+    sideNote: "Capacity is treated as a campus-scale engineering system: data halls, substations, cooling plant, fibre pathways, security zones, and operational processes are coordinated as one expandable platform.",
   },
   {
     id: "delivery",
@@ -72,6 +76,7 @@ const tabs = [
       "For hyperscale and enterprise customers, delivery certainty is built through clear milestone control: site readiness, services coordination, modular data hall release, commissioning discipline, resilience validation, and expansion optionality across future phases.",
     ],
     points: ["Planning approvals and enabling works", "Grid, energy, fibre, and cooling interfaces", "Customer-ready milestone governance"],
+    sideNote: "Delivery control is built around interface management: approvals, services, procurement, commissioning, customer readiness, and operational handover need to move as a coordinated program.",
   },
   {
     id: "sustainability",
@@ -83,8 +88,13 @@ const tabs = [
       "PENTANEX is treating sustainability as an infrastructure design discipline, not a marketing overlay. The campus pathway is focused on measurable operating efficiency, resilient energy strategy, climate-aware design, and long-term environmental performance across development and operations.",
       "The sustainability planning lens includes renewable and firmed energy integration, efficient cooling options, water-conscious design, heat and environmental management, materials and construction coordination, and transparent stakeholder engagement as the campus moves through planning and delivery.",
       "For hyperscale and AI workloads, sustainable performance must be engineered into the platform from the beginning: scalable energy procurement, high-efficiency operating envelopes, operational resilience, lifecycle accountability, and the ability to adapt as customer requirements and reporting standards mature.",
+      "Energy strategy is expected to be a core design driver. For large-scale digital infrastructure, sustainability depends on how grid connection, renewable supply, firming arrangements, demand profile, backup systems, and customer load growth are coordinated over time.",
+      "Cooling strategy is equally important for AI-ready capacity. PENTANEX is considering efficient operating envelopes, water-conscious cooling pathways, heat rejection management, and plant optionality so the campus can respond to different rack densities and customer technology profiles.",
+      "Operational sustainability extends beyond energy use. The campus approach should support resilient maintenance access, secure operations, monitoring and controls, waste and materials management, responsible procurement, and reporting structures that can support enterprise customer due diligence.",
+      "Community and environmental performance also need to be managed as part of the development lifecycle. Site planning, traffic and construction staging, visual and acoustic considerations, local stakeholder engagement, and long-term operational transparency all contribute to a more credible infrastructure platform.",
     ],
     points: ["Renewable and firmed energy integration", "Efficient cooling and water-conscious design", "Lifecycle resilience and accountable reporting"],
+    sideNote: "Sustainable data centre design depends on measurable performance: energy procurement, cooling efficiency, water strategy, resilience, materials coordination, and transparent operational reporting.",
   },
   {
     id: "contact",
@@ -98,6 +108,7 @@ const tabs = [
       "Site tours and project briefings can be coordinated by appointment as the development program progresses. Early conversations should focus on customer demand profile, technical requirements, timing, energy and connectivity needs, and the commercial pathway for participation.",
     ],
     points: [contactEmailDisplay, "Capacity and partnership enquiries", "Site tour requests by appointment"],
+    sideNote: "Engagement is most productive when enquiries include capacity profile, timing, technical requirements, energy and connectivity needs, partnership intent, and preferred briefing format.",
   },
 ];
 
@@ -128,21 +139,6 @@ const sustainabilitySdgs = [
   { number: "9", label: "Industry, Innovation and Infrastructure", color: "#fd6925" },
   { number: "12", label: "Responsible Consumption and Production", color: "#bf8b2e" },
   { number: "13", label: "Climate Action", color: "#3f7e44" },
-];
-
-const capacityDimensions = [
-  {
-    title: "Deployable capacity blocks",
-    copy: "Repeatable data hall zones designed to support phased customer demand and predictable expansion.",
-  },
-  {
-    title: "High-density compute readiness",
-    copy: "Planning focus on AI rack density, cooling optionality, fibre diversity, and resilient operations.",
-  },
-  {
-    title: "Utility coordination",
-    copy: "Campus infrastructure is being shaped around staged power, cooling, security, and services corridors.",
-  },
 ];
 
 const australiaMapYOffset = 34;
@@ -557,20 +553,6 @@ export default function Home() {
                         </p>
                       ))}
                     </div>
-                    {activeTab.id === "capacity" ? (
-                      <div className="mt-5 grid gap-3 border-t border-slate-200/80 pt-4 md:grid-cols-3">
-                        {capacityDimensions.map((dimension) => (
-                          <div className="rounded-sm border border-slate-200 bg-[#f8fbfd]/82 p-3" key={dimension.title}>
-                            <p className="text-sm font-semibold leading-5 text-graphite">
-                              {dimension.title}
-                            </p>
-                            <p className="mt-2 text-xs leading-5 text-steel">
-                              {dimension.copy}
-                            </p>
-                          </div>
-                        ))}
-                      </div>
-                    ) : null}
                   </div>
                 </div>
 
@@ -621,7 +603,7 @@ export default function Home() {
                     ) : null}
                     <div className="mt-5 border-t border-slate-200/80 pt-4">
                       <p className="text-sm leading-6 text-steel">
-                        Information is presented at a planning level and should be read as subject to technical validation, approvals, customer requirements, and delivery sequencing.
+                        {activeTab.sideNote}
                       </p>
                     </div>
                   </div>
