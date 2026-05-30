@@ -509,8 +509,8 @@ export default function Home() {
     <main className="min-h-screen overflow-x-hidden bg-[#eef4f8] text-graphite">
       <div className="pointer-events-none fixed inset-0 overflow-hidden" aria-hidden="true">
         <div className="absolute left-[-10rem] bottom-10 h-[26rem] w-[26rem] rounded-full bg-power/[0.06] blur-3xl" />
-        <div className="absolute right-[-12rem] bottom-[-8rem] h-[34rem] w-[34rem] rounded-full bg-signal/[0.095] blur-[92px]" />
-        <div className="absolute right-[4rem] bottom-[2rem] h-[18rem] w-[18rem] rounded-full bg-power/[0.035] blur-[72px]" />
+        <div className="absolute right-[-9rem] bottom-[2rem] h-[38rem] w-[38rem] rounded-full bg-signal/[0.14] blur-[104px]" />
+        <div className="absolute right-[6rem] bottom-[8rem] h-[20rem] w-[20rem] rounded-full bg-power/[0.07] blur-[78px]" />
       </div>
       <a className="skip-link" href="#top">
         Skip to main content
@@ -577,13 +577,12 @@ export default function Home() {
 
       <section
         id="top"
-        className="relative flex items-start justify-center bg-[#eef4f8] px-3 pb-3 pt-3 sm:px-5"
+        className="relative flex items-start justify-center px-3 pb-3 pt-3 sm:px-5"
       >
         <div className="pointer-events-none absolute left-[8%] top-[16%] h-72 w-72 rounded-full bg-signal/10 blur-3xl" />
-        <div className="pointer-events-none absolute bottom-[12%] right-[6%] h-80 w-80 rounded-full bg-power/12 blur-3xl" />
 
         {activeTab.id === "campus" ? (
-          <div className="relative mx-auto grid w-full max-w-[1180px] items-stretch gap-3 bg-[#eef4f8] lg:grid-cols-[minmax(0,1.04fr)_minmax(0,0.96fr)] xl:gap-4">
+          <div className="relative mx-auto grid w-full max-w-[1180px] items-stretch gap-3 lg:grid-cols-[minmax(0,1.04fr)_minmax(0,0.96fr)] xl:gap-4">
             <div className="grid min-h-0 gap-3 xl:gap-4">
               <AustraliaLocationMap />
 
@@ -742,7 +741,7 @@ export default function Home() {
         )}
       </section>
 
-      <footer className="relative bg-[#eef4f8] px-3 pb-5 sm:px-5">
+      <footer className="relative px-3 pb-5 sm:px-5">
         <div className="relative mx-auto w-full max-w-[1180px] rounded-sm border border-white/70 bg-white/82 p-4 shadow-glow backdrop-blur-2xl xl:p-5">
           <div className="grid gap-4 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,2.1fr)] lg:items-start">
             <div>
