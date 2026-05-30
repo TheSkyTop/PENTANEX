@@ -7,8 +7,11 @@ import {
   Factory,
   Globe2,
   Mail,
+  MapPin,
+  Phone,
   ShieldCheck,
   Trees,
+  UsersRound,
 } from "lucide-react";
 import { geoMercator, geoNaturalEarth1, geoPath } from "d3-geo";
 import { feature } from "topojson-client";
@@ -302,6 +305,11 @@ function ContactPathwayGraphic() {
     { label: "Briefing", detail: "Technical and commercial alignment" },
     { label: "Site tour", detail: "By appointment as program progresses" },
   ];
+  const contactModes = [
+    { label: "Phone", detail: "Initial project discussion", icon: Phone },
+    { label: "Meeting", detail: "Capacity and partnership briefing", icon: UsersRound },
+    { label: "Site tour", detail: "Campus visit by appointment", icon: MapPin },
+  ];
 
   return (
     <div className="mt-5 rounded-sm border border-slate-200/80 bg-white/72 p-4">
@@ -323,6 +331,21 @@ function ContactPathwayGraphic() {
             </div>
           </div>
         ))}
+      </div>
+      <div className="mt-4 grid grid-cols-3 gap-2 border-t border-slate-200/80 pt-4">
+        {contactModes.map((mode) => {
+          const ModeIcon = mode.icon;
+
+          return (
+            <div className="rounded-sm border border-slate-200 bg-[#f8fbfd]/90 p-3" key={mode.label}>
+              <div className="flex h-10 w-10 items-center justify-center rounded-sm border border-signal/25 bg-signal/10 text-signal">
+                <ModeIcon size={18} />
+              </div>
+              <p className="mt-3 text-xs font-semibold text-graphite">{mode.label}</p>
+              <p className="mt-1 text-[10px] leading-4 text-steel">{mode.detail}</p>
+            </div>
+          );
+        })}
       </div>
     </div>
   );
