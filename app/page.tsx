@@ -509,8 +509,8 @@ export default function Home() {
     <main className="min-h-screen overflow-x-hidden bg-[#eef4f8] text-graphite">
       <div className="pointer-events-none fixed inset-0 overflow-hidden" aria-hidden="true">
         <div className="absolute left-[-10rem] bottom-10 h-[26rem] w-[26rem] rounded-full bg-power/[0.06] blur-3xl" />
-        <div className="absolute right-[-9rem] bottom-[2rem] h-[38rem] w-[38rem] rounded-full bg-signal/[0.14] blur-[104px]" />
-        <div className="absolute right-[6rem] bottom-[8rem] h-[20rem] w-[20rem] rounded-full bg-power/[0.07] blur-[78px]" />
+        <div className="absolute right-[-9rem] bottom-[2rem] h-[38rem] w-[38rem] rounded-full bg-signal/[0.075] blur-[112px]" />
+        <div className="absolute right-[6rem] bottom-[8rem] h-[20rem] w-[20rem] rounded-full bg-power/[0.038] blur-[86px]" />
       </div>
       <a className="skip-link" href="#top">
         Skip to main content
