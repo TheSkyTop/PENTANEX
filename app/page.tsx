@@ -507,14 +507,8 @@ export default function Home() {
     <>
     <SiteStructuredData />
     <main className="min-h-screen overflow-x-hidden bg-[#eef4f8] text-graphite">
-      <div
-        className="pointer-events-none fixed inset-0 overflow-hidden"
-        style={{
-          background:
-            "radial-gradient(circle at 93% 38%, rgba(15,174,166,0.12) 0, rgba(15,174,166,0.095) 18rem, rgba(15,174,166,0.045) 34rem, rgba(15,174,166,0) 54rem)",
-        }}
-        aria-hidden="true"
-      >
+      <div className="pointer-events-none fixed inset-0 overflow-hidden" aria-hidden="true">
+        <div className="absolute right-[-34rem] top-[8rem] h-[72rem] w-[72rem] rounded-full bg-signal/[0.08] blur-[130px]" />
         <div className="absolute left-[-10rem] bottom-10 h-[26rem] w-[26rem] rounded-full bg-power/[0.06] blur-3xl" />
         <div className="absolute right-[18%] bottom-[-14rem] h-[32rem] w-[32rem] rounded-full bg-signal/[0.045] blur-3xl" />
       </div>
