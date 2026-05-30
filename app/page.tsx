@@ -55,14 +55,12 @@ const tabs = [
     panelTitle: "Capacity Strategy",
     title: "",
     body: [
-      "The PENTANEX capacity strategy is centred on a masterplanned 560MW hyperscale campus envelope, structured to support large-scale cloud platforms, AI training and inference clusters, accelerated compute environments, and sovereign enterprise workloads.",
-      "Capacity is being planned as a staged infrastructure platform rather than a single building. The campus model allows data hall precincts, utility corridors, cooling pathways, fibre diversity, and customer-ready deployment zones to scale in line with demand.",
-      "For hyperscale and AI customers, the capacity architecture prioritises resilient expansion: high-density rack environments, repeatable data hall modules, secure operations, energy and cooling optionality, and predictable delivery pathways across multiple deployment phases.",
-      "The capacity framework brings together data hall planning, power delivery, cooling plant strategy, network diversity, physical security, and operational readiness. Each element is intended to support scalable deployment while maintaining the discipline required for mission-critical digital infrastructure.",
-      "This approach gives customers a clearer pathway from early demand definition to staged capacity release: technical requirement mapping, utility interface planning, rack density assumptions, cooling configuration, resilience standards, and future expansion zones can be considered as part of one campus-scale platform.",
+      "The PENTANEX capacity strategy is centred on a masterplanned 560MW hyperscale campus envelope for cloud platforms, AI training and inference clusters, accelerated compute environments, and sovereign enterprise workloads.",
+      "Capacity is being planned as a staged infrastructure platform rather than a single building, with data hall precincts, utility corridors, cooling pathways, fibre diversity, and customer-ready deployment zones able to scale in line with demand.",
+      "For hyperscale and AI customers, the capacity architecture prioritises high-density rack environments, repeatable data hall modules, secure operations, energy and cooling optionality, and predictable release pathways across multiple deployment phases.",
     ],
     points: ["560MW masterplanned campus capacity", "High-density AI and accelerated compute", "Scalable staged data hall deployment"],
-    sideNote: "Capacity is treated as a campus-scale engineering system: data halls, substations, cooling plant, fibre pathways, security zones, and operational processes are coordinated as one expandable platform.",
+    sideNote: "",
   },
   {
     id: "delivery",
@@ -76,7 +74,7 @@ const tabs = [
       "For hyperscale and enterprise customers, delivery certainty is built through clear milestone control: site readiness, services coordination, modular data hall release, commissioning discipline, resilience validation, and expansion optionality across future phases.",
     ],
     points: ["Planning approvals and enabling works", "Grid, energy, fibre, and cooling interfaces", "Customer-ready milestone governance"],
-    sideNote: "Delivery control is built around interface management: approvals, services, procurement, commissioning, customer readiness, and operational handover need to move as a coordinated program.",
+    sideNote: "",
   },
   {
     id: "sustainability",
@@ -85,16 +83,13 @@ const tabs = [
     panelTitle: "Resilient Infrastructure",
     title: "",
     body: [
-      "PENTANEX is treating sustainability as an infrastructure design discipline, not a marketing overlay. The campus pathway is focused on measurable operating efficiency, resilient energy strategy, climate-aware design, and long-term environmental performance across development and operations.",
-      "The sustainability planning lens includes renewable and firmed energy integration, efficient cooling options, water-conscious design, heat and environmental management, materials and construction coordination, and transparent stakeholder engagement as the campus moves through planning and delivery.",
-      "For hyperscale and AI workloads, sustainable performance must be engineered into the platform from the beginning: scalable energy procurement, high-efficiency operating envelopes, operational resilience, lifecycle accountability, and the ability to adapt as customer requirements and reporting standards mature.",
-      "Energy strategy is expected to be a core design driver. For large-scale digital infrastructure, sustainability depends on how grid connection, renewable supply, firming arrangements, demand profile, backup systems, and customer load growth are coordinated over time.",
-      "Cooling strategy is equally important for AI-ready capacity. PENTANEX is considering efficient operating envelopes, water-conscious cooling pathways, heat rejection management, and plant optionality so the campus can respond to different rack densities and customer technology profiles.",
-      "Operational sustainability extends beyond energy use. The campus approach should support resilient maintenance access, secure operations, monitoring and controls, waste and materials management, responsible procurement, and reporting structures that can support enterprise customer due diligence.",
-      "Community and environmental performance also need to be managed as part of the development lifecycle. Site planning, traffic and construction staging, visual and acoustic considerations, local stakeholder engagement, and long-term operational transparency all contribute to a more credible infrastructure platform.",
+      "PENTANEX treats sustainability as an infrastructure design discipline. The campus pathway focuses on operating efficiency, resilient energy strategy, climate-aware design, and environmental performance across development and operations.",
+      "Energy planning is a core design driver. Grid connection, renewable supply, firming arrangements, backup systems, and customer load growth need to be coordinated as part of the same long-term capacity platform.",
+      "Cooling and water strategy are central to AI-ready capacity. The campus approach considers efficient operating envelopes, water-conscious cooling pathways, heat rejection management, and plant optionality for different rack density profiles.",
+      "Operational sustainability extends beyond energy use. Secure operations, monitoring and controls, maintenance access, waste and materials management, responsible procurement, community engagement, and reporting structures all support a credible hyperscale platform.",
     ],
     points: ["Renewable and firmed energy integration", "Efficient cooling and water-conscious design", "Lifecycle resilience and accountable reporting"],
-    sideNote: "Sustainable data centre design depends on measurable performance: energy procurement, cooling efficiency, water strategy, resilience, materials coordination, and transparent operational reporting.",
+    sideNote: "",
   },
   {
     id: "contact",
@@ -108,7 +103,7 @@ const tabs = [
       "Site tours and project briefings can be coordinated by appointment as the development program progresses. Early conversations should focus on customer demand profile, technical requirements, timing, energy and connectivity needs, and the commercial pathway for participation.",
     ],
     points: [contactEmailDisplay, "Capacity and partnership enquiries", "Site tour requests by appointment"],
-    sideNote: "Engagement is most productive when enquiries include capacity profile, timing, technical requirements, energy and connectivity needs, partnership intent, and preferred briefing format.",
+    sideNote: "",
   },
 ];
 
@@ -245,6 +240,89 @@ function CapacityPlatformGraphic() {
             Utility spine and staged release pathway
           </p>
         </div>
+      </div>
+    </div>
+  );
+}
+
+function DeliveryRoadmap() {
+  const milestones = [
+    { year: "2027", label: "Permit", active: true },
+    { year: "2028", label: "Design" },
+    { year: "2029", label: "Enable" },
+    { year: "2030", label: "Build" },
+    { year: "2032", label: "Operate" },
+  ];
+
+  return (
+    <div className="mt-5 rounded-sm border border-slate-200/80 bg-white/72 p-4">
+      <div className="flex items-center justify-between gap-3">
+        <div>
+          <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-signal">
+            Delivery roadmap
+          </p>
+          <p className="mt-1 text-xs leading-5 text-steel">
+            2027-2032 staged development pathway.
+          </p>
+        </div>
+        <span className="shrink-0 rounded-sm border border-signal/30 bg-signal/10 px-2.5 py-1 text-xs font-bold text-signal">
+          Permit
+        </span>
+      </div>
+
+      <div className="mt-5">
+        <div className="relative h-2 rounded-full bg-slate-200/80">
+          <div className="h-2 w-[14%] rounded-full bg-signal" />
+        </div>
+        <div className="mt-3 grid grid-cols-5 gap-2">
+          {milestones.map((milestone) => (
+            <div key={milestone.year}>
+              <div
+                className={`mx-auto h-3 w-3 rounded-full border ${
+                  milestone.active ? "border-signal bg-signal shadow-[0_0_0_5px_rgba(15,174,166,0.12)]" : "border-slate-300 bg-white"
+                }`}
+              />
+              <p className={`mt-2 text-center text-[10px] font-bold ${milestone.active ? "text-signal" : "text-steel"}`}>
+                {milestone.year}
+              </p>
+              <p className="mt-1 text-center text-[10px] font-semibold uppercase tracking-[0.08em] text-steel">
+                {milestone.label}
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function ContactPathwayGraphic() {
+  const steps = [
+    { label: "Enquiry", detail: "Project and capacity discussion" },
+    { label: "Briefing", detail: "Technical and commercial alignment" },
+    { label: "Site tour", detail: "By appointment as program progresses" },
+  ];
+
+  return (
+    <div className="mt-5 rounded-sm border border-slate-200/80 bg-white/72 p-4">
+      <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-signal">
+        Contact pathway
+      </p>
+      <div className="mt-4 grid gap-3">
+        {steps.map((step, index) => (
+          <div className="grid grid-cols-[36px_1fr] gap-3" key={step.label}>
+            <div className="flex flex-col items-center">
+              <span className="flex h-8 w-8 items-center justify-center rounded-sm border border-signal/30 bg-signal/10 text-xs font-bold text-signal">
+                {index + 1}
+              </span>
+              {index < steps.length - 1 ? <span className="h-8 w-px bg-slate-200" /> : null}
+            </div>
+            <div className="pb-2">
+              <p className="text-sm font-semibold text-graphite">{step.label}</p>
+              <p className="mt-1 text-xs leading-5 text-steel">{step.detail}</p>
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   );
@@ -534,9 +612,9 @@ export default function Home() {
         ) : (
           <div className="relative mx-auto w-full max-w-[1180px]">
             <div className="rounded-sm border border-white/70 bg-white/58 p-4 shadow-glow backdrop-blur-2xl xl:p-5">
-              <div className="grid items-stretch gap-4 lg:grid-cols-[minmax(0,1.25fr)_minmax(280px,0.75fr)] xl:gap-5">
+              <div className="grid items-center gap-4 lg:grid-cols-[minmax(0,1.22fr)_minmax(300px,0.78fr)] xl:gap-5">
                 <div className="flex rounded-sm border border-slate-200/70 bg-white/68 p-5 xl:p-7">
-                  <div className="my-auto w-full">
+                  <div className="mx-auto w-full max-w-3xl">
                     <div className="inline-flex items-center gap-2 rounded-sm border border-signal/25 bg-white/62 px-3 py-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-signal shadow-[0_0_20px_rgba(15,174,166,0.08)]">
                       <ActiveIcon size={15} />
                       {activeTab.panelTitle}
@@ -546,7 +624,7 @@ export default function Home() {
                         {activeTab.title}
                       </h1>
                     ) : null}
-                    <div className={`${activeTab.title ? "mt-4" : "mt-5"} max-w-3xl space-y-3`}>
+                    <div className={`${activeTab.title ? "mt-4" : "mt-5"} space-y-3`}>
                       {activeBodyParagraphs.map((paragraph) => (
                         <p className="text-base leading-8 text-steel" key={paragraph}>
                           {paragraph}
@@ -557,7 +635,7 @@ export default function Home() {
                 </div>
 
                 <aside className="flex rounded-sm border border-slate-200/70 bg-[#f8fbfd]/76 p-5 xl:p-6">
-                  <div className="my-auto w-full">
+                  <div className="mx-auto w-full max-w-md">
                     <p className="text-xs font-semibold uppercase tracking-[0.2em] text-steel">
                       {focusLabel}
                     </p>
@@ -576,6 +654,7 @@ export default function Home() {
                       ))}
                     </div>
                     {activeTab.id === "capacity" ? <CapacityPlatformGraphic /> : null}
+                    {activeTab.id === "delivery" ? <DeliveryRoadmap /> : null}
                     {activeTab.id === "sustainability" ? (
                       <div className="mt-5 border-t border-slate-200/80 pt-4">
                         <p className="text-xs font-semibold uppercase tracking-[0.2em] text-steel">
@@ -601,11 +680,14 @@ export default function Home() {
                         </div>
                       </div>
                     ) : null}
-                    <div className="mt-5 border-t border-slate-200/80 pt-4">
-                      <p className="text-sm leading-6 text-steel">
-                        {activeTab.sideNote}
-                      </p>
-                    </div>
+                    {activeTab.id === "contact" ? <ContactPathwayGraphic /> : null}
+                    {activeTab.sideNote ? (
+                      <div className="mt-5 border-t border-slate-200/80 pt-4">
+                        <p className="text-sm leading-6 text-steel">
+                          {activeTab.sideNote}
+                        </p>
+                      </div>
+                    ) : null}
                   </div>
                 </aside>
               </div>
