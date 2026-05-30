@@ -582,7 +582,7 @@ function AustraliaLocationMap() {
     ) as Feature<Geometry>;
     const projection = geoMercator().fitExtent([[24, 8], [596, 352]], australiaFeature);
     const path = geoPath(projection);
-    const worldProjection = geoNaturalEarth1().fitExtent([[-136, -108], [756, 468]], world);
+    const worldProjection = geoNaturalEarth1().fitExtent([[0, 0], [620, 360]], world);
     const worldPath = geoPath(worldProjection);
 
     return {
@@ -637,7 +637,7 @@ function AustraliaLocationMap() {
           </defs>
           <path d="M36 180H584" stroke="url(#mapAxisX)" strokeWidth="1.4" />
           <path d="M310 38V326" stroke="url(#mapAxisY)" strokeWidth="1.2" />
-          <g opacity="0.24" transform="translate(310 180) scale(1.12 1.16) translate(-310 -180)">
+          <g opacity="0.24">
             {worldPaths.map((countryPath, index) => (
               <path
                 d={countryPath}
@@ -919,7 +919,7 @@ export default function Home() {
               </div>
 
               <div className="rounded-sm border border-white/70 bg-white/88 p-3 shadow-glow backdrop-blur-2xl xl:p-4">
-                <div className="rounded-sm border border-slate-200/70 bg-white/90 p-4">
+                <div className="rounded-sm border border-slate-200/70 bg-transparent p-4">
                   <div className="inline-flex items-center gap-2 rounded-sm border border-signal/25 bg-white/62 px-3 py-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-signal shadow-[0_0_20px_rgba(15,174,166,0.08)]">
                     <ActiveIcon size={15} />
                     {localizedActiveTab.panelTitle}
