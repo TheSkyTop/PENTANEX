@@ -673,15 +673,15 @@ function AustraliaLocationMap() {
             <rect
               fill="url(#locationTag)"
               filter="url(#softGlass)"
-              height="34"
+              height="40"
               rx="4"
               stroke="#7bdad4"
               strokeOpacity="0.9"
-              width="188"
+              width="218"
               x={sitePoint[0] + 50}
-              y={sitePoint[1] - 12}
+              y={sitePoint[1] - 15}
             />
-            <text fill="#0faea6" fontSize="12.6" fontWeight="500" letterSpacing="0.6" x={sitePoint[0] + 62} y={sitePoint[1] + 11}>
+            <text fill="#0faea6" fontSize="15.2" fontWeight="500" letterSpacing="0.45" x={sitePoint[0] + 64} y={sitePoint[1] + 11}>
               Melbourne North, VIC
             </text>
           </g>
