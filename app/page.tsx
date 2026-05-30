@@ -777,7 +777,7 @@ export default function Home() {
   return (
     <>
     <SiteStructuredData />
-    <main className="min-h-screen overflow-x-hidden bg-[#eef4f8] text-graphite">
+    <main className="min-h-screen overflow-x-hidden bg-[#eef4f8] text-graphite" data-language={language}>
       <div className="pointer-events-none fixed inset-0 overflow-hidden" aria-hidden="true">
         <div className={ambientAccent.left} />
         <div className={ambientAccent.right} />

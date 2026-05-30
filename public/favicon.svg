@@ -6,8 +6,17 @@
     stroke-linejoin="round"
     stroke-width="3.8"
   />
-  <g fill="#2bc9bd" font-family="Arial Rounded MT Bold, Arial, Helvetica, sans-serif" font-weight="700">
-    <text font-size="26" letter-spacing="-1.8" x="14.2" y="39.8">P</text>
-    <text font-size="26" letter-spacing="-1.4" x="31.2" y="39.8">X</text>
-  </g>
+  <text
+    dominant-baseline="middle"
+    fill="#2bc9bd"
+    font-family="Arial Rounded MT Bold, Arial, Helvetica, sans-serif"
+    font-size="25.5"
+    font-weight="700"
+    letter-spacing="-2"
+    text-anchor="middle"
+    x="32"
+    y="34.5"
+  >
+    PX
+  </text>
 </svg>

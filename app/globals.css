@@ -20,7 +20,7 @@ body {
   min-height: 100vh;
   background: #eef4f8;
   color: #102033;
-  font-family: Inter, Arial, Helvetica, sans-serif;
+  font-family: Inter, "Segoe UI", Arial, Helvetica, sans-serif;
 }
 
 a {
@@ -52,6 +52,56 @@ a {
   transform: translateY(0);
   outline: 2px solid #0faea6;
   outline-offset: 3px;
+}
+
+[data-language="zh"] {
+  font-family:
+    "Noto Sans SC",
+    "Microsoft YaHei UI",
+    "Microsoft YaHei",
+    "PingFang SC",
+    "Hiragino Sans GB",
+    "Source Han Sans SC",
+    "Segoe UI",
+    sans-serif;
+  font-variant-east-asian: proportional-width;
+  text-rendering: optimizeLegibility;
+}
+
+[data-language="zh"] p,
+[data-language="zh"] span,
+[data-language="zh"] a,
+[data-language="zh"] button {
+  letter-spacing: 0;
+}
+
+[data-language="zh"] p {
+  line-height: 1.9;
+}
+
+[data-language="zh"] .tracking-\[0\.18em\],
+[data-language="zh"] .tracking-\[0\.2em\],
+[data-language="zh"] .tracking-\[0\.22em\],
+[data-language="zh"] .tracking-\[0\.16em\],
+[data-language="zh"] .tracking-\[0\.12em\],
+[data-language="zh"] .tracking-\[0\.08em\] {
+  letter-spacing: 0.08em;
+}
+
+[data-language="zh"] button {
+  font-weight: 650;
+}
+
+[data-language="zh"] .text-base {
+  font-size: 0.98rem;
+}
+
+[data-language="zh"] .leading-8 {
+  line-height: 1.95;
+}
+
+[data-language="zh"] .text-steel {
+  color: #53687f;
 }
 
 .site-grid {
