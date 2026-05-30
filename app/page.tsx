@@ -508,9 +508,9 @@ export default function Home() {
     <SiteStructuredData />
     <main className="min-h-screen overflow-x-hidden bg-[#eef4f8] text-graphite">
       <div className="pointer-events-none fixed inset-0 overflow-hidden" aria-hidden="true">
-        <div className="absolute right-[-34rem] top-[8rem] h-[72rem] w-[72rem] rounded-full bg-signal/[0.08] blur-[130px]" />
         <div className="absolute left-[-10rem] bottom-10 h-[26rem] w-[26rem] rounded-full bg-power/[0.06] blur-3xl" />
-        <div className="absolute right-[18%] bottom-[-14rem] h-[32rem] w-[32rem] rounded-full bg-signal/[0.045] blur-3xl" />
+        <div className="absolute right-[-12rem] bottom-[-8rem] h-[34rem] w-[34rem] rounded-full bg-signal/[0.095] blur-[92px]" />
+        <div className="absolute right-[4rem] bottom-[2rem] h-[18rem] w-[18rem] rounded-full bg-power/[0.035] blur-[72px]" />
       </div>
       <a className="skip-link" href="#top">
         Skip to main content
