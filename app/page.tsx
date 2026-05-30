@@ -992,11 +992,11 @@ export default function Home() {
                             <div className="flex gap-3 rounded-sm border border-slate-200 bg-white/72 p-4 shadow-[0_12px_28px_rgba(16,32,51,0.04)]" key={point}>
                               <CheckCircle2 className="mt-0.5 shrink-0 text-power" size={18} />
                               {point.includes("@") ? (
-                                <a className="break-words text-sm font-semibold leading-5 text-graphite transition hover:text-signal focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-signal" href={`mailto:${contactEmail}`}>
+                                <a className="break-words text-sm font-normal leading-6 text-steel transition hover:text-signal focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-signal" href={`mailto:${contactEmail}`}>
                                   {point}
                                 </a>
                               ) : (
-                                <span className="text-sm font-semibold leading-5 text-graphite">{point}</span>
+                                <span className="text-sm font-normal leading-6 text-steel">{point}</span>
                               )}
                             </div>
                           ))}
@@ -1022,7 +1022,7 @@ export default function Home() {
                               >
                                 {sdg.number}
                               </span>
-                              <span className="text-sm font-semibold leading-5 text-graphite">
+                              <span className="text-sm font-normal leading-6 text-steel">
                                 {sdg.label}
                               </span>
                             </div>

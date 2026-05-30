@@ -104,6 +104,41 @@ a {
   color: #53687f;
 }
 
+[data-language="zh"] footer p,
+[data-language="zh"] footer a {
+  font-weight: 500;
+  line-height: 1.85;
+}
+
+[data-language="zh"] footer .text-graphite {
+  color: #20334a;
+}
+
+[data-language="zh"] footer .font-semibold {
+  font-weight: 600;
+}
+
+[data-language="zh"] footer .text-xs,
+[data-language="zh"] footer .text-\[12px\],
+[data-language="zh"] footer .text-\[13px\],
+[data-language="zh"] footer .text-\[10\.5px\] {
+  font-size: 0.82rem;
+}
+
+[data-language="zh"] footer .text-\[10px\] {
+  font-size: 0.68rem;
+}
+
+footer .text-graphite {
+  font-weight: 500;
+  line-height: 1.7;
+}
+
+footer a.text-graphite {
+  font-size: 0.82rem;
+  line-height: 1.7;
+}
+
 .site-grid {
   background-image:
     linear-gradient(rgba(16, 32, 51, 0.06) 1px, transparent 1px),
