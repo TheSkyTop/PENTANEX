@@ -23,6 +23,7 @@ const project = {
 };
 
 const contactEmail = "enquiries@pentanex.com.au";
+const contactEmailDisplay = "Enquiries@pentanex.com.au";
 const siteUrl = "https://pentanex.com.au";
 
 const metrics = [
@@ -80,7 +81,7 @@ const tabs = [
     panelTitle: "Strategic Engagement",
     title: "Speak with PENTANEX about capacity, partnerships, and project engagement.",
     body: "We welcome project-level conversations with hyperscale operators, cloud platforms, enterprise AI customers, energy and infrastructure partners, investors, and local stakeholders. Enquiries should focus on capacity requirements, partnership alignment, delivery pathway, and strategic infrastructure engagement for the Melbourne North campus.",
-    points: [contactEmail, "Capacity and partnership enquiries", "Melbourne, Australia"],
+    points: [contactEmailDisplay, "Capacity and partnership enquiries", "Melbourne, Australia"],
   },
 ];
 
@@ -99,7 +100,7 @@ const footerGroups = [
   },
   {
     heading: "Contact",
-    items: ["Project enquiries", contactEmail],
+    items: ["Project enquiries", contactEmailDisplay],
   },
 ];
 
@@ -478,7 +479,7 @@ export default function Home() {
                       <div className="flex gap-3 rounded-sm border border-slate-200 bg-white/72 p-4" key={point}>
                         <CheckCircle2 className="mt-0.5 shrink-0 text-power" size={18} />
                         {point.includes("@") ? (
-                          <a className="break-words text-sm font-semibold leading-5 text-graphite transition hover:text-signal focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-signal" href={`mailto:${point}`}>
+                          <a className="break-words text-sm font-semibold leading-5 text-graphite transition hover:text-signal focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-signal" href={`mailto:${contactEmail}`}>
                             {point}
                           </a>
                         ) : (
@@ -539,7 +540,7 @@ export default function Home() {
                       item.includes("@") ? (
                         <a
                           className="block break-words text-[12px] leading-5 text-graphite transition hover:text-signal focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-signal xl:text-[13px]"
-                          href={`mailto:${item}`}
+                          href={`mailto:${contactEmail}`}
                           key={item}
                         >
                           {item}
