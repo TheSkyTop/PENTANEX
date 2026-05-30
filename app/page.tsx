@@ -681,7 +681,7 @@ function AustraliaLocationMap() {
               x={sitePoint[0] + 50}
               y={sitePoint[1] - 12}
             />
-            <text fill="#0faea6" fontSize="11.5" fontWeight="500" letterSpacing="0.7" x={sitePoint[0] + 64} y={sitePoint[1] + 10}>
+            <text fill="#0faea6" fontSize="12.6" fontWeight="500" letterSpacing="0.6" x={sitePoint[0] + 62} y={sitePoint[1] + 11}>
               Melbourne North, VIC
             </text>
           </g>
