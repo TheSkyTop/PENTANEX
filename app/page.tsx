@@ -52,9 +52,13 @@ const tabs = [
     label: "Capacity",
     icon: CircuitBoard,
     panelTitle: "Capacity Strategy",
-    title: "We are planning capacity for high-density AI and accelerated compute.",
-    body: "Our capacity model is being shaped around deployable infrastructure blocks: staged power delivery, high-density rack environments, cooling optionality, fibre diversity, and repeatable data hall modules. For hyperscale and AI customers, the campus is intended to support dense compute clusters, resilient operations, and predictable expansion over multiple deployment phases.",
-    points: ["High-density AI compute environments", "Scalable power and cooling pathways", "Repeatable hyperscale capacity blocks"],
+    title: "",
+    body: [
+      "The PENTANEX capacity strategy is centred on a masterplanned 560MW hyperscale campus envelope, structured to support large-scale cloud platforms, AI training and inference clusters, accelerated compute environments, and sovereign enterprise workloads.",
+      "Capacity is being planned as a staged infrastructure platform rather than a single building. The campus model allows data hall precincts, utility corridors, cooling pathways, fibre diversity, and customer-ready deployment zones to scale in line with demand.",
+      "For hyperscale and AI customers, the planning focus is resilient expansion: high-density rack environments, repeatable data hall modules, secure operations, energy and cooling optionality, and predictable delivery pathways across multiple deployment phases.",
+    ],
+    points: ["560MW masterplanned campus capacity", "High-density AI and accelerated compute", "Scalable staged data hall deployment"],
   },
   {
     id: "delivery",
@@ -458,10 +462,12 @@ export default function Home() {
                     <ActiveIcon size={15} />
                     {activeTab.panelTitle}
                   </div>
-                  <h1 className="mt-3 max-w-3xl text-[clamp(1.65rem,3vw,2.5rem)] font-semibold leading-tight text-graphite">
-                    {activeTab.title}
-                  </h1>
-                  <div className="mt-4 max-w-3xl space-y-3">
+                  {activeTab.title ? (
+                    <h1 className="mt-3 max-w-3xl text-[clamp(1.65rem,3vw,2.5rem)] font-semibold leading-tight text-graphite">
+                      {activeTab.title}
+                    </h1>
+                  ) : null}
+                  <div className={`${activeTab.title ? "mt-4" : "mt-5"} max-w-3xl space-y-3`}>
                     {activeBodyParagraphs.map((paragraph) => (
                       <p className="text-base leading-8 text-steel" key={paragraph}>
                         {paragraph}
