@@ -121,7 +121,7 @@ const footerGroups = [
   },
   {
     heading: "Platform",
-    items: ["Cloud / AI workloads", "Power + cooling + fibre", "Sovereign capability"],
+    items: ["Cloud AI workloads", "Power cooling fibre", "Sovereign capability"],
   },
   {
     heading: "Contact",
@@ -566,16 +566,16 @@ export default function Home() {
         id="top"
         className="relative flex items-start justify-center px-3 pb-3 pt-3 sm:px-5"
       >
-        <div className="site-grid absolute inset-0 opacity-80" />
+        <div className="site-grid absolute inset-0 opacity-50" />
         <div className="pointer-events-none absolute left-[8%] top-[16%] h-72 w-72 rounded-full bg-signal/10 blur-3xl" />
         <div className="pointer-events-none absolute bottom-[12%] right-[6%] h-80 w-80 rounded-full bg-power/12 blur-3xl" />
 
         {activeTab.id === "campus" ? (
-          <div className="relative mx-auto grid w-full max-w-[1180px] items-stretch gap-3 lg:grid-cols-[minmax(0,1.04fr)_minmax(0,0.96fr)] xl:gap-4">
+          <div className="relative mx-auto grid w-full max-w-[1180px] items-stretch gap-3 bg-[#eef4f8]/94 lg:grid-cols-[minmax(0,1.04fr)_minmax(0,0.96fr)] xl:gap-4">
             <div className="grid min-h-0 gap-3 xl:gap-4">
               <AustraliaLocationMap />
 
-              <div className="rounded-sm border border-white/70 bg-white/58 p-4 shadow-glow backdrop-blur-2xl xl:p-5">
+              <div className="rounded-sm border border-white/70 bg-white/88 p-4 shadow-glow backdrop-blur-2xl xl:p-5">
                 <div className="inline-flex items-center gap-2 rounded-sm border border-signal/20 bg-white/70 px-3 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-signal">
                   <Globe2 size={15} />
                   Australian Digital Infrastructure
@@ -591,7 +591,7 @@ export default function Home() {
             </div>
 
             <div className="grid min-h-0 gap-3 xl:gap-4">
-              <div className="rounded-sm border border-white/70 bg-white/56 p-3 shadow-glow backdrop-blur-2xl">
+              <div className="rounded-sm border border-white/70 bg-white/88 p-3 shadow-glow backdrop-blur-2xl">
                 <div className="grid gap-2 sm:grid-cols-4">
                   {metrics.map((metric) => (
                     <div className="rounded-sm border border-slate-200/70 bg-white/66 p-3" key={metric.label}>
@@ -604,8 +604,8 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="rounded-sm border border-white/70 bg-white/58 p-3 shadow-glow backdrop-blur-2xl xl:p-4">
-                <div className="rounded-sm border border-slate-200/70 bg-[#f8fbfd]/72 p-4">
+              <div className="rounded-sm border border-white/70 bg-white/88 p-3 shadow-glow backdrop-blur-2xl xl:p-4">
+                <div className="rounded-sm border border-slate-200/70 bg-white/90 p-4">
                   <div className="inline-flex items-center gap-2 rounded-sm border border-signal/25 bg-white/62 px-3 py-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-signal shadow-[0_0_20px_rgba(15,174,166,0.08)]">
                     <ActiveIcon size={15} />
                     {activeTab.panelTitle}
@@ -641,7 +641,7 @@ export default function Home() {
           </div>
         ) : (
           <div className="relative mx-auto w-full max-w-[1180px]">
-            <div className="rounded-sm border border-white/70 bg-white/58 p-4 shadow-glow backdrop-blur-2xl xl:p-5">
+            <div className="rounded-sm border border-white/70 bg-white/88 p-4 shadow-glow backdrop-blur-2xl xl:p-5">
               <div className="grid items-stretch gap-4 lg:grid-cols-[minmax(0,1.22fr)_minmax(300px,0.78fr)] xl:gap-5">
                 <div className="flex rounded-sm border border-slate-200/70 bg-white/86 p-5 shadow-[0_18px_44px_rgba(16,32,51,0.04)] backdrop-blur-2xl xl:p-7">
                   <div className="mx-auto w-full max-w-3xl">
