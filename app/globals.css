@@ -104,6 +104,36 @@ a {
   color: #53687f;
 }
 
+.content-copy-sm {
+  color: #53687f !important;
+  font-size: 0.875rem;
+  font-weight: 400 !important;
+  line-height: 1.72;
+  letter-spacing: 0;
+}
+
+.content-copy-xs {
+  color: #53687f !important;
+  font-size: 0.75rem;
+  font-weight: 400 !important;
+  line-height: 1.65;
+  letter-spacing: 0;
+}
+
+[data-language="zh"] .content-copy-sm {
+  color: #53687f !important;
+  font-size: 0.9rem;
+  font-weight: 400 !important;
+  line-height: 1.88;
+}
+
+[data-language="zh"] .content-copy-xs {
+  color: #53687f !important;
+  font-size: 0.78rem;
+  font-weight: 400 !important;
+  line-height: 1.78;
+}
+
 [data-language="zh"] footer p,
 [data-language="zh"] footer a {
   font-weight: 400;

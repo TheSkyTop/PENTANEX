@@ -547,8 +547,8 @@ function ContactPathwayGraphic({
               {index < copy.steps.length - 1 ? <span className="h-8 w-px bg-slate-200" /> : null}
             </div>
             <div className="pb-2">
-              <p className="text-sm font-semibold text-graphite">{step.label}</p>
-              <p className="mt-1 text-xs leading-5 text-steel">{step.detail}</p>
+              <p className="content-copy-sm">{step.label}</p>
+              <p className="content-copy-xs mt-1">{step.detail}</p>
             </div>
           </div>
         ))}
@@ -562,8 +562,8 @@ function ContactPathwayGraphic({
               <div className="flex h-10 w-10 items-center justify-center rounded-sm border border-signal/25 bg-signal/10 text-signal">
                 <ModeIcon size={18} />
               </div>
-              <p className="mt-3 text-xs font-semibold text-graphite">{mode.label}</p>
-              <p className="mt-1 text-[10px] leading-4 text-steel">{mode.detail}</p>
+              <p className="content-copy-xs mt-3">{mode.label}</p>
+              <p className="content-copy-xs mt-1 text-[10px]">{mode.detail}</p>
             </div>
           );
         })}
@@ -992,11 +992,11 @@ export default function Home() {
                             <div className="flex gap-3 rounded-sm border border-slate-200 bg-white/72 p-4 shadow-[0_12px_28px_rgba(16,32,51,0.04)]" key={point}>
                               <CheckCircle2 className="mt-0.5 shrink-0 text-power" size={18} />
                               {point.includes("@") ? (
-                                <a className="break-words text-sm font-normal leading-6 text-steel transition hover:text-signal focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-signal" href={`mailto:${contactEmail}`}>
+                                <a className="content-copy-sm break-words transition hover:text-signal focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-signal" href={`mailto:${contactEmail}`}>
                                   {point}
                                 </a>
                               ) : (
-                                <span className="text-sm font-normal leading-6 text-steel">{point}</span>
+                                <span className="content-copy-sm">{point}</span>
                               )}
                             </div>
                           ))}
@@ -1022,7 +1022,7 @@ export default function Home() {
                               >
                                 {sdg.number}
                               </span>
-                              <span className="text-sm font-normal leading-6 text-steel">
+                              <span className="content-copy-sm">
                                 {sdg.label}
                               </span>
                             </div>
@@ -1059,7 +1059,7 @@ export default function Home() {
                   </p>
                 </div>
               </div>
-              <p className="mt-4 max-w-md text-sm leading-6 text-steel">
+              <p className="content-copy-sm mt-4 max-w-md">
                 {copy.footerIntro}
               </p>
             </div>
@@ -1077,14 +1077,14 @@ export default function Home() {
                     {group.items.map((item) => (
                       item.includes("@") ? (
                         <a
-                          className="block whitespace-nowrap text-sm font-normal leading-6 text-steel transition hover:text-signal focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-signal"
+                          className="content-copy-xs block whitespace-nowrap transition hover:text-signal focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-signal"
                           href={`mailto:${contactEmail}`}
                           key={item}
                         >
                           {item}
                         </a>
                       ) : (
-                        <p className="break-words text-sm font-normal leading-6 text-steel" key={item}>
+                        <p className="content-copy-sm break-words" key={item}>
                           {item}
                         </p>
                       )
