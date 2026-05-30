@@ -1077,14 +1077,14 @@ export default function Home() {
                     {group.items.map((item) => (
                       item.includes("@") ? (
                         <a
-                          className="block whitespace-nowrap text-[10.5px] leading-5 text-graphite transition hover:text-signal focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-signal xl:text-[11px]"
+                          className="block whitespace-nowrap text-sm font-normal leading-6 text-steel transition hover:text-signal focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-signal"
                           href={`mailto:${contactEmail}`}
                           key={item}
                         >
                           {item}
                         </a>
                       ) : (
-                        <p className="break-words text-[12px] leading-5 text-graphite xl:text-[13px]" key={item}>
+                        <p className="break-words text-sm font-normal leading-6 text-steel" key={item}>
                           {item}
                         </p>
                       )

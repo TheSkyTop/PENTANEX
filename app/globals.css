@@ -106,7 +106,7 @@ a {
 
 [data-language="zh"] footer p,
 [data-language="zh"] footer a {
-  font-weight: 500;
+  font-weight: 400;
   line-height: 1.85;
 }
 
@@ -137,6 +137,24 @@ footer .text-graphite {
 footer a.text-graphite {
   font-size: 0.82rem;
   line-height: 1.7;
+}
+
+aside .text-steel,
+aside a.text-steel,
+aside span.text-steel,
+footer .text-steel,
+footer a.text-steel {
+  color: #53687f;
+  font-weight: 400;
+}
+
+[data-language="zh"] aside .text-steel,
+[data-language="zh"] aside a.text-steel,
+[data-language="zh"] aside span.text-steel,
+[data-language="zh"] footer .text-steel,
+[data-language="zh"] footer a.text-steel {
+  color: #53687f;
+  font-weight: 400;
 }
 
 .site-grid {
