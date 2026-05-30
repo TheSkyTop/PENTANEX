@@ -918,8 +918,8 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="rounded-sm border border-white/70 bg-white/88 p-3 shadow-glow backdrop-blur-2xl xl:p-4">
-                <div className="rounded-sm border border-slate-200/70 bg-transparent p-4">
+              <div className="flex rounded-sm border border-white/70 bg-white/88 p-3 shadow-glow backdrop-blur-2xl xl:p-4">
+                <div className="my-auto w-full rounded-sm border border-slate-200/70 bg-transparent p-4">
                   <div className="inline-flex items-center gap-2 rounded-sm border border-signal/25 bg-white/62 px-3 py-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-signal shadow-[0_0_20px_rgba(15,174,166,0.08)]">
                     <ActiveIcon size={15} />
                     {localizedActiveTab.panelTitle}
@@ -936,7 +936,7 @@ export default function Home() {
                     <div className="grid grid-cols-5 gap-2">
                       {Array.from({ length: 10 }).map((_, index) => (
                         <span
-                          className="h-7 rounded-sm border border-slate-200 bg-white/82"
+                          className="h-7 rounded-sm border border-slate-300/80 bg-white shadow-[inset_0_0_0_1px_rgba(255,255,255,0.92)]"
                           key={`data-hall-${index}`}
                         />
                       ))}
