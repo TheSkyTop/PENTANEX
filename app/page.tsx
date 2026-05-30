@@ -475,9 +475,38 @@ function getRequestedTab() {
   return tabs.find((tab) => tab.id === requestedTabId) ?? tabs[0];
 }
 
+const ambientAccents: Record<string, { left: string; right: string; inner: string }> = {
+  campus: {
+    left: "absolute left-[-10rem] bottom-10 h-[26rem] w-[26rem] rounded-full bg-[#08756f]/[0.055] blur-3xl",
+    right: "absolute right-[-9rem] bottom-[2rem] h-[38rem] w-[38rem] rounded-full bg-[#08756f]/[0.058] blur-[118px]",
+    inner: "absolute right-[7rem] bottom-[9rem] h-[19rem] w-[19rem] rounded-full bg-[#08756f]/[0.026] blur-[88px]",
+  },
+  capacity: {
+    left: "absolute left-[-13rem] top-[18rem] h-[30rem] w-[30rem] rounded-full bg-[#08756f]/[0.048] blur-[104px]",
+    right: "absolute right-[-11rem] bottom-[5rem] h-[36rem] w-[36rem] rounded-full bg-[#08756f]/[0.055] blur-[118px]",
+    inner: "absolute right-[5rem] bottom-[15rem] h-[17rem] w-[17rem] rounded-full bg-[#08756f]/[0.024] blur-[84px]",
+  },
+  delivery: {
+    left: "absolute left-[-12rem] bottom-[9rem] h-[28rem] w-[28rem] rounded-full bg-[#08756f]/[0.052] blur-[104px]",
+    right: "absolute right-[-10rem] bottom-[10rem] h-[34rem] w-[34rem] rounded-full bg-[#08756f]/[0.052] blur-[116px]",
+    inner: "absolute right-[8rem] bottom-[4rem] h-[18rem] w-[18rem] rounded-full bg-[#08756f]/[0.023] blur-[84px]",
+  },
+  sustainability: {
+    left: "absolute left-[-11rem] top-[24rem] h-[32rem] w-[32rem] rounded-full bg-[#08756f]/[0.05] blur-[112px]",
+    right: "absolute right-[-12rem] bottom-[3rem] h-[40rem] w-[40rem] rounded-full bg-[#08756f]/[0.054] blur-[124px]",
+    inner: "absolute right-[10rem] bottom-[13rem] h-[15rem] w-[15rem] rounded-full bg-[#08756f]/[0.022] blur-[80px]",
+  },
+  contact: {
+    left: "absolute left-[-10rem] bottom-[7rem] h-[28rem] w-[28rem] rounded-full bg-[#08756f]/[0.048] blur-[108px]",
+    right: "absolute right-[-10rem] bottom-[7rem] h-[36rem] w-[36rem] rounded-full bg-[#08756f]/[0.056] blur-[118px]",
+    inner: "absolute right-[6rem] bottom-[18rem] h-[16rem] w-[16rem] rounded-full bg-[#08756f]/[0.024] blur-[82px]",
+  },
+};
+
 export default function Home() {
   const [activeTab, setActiveTab] = useState(getRequestedTab);
   const ActiveIcon = activeTab.icon;
+  const ambientAccent = ambientAccents[activeTab.id] ?? ambientAccents.campus;
   const activeBodyParagraphs = Array.isArray(activeTab.body) ? activeTab.body : [activeTab.body];
   const focusLabel =
     activeTab.id === "capacity"
@@ -508,9 +537,9 @@ export default function Home() {
     <SiteStructuredData />
     <main className="min-h-screen overflow-x-hidden bg-[#eef4f8] text-graphite">
       <div className="pointer-events-none fixed inset-0 overflow-hidden" aria-hidden="true">
-        <div className="absolute left-[-10rem] bottom-10 h-[26rem] w-[26rem] rounded-full bg-power/[0.06] blur-3xl" />
-        <div className="absolute right-[-9rem] bottom-[2rem] h-[38rem] w-[38rem] rounded-full bg-signal/[0.075] blur-[112px]" />
-        <div className="absolute right-[6rem] bottom-[8rem] h-[20rem] w-[20rem] rounded-full bg-power/[0.038] blur-[86px]" />
+        <div className={ambientAccent.left} />
+        <div className={ambientAccent.right} />
+        <div className={ambientAccent.inner} />
       </div>
       <a className="skip-link" href="#top">
         Skip to main content
