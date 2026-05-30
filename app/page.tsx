@@ -1,6 +1,6 @@
 "use client";
 
-import { useLayoutEffect, useMemo, useState } from "react";
+import { useEffect, useLayoutEffect, useMemo, useState } from "react";
 import {
   CheckCircle2,
   CircuitBoard,
@@ -772,6 +772,10 @@ export default function Home() {
     setLanguage(nextLanguage);
     window.localStorage.setItem("pentanex-language", nextLanguage);
   };
+
+  useEffect(() => {
+    document.documentElement.lang = language === "zh" ? "zh-CN" : "en-AU";
+  }, [language]);
 
   return (
     <>
