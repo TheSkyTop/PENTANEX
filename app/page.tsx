@@ -564,14 +564,13 @@ export default function Home() {
 
       <section
         id="top"
-        className="relative flex items-start justify-center px-3 pb-3 pt-3 sm:px-5"
+        className="relative flex items-start justify-center bg-[#eef4f8] px-3 pb-3 pt-3 sm:px-5"
       >
-        <div className="site-grid absolute inset-0 opacity-50" />
         <div className="pointer-events-none absolute left-[8%] top-[16%] h-72 w-72 rounded-full bg-signal/10 blur-3xl" />
         <div className="pointer-events-none absolute bottom-[12%] right-[6%] h-80 w-80 rounded-full bg-power/12 blur-3xl" />
 
         {activeTab.id === "campus" ? (
-          <div className="relative mx-auto grid w-full max-w-[1180px] items-stretch gap-3 bg-[#eef4f8]/94 lg:grid-cols-[minmax(0,1.04fr)_minmax(0,0.96fr)] xl:gap-4">
+          <div className="relative mx-auto grid w-full max-w-[1180px] items-stretch gap-3 bg-[#eef4f8] lg:grid-cols-[minmax(0,1.04fr)_minmax(0,0.96fr)] xl:gap-4">
             <div className="grid min-h-0 gap-3 xl:gap-4">
               <AustraliaLocationMap />
 
