@@ -130,6 +130,21 @@ const sustainabilitySdgs = [
   { number: "13", label: "Climate Action", color: "#3f7e44" },
 ];
 
+const capacityDimensions = [
+  {
+    title: "Deployable capacity blocks",
+    copy: "Repeatable data hall zones designed to support phased customer demand and predictable expansion.",
+  },
+  {
+    title: "High-density compute readiness",
+    copy: "Planning focus on AI rack density, cooling optionality, fibre diversity, and resilient operations.",
+  },
+  {
+    title: "Utility coordination",
+    copy: "Campus infrastructure is being shaped around staged power, cooling, security, and services corridors.",
+  },
+];
+
 const australiaMapYOffset = 34;
 
 const infrastructureNarrative = [
@@ -189,6 +204,53 @@ function SiteStructuredData() {
       dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
       type="application/ld+json"
     />
+  );
+}
+
+function CapacityPlatformGraphic() {
+  return (
+    <div className="mt-5 rounded-sm border border-slate-200/80 bg-white/72 p-4">
+      <div className="flex items-center justify-between gap-3">
+        <div>
+          <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-signal">
+            Capacity platform
+          </p>
+          <p className="mt-1 text-xs leading-5 text-steel">
+            Staged campus capacity, utility corridors, and customer-ready deployment zones.
+          </p>
+        </div>
+        <span className="shrink-0 rounded-sm border border-signal/30 bg-signal/10 px-2.5 py-1 text-xs font-bold text-signal">
+          560MW
+        </span>
+      </div>
+
+      <div className="mt-4 grid gap-2">
+        <div className="grid grid-cols-[1fr_0.8fr_1fr] items-center gap-2">
+          <span className="h-2 rounded-sm bg-signal/70" />
+          <span className="h-px bg-slate-200" />
+          <span className="h-2 rounded-sm bg-power/70" />
+        </div>
+        <div className="grid grid-cols-4 gap-2">
+          {["Data halls", "Cooling", "Power", "Fibre"].map((label) => (
+            <div className="rounded-sm border border-slate-200 bg-[#f8fbfd]/90 p-2" key={label}>
+              <span className="block h-5 rounded-sm border border-slate-200 bg-white/86" />
+              <p className="mt-2 text-[10px] font-semibold uppercase tracking-[0.12em] text-steel">
+                {label}
+              </p>
+            </div>
+          ))}
+        </div>
+        <div className="relative mt-1 h-12 overflow-hidden rounded-sm border border-slate-200 bg-[#f8fbfd]/90">
+          <div className="absolute left-4 right-4 top-1/2 h-px bg-signal/35" />
+          <div className="absolute left-[18%] top-3 h-6 w-px bg-signal/30" />
+          <div className="absolute left-[48%] top-3 h-6 w-px bg-signal/30" />
+          <div className="absolute left-[78%] top-3 h-6 w-px bg-signal/30" />
+          <p className="absolute bottom-2 left-4 text-[10px] font-semibold uppercase tracking-[0.16em] text-steel">
+            Utility spine and staged release pathway
+          </p>
+        </div>
+      </div>
+    </div>
   );
 }
 
@@ -476,73 +538,92 @@ export default function Home() {
         ) : (
           <div className="relative mx-auto w-full max-w-[1180px]">
             <div className="rounded-sm border border-white/70 bg-white/58 p-4 shadow-glow backdrop-blur-2xl xl:p-5">
-              <div className="grid gap-4 lg:grid-cols-[minmax(0,1.25fr)_minmax(280px,0.75fr)] xl:gap-5">
-                <div className="rounded-sm border border-slate-200/70 bg-white/68 p-5 xl:p-7">
-                  <div className="inline-flex items-center gap-2 rounded-sm border border-signal/25 bg-white/62 px-3 py-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-signal shadow-[0_0_20px_rgba(15,174,166,0.08)]">
-                    <ActiveIcon size={15} />
-                    {activeTab.panelTitle}
-                  </div>
-                  {activeTab.title ? (
-                    <h1 className="mt-3 max-w-3xl text-[clamp(1.65rem,3vw,2.5rem)] font-semibold leading-tight text-graphite">
-                      {activeTab.title}
-                    </h1>
-                  ) : null}
-                  <div className={`${activeTab.title ? "mt-4" : "mt-5"} max-w-3xl space-y-3`}>
-                    {activeBodyParagraphs.map((paragraph) => (
-                      <p className="text-base leading-8 text-steel" key={paragraph}>
-                        {paragraph}
-                      </p>
-                    ))}
-                  </div>
-                </div>
-
-                <aside className="rounded-sm border border-slate-200/70 bg-[#f8fbfd]/76 p-5 xl:p-6">
-                  <p className="text-xs font-semibold uppercase tracking-[0.2em] text-steel">
-                    {focusLabel}
-                  </p>
-                  <div className="mt-5 grid gap-3">
-                    {activeTab.points.map((point) => (
-                      <div className="flex gap-3 rounded-sm border border-slate-200 bg-white/72 p-4 shadow-[0_12px_28px_rgba(16,32,51,0.04)]" key={point}>
-                        <CheckCircle2 className="mt-0.5 shrink-0 text-power" size={18} />
-                        {point.includes("@") ? (
-                          <a className="break-words text-sm font-semibold leading-5 text-graphite transition hover:text-signal focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-signal" href={`mailto:${contactEmail}`}>
-                            {point}
-                          </a>
-                        ) : (
-                          <span className="text-sm font-semibold leading-5 text-graphite">{point}</span>
-                        )}
-                      </div>
-                    ))}
-                  </div>
-                  {activeTab.id === "sustainability" ? (
-                    <div className="mt-5 border-t border-slate-200/80 pt-4">
-                      <p className="text-xs font-semibold uppercase tracking-[0.2em] text-steel">
-                        SDG alignment
-                      </p>
-                      <div className="mt-3 grid gap-2">
-                        {sustainabilitySdgs.map((sdg) => (
-                          <div
-                            className="flex items-center gap-3 rounded-sm border border-slate-200 bg-white/72 p-3"
-                            key={sdg.number}
-                          >
-                            <span
-                              className="flex h-8 w-8 shrink-0 items-center justify-center rounded-sm text-sm font-bold text-white"
-                              style={{ backgroundColor: sdg.color }}
-                            >
-                              {sdg.number}
-                            </span>
-                            <span className="text-sm font-semibold leading-5 text-graphite">
-                              {sdg.label}
-                            </span>
+              <div className="grid items-stretch gap-4 lg:grid-cols-[minmax(0,1.25fr)_minmax(280px,0.75fr)] xl:gap-5">
+                <div className="flex rounded-sm border border-slate-200/70 bg-white/68 p-5 xl:p-7">
+                  <div className="my-auto w-full">
+                    <div className="inline-flex items-center gap-2 rounded-sm border border-signal/25 bg-white/62 px-3 py-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-signal shadow-[0_0_20px_rgba(15,174,166,0.08)]">
+                      <ActiveIcon size={15} />
+                      {activeTab.panelTitle}
+                    </div>
+                    {activeTab.title ? (
+                      <h1 className="mt-3 max-w-3xl text-[clamp(1.65rem,3vw,2.5rem)] font-semibold leading-tight text-graphite">
+                        {activeTab.title}
+                      </h1>
+                    ) : null}
+                    <div className={`${activeTab.title ? "mt-4" : "mt-5"} max-w-3xl space-y-3`}>
+                      {activeBodyParagraphs.map((paragraph) => (
+                        <p className="text-base leading-8 text-steel" key={paragraph}>
+                          {paragraph}
+                        </p>
+                      ))}
+                    </div>
+                    {activeTab.id === "capacity" ? (
+                      <div className="mt-5 grid gap-3 border-t border-slate-200/80 pt-4 md:grid-cols-3">
+                        {capacityDimensions.map((dimension) => (
+                          <div className="rounded-sm border border-slate-200 bg-[#f8fbfd]/82 p-3" key={dimension.title}>
+                            <p className="text-sm font-semibold leading-5 text-graphite">
+                              {dimension.title}
+                            </p>
+                            <p className="mt-2 text-xs leading-5 text-steel">
+                              {dimension.copy}
+                            </p>
                           </div>
                         ))}
                       </div>
-                    </div>
-                  ) : null}
-                  <div className="mt-5 border-t border-slate-200/80 pt-4">
-                    <p className="text-sm leading-6 text-steel">
-                      Information is presented at a planning level and should be read as subject to technical validation, approvals, customer requirements, and delivery sequencing.
+                    ) : null}
+                  </div>
+                </div>
+
+                <aside className="flex rounded-sm border border-slate-200/70 bg-[#f8fbfd]/76 p-5 xl:p-6">
+                  <div className="my-auto w-full">
+                    <p className="text-xs font-semibold uppercase tracking-[0.2em] text-steel">
+                      {focusLabel}
                     </p>
+                    <div className="mt-5 grid gap-3">
+                      {activeTab.points.map((point) => (
+                        <div className="flex gap-3 rounded-sm border border-slate-200 bg-white/72 p-4 shadow-[0_12px_28px_rgba(16,32,51,0.04)]" key={point}>
+                          <CheckCircle2 className="mt-0.5 shrink-0 text-power" size={18} />
+                          {point.includes("@") ? (
+                            <a className="break-words text-sm font-semibold leading-5 text-graphite transition hover:text-signal focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-signal" href={`mailto:${contactEmail}`}>
+                              {point}
+                            </a>
+                          ) : (
+                            <span className="text-sm font-semibold leading-5 text-graphite">{point}</span>
+                          )}
+                        </div>
+                      ))}
+                    </div>
+                    {activeTab.id === "capacity" ? <CapacityPlatformGraphic /> : null}
+                    {activeTab.id === "sustainability" ? (
+                      <div className="mt-5 border-t border-slate-200/80 pt-4">
+                        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-steel">
+                          SDG alignment
+                        </p>
+                        <div className="mt-3 grid gap-2">
+                          {sustainabilitySdgs.map((sdg) => (
+                            <div
+                              className="flex items-center gap-3 rounded-sm border border-slate-200 bg-white/72 p-3"
+                              key={sdg.number}
+                            >
+                              <span
+                                className="flex h-8 w-8 shrink-0 items-center justify-center rounded-sm text-sm font-bold text-white"
+                                style={{ backgroundColor: sdg.color }}
+                              >
+                                {sdg.number}
+                              </span>
+                              <span className="text-sm font-semibold leading-5 text-graphite">
+                                {sdg.label}
+                              </span>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    ) : null}
+                    <div className="mt-5 border-t border-slate-200/80 pt-4">
+                      <p className="text-sm leading-6 text-steel">
+                        Information is presented at a planning level and should be read as subject to technical validation, approvals, customer requirements, and delivery sequencing.
+                      </p>
+                    </div>
                   </div>
                 </aside>
               </div>
