@@ -2,12 +2,12 @@
 
 ## 1. Project Goal
 
-Build a professional public website for PENTANEX, an Australian data centre development company. The first flagship project is the 980 Hume Freeway 560MW campus.
+Build a professional public website for PENTANEX, an Australian data centre development company. The initial public positioning should describe a Melbourne North 400 MW + masterplanned campus without publishing unnecessary site-level detail.
 
 The website should support three business goals:
 
 1. Establish trust with investors, enterprise customers, government, energy partners, and local stakeholders.
-2. Present the 980 Hume Freeway project as a credible AI-ready hyperscale data centre campus.
+2. Present the Melbourne North project as a credible AI-ready hyperscale data centre campus.
 3. Create a consistent public contact system with a dedicated domain, support email, enquiries email, and phone number.
 
 ## 2. Positioning
@@ -72,7 +72,7 @@ Design principle:
 Phase 1 public launch can be compact and polished:
 
 - Home
-- 980 Hume Freeway Campus
+- Melbourne North Campus
 - Capabilities
 - Sustainability
 - About
@@ -91,13 +91,13 @@ Future expansion:
 1. Hero
    - PENTANEX as the first-viewport signal.
    - Short positioning line.
-   - 980 Hume Freeway 560MW as the flagship proof point.
+   - Melbourne North 400 MW + as the flagship proof point.
    - Primary CTA: Contact PENTANEX.
    - Secondary CTA: View Campus.
 
 2. Metric strip
-   - 560MW planned capacity.
-   - 980 Hume Freeway location.
+   - 400 MW + masterplanned capacity.
+   - Melbourne North location.
    - AI-ready hyperscale campus.
    - Australia-focused digital infrastructure.
 
@@ -185,7 +185,7 @@ Reasons:
 Minimum required before launch:
 
 - Confirm legal company name and registered address.
-- Confirm whether "980 Hume Freeway 560MW" is public and approved wording.
+- Confirm whether detailed street address, planning status, and exact capacity figures are public and approved wording.
 - Confirm project suburb/council/state details.
 - Confirm claims that can be made publicly: capacity, land size, grid connection, planning status, sustainability targets, timeline.
 - Provide logo or confirm that we should create a temporary wordmark.
@@ -238,7 +238,7 @@ Build a polished Phase 1 prototype in this repository using Next.js and Tailwind
 Initial prototype assumptions:
 
 - Company name: PENTANEX
-- Flagship project: 980 Hume Freeway 560MW Campus
+- Flagship project: Melbourne North 400 MW + Campus
 - Primary market: Australia
 - Main CTA: Contact PENTANEX
 - Temporary public email copy: enquiries@pentanex.com.au

@@ -16,7 +16,6 @@ export const metadata: Metadata = {
     "data centre",
     "AI infrastructure",
     "hyperscale campus",
-    "Craigieburn",
     "Melbourne North",
     "Australian digital infrastructure",
   ],

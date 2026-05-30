@@ -19,10 +19,10 @@ import type { Feature, FeatureCollection, Geometry } from "geojson";
 import countries from "world-atlas/countries-50m.json";
 
 const project = {
-  address: "980 Hume Freeway, Craigieburn VIC 3064",
-  capacity: "560MW",
-  corridor: "Melbourne northern growth corridor",
-  coordinates: [144.934, -37.594] as [number, number],
+  address: "Melbourne North, Victoria",
+  capacity: "400 MW +",
+  corridor: "Melbourne North infrastructure corridor",
+  coordinates: [144.96, -37.62] as [number, number],
 };
 
 const contactEmail = "enquiries@pentanex.com.au";
@@ -45,11 +45,11 @@ const tabs = [
     title: "We are developing a masterplanned hyperscale campus for AI and cloud growth.",
     body: [
       "PENTANEX is planning a long-term digital infrastructure platform designed for hyperscale cloud, accelerated compute, enterprise AI, and sovereign workload demand.",
-      "The campus strategy is centred on expandable data hall zones, customer-ready utility corridors, secure operations, fibre pathways, and staged deployment flexibility.",
+      "The campus strategy is centred on expandable capacity zones, resilient utility planning, secure operations, connectivity pathways, and staged deployment flexibility.",
       "The objective is to provide a scalable foundation for high-density compute environments, resilient customer growth, and future-ready digital infrastructure across Australia and the Asia-Pacific region.",
     ],
-    points: ["560MW masterplanned campus capacity", "Expandable data hall precincts", "Melbourne North infrastructure corridor"],
-    sideNote: "Campus planning is structured around scalable data hall zones, customer-ready utility corridors, secure operations, and long-term expansion flexibility.",
+    points: ["400 MW + masterplanned campus capacity", "Expandable capacity precincts", "Melbourne North infrastructure corridor"],
+    sideNote: "Campus planning is structured around scalable capacity zones, resilient operations, and long-term expansion flexibility.",
   },
   {
     id: "capacity",
@@ -58,11 +58,11 @@ const tabs = [
     panelTitle: "Capacity Strategy",
     title: "",
     body: [
-      "The PENTANEX capacity strategy is centred on a masterplanned 560MW hyperscale campus envelope for cloud platforms, AI training and inference clusters, accelerated compute environments, and sovereign enterprise workloads.",
-      "Capacity is being planned as a staged infrastructure platform rather than a single building, with data hall precincts, utility corridors, cooling pathways, fibre diversity, and customer-ready deployment zones able to scale in line with demand.",
-      "For hyperscale and AI customers, the capacity architecture prioritises high-density rack environments, repeatable data hall modules, secure operations, energy and cooling optionality, and predictable release pathways across multiple deployment phases.",
+      "The PENTANEX capacity strategy is centred on a masterplanned 400 MW + hyperscale campus platform for cloud, AI, accelerated compute, and sovereign enterprise workloads.",
+      "Capacity is being planned as a staged infrastructure platform rather than a single building, with expandable precincts, resilient utility planning, connectivity diversity, and deployment zones able to scale in line with demand.",
+      "For hyperscale and AI customers, the capacity architecture prioritises secure operations, high-density compute readiness, energy and cooling optionality, and predictable release pathways across multiple development phases.",
     ],
-    points: ["560MW masterplanned campus capacity", "High-density AI and accelerated compute", "Scalable staged data hall deployment"],
+    points: ["400 MW + masterplanned campus capacity", "High-density AI and accelerated compute", "Scalable staged deployment"],
     sideNote: "",
   },
   {
@@ -72,9 +72,9 @@ const tabs = [
     panelTitle: "Delivery Pathway",
     title: "",
     body: [
-      "PENTANEX is approaching delivery through a disciplined infrastructure development pathway, aligning planning approvals, civil enabling works, utility interfaces, design governance, procurement sequencing, and stakeholder coordination into a staged execution model.",
-      "The delivery strategy is intended to translate a large-scale masterplanned campus into bankable, customer-ready capacity. Key workstreams include grid and energy interface planning, fibre pathways, data hall standards, cooling architecture, secure access planning, and operational readiness.",
-      "For hyperscale and enterprise customers, delivery certainty is built through clear milestone control: site readiness, services coordination, modular data hall release, commissioning discipline, resilience validation, and expansion optionality across future phases.",
+      "PENTANEX is approaching delivery through a disciplined infrastructure development pathway, aligning approvals, enabling works, utility interfaces, design governance, and stakeholder coordination into a staged execution model.",
+      "The delivery strategy is intended to translate a large-scale masterplanned campus into credible staged capacity. Key workstreams include energy interface planning, connectivity pathways, secure access planning, and operational readiness.",
+      "For hyperscale and enterprise customers, delivery certainty is supported through milestone control, services coordination, staged capacity release, resilience validation, and expansion optionality across future phases.",
     ],
     points: ["Planning approvals and enabling works", "Grid, energy, fibre, and cooling interfaces", "Customer-ready milestone governance"],
     sideNote: "",
@@ -88,8 +88,8 @@ const tabs = [
     body: [
       "PENTANEX treats sustainability as an infrastructure design discipline. The campus pathway focuses on operating efficiency, resilient energy strategy, climate-aware design, and environmental performance across development and operations.",
       "Energy planning is a core design driver. Grid connection, renewable supply, firming arrangements, backup systems, and customer load growth need to be coordinated as part of the same long-term capacity platform.",
-      "Cooling and water strategy are central to AI-ready capacity. The campus approach considers efficient operating envelopes, water-conscious cooling pathways, heat rejection management, and plant optionality for different rack density profiles.",
-      "Operational sustainability extends beyond energy use. Secure operations, monitoring and controls, maintenance access, waste and materials management, responsible procurement, community engagement, and reporting structures all support a credible hyperscale platform.",
+      "Cooling and water strategy are central to AI-ready capacity. The campus approach considers efficient operating envelopes, water-conscious cooling pathways, heat management, and plant optionality for varied customer technology profiles.",
+      "Operational sustainability extends beyond energy use. Secure operations, monitoring and controls, maintenance access, materials awareness, community engagement, and reporting structures all support a credible hyperscale platform.",
     ],
     points: ["Renewable and firmed energy integration", "Efficient cooling and water-conscious design", "Lifecycle resilience and accountable reporting"],
     sideNote: "",
@@ -113,11 +113,11 @@ const tabs = [
 const footerGroups = [
   {
     heading: "Campus",
-    items: ["Craigieburn VIC", "Melbourne North", "Hume corridor"],
+    items: ["Melbourne North", "Victoria", "Infrastructure corridor"],
   },
   {
     heading: "Capacity",
-    items: ["560MW campus", "AI-ready compute", "Staged data halls"],
+    items: ["400 MW + campus", "AI-ready compute", "Staged capacity"],
   },
   {
     heading: "Platform",
@@ -179,16 +179,9 @@ function SiteStructuredData() {
       name: "PENTANEX Melbourne North campus",
       address: {
         "@type": "PostalAddress",
-        streetAddress: "980 Hume Freeway",
-        addressLocality: "Craigieburn",
+        addressLocality: "Melbourne North",
         addressRegion: "VIC",
-        postalCode: "3064",
         addressCountry: "AU",
-      },
-      geo: {
-        "@type": "GeoCoordinates",
-        latitude: project.coordinates[1],
-        longitude: project.coordinates[0],
       },
     },
   };
@@ -210,11 +203,11 @@ function CapacityPlatformGraphic() {
             Capacity platform
           </p>
           <p className="mt-1 text-xs leading-5 text-steel">
-            Staged campus capacity, utility corridors, and customer-ready deployment zones.
+            Staged campus capacity, utility planning, and deployment zones.
           </p>
         </div>
         <span className="shrink-0 rounded-sm border border-signal/30 bg-signal/10 px-2.5 py-1 text-xs font-bold text-signal">
-          560MW
+          400 MW +
         </span>
       </div>
 
@@ -225,7 +218,7 @@ function CapacityPlatformGraphic() {
           <span className="h-2 rounded-sm bg-power/70" />
         </div>
         <div className="grid grid-cols-4 gap-2">
-          {["Data halls", "Cooling", "Power", "Fibre"].map((label) => (
+          {["Capacity", "Cooling", "Power", "Fibre"].map((label) => (
             <div className="rounded-sm border border-slate-200 bg-[#f8fbfd]/90 p-2" key={label}>
               <span className="block h-5 rounded-sm border border-slate-200 bg-white/86" />
               <p className="mt-2 text-[10px] font-semibold uppercase tracking-[0.12em] text-steel">
@@ -240,7 +233,7 @@ function CapacityPlatformGraphic() {
           <div className="absolute left-[48%] top-3 h-6 w-px bg-signal/30" />
           <div className="absolute left-[78%] top-3 h-6 w-px bg-signal/30" />
           <p className="absolute bottom-2 left-4 text-[10px] font-semibold uppercase tracking-[0.16em] text-steel">
-            Utility spine and staged release pathway
+            Utility planning and staged release pathway
           </p>
         </div>
       </div>
@@ -380,7 +373,7 @@ function AustraliaLocationMap() {
 
       <div className="relative">
         <svg
-          aria-label="Accurate Australia map with PENTANEX campus location marker near Craigieburn, Victoria"
+          aria-label="Australia map with PENTANEX campus marker in Melbourne North, Victoria"
           className="h-[clamp(210px,28vh,270px)] w-full"
           role="img"
           viewBox="0 0 620 360"
@@ -462,7 +455,7 @@ function AustraliaLocationMap() {
               y={sitePoint[1] - 12}
             />
             <text fill="#0faea6" fontSize="11.5" fontWeight="800" letterSpacing="0.7" x={sitePoint[0] + 64} y={sitePoint[1] + 10}>
-              Craigieburn VIC, Australia
+              Melbourne North, VIC
             </text>
           </g>
         </svg>
@@ -503,6 +496,12 @@ export default function Home() {
     <>
     <SiteStructuredData />
     <main className="min-h-screen overflow-x-hidden bg-[#eef4f8] text-graphite">
+      <div className="pointer-events-none fixed inset-0 overflow-hidden" aria-hidden="true">
+        <div className="absolute right-[-8rem] top-24 h-[38rem] w-[18rem] rotate-12 bg-signal/[0.055]" />
+        <div className="absolute right-[10%] top-[48%] h-56 w-72 -rotate-6 border border-signal/[0.08] bg-power/[0.035]" />
+        <div className="absolute left-[-7rem] bottom-20 h-72 w-80 rotate-6 border border-signal/[0.06] bg-signal/[0.04]" />
+        <div className="absolute right-[24%] bottom-[-8rem] h-64 w-[34rem] -rotate-3 bg-power/[0.045]" />
+      </div>
       <a className="skip-link" href="#top">
         Skip to main content
       </a>
