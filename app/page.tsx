@@ -65,27 +65,39 @@ const tabs = [
     label: "Delivery",
     icon: ShieldCheck,
     panelTitle: "Delivery Pathway",
-    title: "We are building a delivery pathway from masterplan to customer-ready capacity.",
-    body: "PENTANEX is approaching delivery through disciplined project controls: planning approvals, grid and energy interfaces, civil enabling works, data hall design standards, procurement sequencing, and stakeholder coordination. The objective is to convert a large-scale campus plan into staged, bankable, and customer-ready infrastructure capacity.",
-    points: ["Planning and approvals workstream", "Grid and energy interface strategy", "Customer-ready delivery milestones"],
+    title: "",
+    body: [
+      "PENTANEX is approaching delivery through a disciplined infrastructure development pathway, aligning planning approvals, civil enabling works, utility interfaces, design governance, procurement sequencing, and stakeholder coordination into a staged execution model.",
+      "The delivery strategy is intended to translate a large-scale masterplanned campus into bankable, customer-ready capacity. Key workstreams include grid and energy interface planning, fibre pathways, data hall standards, cooling architecture, secure access planning, and operational readiness.",
+      "For hyperscale and enterprise customers, delivery certainty is built through clear milestone control: site readiness, services coordination, modular data hall release, commissioning discipline, resilience validation, and expansion optionality across future phases.",
+    ],
+    points: ["Planning approvals and enabling works", "Grid, energy, fibre, and cooling interfaces", "Customer-ready milestone governance"],
   },
   {
     id: "sustainability",
     label: "Sustainability",
     icon: Trees,
     panelTitle: "Resilient Infrastructure",
-    title: "We are designing for resilient, efficient, and accountable digital infrastructure.",
-    body: "Our sustainability pathway is focused on practical outcomes that can be engineered and verified: efficient operating envelopes, renewable and firmed energy integration, water-conscious cooling options, heat and environmental management, and a transparent community interface. The campus is being planned for long-term operational resilience as AI and cloud demand scales.",
-    points: ["Renewable and firmed energy planning", "Efficient cooling and operating envelopes", "Long-term operational resilience"],
+    title: "",
+    body: [
+      "PENTANEX is treating sustainability as an infrastructure design discipline, not a marketing overlay. The campus pathway is focused on measurable operating efficiency, resilient energy strategy, climate-aware design, and long-term environmental performance across development and operations.",
+      "The sustainability planning lens includes renewable and firmed energy integration, efficient cooling options, water-conscious design, heat and environmental management, materials and construction coordination, and transparent stakeholder engagement as the campus moves through planning and delivery.",
+      "For hyperscale and AI workloads, sustainable performance must be engineered into the platform from the beginning: scalable energy procurement, high-efficiency operating envelopes, operational resilience, lifecycle accountability, and the ability to adapt as customer requirements and reporting standards mature.",
+    ],
+    points: ["Renewable and firmed energy integration", "Efficient cooling and water-conscious design", "Lifecycle resilience and accountable reporting"],
   },
   {
     id: "contact",
     label: "Contact",
     icon: Mail,
     panelTitle: "Strategic Engagement",
-    title: "Speak with PENTANEX about capacity, partnerships, and project engagement.",
-    body: "We welcome project-level conversations with hyperscale operators, cloud platforms, enterprise AI customers, energy and infrastructure partners, investors, and local stakeholders. Enquiries should focus on capacity requirements, partnership alignment, delivery pathway, and strategic infrastructure engagement for the Melbourne North campus.",
-    points: [contactEmailDisplay, "Capacity and partnership enquiries", "Melbourne, Australia"],
+    title: "",
+    body: [
+      "PENTANEX welcomes strategic conversations with hyperscale operators, cloud platforms, enterprise AI customers, infrastructure partners, energy market participants, investors, and government or community stakeholders aligned with Australia's next compute cycle.",
+      "Engagement can begin through project enquiries, capacity requirement discussions, partnership alignment, investment and infrastructure conversations, or introductory briefings on the Melbourne North campus strategy and staged delivery pathway.",
+      "Site tours and project briefings can be coordinated by appointment as the development program progresses. Early conversations should focus on customer demand profile, technical requirements, timing, energy and connectivity needs, and the commercial pathway for participation.",
+    ],
+    points: [contactEmailDisplay, "Capacity and partnership enquiries", "Site tour requests by appointment"],
   },
 ];
 
@@ -110,6 +122,13 @@ const footerGroups = [
 
 const footerIntro =
   "Developing scalable AI-ready digital infrastructure for hyperscale cloud, accelerated compute, and sovereign enterprise workloads across Australia.";
+
+const sustainabilitySdgs = [
+  { number: "7", label: "Affordable and Clean Energy", color: "#fcc30b" },
+  { number: "9", label: "Industry, Innovation and Infrastructure", color: "#fd6925" },
+  { number: "12", label: "Responsible Consumption and Production", color: "#bf8b2e" },
+  { number: "13", label: "Climate Action", color: "#3f7e44" },
+];
 
 const australiaMapYOffset = 34;
 
@@ -308,6 +327,7 @@ export default function Home() {
   const [activeTab, setActiveTab] = useState(tabs[0]);
   const ActiveIcon = activeTab.icon;
   const activeBodyParagraphs = Array.isArray(activeTab.body) ? activeTab.body : [activeTab.body];
+  const focusLabel = activeTab.id === "contact" ? "Engagement channels" : "Planning focus";
 
   return (
     <>
@@ -478,7 +498,7 @@ export default function Home() {
 
                 <aside className="rounded-sm border border-slate-200/70 bg-[#f8fbfd]/76 p-5 xl:p-6">
                   <p className="text-xs font-semibold uppercase tracking-[0.2em] text-steel">
-                    Planning focus
+                    {focusLabel}
                   </p>
                   <div className="mt-5 grid gap-3">
                     {activeTab.points.map((point) => (
@@ -494,6 +514,31 @@ export default function Home() {
                       </div>
                     ))}
                   </div>
+                  {activeTab.id === "sustainability" ? (
+                    <div className="mt-5 border-t border-slate-200/80 pt-4">
+                      <p className="text-xs font-semibold uppercase tracking-[0.2em] text-steel">
+                        SDG alignment
+                      </p>
+                      <div className="mt-3 grid gap-2">
+                        {sustainabilitySdgs.map((sdg) => (
+                          <div
+                            className="flex items-center gap-3 rounded-sm border border-slate-200 bg-white/72 p-3"
+                            key={sdg.number}
+                          >
+                            <span
+                              className="flex h-8 w-8 shrink-0 items-center justify-center rounded-sm text-sm font-bold text-white"
+                              style={{ backgroundColor: sdg.color }}
+                            >
+                              {sdg.number}
+                            </span>
+                            <span className="text-sm font-semibold leading-5 text-graphite">
+                              {sdg.label}
+                            </span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  ) : null}
                   <div className="mt-5 border-t border-slate-200/80 pt-4">
                     <p className="text-sm leading-6 text-steel">
                       Information is presented at a planning level and should be read as subject to technical validation, approvals, customer requirements, and delivery sequencing.
