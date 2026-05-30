@@ -51,7 +51,10 @@ export const metadata: Metadata = {
     images: ["/pentanex-logo.png"],
   },
   icons: {
-    icon: "/pentanex-logo.png",
+    icon: [
+      { url: "/favicon.svg", type: "image/svg+xml" },
+      { url: "/pentanex-logo.png", sizes: "512x512", type: "image/png" },
+    ],
     apple: "/pentanex-logo.png",
   },
   manifest: "/site.webmanifest",

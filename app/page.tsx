@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useLayoutEffect, useMemo, useState } from "react";
 import {
   CheckCircle2,
   CircuitBoard,
@@ -325,7 +325,7 @@ function ContactPathwayGraphic() {
           </div>
         ))}
       </div>
-      <div className="mt-4 grid grid-cols-3 gap-2 border-t border-slate-200/80 pt-4">
+      <div className="mt-4 grid gap-2 border-t border-slate-200/80 pt-4 sm:grid-cols-3">
         {contactModes.map((mode) => {
           const ModeIcon = mode.icon;
 
@@ -355,7 +355,7 @@ function AustraliaLocationMap() {
     ) as Feature<Geometry>;
     const projection = geoMercator().fitExtent([[24, 8], [596, 352]], australiaFeature);
     const path = geoPath(projection);
-    const worldProjection = geoNaturalEarth1().fitExtent([[-78, -58], [698, 418]], world);
+    const worldProjection = geoNaturalEarth1().fitExtent([[-108, -58], [728, 418]], world);
     const worldPath = geoPath(worldProjection);
 
     return {
@@ -410,7 +410,7 @@ function AustraliaLocationMap() {
           </defs>
           <path d="M36 180H584" stroke="url(#mapAxisX)" strokeWidth="1.4" />
           <path d="M310 38V326" stroke="url(#mapAxisY)" strokeWidth="1.2" />
-          <g opacity="0.24">
+          <g opacity="0.24" transform="translate(310 180) scale(1.08 1) translate(-310 -180)">
             {worldPaths.map((countryPath, index) => (
               <path
                 d={countryPath}
@@ -454,7 +454,7 @@ function AustraliaLocationMap() {
               x={sitePoint[0] + 50}
               y={sitePoint[1] - 12}
             />
-            <text fill="#0faea6" fontSize="11.5" fontWeight="800" letterSpacing="0.7" x={sitePoint[0] + 64} y={sitePoint[1] + 10}>
+            <text fill="#0faea6" fontSize="11.5" fontWeight="500" letterSpacing="0.7" x={sitePoint[0] + 64} y={sitePoint[1] + 10}>
               Melbourne North, VIC
             </text>
           </g>
@@ -464,8 +464,19 @@ function AustraliaLocationMap() {
   );
 }
 
+function getRequestedTab() {
+  if (typeof window === "undefined") {
+    return tabs[0];
+  }
+
+  const requestedTabId =
+    window.location.hash.replace("#", "") || window.localStorage.getItem("pentanex-active-tab");
+
+  return tabs.find((tab) => tab.id === requestedTabId) ?? tabs[0];
+}
+
 export default function Home() {
-  const [activeTab, setActiveTab] = useState(tabs[0]);
+  const [activeTab, setActiveTab] = useState(getRequestedTab);
   const ActiveIcon = activeTab.icon;
   const activeBodyParagraphs = Array.isArray(activeTab.body) ? activeTab.body : [activeTab.body];
   const focusLabel =
@@ -477,13 +488,13 @@ export default function Home() {
           ? "Sustainability priorities"
           : "Engagement priorities";
 
-  useEffect(() => {
-    const savedTabId = window.location.hash.replace("#", "") || window.localStorage.getItem("pentanex-active-tab");
-    const savedTab = tabs.find((tab) => tab.id === savedTabId);
+  useLayoutEffect(() => {
+    const syncRequestedTab = () => setActiveTab(getRequestedTab());
 
-    if (savedTab) {
-      setActiveTab(savedTab);
-    }
+    syncRequestedTab();
+    window.addEventListener("hashchange", syncRequestedTab);
+
+    return () => window.removeEventListener("hashchange", syncRequestedTab);
   }, []);
 
   const selectTab = (tab: (typeof tabs)[number]) => {
@@ -596,7 +607,7 @@ export default function Home() {
                 <div className="grid gap-2 sm:grid-cols-4">
                   {metrics.map((metric) => (
                     <div className="rounded-sm border border-slate-200/70 bg-white/66 p-3" key={metric.label}>
-                      <p className="text-[clamp(0.95rem,1.35vw,1.125rem)] font-semibold text-graphite">
+                      <p className="text-[clamp(0.86rem,1.05vw,1rem)] font-semibold leading-tight text-signal">
                         {metric.value}
                       </p>
                       <p className="mt-1 text-[11px] leading-4 text-steel">{metric.label}</p>
