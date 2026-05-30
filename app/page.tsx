@@ -121,7 +121,7 @@ const footerGroups = [
   },
   {
     heading: "Platform",
-    items: ["Cloud and AI workloads", "Power, cooling, fibre", "Sovereign capability"],
+    items: ["Cloud / AI workloads", "Power + cooling + fibre", "Sovereign capability"],
   },
   {
     heading: "Contact",
@@ -312,7 +312,7 @@ function ContactPathwayGraphic() {
   ];
 
   return (
-    <div className="mt-5 rounded-sm border border-slate-200/80 bg-white/72 p-4">
+    <div className="rounded-sm border border-slate-200/80 bg-white/88 p-4">
       <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-signal">
         Contact pathway
       </p>
@@ -337,7 +337,7 @@ function ContactPathwayGraphic() {
           const ModeIcon = mode.icon;
 
           return (
-            <div className="rounded-sm border border-slate-200 bg-[#f8fbfd]/90 p-3" key={mode.label}>
+            <div className="rounded-sm border border-slate-200 bg-white/92 p-3" key={mode.label}>
               <div className="flex h-10 w-10 items-center justify-center rounded-sm border border-signal/25 bg-signal/10 text-signal">
                 <ModeIcon size={18} />
               </div>
@@ -642,8 +642,8 @@ export default function Home() {
         ) : (
           <div className="relative mx-auto w-full max-w-[1180px]">
             <div className="rounded-sm border border-white/70 bg-white/58 p-4 shadow-glow backdrop-blur-2xl xl:p-5">
-              <div className="grid items-center gap-4 lg:grid-cols-[minmax(0,1.22fr)_minmax(300px,0.78fr)] xl:gap-5">
-                <div className="flex self-center rounded-sm border border-slate-200/70 bg-white/68 p-5 xl:p-7">
+              <div className="grid items-stretch gap-4 lg:grid-cols-[minmax(0,1.22fr)_minmax(300px,0.78fr)] xl:gap-5">
+                <div className="flex rounded-sm border border-slate-200/70 bg-white/86 p-5 shadow-[0_18px_44px_rgba(16,32,51,0.04)] backdrop-blur-2xl xl:p-7">
                   <div className="mx-auto w-full max-w-3xl">
                     <div className="inline-flex items-center gap-2 rounded-sm border border-signal/25 bg-white/62 px-3 py-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-signal shadow-[0_0_20px_rgba(15,174,166,0.08)]">
                       <ActiveIcon size={15} />
@@ -664,7 +664,7 @@ export default function Home() {
                   </div>
                 </div>
 
-                <aside className="flex self-center rounded-sm border border-slate-200/70 bg-[#f8fbfd]/76 p-5 xl:p-6">
+                <aside className="flex rounded-sm border border-slate-200/70 bg-white/84 p-5 shadow-[0_18px_44px_rgba(16,32,51,0.04)] backdrop-blur-2xl xl:p-6">
                   <div className="mx-auto w-full max-w-md">
                     {activeTab.id !== "contact" ? (
                       <>
