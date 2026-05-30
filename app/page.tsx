@@ -456,8 +456,8 @@ export default function Home() {
         ) : (
           <div className="relative mx-auto w-full max-w-[1180px]">
             <div className="rounded-sm border border-white/70 bg-white/58 p-4 shadow-glow backdrop-blur-2xl xl:p-5">
-              <div className="grid gap-4 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] xl:gap-5">
-                <div className="rounded-sm border border-slate-200/70 bg-white/68 p-5 xl:p-6">
+              <div className="grid gap-4 lg:grid-cols-[minmax(0,1.25fr)_minmax(280px,0.75fr)] xl:gap-5">
+                <div className="rounded-sm border border-slate-200/70 bg-white/68 p-5 xl:p-7">
                   <div className="inline-flex items-center gap-2 rounded-sm border border-signal/25 bg-white/62 px-3 py-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-signal shadow-[0_0_20px_rgba(15,174,166,0.08)]">
                     <ActiveIcon size={15} />
                     {activeTab.panelTitle}
@@ -476,13 +476,13 @@ export default function Home() {
                   </div>
                 </div>
 
-                <div className="rounded-sm border border-slate-200/70 bg-[#f8fbfd]/76 p-5 xl:p-6">
+                <aside className="rounded-sm border border-slate-200/70 bg-[#f8fbfd]/76 p-5 xl:p-6">
                   <p className="text-xs font-semibold uppercase tracking-[0.2em] text-steel">
-                    Current focus
+                    Planning focus
                   </p>
                   <div className="mt-5 grid gap-3">
                     {activeTab.points.map((point) => (
-                      <div className="flex gap-3 rounded-sm border border-slate-200 bg-white/72 p-4" key={point}>
+                      <div className="flex gap-3 rounded-sm border border-slate-200 bg-white/72 p-4 shadow-[0_12px_28px_rgba(16,32,51,0.04)]" key={point}>
                         <CheckCircle2 className="mt-0.5 shrink-0 text-power" size={18} />
                         {point.includes("@") ? (
                           <a className="break-words text-sm font-semibold leading-5 text-graphite transition hover:text-signal focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-signal" href={`mailto:${contactEmail}`}>
@@ -494,19 +494,12 @@ export default function Home() {
                       </div>
                     ))}
                   </div>
-
-                  <div className="mt-6 grid grid-cols-5 gap-2">
-                    {Array.from({ length: 20 }).map((_, index) => (
-                      <span
-                        className="h-8 rounded-sm border border-slate-200 bg-white/80"
-                        key={`tab-capacity-${index}`}
-                      />
-                    ))}
+                  <div className="mt-5 border-t border-slate-200/80 pt-4">
+                    <p className="text-sm leading-6 text-steel">
+                      Information is presented at a planning level and should be read as subject to technical validation, approvals, customer requirements, and delivery sequencing.
+                    </p>
                   </div>
-                  <p className="mt-3 text-[11px] uppercase tracking-[0.18em] text-steel">
-                    integrated data hall planning
-                  </p>
-                </div>
+                </aside>
               </div>
             </div>
           </div>
