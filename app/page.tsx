@@ -27,7 +27,9 @@ const project = {
 
 const contactEmail = "enquiries@pentanex.com.au";
 const contactEmailDisplay = "Enquiries@pentanex.com.au";
-const siteUrl = "https://pentanex.com.au";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://pentanex.com.au";
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+const assetPath = (path: string) => `${basePath}${path}`;
 type Language = "en" | "zh";
 
 const languageOptions: Array<{ id: Language; label: string; shortLabel: string }> = [
@@ -374,7 +376,7 @@ function PentanexLogo() {
     <img
       alt=""
       className="h-11 w-11 shrink-0 object-contain"
-      src="/pentanex-logo.png"
+      src={assetPath("/pentanex-logo.png")}
     />
   );
 }

@@ -2,13 +2,13 @@
   "name": "PENTANEX",
   "short_name": "PENTANEX",
   "description": "AI-ready Australian data centre infrastructure.",
-  "start_url": "/",
+  "start_url": ".",
   "display": "standalone",
   "background_color": "#eef4f8",
   "theme_color": "#0faea6",
   "icons": [
     {
-      "src": "/pentanex-logo.png",
+      "src": "pentanex-logo.png",
       "sizes": "512x512",
       "type": "image/png"
     }

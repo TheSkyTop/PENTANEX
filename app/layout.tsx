@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import "./globals.css";
 
-const siteUrl = "https://pentanex.com.au";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://pentanex.com.au";
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+const assetPath = (path: string) => `${basePath}${path}`;
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -36,7 +38,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/pentanex-logo.png",
+        url: "pentanex-logo.png",
         width: 512,
         height: 512,
         alt: "PENTANEX logo",
@@ -48,16 +50,16 @@ export const metadata: Metadata = {
     title: "PENTANEX | AI-ready Australian Data Centre Infrastructure",
     description:
       "AI-ready digital infrastructure planned for hyperscale cloud, accelerated compute, enterprise AI, and sovereign workload demand.",
-    images: ["/pentanex-logo.png"],
+    images: ["pentanex-logo.png"],
   },
   icons: {
     icon: [
-      { url: "/favicon.svg", type: "image/svg+xml" },
-      { url: "/pentanex-logo.png", sizes: "512x512", type: "image/png" },
+      { url: assetPath("/favicon.svg"), type: "image/svg+xml" },
+      { url: assetPath("/pentanex-logo.png"), sizes: "512x512", type: "image/png" },
     ],
-    apple: "/pentanex-logo.png",
+    apple: assetPath("/pentanex-logo.png"),
   },
-  manifest: "/site.webmanifest",
+  manifest: assetPath("/site.webmanifest"),
   robots: {
     index: true,
     follow: true,
