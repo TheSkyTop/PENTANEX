@@ -6,6 +6,7 @@ import {
   CircuitBoard,
   Factory,
   Globe2,
+  Languages,
   Mail,
   MapPin,
   Phone,
@@ -28,6 +29,12 @@ const project = {
 const contactEmail = "enquiries@pentanex.com.au";
 const contactEmailDisplay = "Enquiries@pentanex.com.au";
 const siteUrl = "https://pentanex.com.au";
+type Language = "en" | "zh";
+
+const languageOptions: Array<{ id: Language; label: string; shortLabel: string }> = [
+  { id: "en", label: "English", shortLabel: "EN" },
+  { id: "zh", label: "中文", shortLabel: "中文" },
+];
 
 const metrics = [
   { value: project.capacity, label: "Masterplanned hyperscale campus capacity" },
@@ -110,6 +117,15 @@ const tabs = [
   },
 ];
 
+type LocalizedTabCopy = {
+  label: string;
+  panelTitle: string;
+  title: string;
+  body: string[];
+  points: string[];
+  sideNote: string;
+};
+
 const footerGroups = [
   {
     heading: "Campus",
@@ -146,6 +162,213 @@ const infrastructureNarrative = [
   "The project is being designed for high-density AI and accelerated computing environments, supported by scalable power infrastructure, renewable and firmed energy integration, operational resilience, and long-term sustainability.",
   "Positioned to support the rapid growth of AI training, inference, and large-scale cloud deployment across Australia and the Asia-Pacific region, PENTANEX aims to deliver a future-ready hyperscale platform for the next compute cycle driven by artificial intelligence and digital transformation.",
 ];
+
+type PageCopy = {
+  navAria: string;
+  mobileNavAria: string;
+  languageLabel: string;
+  skip: string;
+  brandSubtitle: string;
+  infrastructureBadge: string;
+  dataHallCapacity: string;
+  footerCopyright: string;
+  footerTagline: string;
+  metrics: typeof metrics;
+  tabs: Record<string, LocalizedTabCopy>;
+  footerGroups: typeof footerGroups;
+  footerIntro: string;
+  infrastructureNarrative: string[];
+  focusLabels: Record<string, string>;
+  capacityGraphic: { title: string; description: string; blocks: string[]; spine: string };
+  deliveryGraphic: { title: string; description: string; status: string; milestones: string[] };
+  contactGraphic: {
+    title: string;
+    steps: Array<{ label: string; detail: string }>;
+    modes: Array<{ label: string; detail: string }>;
+  };
+  sdgs: typeof sustainabilitySdgs;
+};
+
+const localizedCopy: Record<Language, PageCopy> = {
+  en: {
+    navAria: "Primary navigation",
+    mobileNavAria: "Mobile navigation",
+    languageLabel: "Language",
+    skip: "Skip to main content",
+    brandSubtitle: "Data Centre Infrastructure",
+    infrastructureBadge: "Australian Digital Infrastructure",
+    dataHallCapacity: "staged data hall capacity",
+    footerCopyright: "(c) 2026 PENTANEX. Project information is subject to planning and delivery confirmation.",
+    footerTagline: "AI-ready hyperscale infrastructure platform.",
+    metrics,
+    tabs: Object.fromEntries(tabs.map((tab) => [tab.id, tab])),
+    footerGroups,
+    footerIntro,
+    infrastructureNarrative,
+    focusLabels: {
+      capacity: "Capacity priorities",
+      delivery: "Delivery milestones",
+      sustainability: "Sustainability priorities",
+      contact: "Engagement priorities",
+    },
+    capacityGraphic: {
+      title: "Capacity platform",
+      description: "Staged campus capacity, utility planning, and deployment zones.",
+      blocks: ["Capacity", "Cooling", "Power", "Fibre"],
+      spine: "Utility planning and staged release pathway",
+    },
+    deliveryGraphic: {
+      title: "Delivery roadmap",
+      description: "2027-2032 staged development pathway.",
+      status: "Permit",
+      milestones: ["Permit", "Design", "Enable", "Build", "Operate"],
+    },
+    contactGraphic: {
+      title: "Contact pathway",
+      steps: [
+        { label: "Enquiry", detail: "Project and capacity discussion" },
+        { label: "Briefing", detail: "Technical and commercial alignment" },
+        { label: "Site tour", detail: "By appointment as program progresses" },
+      ],
+      modes: [
+        { label: "Phone", detail: "Initial project discussion" },
+        { label: "Meeting", detail: "Capacity and partnership briefing" },
+        { label: "Site tour", detail: "Campus visit by appointment" },
+      ],
+    },
+    sdgs: sustainabilitySdgs,
+  },
+  zh: {
+    navAria: "主导航",
+    mobileNavAria: "移动端导航",
+    languageLabel: "语言",
+    skip: "跳到主要内容",
+    brandSubtitle: "数据中心基础设施",
+    infrastructureBadge: "澳大利亚数字基础设施",
+    dataHallCapacity: "分阶段数据大厅容量",
+    footerCopyright: "(c) 2026 PENTANEX。项目信息以规划、审批和交付确认为准。",
+    footerTagline: "面向 AI 的超大规模数字基础设施平台。",
+    metrics: [
+      { value: project.capacity, label: "总体规划的超大规模园区容量" },
+      { value: "Melbourne", label: "战略性墨尔本北部，VIC Australia" },
+      { value: "AI-ready", label: "高密度计算基础设施" },
+      { value: "Hyperscale", label: "可扩展云与 AI 计算容量" },
+    ],
+    tabs: {
+      campus: {
+        label: "园区",
+        panelTitle: "园区发展策略",
+        title: "我们正在规划面向 AI 与云计算增长的超大规模数据中心园区。",
+        body: [
+          "PENTANEX 正在规划一个长期数字基础设施平台，服务于超大规模云平台、加速计算、企业 AI 以及澳大利亚主权工作负载需求。",
+          "园区策略围绕可扩展容量分区、韧性公用工程规划、安全运营、连接通道和分阶段交付灵活性展开。",
+          "项目目标是为高密度计算环境、客户长期增长以及澳大利亚和亚太地区下一轮数字基础设施需求提供可扩展基础。",
+        ],
+        points: ["400 MW + 总体规划园区容量", "可扩展容量分区", "墨尔本北部基础设施走廊"],
+        sideNote: "园区规划聚焦可扩展容量分区、韧性运营和长期扩展灵活性。",
+      },
+      capacity: {
+        label: "容量",
+        panelTitle: "容量策略",
+        title: "",
+        body: [
+          "PENTANEX 的容量策略围绕一个 400 MW + 总体规划超大规模园区平台展开，面向云平台、AI、加速计算和主权企业工作负载。",
+          "容量规划采用分阶段基础设施平台模式，而非单一建筑模式，通过可扩展分区、韧性公用工程、连接多样性和交付区域随需求扩展。",
+          "对于超大规模和 AI 客户，容量架构优先考虑安全运营、高密度计算就绪、能源和冷却可选性，以及跨多个开发阶段的可预测释放路径。",
+        ],
+        points: ["400 MW + 总体规划园区容量", "高密度 AI 与加速计算", "可扩展分阶段部署"],
+        sideNote: "",
+      },
+      delivery: {
+        label: "交付",
+        panelTitle: "交付路径",
+        title: "",
+        body: [
+          "PENTANEX 采用严谨的基础设施开发路径推进交付，将审批、前期工程、公用工程接口、设计治理和利益相关方协调纳入分阶段执行模型。",
+          "交付策略旨在把大规模总体规划园区转化为可信的分阶段容量，关键工作包括能源接口规划、连接通道、安全访问规划和运营准备。",
+          "对于超大规模和企业客户，交付确定性来自里程碑控制、服务协调、分阶段容量释放、韧性验证以及未来阶段的扩展可选性。",
+        ],
+        points: ["规划审批与前期工程", "电网、能源、光纤和冷却接口", "面向客户就绪的里程碑治理"],
+        sideNote: "",
+      },
+      sustainability: {
+        label: "可持续",
+        panelTitle: "韧性基础设施",
+        title: "",
+        body: [
+          "PENTANEX 将可持续性视为基础设施设计纪律，而非营销表达。园区路径聚焦运营效率、韧性能源策略、气候适应型设计和长期环境表现。",
+          "能源规划是核心设计驱动因素。电网接入、可再生能源供应、firming 安排、备用系统和客户负载增长需要纳入同一个长期容量平台协调。",
+          "冷却与水策略对 AI-ready 容量至关重要。园区方案考虑高效运行区间、节水型冷却路径、热管理以及面向不同客户技术配置的设备可选性。",
+          "运营可持续性不止于能源使用。安全运营、监控与控制、维护通道、材料意识、社区参与和报告结构共同支撑可信的超大规模平台。",
+        ],
+        points: ["可再生与 firmed 能源整合", "高效冷却和节水设计", "生命周期韧性与可审计报告"],
+        sideNote: "",
+      },
+      contact: {
+        label: "联系",
+        panelTitle: "战略沟通",
+        title: "",
+        body: [
+          "PENTANEX 欢迎与超大规模运营商、云平台、企业 AI 客户、基础设施伙伴、能源市场参与者、投资者以及政府和社区相关方进行战略沟通。",
+          "沟通可以从项目咨询、容量需求讨论、合作对齐、投资和基础设施对话，或关于墨尔本北部园区策略及分阶段交付路径的初步介绍开始。",
+          "随着开发计划推进，可按预约协调项目介绍和现场参观。早期沟通应聚焦客户需求画像、技术要求、时间安排、能源与连接需求以及商业参与路径。",
+        ],
+        points: [contactEmailDisplay, "容量与合作咨询", "预约现场参观"],
+        sideNote: "",
+      },
+    },
+    footerGroups: [
+      { heading: "园区", items: ["墨尔本北部", "Victoria", "基础设施走廊"] },
+      { heading: "容量", items: ["400 MW + 园区", "AI-ready 计算", "分阶段容量"] },
+      { heading: "平台", items: ["云与 AI 工作负载", "电力 冷却 光纤", "主权能力"] },
+      { heading: "联系", items: ["项目咨询", contactEmailDisplay] },
+    ],
+    footerIntro:
+      "为澳大利亚超大规模云、加速计算和主权企业工作负载开发可扩展的 AI-ready 数字基础设施。",
+    infrastructureNarrative: [
+      "PENTANEX 正在开发 AI-ready 数字基础设施，支持澳大利亚下一代超大规模计算需求、云平台、企业 AI 工作负载和主权数字能力。",
+      "项目面向高密度 AI 与加速计算环境进行设计，并结合可扩展电力基础设施、可再生与 firmed 能源整合、运营韧性和长期可持续性。",
+      "PENTANEX 旨在支持澳大利亚和亚太地区 AI 训练、推理及大规模云部署的快速增长，打造面向人工智能和数字化转型下一轮计算周期的未来型超大规模平台。",
+    ],
+    focusLabels: {
+      capacity: "容量重点",
+      delivery: "交付里程碑",
+      sustainability: "可持续重点",
+      contact: "沟通重点",
+    },
+    capacityGraphic: {
+      title: "容量平台",
+      description: "分阶段园区容量、公用工程规划和部署区域。",
+      blocks: ["容量", "冷却", "电力", "光纤"],
+      spine: "公用工程规划与分阶段释放路径",
+    },
+    deliveryGraphic: {
+      title: "交付路线图",
+      description: "2027-2032 分阶段开发路径。",
+      status: "审批",
+      milestones: ["审批", "设计", "前期", "建设", "运营"],
+    },
+    contactGraphic: {
+      title: "联系路径",
+      steps: [
+        { label: "咨询", detail: "项目和容量需求沟通" },
+        { label: "简报", detail: "技术和商业对齐" },
+        { label: "现场参观", detail: "随项目推进按预约安排" },
+      ],
+      modes: [
+        { label: "电话", detail: "初步项目沟通" },
+        { label: "会议", detail: "容量与合作简报" },
+        { label: "参观", detail: "按预约参观园区" },
+      ],
+    },
+    sdgs: [
+      { number: "7", label: "经济适用的清洁能源", color: "#fcc30b" },
+      { number: "9", label: "产业、创新和基础设施", color: "#fd6925" },
+      { number: "12", label: "负责任消费和生产", color: "#bf8b2e" },
+      { number: "13", label: "气候行动", color: "#3f7e44" },
+    ],
+  },
+};
 
 function PentanexLogo() {
   return (
@@ -194,16 +417,20 @@ function SiteStructuredData() {
   );
 }
 
-function CapacityPlatformGraphic() {
+function CapacityPlatformGraphic({
+  copy,
+}: {
+  copy: (typeof localizedCopy)[Language]["capacityGraphic"];
+}) {
   return (
     <div className="mt-5 rounded-sm border border-slate-200/80 bg-white/72 p-4">
       <div className="flex items-center justify-between gap-3">
         <div>
           <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-signal">
-            Capacity platform
+            {copy.title}
           </p>
           <p className="mt-1 text-xs leading-5 text-steel">
-            Staged campus capacity, utility planning, and deployment zones.
+            {copy.description}
           </p>
         </div>
         <span className="shrink-0 rounded-sm border border-signal/30 bg-signal/10 px-2.5 py-1 text-xs font-bold text-signal">
@@ -218,7 +445,7 @@ function CapacityPlatformGraphic() {
           <span className="h-2 rounded-sm bg-power/70" />
         </div>
         <div className="grid grid-cols-4 gap-2">
-          {["Capacity", "Cooling", "Power", "Fibre"].map((label) => (
+          {copy.blocks.map((label) => (
             <div className="rounded-sm border border-slate-200 bg-[#f8fbfd]/90 p-2" key={label}>
               <span className="block h-5 rounded-sm border border-slate-200 bg-white/86" />
               <p className="mt-2 text-[10px] font-semibold uppercase tracking-[0.12em] text-steel">
@@ -233,7 +460,7 @@ function CapacityPlatformGraphic() {
           <div className="absolute left-[48%] top-3 h-6 w-px bg-signal/30" />
           <div className="absolute left-[78%] top-3 h-6 w-px bg-signal/30" />
           <p className="absolute bottom-2 left-4 text-[10px] font-semibold uppercase tracking-[0.16em] text-steel">
-            Utility planning and staged release pathway
+            {copy.spine}
           </p>
         </div>
       </div>
@@ -241,28 +468,30 @@ function CapacityPlatformGraphic() {
   );
 }
 
-function DeliveryRoadmap() {
-  const milestones = [
-    { year: "2027", label: "Permit", active: true },
-    { year: "2028", label: "Design" },
-    { year: "2029", label: "Enable" },
-    { year: "2030", label: "Build" },
-    { year: "2032", label: "Operate" },
-  ];
+function DeliveryRoadmap({
+  copy,
+}: {
+  copy: (typeof localizedCopy)[Language]["deliveryGraphic"];
+}) {
+  const milestones = ["2027", "2028", "2029", "2030", "2032"].map((year, index) => ({
+    year,
+    label: copy.milestones[index],
+    active: index === 0,
+  }));
 
   return (
     <div className="mt-5 rounded-sm border border-slate-200/80 bg-white/72 p-4">
       <div className="flex items-center justify-between gap-3">
         <div>
           <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-signal">
-            Delivery roadmap
+            {copy.title}
           </p>
           <p className="mt-1 text-xs leading-5 text-steel">
-            2027-2032 staged development pathway.
+            {copy.description}
           </p>
         </div>
         <span className="shrink-0 rounded-sm border border-signal/30 bg-signal/10 px-2.5 py-1 text-xs font-bold text-signal">
-          Permit
+          {copy.status}
         </span>
       </div>
 
@@ -292,31 +521,30 @@ function DeliveryRoadmap() {
   );
 }
 
-function ContactPathwayGraphic() {
-  const steps = [
-    { label: "Enquiry", detail: "Project and capacity discussion" },
-    { label: "Briefing", detail: "Technical and commercial alignment" },
-    { label: "Site tour", detail: "By appointment as program progresses" },
-  ];
+function ContactPathwayGraphic({
+  copy,
+}: {
+  copy: (typeof localizedCopy)[Language]["contactGraphic"];
+}) {
   const contactModes = [
-    { label: "Phone", detail: "Initial project discussion", icon: Phone },
-    { label: "Meeting", detail: "Capacity and partnership briefing", icon: UsersRound },
-    { label: "Site tour", detail: "Campus visit by appointment", icon: MapPin },
+    { ...copy.modes[0], icon: Phone },
+    { ...copy.modes[1], icon: UsersRound },
+    { ...copy.modes[2], icon: MapPin },
   ];
 
   return (
     <div className="rounded-sm border border-slate-200/80 bg-white/88 p-4">
       <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-signal">
-        Contact pathway
+        {copy.title}
       </p>
       <div className="mt-4 grid gap-3">
-        {steps.map((step, index) => (
+        {copy.steps.map((step, index) => (
           <div className="grid grid-cols-[36px_1fr] gap-3" key={step.label}>
             <div className="flex flex-col items-center">
               <span className="flex h-8 w-8 items-center justify-center rounded-sm border border-signal/30 bg-signal/10 text-xs font-bold text-signal">
                 {index + 1}
               </span>
-              {index < steps.length - 1 ? <span className="h-8 w-px bg-slate-200" /> : null}
+              {index < copy.steps.length - 1 ? <span className="h-8 w-px bg-slate-200" /> : null}
             </div>
             <div className="pb-2">
               <p className="text-sm font-semibold text-graphite">{step.label}</p>
@@ -475,6 +703,16 @@ function getRequestedTab() {
   return tabs.find((tab) => tab.id === requestedTabId) ?? tabs[0];
 }
 
+function getRequestedLanguage(): Language {
+  if (typeof window === "undefined") {
+    return "en";
+  }
+
+  const savedLanguage = window.localStorage.getItem("pentanex-language");
+
+  return savedLanguage === "zh" ? "zh" : "en";
+}
+
 const ambientAccents: Record<string, { left: string; right: string; inner: string }> = {
   campus: {
     left: "absolute left-[-10rem] bottom-10 h-[26rem] w-[26rem] rounded-full bg-[#08756f]/[0.055] blur-3xl",
@@ -505,17 +743,16 @@ const ambientAccents: Record<string, { left: string; right: string; inner: strin
 
 export default function Home() {
   const [activeTab, setActiveTab] = useState(getRequestedTab);
+  const [language, setLanguage] = useState<Language>(getRequestedLanguage);
+  const copy = localizedCopy[language];
+  const activeTabCopy = copy.tabs[activeTab.id];
+  const localizedActiveTab = { ...activeTab, ...activeTabCopy };
   const ActiveIcon = activeTab.icon;
   const ambientAccent = ambientAccents[activeTab.id] ?? ambientAccents.campus;
-  const activeBodyParagraphs = Array.isArray(activeTab.body) ? activeTab.body : [activeTab.body];
-  const focusLabel =
-    activeTab.id === "capacity"
-      ? "Capacity priorities"
-      : activeTab.id === "delivery"
-        ? "Delivery milestones"
-        : activeTab.id === "sustainability"
-          ? "Sustainability priorities"
-          : "Engagement priorities";
+  const activeBodyParagraphs = Array.isArray(localizedActiveTab.body)
+    ? localizedActiveTab.body
+    : [localizedActiveTab.body];
+  const focusLabel = copy.focusLabels[activeTab.id] ?? copy.focusLabels.contact;
 
   useLayoutEffect(() => {
     const syncRequestedTab = () => setActiveTab(getRequestedTab());
@@ -532,6 +769,11 @@ export default function Home() {
     window.history.replaceState(null, "", `#${tab.id}`);
   };
 
+  const selectLanguage = (nextLanguage: Language) => {
+    setLanguage(nextLanguage);
+    window.localStorage.setItem("pentanex-language", nextLanguage);
+  };
+
   return (
     <>
     <SiteStructuredData />
@@ -542,7 +784,7 @@ export default function Home() {
         <div className={ambientAccent.inner} />
       </div>
       <a className="skip-link" href="#top">
-        Skip to main content
+        {copy.skip}
       </a>
       <header className="sticky top-0 z-50 px-3 pt-3 sm:px-5">
         <div className="mx-auto flex w-full max-w-[1180px] items-center justify-between gap-4 rounded-sm border border-white/80 bg-white/78 px-4 py-3 shadow-[0_18px_60px_rgba(16,32,51,0.12)] backdrop-blur-2xl">
@@ -553,13 +795,13 @@ export default function Home() {
                 PENTANEX
               </span>
               <span className="hidden text-[10px] font-medium uppercase tracking-[0.16em] text-steel sm:block">
-                Data Centre Infrastructure
+                {copy.brandSubtitle}
               </span>
             </span>
           </a>
 
           <nav
-            aria-label="Primary navigation"
+            aria-label={copy.navAria}
             className="hidden items-center gap-1 rounded-sm border border-slate-200/75 bg-[#f8fbfd]/78 p-1 shadow-inner backdrop-blur-2xl lg:flex"
           >
             {tabs.map((tab) => (
@@ -574,16 +816,34 @@ export default function Home() {
                 onClick={() => selectTab(tab)}
                 type="button"
               >
-                {tab.label}
+                {copy.tabs[tab.id].label}
               </button>
             ))}
           </nav>
 
-          <div className="hidden w-[210px] lg:block" aria-hidden="true" />
+          <div className="hidden items-center justify-end gap-1 rounded-sm border border-slate-200/75 bg-[#f8fbfd]/78 p-1 shadow-inner backdrop-blur-2xl lg:flex">
+            <Languages className="ml-2 text-signal" size={15} aria-hidden="true" />
+            <span className="sr-only">{copy.languageLabel}</span>
+            {languageOptions.map((option) => (
+              <button
+                aria-pressed={language === option.id}
+                className={`rounded-sm border px-2.5 py-2 text-xs font-semibold transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-signal ${
+                  language === option.id
+                    ? "border-signal bg-signal text-white shadow-sm"
+                    : "border-slate-200/70 bg-white/62 text-steel hover:border-signal/45 hover:bg-white/90 hover:text-signal"
+                }`}
+                key={option.id}
+                onClick={() => selectLanguage(option.id)}
+                type="button"
+              >
+                {option.shortLabel}
+              </button>
+            ))}
+          </div>
         </div>
 
         <nav
-          aria-label="Mobile navigation"
+          aria-label={copy.mobileNavAria}
           className="mx-auto mt-2 flex w-full max-w-[1180px] gap-2 overflow-x-auto rounded-sm border border-white/75 bg-white/70 p-2 shadow-sm backdrop-blur-2xl lg:hidden"
         >
           {tabs.map((tab) => (
@@ -598,7 +858,23 @@ export default function Home() {
               onClick={() => selectTab(tab)}
               type="button"
             >
-              {tab.label}
+              {copy.tabs[tab.id].label}
+            </button>
+          ))}
+          <span className="mx-1 h-8 w-px shrink-0 bg-slate-200" />
+          {languageOptions.map((option) => (
+            <button
+              aria-pressed={language === option.id}
+              className={`shrink-0 rounded-sm border px-3 py-2 text-xs font-semibold transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-signal ${
+                language === option.id
+                  ? "border-signal bg-signal text-white shadow-sm"
+                  : "border-slate-200/70 bg-white/62 text-steel hover:border-signal/45 hover:bg-white/90 hover:text-signal"
+              }`}
+              key={option.id}
+              onClick={() => selectLanguage(option.id)}
+              type="button"
+            >
+              {option.shortLabel}
             </button>
           ))}
         </nav>
@@ -618,10 +894,10 @@ export default function Home() {
               <div className="rounded-sm border border-white/70 bg-white/88 p-4 shadow-glow backdrop-blur-2xl xl:p-5">
                 <div className="inline-flex items-center gap-2 rounded-sm border border-signal/20 bg-white/70 px-3 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-signal">
                   <Globe2 size={15} />
-                  Australian Digital Infrastructure
+                  {copy.infrastructureBadge}
                 </div>
                 <div className="mt-4 max-w-3xl space-y-3">
-                  {infrastructureNarrative.map((paragraph) => (
+                  {copy.infrastructureNarrative.map((paragraph) => (
                     <p className="text-sm leading-6 text-steel" key={paragraph}>
                       {paragraph}
                     </p>
@@ -633,7 +909,7 @@ export default function Home() {
             <div className="grid min-h-0 gap-3 xl:gap-4">
               <div className="rounded-sm border border-white/70 bg-white/88 p-3 shadow-glow backdrop-blur-2xl">
                 <div className="grid gap-2 sm:grid-cols-4">
-                  {metrics.map((metric) => (
+                  {copy.metrics.map((metric) => (
                     <div className="rounded-sm border border-slate-200/70 bg-white/66 p-3" key={metric.label}>
                       <p className="text-[clamp(0.86rem,1.05vw,1rem)] font-semibold leading-tight text-signal">
                         {metric.value}
@@ -648,7 +924,7 @@ export default function Home() {
                 <div className="rounded-sm border border-slate-200/70 bg-white/90 p-4">
                   <div className="inline-flex items-center gap-2 rounded-sm border border-signal/25 bg-white/62 px-3 py-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-signal shadow-[0_0_20px_rgba(15,174,166,0.08)]">
                     <ActiveIcon size={15} />
-                    {activeTab.panelTitle}
+                    {localizedActiveTab.panelTitle}
                   </div>
                   <div className="mt-4 space-y-3">
                     {activeBodyParagraphs.map((paragraph) => (
@@ -672,7 +948,7 @@ export default function Home() {
                       ))}
                     </div>
                     <p className="mt-3 text-[11px] uppercase tracking-[0.18em] text-steel">
-                      staged data hall capacity
+                      {copy.dataHallCapacity}
                     </p>
                   </div>
                 </div>
@@ -687,14 +963,14 @@ export default function Home() {
                   <div className="mx-auto w-full max-w-3xl">
                     <div className="inline-flex items-center gap-2 rounded-sm border border-signal/25 bg-white/62 px-3 py-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-signal shadow-[0_0_20px_rgba(15,174,166,0.08)]">
                       <ActiveIcon size={15} />
-                      {activeTab.panelTitle}
+                      {localizedActiveTab.panelTitle}
                     </div>
-                    {activeTab.title ? (
+                    {localizedActiveTab.title ? (
                       <h1 className="mt-3 max-w-3xl text-[clamp(1.65rem,3vw,2.5rem)] font-semibold leading-tight text-graphite">
-                        {activeTab.title}
+                        {localizedActiveTab.title}
                       </h1>
                     ) : null}
-                    <div className={`${activeTab.title ? "mt-4" : "mt-5"} space-y-3`}>
+                    <div className={`${localizedActiveTab.title ? "mt-4" : "mt-5"} space-y-3`}>
                       {activeBodyParagraphs.map((paragraph) => (
                         <p className="text-base leading-8 text-steel" key={paragraph}>
                           {paragraph}
@@ -712,7 +988,7 @@ export default function Home() {
                           {focusLabel}
                         </p>
                         <div className="mt-5 grid gap-3">
-                          {activeTab.points.map((point) => (
+                          {localizedActiveTab.points.map((point) => (
                             <div className="flex gap-3 rounded-sm border border-slate-200 bg-white/72 p-4 shadow-[0_12px_28px_rgba(16,32,51,0.04)]" key={point}>
                               <CheckCircle2 className="mt-0.5 shrink-0 text-power" size={18} />
                               {point.includes("@") ? (
@@ -727,15 +1003,15 @@ export default function Home() {
                         </div>
                       </>
                     ) : null}
-                    {activeTab.id === "capacity" ? <CapacityPlatformGraphic /> : null}
-                    {activeTab.id === "delivery" ? <DeliveryRoadmap /> : null}
+                    {activeTab.id === "capacity" ? <CapacityPlatformGraphic copy={copy.capacityGraphic} /> : null}
+                    {activeTab.id === "delivery" ? <DeliveryRoadmap copy={copy.deliveryGraphic} /> : null}
                     {activeTab.id === "sustainability" ? (
                       <div className="mt-5 border-t border-slate-200/80 pt-4">
                         <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-signal">
                           SDG alignment
                         </p>
                         <div className="mt-3 grid gap-2">
-                          {sustainabilitySdgs.map((sdg) => (
+                          {copy.sdgs.map((sdg) => (
                             <div
                               className="flex items-center gap-3 rounded-sm border border-slate-200 bg-white/72 p-3"
                               key={sdg.number}
@@ -754,11 +1030,11 @@ export default function Home() {
                         </div>
                       </div>
                     ) : null}
-                    {activeTab.id === "contact" ? <ContactPathwayGraphic /> : null}
-                    {activeTab.sideNote ? (
+                    {activeTab.id === "contact" ? <ContactPathwayGraphic copy={copy.contactGraphic} /> : null}
+                    {localizedActiveTab.sideNote ? (
                       <div className="mt-5 border-t border-slate-200/80 pt-4">
                         <p className="text-sm leading-6 text-steel">
-                          {activeTab.sideNote}
+                          {localizedActiveTab.sideNote}
                         </p>
                       </div>
                     ) : null}
@@ -779,17 +1055,17 @@ export default function Home() {
                 <div>
                   <p className="text-sm font-semibold tracking-[0.22em] text-graphite">PENTANEX</p>
                   <p className="mt-1 text-[10px] font-medium uppercase tracking-[0.16em] text-steel">
-                    Data Centre Infrastructure
+                    {copy.brandSubtitle}
                   </p>
                 </div>
               </div>
               <p className="mt-4 max-w-md text-sm leading-6 text-steel">
-                {footerIntro}
+                {copy.footerIntro}
               </p>
             </div>
 
             <div className="grid min-w-0 gap-3 sm:grid-cols-2 xl:grid-cols-[0.9fr_0.9fr_1fr_1.35fr]">
-              {footerGroups.map((group) => (
+              {copy.footerGroups.map((group) => (
                 <div
                   className="rounded-sm border border-slate-200/70 bg-white/68 p-4"
                   key={group.heading}
@@ -820,8 +1096,8 @@ export default function Home() {
           </div>
 
           <div className="mt-5 flex flex-col gap-2 border-t border-slate-200/80 pt-4 text-xs text-steel sm:flex-row sm:items-center sm:justify-between">
-            <p>(c) 2026 PENTANEX. Project information is subject to planning and delivery confirmation.</p>
-            <p>AI-ready hyperscale infrastructure platform.</p>
+            <p>{copy.footerCopyright}</p>
+            <p>{copy.footerTagline}</p>
           </div>
         </div>
       </footer>
