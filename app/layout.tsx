@@ -8,7 +8,7 @@ const assetPath = (path: string) => `${basePath}${path}`;
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "PENTANEX | AI-ready Australian Data Centre Infrastructure",
+    default: "PENTANEX | Australian Data Centre Infrastructure",
     template: "%s | PENTANEX",
   },
   description:
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   openGraph: {
-    title: "PENTANEX | AI-ready Australian Data Centre Infrastructure",
+    title: "PENTANEX | Australian Data Centre Infrastructure",
     description:
       "AI-ready digital infrastructure planned for hyperscale cloud, accelerated compute, enterprise AI, and sovereign workload demand.",
     url: siteUrl,
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary",
-    title: "PENTANEX | AI-ready Australian Data Centre Infrastructure",
+    title: "PENTANEX | Australian Data Centre Infrastructure",
     description:
       "AI-ready digital infrastructure planned for hyperscale cloud, accelerated compute, enterprise AI, and sovereign workload demand.",
     images: ["pentanex-logo.png"],
