@@ -4,6 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "update-market-prices": "node scripts/update-market-prices.mjs",
+    "prebuild": "node scripts/update-market-prices.mjs",
     "build": "next build",
     "start": "next start",
     "lint": "tsc --noEmit"
