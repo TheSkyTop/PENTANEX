@@ -168,7 +168,6 @@ const copy = {
     figuresEyebrow: "Australian operations",
     figuresTitle: "Key figures",
     figuresLead: "Everest Foam operational scale",
-    progressLabel: "Production timeline",
     homeNote: "Major foam production facility opening in Derrimut, Victoria.",
   },
   zh: {
@@ -297,7 +296,6 @@ const copy = {
     figuresEyebrow: "澳大利亚运营",
     figuresTitle: "运营数据",
     figuresLead: "Everest Foam 澳大利亚项目规模",
-    progressLabel: "Production timeline",
     homeNote: "位于维多利亚州 Derrimut 的大型泡棉生产基地。",
   },
 };
@@ -842,11 +840,6 @@ function KeyFigures({ language, compact = false }: { language: Language; compact
                 <p className="mt-0.5 text-[10px] font-semibold uppercase tracking-[0.12em] text-[#cbd8d0]">{figure[language]}</p>
               </div>
             ))}
-          </div>
-          <div className={compact ? "px-4 py-4" : "p-6"}>
-            <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
-              <p className="text-[10px] font-semibold uppercase tracking-[0.12em] text-[#cbd8d0]">{t.progressLabel}</p>
-            </div>
           </div>
         </div>
       </div>
