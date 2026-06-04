@@ -17,7 +17,6 @@ import {
   MapPin,
   Menu,
   PackageCheck,
-  Phone,
   Recycle,
   Ruler,
   ShieldCheck,
@@ -747,7 +746,6 @@ function ContactPage({ language }: { language: Language }) {
             <SectionIntro eyebrow={t.contactEyebrow} title={t.contactTitle} lead={t.contactLead} />
             <div className="mt-10 grid gap-4 text-sm text-[#53655a]">
               <ContactLine icon={Mail} text="sales@everestsupplies.com.au" />
-              <ContactLine icon={Phone} text="0421650033" />
               <ContactLine icon={MapPin} text="Derrimut, Victoria" />
             </div>
           </div>
