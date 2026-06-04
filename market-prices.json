@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-04T01:31:58.263Z",
+  "generatedAt": "2026-06-04T02:04:14.074Z",
   "dateBasis": "Australia/Sydney complete trading days",
   "rows": [
     {
@@ -357,19 +357,14 @@
       "market": "Gas",
       "node": "STTM Sydney",
       "metric": "Ex ante market price",
-      "value": "9.62",
+      "value": "9.26",
       "unit": "$/GJ",
-      "period": "2026-05-29 to 2026-06-04",
+      "period": "2026-05-30 to 2026-06-05",
       "status": "live",
       "sourceName": "AEMO STTM ex ante market price",
       "sourceUrl": "https://www.nemweb.com.au/Reports/CURRENT/STTM/int651_v1_ex_ante_market_price_rpt_1.csv",
       "note": "Seven-day average calculated from AEMO STTM hub ex ante market prices.",
       "history": [
-        {
-          "date": "2026-05-29",
-          "value": 10.6,
-          "intervals": 1
-        },
         {
           "date": "2026-05-30",
           "value": 10.06,
@@ -399,6 +394,11 @@
           "date": "2026-06-04",
           "value": 8,
           "intervals": 1
+        },
+        {
+          "date": "2026-06-05",
+          "value": 8.12,
+          "intervals": 1
         }
       ]
     },
@@ -407,19 +407,14 @@
       "market": "Gas",
       "node": "STTM Adelaide",
       "metric": "Ex ante market price",
-      "value": "9.71",
+      "value": "9.45",
       "unit": "$/GJ",
-      "period": "2026-05-29 to 2026-06-04",
+      "period": "2026-05-30 to 2026-06-05",
       "status": "live",
       "sourceName": "AEMO STTM ex ante market price",
       "sourceUrl": "https://www.nemweb.com.au/Reports/CURRENT/STTM/int651_v1_ex_ante_market_price_rpt_1.csv",
       "note": "Seven-day average calculated from AEMO STTM hub ex ante market prices.",
       "history": [
-        {
-          "date": "2026-05-29",
-          "value": 10.3,
-          "intervals": 1
-        },
         {
           "date": "2026-05-30",
           "value": 10.28,
@@ -449,6 +444,11 @@
           "date": "2026-06-04",
           "value": 8.49,
           "intervals": 1
+        },
+        {
+          "date": "2026-06-05",
+          "value": 8.5,
+          "intervals": 1
         }
       ]
     },
@@ -457,19 +457,14 @@
       "market": "Gas",
       "node": "STTM Brisbane",
       "metric": "Ex ante market price",
-      "value": "9.78",
+      "value": "9.49",
       "unit": "$/GJ",
-      "period": "2026-05-29 to 2026-06-04",
+      "period": "2026-05-30 to 2026-06-05",
       "status": "live",
       "sourceName": "AEMO STTM ex ante market price",
       "sourceUrl": "https://www.nemweb.com.au/Reports/CURRENT/STTM/int651_v1_ex_ante_market_price_rpt_1.csv",
       "note": "Seven-day average calculated from AEMO STTM hub ex ante market prices.",
       "history": [
-        {
-          "date": "2026-05-29",
-          "value": 10.45,
-          "intervals": 1
-        },
         {
           "date": "2026-05-30",
           "value": 9.98,
@@ -497,6 +492,11 @@
         },
         {
           "date": "2026-06-04",
+          "value": 8.43,
+          "intervals": 1
+        },
+        {
+          "date": "2026-06-05",
           "value": 8.43,
           "intervals": 1
         }
@@ -555,7 +555,7 @@
   ],
   "marketContext": {
     "title": "Market context",
-    "generatedAt": "2026-06-04T01:31:58.262Z",
+    "generatedAt": "2026-06-04T02:04:14.061Z",
     "periods": [
       {
         "id": "calendar-year",
