@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-04T02:04:14.074Z",
+  "generatedAt": "2026-06-04T03:09:29.912Z",
   "dateBasis": "Australia/Sydney complete trading days",
   "rows": [
     {
@@ -555,7 +555,7 @@
   ],
   "marketContext": {
     "title": "Market context",
-    "generatedAt": "2026-06-04T02:04:14.061Z",
+    "generatedAt": "2026-06-04T03:09:29.834Z",
     "periods": [
       {
         "id": "calendar-year",
