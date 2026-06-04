@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { useState } from "react";
 import {
   ArrowUpRight,
@@ -31,6 +30,7 @@ type Language = "en" | "zh";
 type Page = "home" | "about" | "products" | "sustainability" | "contact";
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 const assetPath = (path: string) => `${basePath}${path}`;
+const routeHref = (path: string) => (path === "/" ? `${basePath || ""}/` : `${basePath}${path}/`);
 const publicSiteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://theskytop.github.io";
 const contactReturnUrl = `${publicSiteUrl}${basePath}/contact/`;
 
@@ -402,29 +402,29 @@ function SiteHeader({
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-[#dce5d8] bg-[#fbfcf8]/92 backdrop-blur-xl">
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-5 lg:px-8">
-        <Link className="flex items-center gap-3" href="/" aria-label="Everest Foam home">
+        <a className="flex items-center gap-3" href={routeHref("/")} aria-label="Everest Foam home">
           <EverestMark />
           <p className="text-[17px] font-semibold tracking-[0.02em] text-[#123528]">Everest Foam</p>
-        </Link>
+        </a>
 
         <nav className="hidden items-center gap-8 text-sm font-medium text-[#405047] lg:flex" aria-label="Primary">
           {navItems.map((item) => (
-            <Link
+            <a
               className={`transition hover:text-[#0d5f45] ${activePage === item.page ? "text-[#0d5f45]" : ""}`}
-              href={item.href}
+              href={routeHref(item.href)}
               key={item.href}
             >
               {item[language]}
-            </Link>
+            </a>
           ))}
         </nav>
 
         <div className="hidden items-center gap-3 lg:flex">
           <LanguageToggle language={language} setLanguage={setLanguage} />
-          <Link className="inline-flex h-11 items-center gap-2 rounded-sm bg-[#0d5f45] px-4 text-sm font-semibold text-white transition hover:bg-[#094533]" href="/contact">
+          <a className="inline-flex h-11 items-center gap-2 rounded-sm bg-[#0d5f45] px-4 text-sm font-semibold text-white transition hover:bg-[#094533]" href={routeHref("/contact")}>
             {t.primaryCta}
             <ArrowUpRight size={17} />
-          </Link>
+          </a>
         </div>
 
         <button
@@ -441,9 +441,9 @@ function SiteHeader({
         <div className="border-t border-[#dce5d8] bg-[#fbfcf8] px-5 py-4 lg:hidden">
           <div className="grid gap-3">
             {navItems.map((item) => (
-              <Link className="py-2 text-sm font-semibold text-[#20342a]" href={item.href} key={item.href} onClick={() => setMenuOpen(false)}>
+              <a className="py-2 text-sm font-semibold text-[#20342a]" href={routeHref(item.href)} key={item.href} onClick={() => setMenuOpen(false)}>
                 {item[language]}
-              </Link>
+              </a>
             ))}
             <LanguageToggle language={language} setLanguage={setLanguage} />
           </div>
@@ -471,14 +471,14 @@ function HomePage({ language }: { language: Language }) {
             </h1>
             <p className="mt-6 max-w-2xl text-base leading-8 text-[#53655a] sm:text-lg">{t.heroLead}</p>
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
-              <Link className="inline-flex h-12 items-center justify-center gap-2 rounded-sm bg-[#0d5f45] px-5 text-sm font-semibold text-white transition hover:bg-[#094533]" href="/contact">
+              <a className="inline-flex h-12 items-center justify-center gap-2 rounded-sm bg-[#0d5f45] px-5 text-sm font-semibold text-white transition hover:bg-[#094533]" href={routeHref("/contact")}>
                 {t.primaryCta}
                 <ArrowUpRight size={18} />
-              </Link>
-              <Link className="inline-flex h-12 items-center justify-center gap-2 rounded-sm border border-[#c7d6c5] bg-white/80 px-5 text-sm font-semibold text-[#123528] transition hover:border-[#0d5f45]" href="/products">
+              </a>
+              <a className="inline-flex h-12 items-center justify-center gap-2 rounded-sm border border-[#c7d6c5] bg-white/80 px-5 text-sm font-semibold text-[#123528] transition hover:border-[#0d5f45]" href={routeHref("/products")}>
                 {t.secondaryCta}
                 <ChevronRight size={18} />
-              </Link>
+              </a>
             </div>
             <div className="mt-9 grid max-w-2xl gap-3 sm:mt-12 sm:grid-cols-3">
               <Metric value={t.stat1} label={t.stat1Label} />
