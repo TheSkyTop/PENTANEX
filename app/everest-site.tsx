@@ -154,8 +154,7 @@ const copy = {
     contactPanelFocusTitle: "Contact details",
     contactPanelFocusAreas: [
       "Location: 30 Fulton Drive, Derrimut, Victoria, Australia.",
-      "Sales email: Sales@everestsupplies.com.au.",
-      "Support: English and Chinese communication for local and cross-border customers.",
+      "Email: Sales@everestsupplies.com.au.",
     ],
     formName: "Name",
     formCompany: "Company",
@@ -282,8 +281,7 @@ const copy = {
     contactPanelFocusTitle: "联系信息",
     contactPanelFocusAreas: [
       "地址：30 Fulton Drive, Derrimut, Victoria, Australia。",
-      "销售邮箱：Sales@everestsupplies.com.au。",
-      "支持范围：为本地及跨境客户提供中英文沟通。",
+      "邮箱：Sales@everestsupplies.com.au。",
     ],
     formName: "姓名",
     formCompany: "公司",
@@ -786,9 +784,9 @@ function ContactPage({ language }: { language: Language }) {
             <p className="text-xs leading-6 text-[#d9e5dd]">{t.contactPanelLead}</p>
             <div className="mt-3 border-t border-white/10 pt-3">
               <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[#e4b947]">{t.contactPanelFocusTitle}</p>
-              <div className="mt-2 grid gap-2 md:grid-cols-3">
+              <div className="mt-2 grid gap-3 md:grid-cols-2">
                 {t.contactPanelFocusAreas.map((item) => (
-                  <div className="flex gap-3" key={item}>
+                  <div className="flex gap-3 rounded-sm border border-white/10 bg-white/[0.03] px-3 py-2.5" key={item}>
                     <Check className="mt-1 shrink-0 text-[#9bcf9f]" size={17} />
                     <p className="text-xs leading-6 text-[#d9e5dd]">{item}</p>
                   </div>
