@@ -31,6 +31,8 @@ type Language = "en" | "zh";
 type Page = "home" | "about" | "products" | "sustainability" | "contact";
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 const assetPath = (path: string) => `${basePath}${path}`;
+const publicSiteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://theskytop.github.io";
+const contactReturnUrl = `${publicSiteUrl}${basePath}/contact/`;
 
 const navItems: Array<{ href: string; page: Page; en: string; zh: string }> = [
   { href: "/about", page: "about", en: "About us", zh: "关于我们" },
@@ -758,7 +760,7 @@ function ContactPage({ language }: { language: Language }) {
             <input name="_subject" type="hidden" value="Everest Foam website enquiry" />
             <input name="_template" type="hidden" value="table" />
             <input name="_captcha" type="hidden" value="false" />
-            <input name="_next" type="hidden" value="https://theskytop.github.io/PENTANEX/contact/" />
+            <input name="_next" type="hidden" value={contactReturnUrl} />
             <div className="grid gap-4 sm:grid-cols-2">
               <Field label={t.formName} name="name" />
               <Field label={t.formCompany} name="company" />

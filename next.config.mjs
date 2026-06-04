@@ -3,7 +3,7 @@ import { fileURLToPath } from "node:url";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const isGitHubPages = process.env.GITHUB_PAGES === "true";
-const basePath = isGitHubPages ? "/PENTANEX" : "";
+const basePath = isGitHubPages ? process.env.NEXT_PUBLIC_BASE_PATH || "/EverstFoam" : "";
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {

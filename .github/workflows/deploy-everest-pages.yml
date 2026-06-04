@@ -35,7 +35,7 @@ jobs:
         run: npm run build
         env:
           GITHUB_PAGES: "true"
-          NEXT_PUBLIC_BASE_PATH: /PENTANEX
+          NEXT_PUBLIC_BASE_PATH: /EverstFoam
           NEXT_PUBLIC_SITE_VARIANT: everest
           NEXT_PUBLIC_SITE_URL: https://theskytop.github.io
 
