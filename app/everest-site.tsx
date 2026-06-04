@@ -751,7 +751,6 @@ function ContactPage({ language }: { language: Language }) {
               <ContactLine icon={Mail} text="sales@everestsupplies.com.au" />
               <ContactLine icon={Phone} text="0421650033" />
               <ContactLine icon={MapPin} text="Derrimut, Victoria" />
-              <ContactLine icon={Globe2} text="English and Chinese support" />
             </div>
           </div>
 
