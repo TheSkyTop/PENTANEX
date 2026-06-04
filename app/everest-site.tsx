@@ -458,16 +458,16 @@ function HomePage({ language }: { language: Language }) {
     <div id="content">
       <section className="relative overflow-hidden pt-28">
         <div className="absolute inset-0 foam-grid opacity-70" aria-hidden="true" />
-        <div className="relative mx-auto grid min-h-[760px] max-w-7xl items-center gap-12 px-5 py-16 lg:grid-cols-[1.02fr_0.98fr] lg:px-8 lg:py-20">
+        <div className="relative mx-auto grid min-h-[calc(100svh-80px)] max-w-7xl items-center gap-9 px-5 py-10 sm:gap-12 sm:py-14 lg:grid-cols-[1.02fr_0.98fr] lg:px-8 lg:py-16 xl:min-h-[720px]">
           <div className="max-w-3xl">
             <div className="mb-6 inline-flex items-center gap-2 border border-[#c9d9c7] bg-white/75 px-3 py-2 text-xs font-semibold uppercase tracking-[0.14em] text-[#0d5f45]">
               <Leaf size={15} />
               {t.eyebrow}
             </div>
-            <h1 className="max-w-3xl text-5xl font-semibold leading-[0.98] tracking-normal text-[#10251b] sm:text-7xl lg:text-[94px]">
+            <h1 className="max-w-3xl text-[clamp(3.4rem,12vw,5.25rem)] font-semibold leading-[0.98] tracking-normal text-[#10251b] lg:text-[clamp(5.6rem,7.2vw,94px)]">
               {t.heroTitle}
             </h1>
-            <p className="mt-7 max-w-2xl text-lg leading-8 text-[#53655a]">{t.heroLead}</p>
+            <p className="mt-6 max-w-2xl text-base leading-8 text-[#53655a] sm:text-lg">{t.heroLead}</p>
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
               <Link className="inline-flex h-12 items-center justify-center gap-2 rounded-sm bg-[#0d5f45] px-5 text-sm font-semibold text-white transition hover:bg-[#094533]" href="/contact">
                 {t.primaryCta}
@@ -478,7 +478,7 @@ function HomePage({ language }: { language: Language }) {
                 <ChevronRight size={18} />
               </Link>
             </div>
-            <div className="mt-12 grid max-w-2xl gap-3 sm:grid-cols-3">
+            <div className="mt-9 grid max-w-2xl gap-3 sm:mt-12 sm:grid-cols-3">
               <Metric value={t.stat1} label={t.stat1Label} />
               <Metric value={t.stat2} label={t.stat2Label} />
               <Metric value={t.stat3} label={t.stat3Label} />
@@ -490,7 +490,7 @@ function HomePage({ language }: { language: Language }) {
       </section>
 
       <section className="border-y border-[#dce5d8] bg-[#fbfcf8]">
-        <div className="mx-auto grid max-w-7xl gap-5 px-5 py-9 md:grid-cols-4 lg:px-8">
+        <div className="mx-auto grid max-w-7xl gap-5 px-5 py-7 md:grid-cols-4 lg:px-8 lg:py-9">
           <div className="md:col-span-1">
             <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#0d5f45]">{t.figuresEyebrow}</p>
             <p className="mt-2 max-w-sm text-sm leading-6 text-[#5e6e64]">{t.homeNote}</p>
@@ -512,24 +512,24 @@ function AboutPage({ language }: { language: Language }) {
   return (
     <section className="relative overflow-hidden bg-[#f4f7f2] pt-24" id="content">
       <div className="absolute inset-0 foam-grid opacity-70" aria-hidden="true" />
-      <div className="relative mx-auto w-full max-w-7xl px-5 pb-6 pt-10 lg:px-8">
-      <div className="grid gap-10 lg:grid-cols-[0.92fr_1.08fr] lg:items-start">
-        <div className="flex min-h-[300px] flex-col justify-start">
+      <div className="relative mx-auto w-full max-w-7xl px-5 pb-7 pt-8 sm:pt-10 lg:px-8 lg:pt-12">
+      <div className="grid gap-8 lg:grid-cols-[0.92fr_1.08fr] lg:items-start xl:gap-10">
+        <div className="flex flex-col justify-start lg:min-h-[280px]">
           <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#0d5f45]">{t.aboutEyebrow}</p>
-          <h1 className={`mt-4 max-w-2xl font-semibold leading-[1.08] tracking-normal text-[#17231d] ${language === "zh" ? "text-[28px] sm:text-[31px] lg:whitespace-nowrap" : "text-[32px] sm:text-[38px]"}`}>
+          <h1 className={`mt-4 max-w-2xl font-semibold leading-[1.08] tracking-normal text-[#17231d] ${language === "zh" ? "text-[26px] sm:text-[31px] lg:whitespace-nowrap xl:text-[34px]" : "text-[30px] sm:text-[38px]"}`}>
             {t.aboutTitle}
           </h1>
-          <div className="mt-5 max-w-2xl space-y-3 text-sm leading-7 text-[#5e6e64]">
+          <div className="mt-5 max-w-2xl space-y-3 text-[13px] leading-7 text-[#5e6e64] sm:text-sm">
             {t.aboutLead.split("\n\n").map((paragraph) => (
               <p key={paragraph}>{paragraph}</p>
             ))}
           </div>
         </div>
-        <div className="grid gap-4 pt-1">
+        <div className="grid gap-3 pt-1 sm:gap-4">
           {t.pillars.map((pillar, index) => {
             const Icon = iconMap[index];
             return (
-              <article className="min-h-[116px] border border-[#dce5d8] bg-white p-6 shadow-[0_18px_60px_rgba(31,54,42,0.06)]" key={pillar.title}>
+              <article className="border border-[#dce5d8] bg-white p-4 shadow-[0_18px_60px_rgba(31,54,42,0.06)] sm:p-5 lg:min-h-[112px] xl:p-6" key={pillar.title}>
                 <div className="flex items-start gap-4">
                   <span className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-sm bg-[#e7f0e4] text-[#0d5f45]">
                     <Icon size={18} />
@@ -558,26 +558,26 @@ function ProductsPage({ language }: { language: Language }) {
   return (
     <section className="relative overflow-hidden bg-[#f4f7f2] pt-24" id="content">
       <div className="absolute inset-0 foam-grid opacity-70" aria-hidden="true" />
-      <div className="relative mx-auto w-full max-w-7xl px-5 pb-6 pt-10 lg:px-8">
-      <div className="grid gap-6 lg:grid-cols-[0.48fr_0.52fr] lg:items-end">
+      <div className="relative mx-auto w-full max-w-7xl px-5 pb-7 pt-8 sm:pt-10 lg:px-8">
+      <div className="grid gap-5 lg:grid-cols-[0.47fr_0.53fr] lg:items-end">
         <div>
           <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#0d5f45]">{t.productsEyebrow}</p>
-          <h1 className="mt-4 max-w-3xl text-[32px] font-semibold leading-[1.08] tracking-normal text-[#10251b] sm:text-[38px]">
+          <h1 className="mt-4 max-w-3xl text-[30px] font-semibold leading-[1.08] tracking-normal text-[#10251b] sm:text-[38px]">
             {t.productsTitle}
           </h1>
         </div>
-        <p className="max-w-2xl text-sm leading-7 text-[#5e6e64] lg:pb-1">{t.productsLead}</p>
+        <p className="max-w-2xl text-[13px] leading-7 text-[#5e6e64] sm:text-sm lg:pb-1">{t.productsLead}</p>
       </div>
 
-      <div className="mt-7 grid gap-4 border border-[#dce5d8] bg-white p-4 shadow-[0_24px_70px_rgba(31,54,42,0.06)] lg:grid-cols-[300px_1fr]">
-        <div className="flex border border-[#dce5d8] bg-[#fbfcf8] sm:block lg:h-[560px]">
-          <div className="grid w-full sm:grid-cols-2 lg:block">
+      <div className="mt-6 grid gap-3 border border-[#dce5d8] bg-white p-3 shadow-[0_24px_70px_rgba(31,54,42,0.06)] sm:p-4 lg:grid-cols-[minmax(220px,280px)_1fr] xl:grid-cols-[300px_1fr]">
+        <div className="border border-[#dce5d8] bg-[#fbfcf8] lg:min-h-[clamp(430px,48vw,560px)]">
+          <div className="grid w-full grid-cols-1 min-[520px]:grid-cols-2 md:grid-cols-3 lg:block">
             {t.productGroups.map((item, index) => {
               const TabIcon = productIcons[index];
               const active = activeProduct === index;
               return (
                 <button
-                  className={`flex h-[76px] w-full items-center gap-3 border-b border-[#dce5d8] px-4 py-2.5 text-left transition last:border-b-0 sm:border-r lg:border-r-0 ${
+                  className={`flex min-h-[68px] w-full items-center gap-3 border-b border-[#dce5d8] px-3 py-2.5 text-left transition last:border-b-0 min-[520px]:border-r md:min-h-[74px] lg:border-r-0 lg:px-4 ${
                     active ? "bg-[#0d5f45] text-white" : "bg-[#fbfcf8] text-[#24372d] hover:bg-white"
                   }`}
                   key={item.title}
@@ -588,7 +588,7 @@ function ProductsPage({ language }: { language: Language }) {
                     <TabIcon size={16} />
                   </span>
                   <span className="min-w-0 flex-1">
-                    <span className="block text-[12px] font-semibold leading-snug">{item.title}</span>
+                    <span className="block text-[11px] font-semibold leading-snug sm:text-[12px]">{item.title}</span>
                     <span className={`mt-0.5 block text-[10px] font-semibold uppercase tracking-[0.1em] ${active ? "text-[#c9d8cf]" : "text-[#8b9d8b]"}`}>
                       0{index + 1}
                     </span>
@@ -599,7 +599,7 @@ function ProductsPage({ language }: { language: Language }) {
           </div>
         </div>
 
-        <article className="flex h-[560px] items-center justify-center overflow-hidden bg-white">
+        <article className="flex min-h-[280px] items-center justify-center overflow-hidden bg-white sm:min-h-[360px] lg:h-[clamp(430px,48vw,560px)]">
           {productImage ? (
             <img alt={productImage.alt} className="h-full w-full object-contain" src={assetPath(productImage.src)} style={{ objectPosition: productImage.position }} />
           ) : (
@@ -614,7 +614,7 @@ function ProductsPage({ language }: { language: Language }) {
         </article>
       </div>
 
-      <section className="info-feature-panel mt-6 grid gap-5 border border-[#b7d1bc] p-5 text-white shadow-[0_24px_70px_rgba(31,54,42,0.12)] lg:grid-cols-[360px_1fr] lg:px-6 lg:py-5">
+      <section className="info-feature-panel mt-5 grid gap-5 border border-[#b7d1bc] p-5 text-white shadow-[0_24px_70px_rgba(31,54,42,0.12)] lg:grid-cols-[320px_1fr] lg:px-6 lg:py-5 xl:grid-cols-[360px_1fr]">
         <div className="info-feature-glow" aria-hidden="true" />
         <div className="info-feature-sheen" aria-hidden="true" />
         <div className="relative z-10">
@@ -628,7 +628,7 @@ function ProductsPage({ language }: { language: Language }) {
           <p className="text-xs leading-6 text-[#d9e5dd]">{t.rdLead}</p>
           <div className="mt-3 border-t border-white/10 pt-3">
             <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[#e4b947]">{t.rdFocusTitle}</p>
-            <div className="mt-2 grid gap-3 sm:grid-cols-3">
+            <div className="mt-2 grid gap-3 md:grid-cols-3">
               {t.rdFocusAreas.map((item) => (
                 <div className="flex gap-3" key={item}>
                   <Check className="mt-1 shrink-0 text-[#9bcf9f]" size={17} />
@@ -651,28 +651,28 @@ function SustainabilityPage({ language }: { language: Language }) {
   return (
     <div className="relative overflow-hidden bg-[#f4f7f2] text-[#17231d]" id="content">
       <div className="absolute inset-0 foam-grid opacity-70" aria-hidden="true" />
-      <div className="relative mx-auto max-w-7xl px-5 pb-6 pt-28 lg:px-8">
-        <div className="grid gap-8 lg:grid-cols-[0.96fr_1.04fr] lg:items-start">
+      <div className="relative mx-auto max-w-7xl px-5 pb-7 pt-24 sm:pt-28 lg:px-8">
+        <div className="grid gap-7 lg:grid-cols-[0.96fr_1.04fr] lg:items-start xl:gap-8">
           <div className="relative">
             <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#0d5f45]">{t.sustainabilityEyebrow}</p>
-            <h1 className="mt-4 max-w-2xl text-[32px] font-semibold leading-[1.08] tracking-normal text-[#17231d] sm:text-[38px]">{t.sustainabilityTitle}</h1>
-            <div className="mt-5 max-w-2xl space-y-3 text-sm leading-7 text-[#5e6e64]">
+            <h1 className="mt-4 max-w-2xl text-[30px] font-semibold leading-[1.08] tracking-normal text-[#17231d] sm:text-[38px]">{t.sustainabilityTitle}</h1>
+            <div className="mt-5 max-w-2xl space-y-3 text-[13px] leading-7 text-[#5e6e64] sm:text-sm">
               {t.sustainabilityLead.split("\n\n").map((paragraph) => (
                 <p key={paragraph}>{paragraph}</p>
               ))}
             </div>
             <div className="mt-7 grid gap-3">
               {t.sustainabilityItems.map((item) => (
-                <div className="flex min-h-[58px] gap-3 border border-[#dce5d8] bg-white/85 px-4 py-3 shadow-[0_14px_40px_rgba(31,54,42,0.04)]" key={item}>
+                <div className="flex min-h-[54px] gap-3 border border-[#dce5d8] bg-white/85 px-4 py-3 shadow-[0_14px_40px_rgba(31,54,42,0.04)]" key={item}>
                   <Check className="mt-1 shrink-0 text-[#0d5f45]" size={18} />
-                  <p className="text-sm leading-6 text-[#405047]">{item}</p>
+                  <p className="text-[13px] leading-6 text-[#405047] sm:text-sm">{item}</p>
                 </div>
               ))}
             </div>
           </div>
-          <div className="relative min-h-[520px] overflow-hidden border border-[#dce5d8] bg-white/80 p-5 shadow-[0_24px_70px_rgba(31,54,42,0.08)] lg:mt-10">
+          <div className="relative overflow-hidden border border-[#dce5d8] bg-white/80 p-4 shadow-[0_24px_70px_rgba(31,54,42,0.08)] sm:p-5 lg:mt-10 lg:min-h-[clamp(460px,44vw,520px)]">
             <div className="absolute inset-0 sustainability-lines" aria-hidden="true" />
-            <div className="relative flex h-full flex-col justify-between gap-4 pt-10">
+            <div className="relative flex h-full flex-col justify-between gap-4 pt-5 sm:pt-8 lg:pt-10">
               <div className="flex justify-end">
                 <span className="inline-flex h-10 w-10 items-center justify-center rounded-sm bg-[#d9ecd4] text-[#0d5f45]">
                   <Recycle size={21} />
@@ -682,7 +682,7 @@ function SustainabilityPage({ language }: { language: Language }) {
                 <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[#0d5f45]">{t.sdgTitle}</p>
                 <div className="mt-3 grid gap-2">
                   {sdgs.map((sdg) => (
-                    <article className="border border-[#dce5d8] bg-[#fbfcf8] p-2" key={sdg.goal}>
+                    <article className="border border-[#dce5d8] bg-[#fbfcf8] p-2 sm:p-2.5" key={sdg.goal}>
                       <div className="flex items-center gap-3">
                         <SdgLogo sdg={sdg} />
                         <div className="min-w-0">
@@ -690,7 +690,7 @@ function SustainabilityPage({ language }: { language: Language }) {
                             {sdg.goal}
                           </p>
                           <h3 className="mt-1 text-xs font-semibold text-[#17231d]">{sdg.logoTitle}</h3>
-                          <p className="mt-1 text-[11px] leading-[1.35] text-[#5e6e64]">{sdg.detail}</p>
+                          <p className="mt-1 text-[10.5px] leading-[1.35] text-[#5e6e64] sm:text-[11px]">{sdg.detail}</p>
                         </div>
                       </div>
                     </article>
@@ -703,12 +703,12 @@ function SustainabilityPage({ language }: { language: Language }) {
                   <FoamSample tone="mid" compact />
                   <FoamSample tone="dark" compact />
                 </div>
-                <p className="max-w-full whitespace-nowrap text-[10px] uppercase leading-5 tracking-[0.06em] text-[#0d5f45]">Closed-loop material use / clean production / product recovery</p>
+                <p className="max-w-full text-[10px] uppercase leading-5 tracking-[0.06em] text-[#0d5f45] sm:whitespace-nowrap">Closed-loop material use / clean production / product recovery</p>
               </div>
             </div>
           </div>
         </div>
-        <section className="info-feature-panel mt-6 grid gap-5 border border-[#b7d1bc] p-5 text-white shadow-[0_24px_70px_rgba(31,54,42,0.12)] lg:grid-cols-[0.32fr_0.68fr] lg:p-6">
+        <section className="info-feature-panel mt-5 grid gap-5 border border-[#b7d1bc] p-5 text-white shadow-[0_24px_70px_rgba(31,54,42,0.12)] lg:grid-cols-[0.32fr_0.68fr] lg:p-6">
           <div className="info-feature-glow" aria-hidden="true" />
           <div className="info-feature-sheen" aria-hidden="true" />
           <div className="relative z-10">
@@ -722,7 +722,7 @@ function SustainabilityPage({ language }: { language: Language }) {
             <p className="text-xs leading-6 text-[#d9e5dd]">{t.sustainabilityPanelLead}</p>
             <div className="mt-3 border-t border-white/10 pt-3">
               <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[#e4b947]">{t.sustainabilityPanelFocusTitle}</p>
-              <div className="mt-2 grid gap-2 sm:grid-cols-3">
+              <div className="mt-2 grid gap-2 md:grid-cols-3">
                 {t.sustainabilityPanelFocusAreas.map((item) => (
                   <div className="flex gap-3" key={item}>
                     <Check className="mt-1 shrink-0 text-[#9bcf9f]" size={17} />
@@ -776,7 +776,7 @@ function ContactPage({ language }: { language: Language }) {
             </button>
           </form>
         </div>
-        <section className="info-feature-panel mt-6 grid gap-5 border border-[#b7d1bc] p-5 text-white shadow-[0_24px_70px_rgba(31,54,42,0.12)] lg:grid-cols-[0.32fr_0.68fr] lg:p-6">
+        <section className="info-feature-panel mt-5 grid gap-5 border border-[#b7d1bc] p-5 text-white shadow-[0_24px_70px_rgba(31,54,42,0.12)] lg:grid-cols-[0.32fr_0.68fr] lg:p-6">
           <div className="info-feature-glow" aria-hidden="true" />
           <div className="info-feature-sheen" aria-hidden="true" />
           <div className="relative z-10">
@@ -790,7 +790,7 @@ function ContactPage({ language }: { language: Language }) {
             <p className="text-xs leading-6 text-[#d9e5dd]">{t.contactPanelLead}</p>
             <div className="mt-3 border-t border-white/10 pt-3">
               <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[#e4b947]">{t.contactPanelFocusTitle}</p>
-              <div className="mt-2 grid gap-2 sm:grid-cols-3">
+              <div className="mt-2 grid gap-2 md:grid-cols-3">
                 {t.contactPanelFocusAreas.map((item) => (
                   <div className="flex gap-3" key={item}>
                     <Check className="mt-1 shrink-0 text-[#9bcf9f]" size={17} />
@@ -810,7 +810,7 @@ function PageShell({ children }: { children: React.ReactNode }) {
   return (
     <section className="relative overflow-hidden bg-[#f4f7f2] pt-24" id="content">
       <div className="absolute inset-0 foam-grid opacity-70" aria-hidden="true" />
-      <div className="relative mx-auto max-w-7xl px-5 pb-8 pt-12 lg:px-8">{children}</div>
+      <div className="relative mx-auto max-w-7xl px-5 pb-8 pt-8 sm:pt-12 lg:px-8">{children}</div>
     </section>
   );
 }
@@ -905,8 +905,8 @@ function Metric({ value, label }: { value: string; label: string }) {
 
 function HeroMaterial({ badge }: { badge: string }) {
   return (
-    <div className="relative mx-auto w-full max-w-xl">
-      <div className="absolute left-3 top-8 z-10 max-w-[calc(100%-1.5rem)] border border-[#cddcca] bg-white px-4 py-3 shadow-[0_20px_60px_rgba(31,54,42,0.12)] lg:-left-6 lg:top-12">
+    <div className="relative mx-auto w-full max-w-[420px] sm:max-w-xl">
+      <div className="absolute left-3 top-5 z-10 max-w-[calc(100%-1.5rem)] border border-[#cddcca] bg-white px-3 py-2 shadow-[0_20px_60px_rgba(31,54,42,0.12)] sm:top-8 sm:px-4 sm:py-3 lg:-left-6 lg:top-12">
         <p className="text-xs font-semibold uppercase tracking-[0.13em] text-[#0d5f45]">{badge}</p>
       </div>
       <div className="relative aspect-[4/5] overflow-hidden border border-[#cbdac8] bg-[#dfe9da] shadow-[0_30px_100px_rgba(31,54,42,0.18)]">
@@ -916,8 +916,8 @@ function HeroMaterial({ badge }: { badge: string }) {
           <div className="foam-block foam-block-three" />
           <div className="foam-cut-line" />
         </div>
-        <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-[#10251b]/82 to-transparent p-6 pt-28 text-white">
-          <p className="max-w-sm text-sm leading-6 text-[#edf4ec]">Layered comfort, protective structure and custom profiles represented as a clean product system.</p>
+        <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-[#10251b]/82 to-transparent p-4 pt-20 text-white sm:p-6 sm:pt-28">
+          <p className="max-w-sm text-xs leading-6 text-[#edf4ec] sm:text-sm">Layered comfort, protective structure and custom profiles represented as a clean product system.</p>
         </div>
       </div>
     </div>
@@ -928,14 +928,14 @@ function SectionIntro({ eyebrow, title, lead }: { eyebrow: string; title: string
   return (
     <div>
       <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#0d5f45]">{eyebrow}</p>
-      <h1 className="mt-4 max-w-2xl text-[32px] font-semibold leading-[1.08] tracking-normal text-[#17231d] sm:text-[38px]">{title}</h1>
-      <p className="mt-5 max-w-2xl text-sm leading-7 text-[#5e6e64]">{lead}</p>
+      <h1 className="mt-4 max-w-2xl text-[30px] font-semibold leading-[1.08] tracking-normal text-[#17231d] sm:text-[38px]">{title}</h1>
+      <p className="mt-5 max-w-2xl text-[13px] leading-7 text-[#5e6e64] sm:text-sm">{lead}</p>
     </div>
   );
 }
 
 function FoamSample({ tone, compact = false }: { tone: "light" | "mid" | "dark"; compact?: boolean }) {
-  return <div className={`${compact ? "h-20" : "h-28"} border border-white/10 foam-sample foam-sample-${tone}`} />;
+  return <div className={`${compact ? "h-16 sm:h-20" : "h-24 sm:h-28"} border border-white/10 foam-sample foam-sample-${tone}`} />;
 }
 
 function SdgLogo({ sdg }: { sdg: (typeof sdgItems.en)[number] }) {
@@ -944,11 +944,11 @@ function SdgLogo({ sdg }: { sdg: (typeof sdgItems.en)[number] }) {
   return (
     <span
       aria-label={`${sdg.goal} ${sdg.logoTitle}`}
-      className="relative flex h-14 w-14 shrink-0 overflow-hidden text-white shadow-[0_5px_14px_rgba(31,54,42,0.12)]"
+      className="relative flex h-12 w-12 shrink-0 overflow-hidden text-white shadow-[0_5px_14px_rgba(31,54,42,0.12)] sm:h-14 sm:w-14"
       style={{ backgroundColor: sdg.colour }}
     >
-      <span className="absolute left-2 top-1 text-2xl font-bold leading-none">{sdg.number}</span>
-      <Icon className="absolute bottom-1.5 right-1.5" size={24} strokeWidth={2.4} />
+      <span className="absolute left-1.5 top-1 text-xl font-bold leading-none sm:left-2 sm:text-2xl">{sdg.number}</span>
+      <Icon className="absolute bottom-1.5 right-1.5 h-5 w-5 sm:h-6 sm:w-6" strokeWidth={2.4} />
     </span>
   );
 }
@@ -959,7 +959,7 @@ function ContactLine({ icon: Icon, text }: { icon: typeof Mail; text: string }) 
       <span className="inline-flex h-10 w-10 items-center justify-center rounded-sm bg-[#e7f0e4] text-[#0d5f45]">
         <Icon size={18} />
       </span>
-      <span>{text}</span>
+      <span className="min-w-0 break-words">{text}</span>
     </div>
   );
 }

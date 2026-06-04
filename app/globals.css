@@ -23,6 +23,21 @@ body {
   color: #17231d;
   font-family: Inter, "Segoe UI", Arial, Helvetica, sans-serif;
   overflow-x: hidden;
+  text-size-adjust: 100%;
+}
+
+img,
+svg,
+video,
+canvas {
+  max-width: 100%;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
 }
 
 a {
@@ -233,6 +248,17 @@ footer a.text-steel {
   mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
 }
 
+@media (max-width: 767px) {
+  .foam-grid {
+    background-size:
+      48px 48px,
+      48px 48px,
+      auto,
+      auto;
+    opacity: 0.55;
+  }
+}
+
 .key-figures-panel {
   position: relative;
   background:
@@ -331,6 +357,31 @@ footer a.text-steel {
   transform: translateX(-120%);
   animation: soft-sheen 10s ease-in-out infinite;
   pointer-events: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .info-feature-panel::before,
+  .key-figures-panel::before {
+    background-size: 52px 52px;
+    opacity: 0.42;
+  }
+
+  .info-feature-glow,
+  .key-figures-glow {
+    width: 78%;
+    opacity: 0.55;
+  }
 }
 
 @keyframes ambient-glow {
