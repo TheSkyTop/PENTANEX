@@ -154,7 +154,7 @@ const copy = {
     contactPanelFocusTitle: "Contact details",
     contactPanelFocusAreas: [
       "Location: 30 Fulton Drive, Derrimut, Victoria, Australia.",
-      "Sales contact: 0421650033 / sales@everestsupplies.com.au.",
+      "Sales contact: 0421650033 / Sales@everestsupplies.com.au.",
       "Support: English and Chinese communication for local and cross-border customers.",
     ],
     formName: "Name",
@@ -282,7 +282,7 @@ const copy = {
     contactPanelFocusTitle: "联系信息",
     contactPanelFocusAreas: [
       "地址：30 Fulton Drive, Derrimut, Victoria, Australia。",
-      "销售联系：0421650033 / sales@everestsupplies.com.au。",
+      "销售联系：0421650033 / Sales@everestsupplies.com.au。",
       "支持范围：为本地及跨境客户提供中英文沟通。",
     ],
     formName: "姓名",
@@ -745,7 +745,7 @@ function ContactPage({ language }: { language: Language }) {
           <div>
             <SectionIntro eyebrow={t.contactEyebrow} title={t.contactTitle} lead={t.contactLead} />
             <div className="mt-10 grid gap-4 text-sm text-[#53655a]">
-              <ContactLine icon={Mail} text="sales@everestsupplies.com.au" />
+              <ContactLine icon={Mail} text="Sales@everestsupplies.com.au" />
               <ContactLine icon={MapPin} text="Derrimut, Victoria" />
             </div>
           </div>
