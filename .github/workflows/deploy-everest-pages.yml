@@ -35,9 +35,9 @@ jobs:
         run: npm run build
         env:
           GITHUB_PAGES: "true"
-          NEXT_PUBLIC_BASE_PATH: /EverstFoam
+          NEXT_PUBLIC_BASE_PATH: __ROOT__
           NEXT_PUBLIC_SITE_VARIANT: everest
-          NEXT_PUBLIC_SITE_URL: https://theskytop.github.io
+          NEXT_PUBLIC_SITE_URL: https://everestfoam.com.au
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3

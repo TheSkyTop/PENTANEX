@@ -27,7 +27,7 @@ import {
 
 type Language = "en" | "zh";
 type Page = "home" | "about" | "products" | "sustainability" | "contact";
-const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH === "__ROOT__" ? "" : process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 const assetPath = (path: string) => `${basePath}${path}`;
 const routeHref = (path: string) => (path === "/" ? `${basePath || ""}/` : `${basePath}${path}/`);
 const publicSiteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://theskytop.github.io";
