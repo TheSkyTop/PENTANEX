@@ -154,7 +154,7 @@ const copy = {
     contactPanelFocusTitle: "Contact details",
     contactPanelFocusAreas: [
       "Location: 30 Fulton Drive, Derrimut, Victoria, Australia.",
-      "Email: Sales@everestsupplies.com.au.",
+      "Email: zhang@everestfoam.com.au.",
     ],
     formName: "Name",
     formCompany: "Company",
@@ -281,7 +281,7 @@ const copy = {
     contactPanelFocusTitle: "联系信息",
     contactPanelFocusAreas: [
       "地址：30 Fulton Drive, Derrimut, Victoria, Australia。",
-      "邮箱：Sales@everestsupplies.com.au。",
+      "邮箱：zhang@everestfoam.com.au。",
     ],
     formName: "姓名",
     formCompany: "公司",
@@ -743,12 +743,12 @@ function ContactPage({ language }: { language: Language }) {
           <div>
             <SectionIntro eyebrow={t.contactEyebrow} title={t.contactTitle} lead={t.contactLead} />
             <div className="mt-10 grid gap-4 text-sm text-[#53655a]">
-              <ContactLine icon={Mail} text="Sales@everestsupplies.com.au" />
+              <ContactLine icon={Mail} text="zhang@everestfoam.com.au" />
               <ContactLine icon={MapPin} text="Derrimut, Victoria" />
             </div>
           </div>
 
-          <form action="https://formsubmit.co/sales@everestsupplies.com.au" className="border border-[#dce5d8] bg-white p-5 shadow-[0_24px_70px_rgba(31,54,42,0.08)] sm:p-8" method="POST">
+          <form action="https://formsubmit.co/zhang@everestfoam.com.au" className="border border-[#dce5d8] bg-white p-5 shadow-[0_24px_70px_rgba(31,54,42,0.08)] sm:p-8" method="POST">
             <input name="_subject" type="hidden" value="Everest Foam website enquiry" />
             <input name="_template" type="hidden" value="table" />
             <input name="_captcha" type="hidden" value="false" />
