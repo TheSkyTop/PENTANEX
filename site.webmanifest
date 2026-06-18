@@ -1,16 +1,16 @@
 {
-  "name": "OceanEnergy",
-  "short_name": "OceanEnergy",
-  "description": "Australia energy market intelligence.",
+  "name": "PENTANEX",
+  "short_name": "PENTANEX",
+  "description": "AI-ready Australian data centre infrastructure.",
   "start_url": ".",
   "display": "standalone",
-  "background_color": "#edf5f3",
-  "theme_color": "#007f7a",
+  "background_color": "#eef4f8",
+  "theme_color": "#0faea6",
   "icons": [
     {
-      "src": "favicon.svg",
-      "sizes": "64x64",
-      "type": "image/svg+xml"
+      "src": "pentanex-logo.png",
+      "sizes": "512x512",
+      "type": "image/png"
     }
   ]
 }

@@ -1,4 +1,4 @@
 User-Agent: *
 Allow: /
 
-Sitemap: https://theskytop.github.io/sitemap.xml
+Sitemap: https://theskytop.github.io/PENTANEX/sitemap.xml
