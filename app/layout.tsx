@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import "./globals.css";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://pentanex.com.au";
@@ -8,32 +8,32 @@ const assetPath = (path: string) => `${basePath}${path}`;
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "PENTANEX | Australian Data Centre Infrastructure",
-    template: "%s | PENTANEX",
+    default: "PentaNex | Australian Data Centre Infrastructure",
+    template: "%s | PentaNex",
   },
   description:
-    "PENTANEX is developing AI-ready digital infrastructure for hyperscale cloud, accelerated compute, enterprise AI, and sovereign workload demand in Australia.",
+    "PentaNex is developing AI-ready digital infrastructure for hyperscale cloud, accelerated compute, enterprise AI, and sovereign workload demand in Australia.",
   keywords: [
-    "PENTANEX",
+    "PentaNex",
     "data centre",
     "AI infrastructure",
     "hyperscale campus",
     "Melbourne North",
     "Australian digital infrastructure",
   ],
-  applicationName: "PENTANEX",
-  authors: [{ name: "PENTANEX" }],
-  creator: "PENTANEX",
-  publisher: "PENTANEX",
+  applicationName: "PentaNex",
+  authors: [{ name: "PentaNex" }],
+  creator: "PentaNex",
+  publisher: "PentaNex",
   alternates: {
     canonical: "/",
   },
   openGraph: {
-    title: "PENTANEX | Australian Data Centre Infrastructure",
+    title: "PentaNex | Australian Data Centre Infrastructure",
     description:
       "AI-ready digital infrastructure planned for hyperscale cloud, accelerated compute, enterprise AI, and sovereign workload demand.",
     url: siteUrl,
-    siteName: "PENTANEX",
+    siteName: "PentaNex",
     locale: "en_AU",
     type: "website",
     images: [
@@ -41,13 +41,13 @@ export const metadata: Metadata = {
         url: "pentanex-logo-full.png",
         width: 1006,
         height: 289,
-        alt: "PENTANEX logo",
+        alt: "PentaNex logo",
       },
     ],
   },
   twitter: {
     card: "summary",
-    title: "PENTANEX | Australian Data Centre Infrastructure",
+    title: "PentaNex | Australian Data Centre Infrastructure",
     description:
       "AI-ready digital infrastructure planned for hyperscale cloud, accelerated compute, enterprise AI, and sovereign workload demand.",
     images: ["pentanex-logo-full.png"],
@@ -85,3 +85,4 @@ export default function RootLayout({
     </html>
   );
 }
+

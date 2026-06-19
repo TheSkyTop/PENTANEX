@@ -52,7 +52,7 @@ const tabs = [
     panelTitle: "Campus Development Strategy",
     title: "We are developing a masterplanned hyperscale campus for AI and cloud growth.",
     body: [
-      "PENTANEX is planning a long-term digital infrastructure platform designed for hyperscale cloud, accelerated compute, enterprise AI, and sovereign workload demand.",
+      "PentaNex is planning a long-term digital infrastructure platform designed for hyperscale cloud, accelerated compute, enterprise AI, and sovereign workload demand.",
       "The campus strategy is centred on expandable capacity zones, resilient utility planning, secure operations, connectivity pathways, and staged deployment flexibility.",
       "The objective is to provide a scalable foundation for high-density compute environments, resilient customer growth, and future-ready digital infrastructure across Australia and the Asia-Pacific region.",
     ],
@@ -66,7 +66,7 @@ const tabs = [
     panelTitle: "Capacity Strategy",
     title: "",
     body: [
-      "The PENTANEX capacity strategy is centred on a masterplanned 400 MW + hyperscale campus platform for cloud, AI, accelerated compute, and sovereign enterprise workloads.",
+      "The PentaNex capacity strategy is centred on a masterplanned 400 MW + hyperscale campus platform for cloud, AI, accelerated compute, and sovereign enterprise workloads.",
       "Capacity is being planned as a staged infrastructure platform rather than a single building, with expandable precincts, resilient utility planning, connectivity diversity, and deployment zones able to scale in line with demand.",
       "For hyperscale and AI customers, the capacity architecture prioritises secure operations, high-density compute readiness, energy and cooling optionality, and predictable release pathways across multiple development phases.",
     ],
@@ -80,7 +80,7 @@ const tabs = [
     panelTitle: "Delivery Pathway",
     title: "",
     body: [
-      "PENTANEX is approaching delivery through a disciplined infrastructure development pathway, aligning approvals, enabling works, utility interfaces, design governance, and stakeholder coordination into a staged execution model.",
+      "PentaNex is approaching delivery through a disciplined infrastructure development pathway, aligning approvals, enabling works, utility interfaces, design governance, and stakeholder coordination into a staged execution model.",
       "The delivery strategy is intended to translate a large-scale masterplanned campus into credible staged capacity. Key workstreams include energy interface planning, connectivity pathways, secure access planning, and operational readiness.",
       "For hyperscale and enterprise customers, delivery certainty is supported through milestone control, services coordination, staged capacity release, resilience validation, and expansion optionality across future phases.",
     ],
@@ -94,7 +94,7 @@ const tabs = [
     panelTitle: "Resilient Infrastructure",
     title: "",
     body: [
-      "PENTANEX treats sustainability as an infrastructure design discipline. The campus pathway focuses on operating efficiency, resilient energy strategy, climate-aware design, and environmental performance across development and operations.",
+      "PentaNex treats sustainability as an infrastructure design discipline. The campus pathway focuses on operating efficiency, resilient energy strategy, climate-aware design, and environmental performance across development and operations.",
       "Energy planning is a core design driver. Grid connection, renewable supply, firming arrangements, backup systems, and customer load growth need to be coordinated as part of the same long-term capacity platform.",
       "Cooling and water strategy are central to AI-ready capacity. The campus approach considers efficient operating envelopes, water-conscious cooling pathways, heat management, and plant optionality for varied customer technology profiles.",
       "Operational sustainability extends beyond energy use. Secure operations, monitoring and controls, maintenance access, materials awareness, community engagement, and reporting structures all support a credible hyperscale platform.",
@@ -109,7 +109,7 @@ const tabs = [
     panelTitle: "Strategic Engagement",
     title: "",
     body: [
-      "PENTANEX welcomes strategic conversations with hyperscale operators, cloud platforms, enterprise AI customers, infrastructure partners, energy market participants, investors, and government or community stakeholders aligned with Australia's next compute cycle.",
+      "PentaNex welcomes strategic conversations with hyperscale operators, cloud platforms, enterprise AI customers, infrastructure partners, energy market participants, investors, and government or community stakeholders aligned with Australia's next compute cycle.",
       "Engagement can begin through project enquiries, capacity requirement discussions, partnership alignment, investment and infrastructure conversations, or introductory briefings on the Melbourne North campus strategy and staged delivery pathway.",
       "Site tours and project briefings can be coordinated by appointment as the development program progresses. Early conversations should focus on customer demand profile, technical requirements, timing, energy and connectivity needs, and the commercial pathway for participation.",
     ],
@@ -159,9 +159,9 @@ const sustainabilitySdgs = [
 const australiaMapYOffset = 34;
 
 const infrastructureNarrative = [
-  "PENTANEX is developing AI-ready digital infrastructure designed to support Australia's next generation of hyperscale compute demand, cloud platforms, enterprise AI workloads, and sovereign digital capability.",
+  "PentaNex is developing AI-ready digital infrastructure designed to support Australia's next generation of hyperscale compute demand, cloud platforms, enterprise AI workloads, and sovereign digital capability.",
   "The project is being designed for high-density AI and accelerated computing environments, supported by scalable power infrastructure, renewable and firmed energy integration, operational resilience, and long-term sustainability.",
-  "Positioned to support the rapid growth of AI training, inference, and large-scale cloud deployment across Australia and the Asia-Pacific region, PENTANEX aims to deliver a future-ready hyperscale platform for the next compute cycle driven by artificial intelligence and digital transformation.",
+  "Positioned to support the rapid growth of AI training, inference, and large-scale cloud deployment across Australia and the Asia-Pacific region, PentaNex aims to deliver a future-ready hyperscale platform for the next compute cycle driven by artificial intelligence and digital transformation.",
 ];
 
 type PageCopy = {
@@ -199,7 +199,7 @@ const localizedCopy: Record<Language, PageCopy> = {
     brandSubtitle: "Data Centre Infrastructure",
     infrastructureBadge: "Australian Digital Infrastructure",
     dataHallCapacity: "staged data hall capacity",
-    footerCopyright: "(c) 2026 PENTANEX. Project information is subject to planning and delivery confirmation.",
+    footerCopyright: "(c) 2026 PentaNex. Project information is subject to planning and delivery confirmation.",
     footerTagline: "AI-ready hyperscale infrastructure platform.",
     metrics,
     tabs: Object.fromEntries(tabs.map((tab) => [tab.id, tab])),
@@ -247,7 +247,7 @@ const localizedCopy: Record<Language, PageCopy> = {
     brandSubtitle: "数据中心基础设施",
     infrastructureBadge: "澳大利亚数字基础设施",
     dataHallCapacity: "分阶段数据大厅容量",
-    footerCopyright: "(c) 2026 PENTANEX。项目信息以规划、审批和交付确认为准。",
+    footerCopyright: "(c) 2026 PentaNex。项目信息以规划、审批和交付确认为准。",
     footerTagline: "面向 AI 的超大规模数字基础设施平台。",
     metrics: [
       { value: project.capacity, label: "总体规划超大规模园区容量" },
@@ -261,7 +261,7 @@ const localizedCopy: Record<Language, PageCopy> = {
         panelTitle: "园区发展策略",
         title: "",
         body: [
-          "PENTANEX 正在规划长期数字基础设施平台，服务超大规模云、加速计算、企业 AI 以及澳大利亚主权工作负载需求。",
+          "PentaNex 正在规划长期数字基础设施平台，服务超大规模云、加速计算、企业 AI 以及澳大利亚主权工作负载需求。",
           "园区策略围绕可扩展容量分区、韧性公用工程规划、安全运营、连接通道和分阶段交付能力展开。",
           "项目目标是为高密度计算环境、客户长期增长，以及澳大利亚和亚太地区下一轮数字基础设施需求提供可扩展基础。",
         ],
@@ -273,7 +273,7 @@ const localizedCopy: Record<Language, PageCopy> = {
         panelTitle: "容量策略",
         title: "",
         body: [
-          "PENTANEX 的容量策略围绕 400 MW + 总体规划超大规模园区平台展开，面向云平台、AI 训练与推理、加速计算和主权企业工作负载。",
+          "PentaNex 的容量策略围绕 400 MW + 总体规划超大规模园区平台展开，面向云平台、AI 训练与推理、加速计算和主权企业工作负载。",
           "容量规划采用分阶段基础设施平台模式，而非单体建筑模式，通过容量分区、公用工程走廊、冷却路径、光纤多样性和客户就绪部署区随需求扩展。",
           "面向超大规模和 AI 客户，容量架构重点关注安全运营、高密度计算就绪、能源与冷却可选性，以及跨阶段的可预测容量释放路径。",
         ],
@@ -285,7 +285,7 @@ const localizedCopy: Record<Language, PageCopy> = {
         panelTitle: "交付路径",
         title: "",
         body: [
-          "PENTANEX 以严谨的基础设施开发路径推进交付，将规划审批、前期工程、公用工程接口、设计治理和利益相关方协调纳入分阶段执行体系。",
+          "PentaNex 以严谨的基础设施开发路径推进交付，将规划审批、前期工程、公用工程接口、设计治理和利益相关方协调纳入分阶段执行体系。",
           "交付策略旨在把大规模总体规划园区转化为可信、可建设、可运营的客户就绪容量，关键工作包括能源接口、连接路径、冷却系统、安全通行和运营准备。",
           "面向超大规模和企业客户，交付确定性来自清晰的里程碑治理、服务接口协调、分阶段容量释放、韧性验证以及后续扩展可选性。",
         ],
@@ -297,7 +297,7 @@ const localizedCopy: Record<Language, PageCopy> = {
         panelTitle: "韧性与可持续基础设施",
         title: "",
         body: [
-          "PENTANEX 将可持续性纳入基础设施设计原则。园区路径聚焦运营效率、能源韧性、气候适应型设计，以及开发和运营周期内的长期环境表现。",
+          "PentaNex 将可持续性纳入基础设施设计原则。园区路径聚焦运营效率、能源韧性、气候适应型设计，以及开发和运营周期内的长期环境表现。",
           "能源规划是核心设计驱动因素。电网接入、可再生能源采购、保障性能源安排、备用系统和客户负载增长，需要在同一长期容量平台内协同推进。",
           "冷却与水策略对 AI-ready 容量至关重要。园区方案将综合考虑高效运行区间、节水型冷却路径、热管理能力，以及适配不同客户技术配置的设备可选性。",
           "运营可持续性不止于能源使用。安全运营、监测控制、维护通道、材料管理、社区沟通和报告机制共同支撑可信的超大规模基础设施平台。",
@@ -310,9 +310,9 @@ const localizedCopy: Record<Language, PageCopy> = {
         panelTitle: "战略沟通",
         title: "",
         body: [
-          "PENTANEX 欢迎与超大规模运营商、云平台、企业 AI 客户、基础设施伙伴、能源市场参与者、投资者，以及政府和社区相关方开展战略沟通。",
+          "PentaNex 欢迎与超大规模运营商、云平台、企业 AI 客户、基础设施伙伴、能源市场参与者、投资者，以及政府和社区相关方开展战略沟通。",
           "沟通可从项目咨询、容量需求讨论、合作匹配、投资及基础设施对话，或墨尔本北部园区策略与分阶段交付路径介绍开始。",
-          "随着开发计划推进，PENTANEX 可按预约协调项目简报和现场参访。早期沟通建议聚焦客户容量画像、技术要求、时间窗口、能源与连接需求，以及商业参与路径。",
+          "随着开发计划推进，PentaNex 可按预约协调项目简报和现场参访。早期沟通建议聚焦客户容量画像、技术要求、时间窗口、能源与连接需求，以及商业参与路径。",
         ],
         points: [contactEmailDisplay, "容量与合作咨询", "预约现场参访"],
         sideNote: "",
@@ -327,9 +327,9 @@ const localizedCopy: Record<Language, PageCopy> = {
     footerIntro:
       "为澳大利亚超大规模云、加速计算和主权企业工作负载开发可扩展的 AI-ready 数字基础设施。",
     infrastructureNarrative: [
-      "PENTANEX 正在开发 AI-ready 数字基础设施，支持澳大利亚下一代超大规模计算需求、云平台、企业 AI 工作负载和主权数字能力。",
+      "PentaNex 正在开发 AI-ready 数字基础设施，支持澳大利亚下一代超大规模计算需求、云平台、企业 AI 工作负载和主权数字能力。",
       "项目面向高密度 AI 与加速计算环境进行设计，并结合可扩展电力基础设施、可再生能源与保障性能源整合、运营韧性和长期可持续性。",
-      "PENTANEX 旨在支持澳大利亚和亚太地区 AI 训练、推理及大规模云部署的快速增长，打造面向人工智能和数字化转型下一轮计算周期的未来型超大规模平台。",
+      "PentaNex 旨在支持澳大利亚和亚太地区 AI 训练、推理及大规模云部署的快速增长，打造面向人工智能和数字化转型下一轮计算周期的未来型超大规模平台。",
     ],
     focusLabels: {
       capacity: "容量重点",
@@ -386,13 +386,13 @@ function SiteStructuredData() {
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    name: "PENTANEX",
+    name: "PentaNex",
     url: siteUrl,
     logo: `${siteUrl}/pentanex-logo-full.png`,
     email: contactEmail,
     areaServed: "Australia",
     description:
-      "PENTANEX is developing AI-ready digital infrastructure for hyperscale cloud, accelerated compute, enterprise AI, and sovereign workload demand in Australia.",
+      "PentaNex is developing AI-ready digital infrastructure for hyperscale cloud, accelerated compute, enterprise AI, and sovereign workload demand in Australia.",
     makesOffer: {
       "@type": "Offer",
       name: "AI-ready hyperscale data centre campus capacity",
@@ -401,7 +401,7 @@ function SiteStructuredData() {
     },
     location: {
       "@type": "Place",
-      name: "PENTANEX Melbourne North campus",
+      name: "PentaNex Melbourne North campus",
       address: {
         "@type": "PostalAddress",
         addressLocality: "Melbourne North",
@@ -603,7 +603,7 @@ function AustraliaLocationMap() {
 
       <div className="relative">
         <svg
-          aria-label="Australia map with PENTANEX campus marker in Melbourne North, Victoria"
+          aria-label="Australia map with PentaNex campus marker in Melbourne North, Victoria"
           className="h-[clamp(210px,28vh,270px)] w-full"
           role="img"
           viewBox="0 0 620 360"
@@ -794,7 +794,7 @@ export default function Home() {
       </a>
       <header className="sticky top-0 z-50 px-3 pt-3 sm:px-5">
         <div className="mx-auto flex w-full max-w-[1180px] items-center justify-between gap-4 rounded-sm border border-white/80 bg-white/78 px-4 py-3 shadow-[0_18px_60px_rgba(16,32,51,0.12)] backdrop-blur-2xl">
-          <a className="flex items-center gap-3" href="#top" aria-label="PENTANEX home">
+          <a className="flex items-center gap-3" href="#top" aria-label="PentaNex home">
             <PentanexLogo />
           </a>
 
@@ -1092,5 +1092,6 @@ export default function Home() {
     </>
   );
 }
+
 
 
