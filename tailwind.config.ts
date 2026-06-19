@@ -18,7 +18,7 @@ const config: Config = {
         sans: ["Inter", "Arial", "Helvetica", "sans-serif"],
       },
       boxShadow: {
-        glow: "0 24px 70px rgba(15, 41, 76, 0.12)",
+        glow: "0 26px 76px rgba(15, 41, 76, 0.16)",
       },
     },
   },
