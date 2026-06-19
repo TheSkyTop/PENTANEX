@@ -425,7 +425,7 @@ function CapacityPlatformGraphic({
   copy: (typeof localizedCopy)[Language]["capacityGraphic"];
 }) {
   return (
-    <div className="mt-5 rounded-sm border border-slate-200/80 bg-white/72 p-4">
+    <div className="mt-5 rounded-sm border border-slate-200/80 bg-white/95 p-4">
       <div className="flex items-center justify-between gap-3">
         <div>
           <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-signal">
@@ -449,7 +449,7 @@ function CapacityPlatformGraphic({
         <div className="grid grid-cols-4 gap-2">
           {copy.blocks.map((label) => (
             <div className="rounded-sm border border-slate-200 bg-[#f6fbff]/90 p-2" key={label}>
-              <span className="block h-5 rounded-sm border border-slate-200 bg-white/86" />
+              <span className="block h-5 rounded-sm border border-slate-200 bg-white/97" />
               <p className="mt-2 text-[10px] font-semibold uppercase tracking-[0.12em] text-steel">
                 {label}
               </p>
@@ -482,7 +482,7 @@ function DeliveryRoadmap({
   }));
 
   return (
-    <div className="mt-5 rounded-sm border border-slate-200/80 bg-white/72 p-4">
+    <div className="mt-5 rounded-sm border border-slate-200/80 bg-white/95 p-4">
       <div className="flex items-center justify-between gap-3">
         <div>
           <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-signal">
@@ -535,7 +535,7 @@ function ContactPathwayGraphic({
   ];
 
   return (
-    <div className="rounded-sm border border-slate-200/80 bg-white/88 p-4">
+    <div className="rounded-sm border border-slate-200/80 bg-white/97 p-4">
       <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-signal">
         {copy.title}
       </p>
@@ -598,7 +598,7 @@ function AustraliaLocationMap() {
   }, []);
 
   return (
-    <div className="relative overflow-hidden rounded-sm border border-white/70 bg-white/58 p-3 shadow-glow backdrop-blur-2xl xl:p-4">
+    <div className="relative overflow-hidden rounded-sm border border-white bg-white/94 p-3 shadow-glow backdrop-blur-2xl xl:p-4">
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-white/82 via-white/32 to-signal/12" />
 
       <div className="relative">
@@ -788,16 +788,13 @@ export default function Home() {
         <div className={`${ambientAccent.left} ambient-drift`} />
         <div className={`${ambientAccent.right} ambient-drift-slow`} />
         <div className={`${ambientAccent.inner} ambient-drift`} />
-        <div className="datacenter-backdrop">
-          <span className="pulse-node node-a" />
-          <span className="pulse-node node-b" />
-        </div>
+        <div className="datacenter-backdrop" />
       </div>
       <a className="skip-link" href="#top">
         {copy.skip}
       </a>
       <header className="sticky top-0 z-50 px-3 pt-3 sm:px-5">
-        <div className="mx-auto flex w-full max-w-[1180px] items-center justify-between gap-4 rounded-sm border border-white/80 bg-white/78 px-4 py-3 shadow-[0_18px_60px_rgba(16,32,51,0.12)] backdrop-blur-2xl">
+        <div className="mx-auto flex w-full max-w-[1180px] items-center justify-between gap-4 rounded-sm border border-white bg-white/96 px-4 py-3 shadow-[0_18px_60px_rgba(16,32,51,0.12)] backdrop-blur-2xl">
           <a className="flex items-center gap-3" href="#top" aria-label="PentaNex home">
             <PentanexLogo />
           </a>
@@ -812,7 +809,7 @@ export default function Home() {
                 className={`rounded-sm border px-3.5 py-2 text-sm font-semibold transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-signal ${
                   activeTab.id === tab.id
                     ? "border-signal bg-signal text-white shadow-sm"
-                    : "border-slate-200/70 bg-white/62 text-steel hover:border-signal/45 hover:bg-white/90 hover:text-signal"
+                    : "border-slate-200/70 bg-white/92 text-steel hover:border-signal/45 hover:bg-white/90 hover:text-signal"
                 }`}
                 key={tab.id}
                 onClick={() => selectTab(tab)}
@@ -831,7 +828,7 @@ export default function Home() {
                 className={`rounded-sm border px-2.5 py-2 text-xs font-semibold transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-signal ${
                   language === option.id
                     ? "border-signal bg-signal text-white shadow-sm"
-                    : "border-slate-200/70 bg-white/62 text-steel hover:border-signal/45 hover:bg-white/90 hover:text-signal"
+                    : "border-slate-200/70 bg-white/92 text-steel hover:border-signal/45 hover:bg-white/90 hover:text-signal"
                 }`}
                 key={option.id}
                 onClick={() => selectLanguage(option.id)}
@@ -845,7 +842,7 @@ export default function Home() {
 
         <nav
           aria-label={copy.mobileNavAria}
-          className="mx-auto mt-2 flex w-full max-w-[1180px] gap-2 overflow-x-auto rounded-sm border border-white/75 bg-white/70 p-2 shadow-sm backdrop-blur-2xl lg:hidden"
+          className="mx-auto mt-2 flex w-full max-w-[1180px] gap-2 overflow-x-auto rounded-sm border border-white bg-white/94 p-2 shadow-sm backdrop-blur-2xl lg:hidden"
         >
           {tabs.map((tab) => (
             <button
@@ -853,7 +850,7 @@ export default function Home() {
               className={`shrink-0 rounded-sm border px-3 py-2 text-xs font-semibold transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-signal ${
                 activeTab.id === tab.id
                   ? "border-signal bg-signal text-white shadow-sm"
-                  : "border-slate-200/70 bg-white/62 text-steel hover:border-signal/45 hover:text-signal"
+                  : "border-slate-200/70 bg-white/92 text-steel hover:border-signal/45 hover:text-signal"
               }`}
               key={tab.id}
               onClick={() => selectTab(tab)}
@@ -869,7 +866,7 @@ export default function Home() {
               className={`shrink-0 rounded-sm border px-3 py-2 text-xs font-semibold transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-signal ${
                 language === option.id
                   ? "border-signal bg-signal text-white shadow-sm"
-                  : "border-slate-200/70 bg-white/62 text-steel hover:border-signal/45 hover:bg-white/90 hover:text-signal"
+                  : "border-slate-200/70 bg-white/92 text-steel hover:border-signal/45 hover:bg-white/90 hover:text-signal"
               }`}
               key={option.id}
               onClick={() => selectLanguage(option.id)}
@@ -892,8 +889,8 @@ export default function Home() {
             <div className="grid min-h-0 gap-3 xl:gap-4">
               <AustraliaLocationMap />
 
-              <div className="rounded-sm border border-white/70 bg-white/88 p-4 shadow-glow backdrop-blur-2xl xl:p-5">
-                <div className="inline-flex items-center gap-2 rounded-sm border border-signal/20 bg-white/70 px-3 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-signal">
+              <div className="rounded-sm border border-white bg-white/97 p-4 shadow-glow backdrop-blur-2xl xl:p-5">
+                <div className="inline-flex items-center gap-2 rounded-sm border border-signal/20 bg-white/94 px-3 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-signal">
                   <Globe2 size={15} />
                   {copy.infrastructureBadge}
                 </div>
@@ -908,10 +905,10 @@ export default function Home() {
             </div>
 
             <div className="grid min-h-0 gap-3 xl:gap-4">
-              <div className="rounded-sm border border-white/70 bg-white/88 p-3 shadow-glow backdrop-blur-2xl">
+              <div className="rounded-sm border border-white bg-white/97 p-3 shadow-glow backdrop-blur-2xl">
                 <div className="grid gap-2 sm:grid-cols-4">
                   {copy.metrics.map((metric) => (
-                    <div className="rounded-sm border border-slate-200/70 bg-white/66 p-3" key={metric.label}>
+                    <div className="rounded-sm border border-slate-200/70 bg-white/94 p-3" key={metric.label}>
                       <p className="text-[clamp(0.86rem,1.05vw,1rem)] font-semibold leading-tight text-signal">
                         {metric.value}
                       </p>
@@ -921,9 +918,9 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="flex rounded-sm border border-white/70 bg-white/88 p-3 shadow-glow backdrop-blur-2xl xl:p-4">
+              <div className="flex rounded-sm border border-white bg-white/97 p-3 shadow-glow backdrop-blur-2xl xl:p-4">
                 <div className="my-auto w-full rounded-sm border border-slate-200/70 bg-transparent p-4">
-                  <div className="inline-flex items-center gap-2 rounded-sm border border-signal/25 bg-white/62 px-3 py-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-signal shadow-[0_0_20px_rgba(15,114,179,0.10)]">
+                  <div className="inline-flex items-center gap-2 rounded-sm border border-signal/25 bg-white/92 px-3 py-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-signal shadow-[0_0_20px_rgba(15,114,179,0.10)]">
                     <ActiveIcon size={15} />
                     {localizedActiveTab.panelTitle}
                   </div>
@@ -954,11 +951,11 @@ export default function Home() {
           </div>
         ) : (
           <div className="panel-fade relative mx-auto w-full max-w-[1180px]">
-            <div className="rounded-sm border border-white/70 bg-white/88 p-4 shadow-glow backdrop-blur-2xl xl:p-5">
+            <div className="rounded-sm border border-white bg-white/97 p-4 shadow-glow backdrop-blur-2xl xl:p-5">
               <div className="grid items-stretch gap-4 lg:grid-cols-[minmax(0,1.22fr)_minmax(300px,0.78fr)] xl:gap-5">
-                <div className="flex rounded-sm border border-slate-200/70 bg-white/86 p-5 shadow-[0_18px_44px_rgba(16,32,51,0.04)] backdrop-blur-2xl xl:p-7">
+                <div className="flex rounded-sm border border-slate-200/70 bg-white/97 p-5 shadow-[0_18px_46px_rgba(16,32,51,0.075)] backdrop-blur-2xl xl:p-7">
                   <div className="mx-auto w-full max-w-3xl">
-                    <div className="inline-flex items-center gap-2 rounded-sm border border-signal/25 bg-white/62 px-3 py-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-signal shadow-[0_0_20px_rgba(15,114,179,0.10)]">
+                    <div className="inline-flex items-center gap-2 rounded-sm border border-signal/25 bg-white/92 px-3 py-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-signal shadow-[0_0_20px_rgba(15,114,179,0.10)]">
                       <ActiveIcon size={15} />
                       {localizedActiveTab.panelTitle}
                     </div>
@@ -977,7 +974,7 @@ export default function Home() {
                   </div>
                 </div>
 
-                <aside className="flex rounded-sm border border-slate-200/70 bg-white/84 p-5 shadow-[0_18px_44px_rgba(16,32,51,0.04)] backdrop-blur-2xl xl:p-6">
+                <aside className="flex rounded-sm border border-slate-200/70 bg-white/96 p-5 shadow-[0_18px_46px_rgba(16,32,51,0.075)] backdrop-blur-2xl xl:p-6">
                   <div className="mx-auto w-full max-w-md">
                     {activeTab.id !== "contact" ? (
                       <>
@@ -986,7 +983,7 @@ export default function Home() {
                         </p>
                         <div className="mt-5 grid gap-3">
                           {localizedActiveTab.points.map((point) => (
-                            <div className="flex gap-3 rounded-sm border border-slate-200 bg-white/72 p-4 shadow-[0_12px_28px_rgba(16,32,51,0.04)]" key={point}>
+                            <div className="flex gap-3 rounded-sm border border-slate-200 bg-white/95 p-4 shadow-[0_12px_28px_rgba(16,32,51,0.04)]" key={point}>
                               <CheckCircle2 className="mt-0.5 shrink-0 text-power" size={18} />
                               {point.includes("@") ? (
                                 <a className="content-copy-sm break-words transition hover:text-signal focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-signal" href={`mailto:${contactEmail}`}>
@@ -1010,7 +1007,7 @@ export default function Home() {
                         <div className="mt-3 grid gap-2">
                           {copy.sdgs.map((sdg) => (
                             <div
-                              className="flex items-center gap-3 rounded-sm border border-slate-200 bg-white/72 p-3"
+                              className="flex items-center gap-3 rounded-sm border border-slate-200 bg-white/95 p-3"
                               key={sdg.number}
                             >
                               <span
@@ -1044,7 +1041,7 @@ export default function Home() {
       </section>
 
       <footer className="relative px-3 pb-5 sm:px-5">
-        <div className="relative mx-auto w-full max-w-[1180px] rounded-sm border border-white/70 bg-white/82 p-4 shadow-glow backdrop-blur-2xl xl:p-5">
+        <div className="relative mx-auto w-full max-w-[1180px] rounded-sm border border-white bg-white/96 p-4 shadow-glow backdrop-blur-2xl xl:p-5">
           <div className="grid gap-4 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,2.1fr)] lg:items-start">
             <div>
               <div className="flex items-center gap-3">
@@ -1058,7 +1055,7 @@ export default function Home() {
             <div className="grid min-w-0 gap-3 sm:grid-cols-2 xl:grid-cols-[0.9fr_0.9fr_1fr_1.35fr]">
               {copy.footerGroups.map((group) => (
                 <div
-                  className="rounded-sm border border-slate-200/70 bg-white/68 p-4"
+                  className="rounded-sm border border-slate-200/70 bg-white/94 p-4"
                   key={group.heading}
                 >
                   <p className="text-xs font-semibold uppercase tracking-[0.2em] text-signal">
@@ -1096,6 +1093,7 @@ export default function Home() {
     </>
   );
 }
+
 
 
 
