@@ -1,6 +1,6 @@
-{
-  "name": "PENTANEX",
-  "short_name": "PENTANEX",
+﻿{
+  "name": "PentaNex",
+  "short_name": "PentaNex",
   "description": "AI-ready Australian data centre infrastructure.",
   "start_url": ".",
   "display": "standalone",
@@ -19,3 +19,4 @@
     }
   ]
 }
+
