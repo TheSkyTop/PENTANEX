@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useEffect, useLayoutEffect, useMemo, useState } from "react";
 import {
@@ -243,29 +243,29 @@ const localizedCopy: Record<Language, PageCopy> = {
     navAria: "主导航",
     mobileNavAria: "移动端导航",
     languageLabel: "语言",
-    skip: "跳到主要内容",
+    skip: "跳转到主要内容",
     brandSubtitle: "数据中心基础设施",
     infrastructureBadge: "澳大利亚数字基础设施",
-    dataHallCapacity: "分阶段数据机房容量",
-    footerCopyright: "(c) 2026 PENTANEX。项目信息以规划、审批及最终交付确认为准。",
+    dataHallCapacity: "分阶段数据大厅容量",
+    footerCopyright: "(c) 2026 PENTANEX。项目信息以规划、审批和交付确认为准。",
     footerTagline: "面向 AI 的超大规模数字基础设施平台。",
     metrics: [
-      { value: project.capacity, label: "总规超大规模园区容量" },
+      { value: project.capacity, label: "总体规划超大规模园区容量" },
       { value: "Melbourne", label: "墨尔本北部战略区位，VIC Australia" },
-      { value: "AI-ready", label: "面向 AI 的高密度算力基础设施" },
-      { value: "Hyperscale", label: "可扩展云与 AI 算力容量" },
+      { value: "AI-ready", label: "高密度计算基础设施" },
+      { value: "Hyperscale", label: "可扩展云与 AI 计算容量" },
     ],
     tabs: {
       campus: {
         label: "园区",
-        panelTitle: "园区开发策略",
-        title: "我们正在规划面向 AI 与云计算增长的超大规模数据中心园区。",
+        panelTitle: "园区发展策略",
+        title: "",
         body: [
-          "PENTANEX 正在打造长期数字基础设施平台，服务超大规模云、加速计算、企业 AI 以及澳大利亚主权工作负载需求。",
-          "园区开发策略围绕可扩展容量分区、公用工程走廊、安全运营、网络连接路径和分阶段交付能力展开。",
+          "PENTANEX 正在规划长期数字基础设施平台，服务超大规模云、加速计算、企业 AI 以及澳大利亚主权工作负载需求。",
+          "园区策略围绕可扩展容量分区、韧性公用工程规划、安全运营、连接通道和分阶段交付能力展开。",
           "项目目标是为高密度计算环境、客户长期增长，以及澳大利亚和亚太地区下一轮数字基础设施需求提供可扩展基础。",
         ],
-        points: ["400 MW + 总规园区容量", "可扩展容量分区", "墨尔本北部基础设施走廊"],
+        points: ["400 MW + 总体规划园区容量", "可扩展容量分区", "墨尔本北部基础设施走廊"],
         sideNote: "园区规划聚焦可扩展容量分区、韧性运营和长期扩展能力。",
       },
       capacity: {
@@ -273,11 +273,11 @@ const localizedCopy: Record<Language, PageCopy> = {
         panelTitle: "容量策略",
         title: "",
         body: [
-          "PENTANEX 的容量策略围绕 400 MW + 总规超大规模园区平台展开，面向云平台、AI 训练与推理、加速计算和主权企业工作负载。",
-          "容量规划采用分阶段基础设施平台模式，而非单体建筑模式，通过容量分区、公用工程走廊、冷却路径、光纤多样性和客户就绪部署区域随需求扩展。",
-          "面向超大规模和 AI 客户，容量架构重点关注高密度机柜环境、可重复数据机房模块、安全运营、能源与冷却可选性，以及跨阶段的可预测容量释放路径。",
+          "PENTANEX 的容量策略围绕 400 MW + 总体规划超大规模园区平台展开，面向云平台、AI 训练与推理、加速计算和主权企业工作负载。",
+          "容量规划采用分阶段基础设施平台模式，而非单体建筑模式，通过容量分区、公用工程走廊、冷却路径、光纤多样性和客户就绪部署区随需求扩展。",
+          "面向超大规模和 AI 客户，容量架构重点关注安全运营、高密度计算就绪、能源与冷却可选性，以及跨阶段的可预测容量释放路径。",
         ],
-        points: ["400 MW + 总规园区容量", "高密度 AI 与加速计算", "可扩展分阶段部署"],
+        points: ["400 MW + 总体规划园区容量", "高密度 AI 与加速计算", "可扩展分阶段部署"],
         sideNote: "",
       },
       delivery: {
@@ -286,7 +286,7 @@ const localizedCopy: Record<Language, PageCopy> = {
         title: "",
         body: [
           "PENTANEX 以严谨的基础设施开发路径推进交付，将规划审批、前期工程、公用工程接口、设计治理和利益相关方协调纳入分阶段执行体系。",
-          "交付策略旨在把大规模总规园区转化为可融资、可建设、可运营的客户就绪容量，关键工作包括电网与能源接口、光纤路径、冷却系统、安全通行和运营准备。",
+          "交付策略旨在把大规模总体规划园区转化为可信、可建设、可运营的客户就绪容量，关键工作包括能源接口、连接路径、冷却系统、安全通行和运营准备。",
           "面向超大规模和企业客户，交付确定性来自清晰的里程碑治理、服务接口协调、分阶段容量释放、韧性验证以及后续扩展可选性。",
         ],
         points: ["规划审批与前期工程", "电网、能源、光纤和冷却接口", "客户就绪里程碑治理"],
@@ -307,7 +307,7 @@ const localizedCopy: Record<Language, PageCopy> = {
       },
       contact: {
         label: "联系",
-        panelTitle: "战略合作沟通",
+        panelTitle: "战略沟通",
         title: "",
         body: [
           "PENTANEX 欢迎与超大规模运营商、云平台、企业 AI 客户、基础设施伙伴、能源市场参与者、投资者，以及政府和社区相关方开展战略沟通。",
@@ -319,29 +319,29 @@ const localizedCopy: Record<Language, PageCopy> = {
       },
     },
     footerGroups: [
-      { heading: "园区", items: ["墨尔本北部", "维多利亚州", "基础设施走廊"] },
-      { heading: "容量", items: ["400 MW + 园区", "AI-ready 算力", "分阶段容量"] },
-      { heading: "平台", items: ["云与 AI 负载", "电力 冷却 光纤", "主权数字能力"] },
+      { heading: "园区", items: ["墨尔本北部", "Victoria", "基础设施走廊"] },
+      { heading: "容量", items: ["400 MW + 园区", "AI-ready 计算", "分阶段容量"] },
+      { heading: "平台", items: ["云与 AI 负载", "电力 冷却 光纤", "主权能力"] },
       { heading: "联系", items: ["项目咨询", contactEmailDisplay] },
     ],
     footerIntro:
       "为澳大利亚超大规模云、加速计算和主权企业工作负载开发可扩展的 AI-ready 数字基础设施。",
     infrastructureNarrative: [
-      "PENTANEX 正在开发 AI-ready 数字基础设施，支持澳大利亚下一代超大规模算力需求、云平台、企业 AI 工作负载和主权数字能力。",
+      "PENTANEX 正在开发 AI-ready 数字基础设施，支持澳大利亚下一代超大规模计算需求、云平台、企业 AI 工作负载和主权数字能力。",
       "项目面向高密度 AI 与加速计算环境进行设计，并结合可扩展电力基础设施、可再生能源与保障性能源整合、运营韧性和长期可持续性。",
-      "PENTANEX 旨在支持澳大利亚和亚太地区 AI 训练、推理及大规模云部署的增长，打造面向人工智能和数字化转型下一轮计算周期的未来型超大规模平台。",
+      "PENTANEX 旨在支持澳大利亚和亚太地区 AI 训练、推理及大规模云部署的快速增长，打造面向人工智能和数字化转型下一轮计算周期的未来型超大规模平台。",
     ],
     focusLabels: {
-      capacity: "容量策略重点",
-      delivery: "交付路径重点",
-      sustainability: "可持续策略重点",
-      contact: "沟通渠道",
+      capacity: "容量重点",
+      delivery: "交付重点",
+      sustainability: "可持续重点",
+      contact: "沟通路径",
     },
     capacityGraphic: {
       title: "容量平台",
-      description: "分阶段园区容量、公用工程走廊和客户就绪部署区域。",
+      description: "分阶段园区容量、公用工程规划和部署区域。",
       blocks: ["容量", "冷却", "电力", "光纤"],
-      spine: "公用工程走廊与分阶段容量释放路径",
+      spine: "公用工程规划与分阶段释放路径",
     },
     deliveryGraphic: {
       title: "交付路线图",
@@ -369,14 +369,15 @@ const localizedCopy: Record<Language, PageCopy> = {
       { number: "13", label: "气候行动", color: "#3f7e44" },
     ],
   },
+
 };
 
 function PentanexLogo() {
   return (
     <img
-      alt=""
-      className="h-11 w-11 shrink-0 object-contain"
-      src={assetPath("/pentanex-logo.png")}
+      alt="PentaNex"
+      className="h-9 w-auto max-w-[180px] shrink-0 object-contain sm:h-10"
+      src={assetPath("/pentanex-logo-full.png")}
     />
   );
 }
@@ -387,7 +388,7 @@ function SiteStructuredData() {
     "@type": "Organization",
     name: "PENTANEX",
     url: siteUrl,
-    logo: `${siteUrl}/pentanex-logo.png`,
+    logo: `${siteUrl}/pentanex-logo-full.png`,
     email: contactEmail,
     areaServed: "Australia",
     description:
@@ -447,7 +448,7 @@ function CapacityPlatformGraphic({
         </div>
         <div className="grid grid-cols-4 gap-2">
           {copy.blocks.map((label) => (
-            <div className="rounded-sm border border-slate-200 bg-[#f8fbfd]/90 p-2" key={label}>
+            <div className="rounded-sm border border-slate-200 bg-[#f6fbff]/90 p-2" key={label}>
               <span className="block h-5 rounded-sm border border-slate-200 bg-white/86" />
               <p className="mt-2 text-[10px] font-semibold uppercase tracking-[0.12em] text-steel">
                 {label}
@@ -455,7 +456,7 @@ function CapacityPlatformGraphic({
             </div>
           ))}
         </div>
-        <div className="relative mt-1 h-12 overflow-hidden rounded-sm border border-slate-200 bg-[#f8fbfd]/90">
+        <div className="relative mt-1 h-12 overflow-hidden rounded-sm border border-slate-200 bg-[#f6fbff]/90">
           <div className="absolute left-4 right-4 top-1/2 h-px bg-signal/35" />
           <div className="absolute left-[18%] top-3 h-6 w-px bg-signal/30" />
           <div className="absolute left-[48%] top-3 h-6 w-px bg-signal/30" />
@@ -505,7 +506,7 @@ function DeliveryRoadmap({
             <div key={milestone.year}>
               <div
                 className={`mx-auto h-3 w-3 rounded-full border ${
-                  milestone.active ? "border-signal bg-signal shadow-[0_0_0_5px_rgba(15,174,166,0.12)]" : "border-slate-300 bg-white"
+                  milestone.active ? "border-signal bg-signal shadow-[0_0_0_5px_rgba(22,136,199,0.12)]" : "border-slate-300 bg-white"
                 }`}
               />
               <p className={`mt-2 text-center text-[10px] font-bold ${milestone.active ? "text-signal" : "text-steel"}`}>
@@ -610,24 +611,24 @@ function AustraliaLocationMap() {
           <defs>
             <linearGradient id="mapFill" x1="0" x2="1" y1="0" y2="1">
               <stop offset="0%" stopColor="#f8fffe" />
-              <stop offset="100%" stopColor="#dff2ef" />
+              <stop offset="100%" stopColor="#dceff8" />
             </linearGradient>
             <linearGradient id="locationTag" x1="0" x2="1" y1="0" y2="1">
               <stop offset="0%" stopColor="#ffffff" />
-              <stop offset="100%" stopColor="#e9fbfa" />
+              <stop offset="100%" stopColor="#e8f6fc" />
             </linearGradient>
             <linearGradient id="mapAxisX" x1="0" x2="1" y1="0" y2="0">
-              <stop offset="0%" stopColor="#0faea6" stopOpacity="0" />
-              <stop offset="50%" stopColor="#0faea6" stopOpacity="0.28" />
-              <stop offset="100%" stopColor="#0faea6" stopOpacity="0" />
+              <stop offset="0%" stopColor="#1688c7" stopOpacity="0" />
+              <stop offset="50%" stopColor="#1688c7" stopOpacity="0.28" />
+              <stop offset="100%" stopColor="#1688c7" stopOpacity="0" />
             </linearGradient>
             <linearGradient id="mapAxisY" x1="0" x2="0" y1="0" y2="1">
-              <stop offset="0%" stopColor="#0faea6" stopOpacity="0" />
-              <stop offset="50%" stopColor="#0faea6" stopOpacity="0.22" />
-              <stop offset="100%" stopColor="#0faea6" stopOpacity="0" />
+              <stop offset="0%" stopColor="#1688c7" stopOpacity="0" />
+              <stop offset="50%" stopColor="#1688c7" stopOpacity="0.22" />
+              <stop offset="100%" stopColor="#1688c7" stopOpacity="0" />
             </linearGradient>
             <filter id="softGlass" height="180%" width="180%" x="-40%" y="-40%">
-              <feDropShadow dx="0" dy="7" floodColor="#0faea6" floodOpacity="0.12" stdDeviation="8" />
+              <feDropShadow dx="0" dy="7" floodColor="#1688c7" floodOpacity="0.12" stdDeviation="8" />
             </filter>
             <filter id="markerGlow" height="240%" width="240%" x="-70%" y="-70%">
               <feGaussianBlur result="blur" stdDeviation="10" />
@@ -643,9 +644,9 @@ function AustraliaLocationMap() {
             {worldPaths.map((countryPath, index) => (
               <path
                 d={countryPath}
-                fill="#c9e7e4"
+                fill="#c9e5f3"
                 key={`world-${index}`}
-                stroke="#78b9b2"
+                stroke="#7eb8d4"
                 strokeWidth="0.5"
               />
             ))}
@@ -659,31 +660,31 @@ function AustraliaLocationMap() {
             strokeWidth="1"
           />
           <g transform={`translate(0 ${australiaMapYOffset})`}>
-            <path d={australiaPath} fill="url(#mapFill)" stroke="#88c7c1" strokeWidth="1.6" />
+            <path d={australiaPath} fill="url(#mapFill)" stroke="#6db4d4" strokeWidth="1.6" />
             <path
               d={`M${sitePoint[0] + 44} ${sitePoint[1] + 8} C${sitePoint[0] + 30} ${sitePoint[1] + 5} ${sitePoint[0] + 23} ${sitePoint[1] + 4} ${sitePoint[0] + 13} ${sitePoint[1] + 1}`}
               fill="none"
-              stroke="#0faea6"
+              stroke="#1688c7"
               strokeDasharray="4 7"
               strokeLinecap="round"
               strokeOpacity="0.72"
               strokeWidth="1.25"
             />
             <circle cx={sitePoint[0]} cy={sitePoint[1]} fill="none" r="15" stroke="#74c947" strokeDasharray="3 6" strokeOpacity="0.58" strokeWidth="1.6" />
-            <circle cx={sitePoint[0]} cy={sitePoint[1]} fill="#0faea6" r="4.5" />
-            <circle cx={sitePoint[0]} cy={sitePoint[1]} fill="none" r="9" stroke="#0faea6" strokeOpacity="0.5" strokeWidth="3" />
+            <circle cx={sitePoint[0]} cy={sitePoint[1]} fill="#1688c7" r="4.5" />
+            <circle cx={sitePoint[0]} cy={sitePoint[1]} fill="none" r="9" stroke="#1688c7" strokeOpacity="0.5" strokeWidth="3" />
             <rect
               fill="url(#locationTag)"
               filter="url(#softGlass)"
               height="40"
               rx="4"
-              stroke="#7bdad4"
+              stroke="#87cdea"
               strokeOpacity="0.9"
               width="218"
               x={sitePoint[0] + 50}
               y={sitePoint[1] - 15}
             />
-            <text fill="#0faea6" fontSize="15.2" fontWeight="500" letterSpacing="0.45" x={sitePoint[0] + 64} y={sitePoint[1] + 11}>
+            <text fill="#1688c7" fontSize="15.2" fontWeight="500" letterSpacing="0.45" x={sitePoint[0] + 64} y={sitePoint[1] + 11}>
               Melbourne North, VIC
             </text>
           </g>
@@ -716,29 +717,29 @@ function getRequestedLanguage(): Language {
 
 const ambientAccents: Record<string, { left: string; right: string; inner: string }> = {
   campus: {
-    left: "absolute left-[-10rem] bottom-10 h-[26rem] w-[26rem] rounded-full bg-[#08756f]/[0.055] blur-3xl",
-    right: "absolute right-[-9rem] bottom-[2rem] h-[38rem] w-[38rem] rounded-full bg-[#08756f]/[0.058] blur-[118px]",
-    inner: "absolute right-[7rem] bottom-[9rem] h-[19rem] w-[19rem] rounded-full bg-[#08756f]/[0.026] blur-[88px]",
+    left: "absolute left-[-10rem] bottom-10 h-[26rem] w-[26rem] rounded-full bg-[#0b6f9f]/[0.055] blur-3xl",
+    right: "absolute right-[-9rem] bottom-[2rem] h-[38rem] w-[38rem] rounded-full bg-[#0b6f9f]/[0.058] blur-[118px]",
+    inner: "absolute right-[7rem] bottom-[9rem] h-[19rem] w-[19rem] rounded-full bg-[#0b6f9f]/[0.026] blur-[88px]",
   },
   capacity: {
-    left: "absolute left-[-13rem] top-[18rem] h-[30rem] w-[30rem] rounded-full bg-[#08756f]/[0.048] blur-[104px]",
-    right: "absolute right-[-11rem] bottom-[5rem] h-[36rem] w-[36rem] rounded-full bg-[#08756f]/[0.055] blur-[118px]",
-    inner: "absolute right-[5rem] bottom-[15rem] h-[17rem] w-[17rem] rounded-full bg-[#08756f]/[0.024] blur-[84px]",
+    left: "absolute left-[-13rem] top-[18rem] h-[30rem] w-[30rem] rounded-full bg-[#0b6f9f]/[0.048] blur-[104px]",
+    right: "absolute right-[-11rem] bottom-[5rem] h-[36rem] w-[36rem] rounded-full bg-[#0b6f9f]/[0.055] blur-[118px]",
+    inner: "absolute right-[5rem] bottom-[15rem] h-[17rem] w-[17rem] rounded-full bg-[#0b6f9f]/[0.024] blur-[84px]",
   },
   delivery: {
-    left: "absolute left-[-12rem] bottom-[9rem] h-[28rem] w-[28rem] rounded-full bg-[#08756f]/[0.052] blur-[104px]",
-    right: "absolute right-[-10rem] bottom-[10rem] h-[34rem] w-[34rem] rounded-full bg-[#08756f]/[0.052] blur-[116px]",
-    inner: "absolute right-[8rem] bottom-[4rem] h-[18rem] w-[18rem] rounded-full bg-[#08756f]/[0.023] blur-[84px]",
+    left: "absolute left-[-12rem] bottom-[9rem] h-[28rem] w-[28rem] rounded-full bg-[#0b6f9f]/[0.052] blur-[104px]",
+    right: "absolute right-[-10rem] bottom-[10rem] h-[34rem] w-[34rem] rounded-full bg-[#0b6f9f]/[0.052] blur-[116px]",
+    inner: "absolute right-[8rem] bottom-[4rem] h-[18rem] w-[18rem] rounded-full bg-[#0b6f9f]/[0.023] blur-[84px]",
   },
   sustainability: {
-    left: "absolute left-[-11rem] top-[24rem] h-[32rem] w-[32rem] rounded-full bg-[#08756f]/[0.05] blur-[112px]",
-    right: "absolute right-[-12rem] bottom-[3rem] h-[40rem] w-[40rem] rounded-full bg-[#08756f]/[0.054] blur-[124px]",
-    inner: "absolute right-[10rem] bottom-[13rem] h-[15rem] w-[15rem] rounded-full bg-[#08756f]/[0.022] blur-[80px]",
+    left: "absolute left-[-11rem] top-[24rem] h-[32rem] w-[32rem] rounded-full bg-[#0b6f9f]/[0.05] blur-[112px]",
+    right: "absolute right-[-12rem] bottom-[3rem] h-[40rem] w-[40rem] rounded-full bg-[#0b6f9f]/[0.054] blur-[124px]",
+    inner: "absolute right-[10rem] bottom-[13rem] h-[15rem] w-[15rem] rounded-full bg-[#0b6f9f]/[0.022] blur-[80px]",
   },
   contact: {
-    left: "absolute left-[-10rem] bottom-[7rem] h-[28rem] w-[28rem] rounded-full bg-[#08756f]/[0.048] blur-[108px]",
-    right: "absolute right-[-10rem] bottom-[7rem] h-[36rem] w-[36rem] rounded-full bg-[#08756f]/[0.056] blur-[118px]",
-    inner: "absolute right-[6rem] bottom-[18rem] h-[16rem] w-[16rem] rounded-full bg-[#08756f]/[0.024] blur-[82px]",
+    left: "absolute left-[-10rem] bottom-[7rem] h-[28rem] w-[28rem] rounded-full bg-[#0b6f9f]/[0.048] blur-[108px]",
+    right: "absolute right-[-10rem] bottom-[7rem] h-[36rem] w-[36rem] rounded-full bg-[#0b6f9f]/[0.056] blur-[118px]",
+    inner: "absolute right-[6rem] bottom-[18rem] h-[16rem] w-[16rem] rounded-full bg-[#0b6f9f]/[0.024] blur-[82px]",
   },
 };
 
@@ -782,7 +783,7 @@ export default function Home() {
   return (
     <>
     <SiteStructuredData />
-    <main className="min-h-screen overflow-x-hidden bg-[#eef4f8] text-graphite" data-language={language}>
+    <main className="min-h-screen overflow-x-hidden bg-[#eef5fa] text-graphite" data-language={language}>
       <div className="pointer-events-none fixed inset-0 overflow-hidden" aria-hidden="true">
         <div className={ambientAccent.left} />
         <div className={ambientAccent.right} />
@@ -795,19 +796,11 @@ export default function Home() {
         <div className="mx-auto flex w-full max-w-[1180px] items-center justify-between gap-4 rounded-sm border border-white/80 bg-white/78 px-4 py-3 shadow-[0_18px_60px_rgba(16,32,51,0.12)] backdrop-blur-2xl">
           <a className="flex items-center gap-3" href="#top" aria-label="PENTANEX home">
             <PentanexLogo />
-            <span>
-              <span className="block text-sm font-semibold tracking-[0.22em] text-graphite">
-                PENTANEX
-              </span>
-              <span className="hidden text-[10px] font-medium uppercase tracking-[0.16em] text-steel sm:block">
-                {copy.brandSubtitle}
-              </span>
-            </span>
           </a>
 
           <nav
             aria-label={copy.navAria}
-            className="hidden items-center gap-1 rounded-sm border border-slate-200/75 bg-[#f8fbfd]/78 p-1 shadow-inner backdrop-blur-2xl lg:flex"
+            className="hidden items-center gap-1 rounded-sm border border-slate-200/75 bg-[#f6fbff]/78 p-1 shadow-inner backdrop-blur-2xl lg:flex"
           >
             {tabs.map((tab) => (
               <button
@@ -826,7 +819,7 @@ export default function Home() {
             ))}
           </nav>
 
-          <div className="hidden items-center justify-end gap-1 rounded-sm border border-slate-200/75 bg-[#f8fbfd]/78 p-1 shadow-inner backdrop-blur-2xl lg:flex">
+          <div className="hidden items-center justify-end gap-1 rounded-sm border border-slate-200/75 bg-[#f6fbff]/78 p-1 shadow-inner backdrop-blur-2xl lg:flex">
             <span className="sr-only">{copy.languageLabel}</span>
             {languageOptions.map((option) => (
               <button
@@ -926,7 +919,7 @@ export default function Home() {
 
               <div className="flex rounded-sm border border-white/70 bg-white/88 p-3 shadow-glow backdrop-blur-2xl xl:p-4">
                 <div className="my-auto w-full rounded-sm border border-slate-200/70 bg-transparent p-4">
-                  <div className="inline-flex items-center gap-2 rounded-sm border border-signal/25 bg-white/62 px-3 py-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-signal shadow-[0_0_20px_rgba(15,174,166,0.08)]">
+                  <div className="inline-flex items-center gap-2 rounded-sm border border-signal/25 bg-white/62 px-3 py-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-signal shadow-[0_0_20px_rgba(22,136,199,0.08)]">
                     <ActiveIcon size={15} />
                     {localizedActiveTab.panelTitle}
                   </div>
@@ -961,7 +954,7 @@ export default function Home() {
               <div className="grid items-stretch gap-4 lg:grid-cols-[minmax(0,1.22fr)_minmax(300px,0.78fr)] xl:gap-5">
                 <div className="flex rounded-sm border border-slate-200/70 bg-white/86 p-5 shadow-[0_18px_44px_rgba(16,32,51,0.04)] backdrop-blur-2xl xl:p-7">
                   <div className="mx-auto w-full max-w-3xl">
-                    <div className="inline-flex items-center gap-2 rounded-sm border border-signal/25 bg-white/62 px-3 py-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-signal shadow-[0_0_20px_rgba(15,174,166,0.08)]">
+                    <div className="inline-flex items-center gap-2 rounded-sm border border-signal/25 bg-white/62 px-3 py-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-signal shadow-[0_0_20px_rgba(22,136,199,0.08)]">
                       <ActiveIcon size={15} />
                       {localizedActiveTab.panelTitle}
                     </div>
@@ -1052,12 +1045,6 @@ export default function Home() {
             <div>
               <div className="flex items-center gap-3">
                 <PentanexLogo />
-                <div>
-                  <p className="text-sm font-semibold tracking-[0.22em] text-graphite">PENTANEX</p>
-                  <p className="mt-1 text-[10px] font-medium uppercase tracking-[0.16em] text-steel">
-                    {copy.brandSubtitle}
-                  </p>
-                </div>
               </div>
               <p className="content-copy-sm mt-4 max-w-md">
                 {copy.footerIntro}
@@ -1105,3 +1092,5 @@ export default function Home() {
     </>
   );
 }
+
+

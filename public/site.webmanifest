@@ -4,12 +4,17 @@
   "description": "AI-ready Australian data centre infrastructure.",
   "start_url": ".",
   "display": "standalone",
-  "background_color": "#eef4f8",
-  "theme_color": "#0faea6",
+  "background_color": "#eef5fa",
+  "theme_color": "#1688c7",
   "icons": [
     {
-      "src": "pentanex-logo.png",
+      "src": "pentanex-mark.png",
       "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "apple-touch-icon.png",
+      "sizes": "180x180",
       "type": "image/png"
     }
   ]

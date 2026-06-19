@@ -9,10 +9,10 @@ const config: Config = {
     extend: {
       colors: {
         graphite: "#102033",
-        panel: "#f6f9fc",
-        steel: "#617084",
-        signal: "#0faea6",
-        power: "#74c947",
+        panel: "#f5f9fd",
+        steel: "#5e7086",
+        signal: "#1688c7",
+        power: "#45a9c8",
       },
       fontFamily: {
         sans: ["Inter", "Arial", "Helvetica", "sans-serif"],

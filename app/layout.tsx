@@ -38,9 +38,9 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "pentanex-logo.png",
-        width: 512,
-        height: 512,
+        url: "pentanex-logo-full.png",
+        width: 1006,
+        height: 289,
         alt: "PENTANEX logo",
       },
     ],
@@ -50,14 +50,14 @@ export const metadata: Metadata = {
     title: "PENTANEX | Australian Data Centre Infrastructure",
     description:
       "AI-ready digital infrastructure planned for hyperscale cloud, accelerated compute, enterprise AI, and sovereign workload demand.",
-    images: ["pentanex-logo.png"],
+    images: ["pentanex-logo-full.png"],
   },
   icons: {
     icon: [
       { url: assetPath("/favicon.svg"), type: "image/svg+xml" },
-      { url: assetPath("/pentanex-logo.png"), sizes: "512x512", type: "image/png" },
+      { url: assetPath("/pentanex-mark.png"), sizes: "512x512", type: "image/png" },
     ],
-    apple: assetPath("/pentanex-logo.png"),
+    apple: assetPath("/apple-touch-icon.png"),
   },
   manifest: assetPath("/site.webmanifest"),
   robots: {
