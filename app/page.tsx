@@ -435,7 +435,7 @@ function CapacityPlatformGraphic({
             {copy.description}
           </p>
         </div>
-        <span className="shrink-0 rounded-sm border border-signal/30 bg-signal/10 px-2.5 py-1 text-xs font-bold text-signal">
+        <span className="shrink-0 rounded-sm border border-signal/30 bg-signal/12 px-2.5 py-1 text-xs font-bold text-signal">
           400 MW +
         </span>
       </div>
@@ -492,7 +492,7 @@ function DeliveryRoadmap({
             {copy.description}
           </p>
         </div>
-        <span className="shrink-0 rounded-sm border border-signal/30 bg-signal/10 px-2.5 py-1 text-xs font-bold text-signal">
+        <span className="shrink-0 rounded-sm border border-signal/30 bg-signal/12 px-2.5 py-1 text-xs font-bold text-signal">
           {copy.status}
         </span>
       </div>
@@ -506,7 +506,7 @@ function DeliveryRoadmap({
             <div key={milestone.year}>
               <div
                 className={`mx-auto h-3 w-3 rounded-full border ${
-                  milestone.active ? "border-signal bg-signal shadow-[0_0_0_5px_rgba(22,136,199,0.12)]" : "border-slate-300 bg-white"
+                  milestone.active ? "border-signal bg-signal shadow-[0_0_0_5px_rgba(15,114,179,0.14)]" : "border-slate-300 bg-white"
                 }`}
               />
               <p className={`mt-2 text-center text-[10px] font-bold ${milestone.active ? "text-signal" : "text-steel"}`}>
@@ -543,7 +543,7 @@ function ContactPathwayGraphic({
         {copy.steps.map((step, index) => (
           <div className="grid grid-cols-[36px_1fr] gap-3" key={step.label}>
             <div className="flex flex-col items-center">
-              <span className="flex h-8 w-8 items-center justify-center rounded-sm border border-signal/30 bg-signal/10 text-xs font-bold text-signal">
+              <span className="flex h-8 w-8 items-center justify-center rounded-sm border border-signal/30 bg-signal/12 text-xs font-bold text-signal">
                 {index + 1}
               </span>
               {index < copy.steps.length - 1 ? <span className="h-8 w-px bg-slate-200" /> : null}
@@ -561,7 +561,7 @@ function ContactPathwayGraphic({
 
           return (
             <div className="rounded-sm border border-slate-200 bg-white/92 p-3" key={mode.label}>
-              <div className="flex h-10 w-10 items-center justify-center rounded-sm border border-signal/25 bg-signal/10 text-signal">
+              <div className="flex h-10 w-10 items-center justify-center rounded-sm border border-signal/25 bg-signal/12 text-signal">
                 <ModeIcon size={18} />
               </div>
               <p className="content-copy-xs mt-3">{mode.label}</p>
@@ -618,17 +618,17 @@ function AustraliaLocationMap() {
               <stop offset="100%" stopColor="#e8f6fc" />
             </linearGradient>
             <linearGradient id="mapAxisX" x1="0" x2="1" y1="0" y2="0">
-              <stop offset="0%" stopColor="#1688c7" stopOpacity="0" />
-              <stop offset="50%" stopColor="#1688c7" stopOpacity="0.28" />
-              <stop offset="100%" stopColor="#1688c7" stopOpacity="0" />
+              <stop offset="0%" stopColor="#0f72b3" stopOpacity="0" />
+              <stop offset="50%" stopColor="#0f72b3" stopOpacity="0.28" />
+              <stop offset="100%" stopColor="#0f72b3" stopOpacity="0" />
             </linearGradient>
             <linearGradient id="mapAxisY" x1="0" x2="0" y1="0" y2="1">
-              <stop offset="0%" stopColor="#1688c7" stopOpacity="0" />
-              <stop offset="50%" stopColor="#1688c7" stopOpacity="0.22" />
-              <stop offset="100%" stopColor="#1688c7" stopOpacity="0" />
+              <stop offset="0%" stopColor="#0f72b3" stopOpacity="0" />
+              <stop offset="50%" stopColor="#0f72b3" stopOpacity="0.22" />
+              <stop offset="100%" stopColor="#0f72b3" stopOpacity="0" />
             </linearGradient>
             <filter id="softGlass" height="180%" width="180%" x="-40%" y="-40%">
-              <feDropShadow dx="0" dy="7" floodColor="#1688c7" floodOpacity="0.12" stdDeviation="8" />
+              <feDropShadow dx="0" dy="7" floodColor="#0f72b3" floodOpacity="0.12" stdDeviation="8" />
             </filter>
             <filter id="markerGlow" height="240%" width="240%" x="-70%" y="-70%">
               <feGaussianBlur result="blur" stdDeviation="10" />
@@ -664,15 +664,15 @@ function AustraliaLocationMap() {
             <path
               d={`M${sitePoint[0] + 44} ${sitePoint[1] + 8} C${sitePoint[0] + 30} ${sitePoint[1] + 5} ${sitePoint[0] + 23} ${sitePoint[1] + 4} ${sitePoint[0] + 13} ${sitePoint[1] + 1}`}
               fill="none"
-              stroke="#1688c7"
+              stroke="#0f72b3"
               strokeDasharray="4 7"
               strokeLinecap="round"
               strokeOpacity="0.72"
               strokeWidth="1.25"
             />
-            <circle cx={sitePoint[0]} cy={sitePoint[1]} fill="none" r="15" stroke="#74c947" strokeDasharray="3 6" strokeOpacity="0.58" strokeWidth="1.6" />
-            <circle cx={sitePoint[0]} cy={sitePoint[1]} fill="#1688c7" r="4.5" />
-            <circle cx={sitePoint[0]} cy={sitePoint[1]} fill="none" r="9" stroke="#1688c7" strokeOpacity="0.5" strokeWidth="3" />
+            <circle className="location-pulse" cx={sitePoint[0]} cy={sitePoint[1]} fill="none" r="15" stroke="#2d9abc" strokeDasharray="3 6" strokeOpacity="0.58" strokeWidth="1.6" />
+            <circle cx={sitePoint[0]} cy={sitePoint[1]} fill="#0f72b3" r="4.5" />
+            <circle cx={sitePoint[0]} cy={sitePoint[1]} fill="none" r="9" stroke="#0f72b3" strokeOpacity="0.5" strokeWidth="3" />
             <rect
               fill="url(#locationTag)"
               filter="url(#softGlass)"
@@ -684,7 +684,7 @@ function AustraliaLocationMap() {
               x={sitePoint[0] + 50}
               y={sitePoint[1] - 15}
             />
-            <text fill="#1688c7" fontSize="15.2" fontWeight="500" letterSpacing="0.45" x={sitePoint[0] + 64} y={sitePoint[1] + 11}>
+            <text fill="#0f72b3" fontSize="15.2" fontWeight="500" letterSpacing="0.45" x={sitePoint[0] + 64} y={sitePoint[1] + 11}>
               Melbourne North, VIC
             </text>
           </g>
@@ -785,9 +785,9 @@ export default function Home() {
     <SiteStructuredData />
     <main className="min-h-screen overflow-x-hidden bg-[#eef5fa] text-graphite" data-language={language}>
       <div className="pointer-events-none fixed inset-0 overflow-hidden" aria-hidden="true">
-        <div className={ambientAccent.left} />
-        <div className={ambientAccent.right} />
-        <div className={ambientAccent.inner} />
+        <div className={`${ambientAccent.left} ambient-drift`} />
+        <div className={`${ambientAccent.right} ambient-drift-slow`} />
+        <div className={`${ambientAccent.inner} ambient-drift`} />
       </div>
       <a className="skip-link" href="#top">
         {copy.skip}
@@ -881,10 +881,10 @@ export default function Home() {
         id="top"
         className="relative flex items-start justify-center px-3 pb-3 pt-3 sm:px-5"
       >
-        <div className="pointer-events-none absolute left-[8%] top-[16%] h-72 w-72 rounded-full bg-signal/10 blur-3xl" />
+        <div className="pointer-events-none absolute left-[8%] top-[16%] h-72 w-72 rounded-full bg-signal/12 blur-3xl" />
 
         {activeTab.id === "campus" ? (
-          <div className="relative mx-auto grid w-full max-w-[1180px] items-stretch gap-3 lg:grid-cols-[minmax(0,1.04fr)_minmax(0,0.96fr)] xl:gap-4">
+          <div className="panel-fade relative mx-auto grid w-full max-w-[1180px] items-stretch gap-3 lg:grid-cols-[minmax(0,1.04fr)_minmax(0,0.96fr)] xl:gap-4">
             <div className="grid min-h-0 gap-3 xl:gap-4">
               <AustraliaLocationMap />
 
@@ -919,7 +919,7 @@ export default function Home() {
 
               <div className="flex rounded-sm border border-white/70 bg-white/88 p-3 shadow-glow backdrop-blur-2xl xl:p-4">
                 <div className="my-auto w-full rounded-sm border border-slate-200/70 bg-transparent p-4">
-                  <div className="inline-flex items-center gap-2 rounded-sm border border-signal/25 bg-white/62 px-3 py-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-signal shadow-[0_0_20px_rgba(22,136,199,0.08)]">
+                  <div className="inline-flex items-center gap-2 rounded-sm border border-signal/25 bg-white/62 px-3 py-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-signal shadow-[0_0_20px_rgba(15,114,179,0.10)]">
                     <ActiveIcon size={15} />
                     {localizedActiveTab.panelTitle}
                   </div>
@@ -935,7 +935,7 @@ export default function Home() {
                     <div className="grid grid-cols-5 gap-2">
                       {Array.from({ length: 10 }).map((_, index) => (
                         <span
-                          className="h-7 rounded-sm border border-slate-300/80 bg-white shadow-[inset_0_0_0_1px_rgba(255,255,255,0.92)]"
+                          className="data-hall-cell h-7 rounded-sm border border-slate-300/80 shadow-[inset_0_0_0_1px_rgba(255,255,255,0.92)]"
                           key={`data-hall-${index}`}
                         />
                       ))}
@@ -949,12 +949,12 @@ export default function Home() {
             </div>
           </div>
         ) : (
-          <div className="relative mx-auto w-full max-w-[1180px]">
+          <div className="panel-fade relative mx-auto w-full max-w-[1180px]">
             <div className="rounded-sm border border-white/70 bg-white/88 p-4 shadow-glow backdrop-blur-2xl xl:p-5">
               <div className="grid items-stretch gap-4 lg:grid-cols-[minmax(0,1.22fr)_minmax(300px,0.78fr)] xl:gap-5">
                 <div className="flex rounded-sm border border-slate-200/70 bg-white/86 p-5 shadow-[0_18px_44px_rgba(16,32,51,0.04)] backdrop-blur-2xl xl:p-7">
                   <div className="mx-auto w-full max-w-3xl">
-                    <div className="inline-flex items-center gap-2 rounded-sm border border-signal/25 bg-white/62 px-3 py-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-signal shadow-[0_0_20px_rgba(22,136,199,0.08)]">
+                    <div className="inline-flex items-center gap-2 rounded-sm border border-signal/25 bg-white/62 px-3 py-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-signal shadow-[0_0_20px_rgba(15,114,179,0.10)]">
                       <ActiveIcon size={15} />
                       {localizedActiveTab.panelTitle}
                     </div>
@@ -1092,6 +1092,7 @@ export default function Home() {
     </>
   );
 }
+
 
 
 

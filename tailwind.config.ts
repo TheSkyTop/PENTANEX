@@ -11,8 +11,8 @@ const config: Config = {
         graphite: "#102033",
         panel: "#f5f9fd",
         steel: "#5e7086",
-        signal: "#1688c7",
-        power: "#45a9c8",
+        signal: "#0f72b3",
+        power: "#2d9abc",
       },
       fontFamily: {
         sans: ["Inter", "Arial", "Helvetica", "sans-serif"],

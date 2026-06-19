@@ -29,7 +29,7 @@ a {
 }
 
 ::selection {
-  background: rgba(22, 136, 199, 0.2);
+  background: rgba(15, 114, 179, 0.2);
 }
 
 .skip-link {
@@ -38,10 +38,10 @@ a {
   top: 1rem;
   z-index: 100;
   transform: translateY(-160%);
-  border: 1px solid rgba(22, 136, 199, 0.35);
+  border: 1px solid rgba(15, 114, 179, 0.35);
   border-radius: 2px;
   background: rgba(255, 255, 255, 0.92);
-  color: #1688c7;
+  color: #0f72b3;
   font-size: 0.82rem;
   font-weight: 700;
   padding: 0.65rem 0.85rem;
@@ -50,7 +50,7 @@ a {
 
 .skip-link:focus {
   transform: translateY(0);
-  outline: 2px solid #1688c7;
+  outline: 2px solid #0f72b3;
   outline-offset: 3px;
 }
 
@@ -196,8 +196,34 @@ footer a.text-steel {
 }
 
 .scan-line {
-  background: linear-gradient(90deg, transparent, rgba(22, 136, 199, 0.5), transparent);
+  background: linear-gradient(90deg, transparent, rgba(15, 114, 179, 0.5), transparent);
   animation: scan 5.5s ease-in-out infinite;
+}
+
+.ambient-drift {
+  animation: ambient-drift 18s ease-in-out infinite alternate;
+}
+
+.ambient-drift-slow {
+  animation: ambient-drift-slow 24s ease-in-out infinite alternate;
+}
+
+.panel-fade {
+  animation: panel-fade 560ms ease-out both;
+}
+
+.location-pulse {
+  animation: location-pulse 3.8s ease-in-out infinite;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.data-hall-cell {
+  background:
+    linear-gradient(90deg, rgba(15, 114, 179, 0.08), rgba(255, 255, 255, 0.95), rgba(45, 154, 188, 0.07)),
+    #ffffff;
+  background-size: 220% 100%;
+  animation: data-hall-flow 8s ease-in-out infinite;
 }
 
 @keyframes scan {
@@ -214,5 +240,71 @@ footer a.text-steel {
   100% {
     transform: translateX(90%);
     opacity: 0;
+  }
+}
+
+@keyframes ambient-drift {
+  from {
+    transform: translate3d(-10px, 6px, 0) scale(0.98);
+    opacity: 0.78;
+  }
+  to {
+    transform: translate3d(18px, -12px, 0) scale(1.04);
+    opacity: 1;
+  }
+}
+
+@keyframes ambient-drift-slow {
+  from {
+    transform: translate3d(14px, -8px, 0) scale(1);
+    opacity: 0.74;
+  }
+  to {
+    transform: translate3d(-18px, 18px, 0) scale(1.06);
+    opacity: 0.96;
+  }
+}
+
+@keyframes panel-fade {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes location-pulse {
+  0%,
+  100% {
+    opacity: 0.42;
+    transform: scale(0.92);
+  }
+  50% {
+    opacity: 0.82;
+    transform: scale(1.08);
+  }
+}
+
+@keyframes data-hall-flow {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.001ms !important;
   }
 }
