@@ -226,6 +226,77 @@ footer a.text-steel {
   animation: data-hall-flow 8s ease-in-out infinite;
 }
 
+.datacenter-backdrop {
+  position: fixed;
+  right: max(-9rem, -10vw);
+  bottom: -5rem;
+  z-index: 0;
+  width: min(46rem, 58vw);
+  aspect-ratio: 1.18;
+  pointer-events: none;
+  opacity: 0.72;
+  background:
+    radial-gradient(circle at 52% 54%, rgba(45, 154, 188, 0.18), rgba(45, 154, 188, 0.08) 28%, transparent 61%),
+    radial-gradient(circle at 72% 30%, rgba(15, 114, 179, 0.14), transparent 48%);
+  filter: blur(0);
+  animation: backdrop-breathe 16s ease-in-out infinite alternate;
+}
+
+.datacenter-backdrop::before {
+  content: "";
+  position: absolute;
+  inset: 5% 4% 8% 7%;
+  background:
+    linear-gradient(90deg, transparent 0 10%, rgba(15, 114, 179, 0.16) 10.5% 11%, transparent 11.5% 23%, rgba(15, 114, 179, 0.12) 23.5% 24%, transparent 24.5% 39%, rgba(15, 114, 179, 0.14) 39.5% 40%, transparent 40.5% 56%, rgba(15, 114, 179, 0.12) 56.5% 57%, transparent 57.5% 72%, rgba(15, 114, 179, 0.13) 72.5% 73%, transparent 73.5%),
+    linear-gradient(180deg, transparent 0 24%, rgba(15, 114, 179, 0.18) 24.5% 25%, transparent 25.5% 43%, rgba(15, 114, 179, 0.14) 43.5% 44%, transparent 44.5% 62%, rgba(15, 114, 179, 0.14) 62.5% 63%, transparent 63.5%),
+    linear-gradient(135deg, transparent 0 42%, rgba(15, 114, 179, 0.22) 42.2% 42.7%, transparent 43%),
+    linear-gradient(45deg, transparent 0 51%, rgba(45, 154, 188, 0.18) 51.2% 51.8%, transparent 52.1%);
+  mask-image:
+    linear-gradient(to right, transparent, black 12%, black 86%, transparent),
+    linear-gradient(to bottom, transparent, black 6%, black 88%, transparent);
+  mask-composite: intersect;
+}
+
+.datacenter-backdrop::after {
+  content: "";
+  position: absolute;
+  left: 18%;
+  right: 9%;
+  bottom: 15%;
+  height: 38%;
+  border: 1px solid rgba(15, 114, 179, 0.16);
+  border-bottom-color: rgba(15, 114, 179, 0.28);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.02)),
+    repeating-linear-gradient(90deg, rgba(15, 114, 179, 0.18) 0 1px, transparent 1px 42px),
+    repeating-linear-gradient(180deg, rgba(15, 114, 179, 0.13) 0 1px, transparent 1px 30px);
+  box-shadow:
+    0 0 54px rgba(45, 154, 188, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.34);
+  clip-path: polygon(0 18%, 68% 0, 100% 15%, 100% 100%, 0 100%);
+}
+
+.datacenter-backdrop .pulse-node {
+  position: absolute;
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 999px;
+  background: rgba(15, 114, 179, 0.42);
+  box-shadow: 0 0 20px rgba(15, 114, 179, 0.34);
+  animation: node-pulse 4.5s ease-in-out infinite;
+}
+
+.datacenter-backdrop .node-a {
+  right: 22%;
+  bottom: 55%;
+}
+
+.datacenter-backdrop .node-b {
+  right: 42%;
+  bottom: 31%;
+  animation-delay: 1.2s;
+}
+
 @keyframes scan {
   0% {
     transform: translateX(-90%);
@@ -295,6 +366,46 @@ footer a.text-steel {
   }
   50% {
     background-position: 100% 50%;
+  }
+}
+
+@keyframes backdrop-breathe {
+  from {
+    transform: translate3d(12px, 10px, 0) scale(0.98);
+    opacity: 0.58;
+  }
+  to {
+    transform: translate3d(-8px, -10px, 0) scale(1.03);
+    opacity: 0.78;
+  }
+}
+
+@keyframes node-pulse {
+  0%,
+  100% {
+    opacity: 0.38;
+    transform: scale(0.85);
+  }
+  50% {
+    opacity: 0.9;
+    transform: scale(1.18);
+  }
+}
+
+@media (max-width: 900px) {
+  .datacenter-backdrop {
+    right: -18rem;
+    bottom: 10rem;
+    width: 38rem;
+    opacity: 0.38;
+  }
+}
+
+@media (max-width: 520px) {
+  .datacenter-backdrop {
+    right: -22rem;
+    bottom: 18rem;
+    opacity: 0.26;
   }
 }
 

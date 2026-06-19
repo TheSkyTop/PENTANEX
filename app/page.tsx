@@ -788,6 +788,10 @@ export default function Home() {
         <div className={`${ambientAccent.left} ambient-drift`} />
         <div className={`${ambientAccent.right} ambient-drift-slow`} />
         <div className={`${ambientAccent.inner} ambient-drift`} />
+        <div className="datacenter-backdrop">
+          <span className="pulse-node node-a" />
+          <span className="pulse-node node-b" />
+        </div>
       </div>
       <a className="skip-link" href="#top">
         {copy.skip}
