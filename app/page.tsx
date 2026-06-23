@@ -425,7 +425,7 @@ function CapacityPlatformGraphic({
   copy: (typeof localizedCopy)[Language]["capacityGraphic"];
 }) {
   return (
-    <div className="mt-5 rounded-sm border border-slate-200/90 bg-white p-4">
+    <div className="mt-5 rounded-md border border-slate-200/80 bg-white p-4 shadow-[0_14px_34px_rgba(15,39,69,0.07)]">
       <div className="flex items-center justify-between gap-3">
         <div>
           <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-signal">
@@ -448,7 +448,7 @@ function CapacityPlatformGraphic({
         </div>
         <div className="grid grid-cols-4 gap-2">
           {copy.blocks.map((label) => (
-            <div className="rounded-sm border border-slate-200 bg-white p-2" key={label}>
+            <div className="premium-lift rounded-md border border-slate-200 bg-white p-2" key={label}>
               <span className="block h-5 rounded-sm border border-slate-200 bg-white" />
               <p className="mt-2 text-[10px] font-semibold uppercase tracking-[0.12em] text-steel">
                 {label}
@@ -482,7 +482,7 @@ function DeliveryRoadmap({
   }));
 
   return (
-    <div className="mt-5 rounded-sm border border-slate-200/90 bg-white p-4">
+    <div className="mt-5 rounded-md border border-slate-200/80 bg-white p-4 shadow-[0_14px_34px_rgba(15,39,69,0.07)]">
       <div className="flex items-center justify-between gap-3">
         <div>
           <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-signal">
@@ -535,7 +535,7 @@ function ContactPathwayGraphic({
   ];
 
   return (
-    <div className="rounded-sm border border-slate-200/90 bg-white p-4">
+    <div className="rounded-md border border-slate-200/80 bg-white p-4 shadow-[0_14px_34px_rgba(15,39,69,0.07)]">
       <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-signal">
         {copy.title}
       </p>
@@ -560,7 +560,7 @@ function ContactPathwayGraphic({
           const ModeIcon = mode.icon;
 
           return (
-            <div className="rounded-sm border border-slate-200 bg-white p-3" key={mode.label}>
+            <div className="premium-lift rounded-md border border-slate-200 bg-white p-3" key={mode.label}>
               <div className="flex h-10 w-10 items-center justify-center rounded-sm border border-signal/25 bg-signal/12 text-signal">
                 <ModeIcon size={18} />
               </div>
@@ -598,19 +598,19 @@ function AustraliaLocationMap() {
   }, []);
 
   return (
-    <div className="relative overflow-hidden rounded-sm border border-slate-200/90 bg-white p-3 shadow-glow backdrop-blur-2xl xl:p-4">
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-white/82 via-white/32 to-signal/12" />
+    <div className="map-showcase relative overflow-hidden rounded-md border border-slate-200/80 p-3 shadow-glow backdrop-blur-2xl xl:p-4">
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-white/82 via-white/48 to-signal/10" />
 
       <div className="relative">
         <svg
           aria-label="Australia map with PentaNex campus marker in Melbourne North, Victoria"
-          className="h-[clamp(210px,28vh,270px)] w-full"
+          className="h-[clamp(245px,31vh,315px)] w-full"
           role="img"
           viewBox="0 0 620 360"
         >
           <defs>
             <linearGradient id="mapFill" x1="0" x2="1" y1="0" y2="1">
-              <stop offset="0%" stopColor="#f8fffe" />
+              <stop offset="0%" stopColor="#ffffff" />
               <stop offset="100%" stopColor="#dceff8" />
             </linearGradient>
             <linearGradient id="locationTag" x1="0" x2="1" y1="0" y2="1">
@@ -619,12 +619,12 @@ function AustraliaLocationMap() {
             </linearGradient>
             <linearGradient id="mapAxisX" x1="0" x2="1" y1="0" y2="0">
               <stop offset="0%" stopColor="#0f72b3" stopOpacity="0" />
-              <stop offset="50%" stopColor="#0f72b3" stopOpacity="0.28" />
+              <stop offset="50%" stopColor="#127cdb" stopOpacity="0.26" />
               <stop offset="100%" stopColor="#0f72b3" stopOpacity="0" />
             </linearGradient>
             <linearGradient id="mapAxisY" x1="0" x2="0" y1="0" y2="1">
               <stop offset="0%" stopColor="#0f72b3" stopOpacity="0" />
-              <stop offset="50%" stopColor="#0f72b3" stopOpacity="0.22" />
+              <stop offset="50%" stopColor="#127cdb" stopOpacity="0.20" />
               <stop offset="100%" stopColor="#0f72b3" stopOpacity="0" />
             </linearGradient>
             <filter id="softGlass" height="180%" width="180%" x="-40%" y="-40%">
@@ -646,7 +646,7 @@ function AustraliaLocationMap() {
                 d={countryPath}
                 fill="#c9e5f3"
                 key={`world-${index}`}
-                stroke="#7eb8d4"
+                stroke="#8ac4df"
                 strokeWidth="0.5"
               />
             ))}
@@ -660,19 +660,19 @@ function AustraliaLocationMap() {
             strokeWidth="1"
           />
           <g transform={`translate(0 ${australiaMapYOffset})`}>
-            <path d={australiaPath} fill="url(#mapFill)" stroke="#6db4d4" strokeWidth="1.6" />
+            <path d={australiaPath} fill="url(#mapFill)" stroke="#5eaed4" strokeWidth="1.8" />
             <path
               d={`M${sitePoint[0] + 44} ${sitePoint[1] + 8} C${sitePoint[0] + 30} ${sitePoint[1] + 5} ${sitePoint[0] + 23} ${sitePoint[1] + 4} ${sitePoint[0] + 13} ${sitePoint[1] + 1}`}
               fill="none"
-              stroke="#0f72b3"
+              stroke="#127cdb"
               strokeDasharray="4 7"
               strokeLinecap="round"
               strokeOpacity="0.72"
               strokeWidth="1.25"
             />
             <circle className="location-pulse" cx={sitePoint[0]} cy={sitePoint[1]} fill="none" r="15" stroke="#2d9abc" strokeDasharray="3 6" strokeOpacity="0.58" strokeWidth="1.6" />
-            <circle cx={sitePoint[0]} cy={sitePoint[1]} fill="#0f72b3" r="4.5" />
-            <circle cx={sitePoint[0]} cy={sitePoint[1]} fill="none" r="9" stroke="#0f72b3" strokeOpacity="0.5" strokeWidth="3" />
+            <circle cx={sitePoint[0]} cy={sitePoint[1]} fill="#127cdb" r="4.5" />
+            <circle cx={sitePoint[0]} cy={sitePoint[1]} fill="none" r="9" stroke="#127cdb" strokeOpacity="0.5" strokeWidth="3" />
             <rect
               fill="url(#locationTag)"
               filter="url(#softGlass)"
@@ -684,7 +684,7 @@ function AustraliaLocationMap() {
               x={sitePoint[0] + 50}
               y={sitePoint[1] - 15}
             />
-            <text fill="#0f72b3" fontSize="15.2" fontWeight="500" letterSpacing="0.45" x={sitePoint[0] + 64} y={sitePoint[1] + 11}>
+            <text fill="#127cdb" fontSize="15.2" fontWeight="500" letterSpacing="0.45" x={sitePoint[0] + 64} y={sitePoint[1] + 11}>
               Melbourne North, VIC
             </text>
           </g>
@@ -783,7 +783,8 @@ export default function Home() {
   return (
     <>
     <SiteStructuredData />
-    <main className="min-h-screen overflow-x-hidden bg-[#eef5fa] text-graphite" data-language={language}>
+    <main className="premium-page min-h-screen overflow-x-hidden text-graphite" data-language={language}>
+      <div className="hero-image-wash" aria-hidden="true" />
       <div className="pointer-events-none fixed inset-0 overflow-hidden" aria-hidden="true">
         <div className={`${ambientAccent.left} ambient-drift`} />
         <div className={`${ambientAccent.right} ambient-drift-slow`} />
@@ -794,22 +795,22 @@ export default function Home() {
         {copy.skip}
       </a>
       <header className="sticky top-0 z-50 px-3 pt-3 sm:px-5">
-        <div className="mx-auto flex w-full max-w-[1180px] items-center justify-between gap-4 rounded-sm border border-slate-200/90 bg-white px-4 py-3 shadow-[0_18px_60px_rgba(16,32,51,0.12)] backdrop-blur-2xl">
+        <div className="premium-shell mx-auto flex w-full max-w-[1180px] items-center justify-between gap-4 rounded-md border px-4 py-3 backdrop-blur-2xl">
           <a className="flex items-center gap-3" href="#top" aria-label="PentaNex home">
             <PentanexLogo />
           </a>
 
           <nav
             aria-label={copy.navAria}
-            className="hidden items-center gap-1 rounded-sm border border-slate-200 bg-white p-1 shadow-inner backdrop-blur-2xl lg:flex"
+            className="hidden items-center gap-1 rounded-md border border-slate-200/80 bg-[#f7fbff] p-1 shadow-inner backdrop-blur-2xl lg:flex"
           >
             {tabs.map((tab) => (
               <button
                 aria-pressed={activeTab.id === tab.id}
-                className={`rounded-sm border px-3.5 py-2 text-sm font-semibold transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-signal ${
+                className={`rounded-md border px-3.5 py-2 text-sm font-semibold transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-signal ${
                   activeTab.id === tab.id
-                    ? "border-signal bg-signal text-white shadow-sm"
-                    : "border-slate-200 bg-white text-steel hover:border-signal/45 hover:bg-white hover:text-signal"
+                    ? "border-signal bg-signal text-white shadow-[0_10px_22px_rgba(18,124,219,0.22)]"
+                    : "border-slate-200/80 bg-white text-steel hover:border-signal/45 hover:bg-white hover:text-signal"
                 }`}
                 key={tab.id}
                 onClick={() => selectTab(tab)}
@@ -820,12 +821,12 @@ export default function Home() {
             ))}
           </nav>
 
-          <div className="hidden items-center justify-end gap-1 rounded-sm border border-slate-200 bg-white p-1 shadow-inner backdrop-blur-2xl lg:flex">
+          <div className="hidden items-center justify-end gap-1 rounded-md border border-slate-200/80 bg-[#f7fbff] p-1 shadow-inner backdrop-blur-2xl lg:flex">
             <span className="sr-only">{copy.languageLabel}</span>
             {languageOptions.map((option) => (
               <button
                 aria-pressed={language === option.id}
-                className={`rounded-sm border px-2.5 py-2 text-xs font-semibold transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-signal ${
+                className={`rounded-md border px-2.5 py-2 text-xs font-semibold transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-signal ${
                   language === option.id
                     ? "border-signal bg-signal text-white shadow-sm"
                     : "border-slate-200 bg-white text-steel hover:border-signal/45 hover:bg-white hover:text-signal"
@@ -842,12 +843,12 @@ export default function Home() {
 
         <nav
           aria-label={copy.mobileNavAria}
-          className="mx-auto mt-2 flex w-full max-w-[1180px] gap-2 overflow-x-auto rounded-sm border border-slate-200/90 bg-white p-2 shadow-sm backdrop-blur-2xl lg:hidden"
+          className="premium-shell mx-auto mt-2 flex w-full max-w-[1180px] gap-2 overflow-x-auto rounded-md border p-2 backdrop-blur-2xl lg:hidden"
         >
           {tabs.map((tab) => (
             <button
               aria-pressed={activeTab.id === tab.id}
-              className={`shrink-0 rounded-sm border px-3 py-2 text-xs font-semibold transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-signal ${
+              className={`shrink-0 rounded-md border px-3 py-2 text-xs font-semibold transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-signal ${
                 activeTab.id === tab.id
                   ? "border-signal bg-signal text-white shadow-sm"
                   : "border-slate-200 bg-white text-steel hover:border-signal/45 hover:text-signal"
@@ -863,7 +864,7 @@ export default function Home() {
           {languageOptions.map((option) => (
             <button
               aria-pressed={language === option.id}
-              className={`shrink-0 rounded-sm border px-3 py-2 text-xs font-semibold transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-signal ${
+              className={`shrink-0 rounded-md border px-3 py-2 text-xs font-semibold transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-signal ${
                 language === option.id
                   ? "border-signal bg-signal text-white shadow-sm"
                   : "border-slate-200 bg-white text-steel hover:border-signal/45 hover:bg-white hover:text-signal"
@@ -880,17 +881,17 @@ export default function Home() {
 
       <section
         id="top"
-        className="relative flex items-start justify-center px-3 pb-3 pt-3 sm:px-5"
+        className="relative isolate z-10 flex items-start justify-center px-3 pb-3 pt-3 sm:px-5"
       >
-        <div className="pointer-events-none absolute left-[8%] top-[16%] h-72 w-72 rounded-full bg-signal/12 blur-3xl" />
+        <div className="pointer-events-none absolute left-[8%] top-[16%] -z-10 h-72 w-72 rounded-full bg-signal/10 blur-3xl" />
 
         {activeTab.id === "campus" ? (
           <div className="panel-fade relative mx-auto grid w-full max-w-[1180px] items-stretch gap-3 lg:grid-cols-[minmax(0,1.04fr)_minmax(0,0.96fr)] xl:gap-4">
             <div className="grid min-h-0 gap-3 xl:gap-4">
               <AustraliaLocationMap />
 
-              <div className="rounded-sm border border-slate-200/90 bg-white p-4 shadow-glow backdrop-blur-2xl xl:p-5">
-                <div className="inline-flex items-center gap-2 rounded-sm border border-signal/20 bg-white px-3 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-signal">
+              <div className="premium-card rounded-md border p-4 backdrop-blur-2xl xl:p-5">
+                <div className="section-kicker inline-flex items-center gap-2 rounded-sm border px-3 py-2 text-xs font-semibold uppercase tracking-[0.2em]">
                   <Globe2 size={15} />
                   {copy.infrastructureBadge}
                 </div>
@@ -905,10 +906,10 @@ export default function Home() {
             </div>
 
             <div className="grid min-h-0 gap-3 xl:gap-4">
-              <div className="rounded-sm border border-slate-200/90 bg-white p-3 shadow-glow backdrop-blur-2xl">
+              <div className="premium-card rounded-md border p-3 backdrop-blur-2xl">
                 <div className="grid gap-2 sm:grid-cols-4">
                   {copy.metrics.map((metric) => (
-                    <div className="rounded-sm border border-slate-200 bg-white p-3" key={metric.label}>
+                    <div className="premium-card-soft premium-lift rounded-md border p-3" key={metric.label}>
                       <p className="text-[clamp(0.86rem,1.05vw,1rem)] font-semibold leading-tight text-signal">
                         {metric.value}
                       </p>
@@ -918,13 +919,14 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="flex rounded-sm border border-slate-200/90 bg-white p-3 shadow-glow backdrop-blur-2xl xl:p-4">
-                <div className="my-auto w-full rounded-sm border border-slate-200/70 bg-transparent p-4">
-                  <div className="inline-flex items-center gap-2 rounded-sm border border-signal/25 bg-white px-3 py-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-signal shadow-[0_0_20px_rgba(15,114,179,0.10)]">
+              <div className="premium-card flex rounded-md border p-3 backdrop-blur-2xl xl:p-4">
+                <div className="relative my-auto w-full overflow-hidden rounded-md border border-slate-200/70 bg-white p-4">
+                  <div className="image-ribbon" aria-hidden="true" />
+                  <div className="section-kicker relative inline-flex items-center gap-2 rounded-sm border px-3 py-2 text-[11px] font-semibold uppercase tracking-[0.18em] shadow-[0_0_20px_rgba(18,124,219,0.10)]">
                     <ActiveIcon size={15} />
                     {localizedActiveTab.panelTitle}
                   </div>
-                  <div className="mt-4 space-y-3">
+                  <div className="relative mt-4 space-y-3">
                     {activeBodyParagraphs.map((paragraph) => (
                       <p className="text-sm leading-6 text-steel" key={paragraph}>
                         {paragraph}
@@ -932,7 +934,7 @@ export default function Home() {
                     ))}
                   </div>
 
-                  <div className="mt-5 border-t border-slate-200/80 pt-4">
+                  <div className="relative mt-5 border-t border-slate-200/80 pt-4">
                     <div className="grid grid-cols-5 gap-2">
                       {Array.from({ length: 10 }).map((_, index) => (
                         <span
@@ -950,12 +952,12 @@ export default function Home() {
             </div>
           </div>
         ) : (
-          <div className="panel-fade relative mx-auto w-full max-w-[1180px]">
-            <div className="rounded-sm border border-slate-200/90 bg-white p-4 shadow-glow backdrop-blur-2xl xl:p-5">
-              <div className="grid items-stretch gap-4 lg:grid-cols-[minmax(0,1.22fr)_minmax(300px,0.78fr)] xl:gap-5">
-                <div className="flex rounded-sm border border-slate-200 bg-white p-5 shadow-[0_20px_52px_rgba(16,32,51,0.095)] backdrop-blur-2xl xl:p-7">
-                  <div className="mx-auto w-full max-w-3xl">
-                    <div className="inline-flex items-center gap-2 rounded-sm border border-signal/25 bg-white px-3 py-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-signal shadow-[0_0_20px_rgba(15,114,179,0.10)]">
+          <div className="panel-fade relative mx-auto min-w-0 w-full max-w-[1180px]">
+            <div className="premium-card rounded-md border p-4 backdrop-blur-2xl xl:p-5">
+              <div className="grid min-w-0 items-stretch gap-4 lg:grid-cols-[minmax(0,1.22fr)_minmax(300px,0.78fr)] xl:gap-5">
+                <div className="premium-card-soft min-w-0 flex rounded-md border p-5 backdrop-blur-2xl xl:p-7">
+                  <div className="mx-auto min-w-0 w-full max-w-3xl">
+                    <div className="section-kicker inline-flex items-center gap-2 rounded-sm border px-3 py-2 text-[11px] font-semibold uppercase tracking-[0.18em] shadow-[0_0_20px_rgba(18,124,219,0.10)]">
                       <ActiveIcon size={15} />
                       {localizedActiveTab.panelTitle}
                     </div>
@@ -966,7 +968,7 @@ export default function Home() {
                     ) : null}
                     <div className={`${localizedActiveTab.title ? "mt-4" : "mt-5"} space-y-3`}>
                       {activeBodyParagraphs.map((paragraph) => (
-                        <p className="text-base leading-8 text-steel" key={paragraph}>
+                        <p className="break-words text-base leading-8 text-steel" key={paragraph}>
                           {paragraph}
                         </p>
                       ))}
@@ -974,8 +976,8 @@ export default function Home() {
                   </div>
                 </div>
 
-                <aside className="flex rounded-sm border border-slate-200 bg-white p-5 shadow-[0_20px_52px_rgba(16,32,51,0.095)] backdrop-blur-2xl xl:p-6">
-                  <div className="mx-auto w-full max-w-md">
+                <aside className="premium-card-soft min-w-0 flex rounded-md border p-5 backdrop-blur-2xl xl:p-6">
+                  <div className="mx-auto min-w-0 w-full max-w-md">
                     {activeTab.id !== "contact" ? (
                       <>
                         <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-signal">
@@ -983,7 +985,7 @@ export default function Home() {
                         </p>
                         <div className="mt-5 grid gap-3">
                           {localizedActiveTab.points.map((point) => (
-                            <div className="flex gap-3 rounded-sm border border-slate-200 bg-white p-4 shadow-[0_12px_30px_rgba(16,32,51,0.065)]" key={point}>
+                            <div className="premium-lift flex gap-3 rounded-md border border-slate-200 bg-white p-4 shadow-[0_12px_30px_rgba(16,32,51,0.065)]" key={point}>
                               <CheckCircle2 className="mt-0.5 shrink-0 text-power" size={18} />
                               {point.includes("@") ? (
                                 <a className="content-copy-sm break-words transition hover:text-signal focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-signal" href={`mailto:${contactEmail}`}>
@@ -1040,11 +1042,11 @@ export default function Home() {
         )}
       </section>
 
-      <footer className="relative px-3 pb-5 sm:px-5">
-        <div className="relative mx-auto w-full max-w-[1180px] rounded-sm border border-slate-200/90 bg-white p-4 shadow-glow backdrop-blur-2xl xl:p-5">
+      <footer className="relative z-10 px-3 pb-5 sm:px-5">
+        <div className="deep-footer relative mx-auto w-full max-w-[1180px] rounded-md border p-4 backdrop-blur-2xl xl:p-5">
           <div className="grid gap-4 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,2.1fr)] lg:items-start">
             <div>
-              <div className="flex items-center gap-3">
+              <div className="inline-flex items-center gap-3 rounded-md bg-white px-3 py-2 shadow-[0_14px_34px_rgba(0,0,0,0.16)]">
                 <PentanexLogo />
               </div>
               <p className="content-copy-sm mt-4 max-w-md">
@@ -1055,10 +1057,10 @@ export default function Home() {
             <div className="grid min-w-0 gap-3 sm:grid-cols-2 xl:grid-cols-[0.9fr_0.9fr_1fr_1.35fr]">
               {copy.footerGroups.map((group) => (
                 <div
-                  className="rounded-sm border border-slate-200 bg-white p-4"
+                  className="rounded-md border border-white/10 bg-white/[0.045] p-4"
                   key={group.heading}
                 >
-                  <p className="text-xs font-semibold uppercase tracking-[0.2em] text-signal">
+                  <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#7edaff]">
                     {group.heading}
                   </p>
                   <div className="mt-3 space-y-2">
@@ -1083,7 +1085,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="mt-5 flex flex-col gap-2 border-t border-slate-200/80 pt-4 text-xs text-steel sm:flex-row sm:items-center sm:justify-between">
+          <div className="mt-5 flex flex-col gap-2 border-t border-white/12 pt-4 text-xs text-white/68 sm:flex-row sm:items-center sm:justify-between">
             <p>{copy.footerCopyright}</p>
             <p>{copy.footerTagline}</p>
           </div>
