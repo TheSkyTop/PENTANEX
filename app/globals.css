@@ -34,13 +34,14 @@ a {
 
 .premium-page {
   background:
-    linear-gradient(90deg, rgba(234, 244, 251, 0.04) 0%, rgba(255, 255, 255, 0.64) 22%, rgba(255, 255, 255, 0.86) 50%, rgba(255, 255, 255, 0.64) 78%, rgba(234, 244, 251, 0.04) 100%),
-    linear-gradient(180deg, rgba(245, 247, 250, 0.02) 0%, rgba(234, 244, 251, 0.30) 46%, rgba(245, 247, 250, 0.90) 84%, #f5f7fa 100%),
+    linear-gradient(90deg, rgba(234, 244, 251, 0.16) 0%, rgba(255, 255, 255, 0.52) 22%, rgba(255, 255, 255, 0.84) 50%, rgba(255, 255, 255, 0.52) 78%, rgba(234, 244, 251, 0.16) 100%),
+    linear-gradient(180deg, rgba(245, 247, 250, 0.00) 0%, rgba(234, 244, 251, 0.24) 46%, rgba(245, 247, 250, 0.88) 84%, #f5f7fa 100%),
     var(--page-bg);
   background-attachment: fixed;
-  background-position: center top;
+  background-position: center top, center top, center top;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: cover, cover, cover;
+  animation: server-hall-drift 24s ease-in-out infinite alternate;
 }
 
 .premium-shell {
@@ -478,6 +479,21 @@ footer a.text-steel {
   to {
     transform: translate3d(-8px, -10px, 0) scale(1.03);
     opacity: 0.78;
+  }
+}
+
+@keyframes server-hall-drift {
+  from {
+    background-position: center top, center top, 50% 0%;
+  }
+  to {
+    background-position: center top, center top, 52% 0%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .premium-page {
+    animation: none;
   }
 }
 
