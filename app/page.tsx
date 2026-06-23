@@ -1199,7 +1199,7 @@ export default function Home() {
         <div className="deep-footer relative mx-auto w-full max-w-[1080px] rounded-xl border p-5 backdrop-blur-2xl xl:p-6">
           <div className="grid gap-4 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,2.1fr)] lg:items-start">
             <div>
-              <p className="text-xl font-semibold tracking-[-0.01em] text-graphite">PentaNex</p>
+              <p className="text-xs font-semibold tracking-[0.2em] text-signal">PentaNex</p>
               <p className="content-copy-sm mt-4 max-w-md">
                 {copy.footerIntro}
               </p>
