@@ -223,7 +223,7 @@ type PageCopy = {
   footerIntro: string;
   infrastructureNarrative: string[];
   focusLabels: Record<string, string>;
-  capacityGraphic: { title: string; description: string; blocks: string[]; spine: string };
+  capacityGraphic: { title: string; description: string; blocks: string[] };
   deliveryGraphic: { title: string; description: string; status: string; milestones: string[] };
   contactGraphic: {
     title: string;
@@ -259,7 +259,6 @@ const localizedCopy: Record<Language, PageCopy> = {
       title: "Capacity platform",
       description: "Staged campus capacity, utility planning, and deployment zones.",
       blocks: ["Capacity", "Cooling", "Power", "Fibre"],
-      spine: "Utility planning and staged release pathway",
     },
     deliveryGraphic: {
       title: "Delivery roadmap",
@@ -384,7 +383,6 @@ const localizedCopy: Record<Language, PageCopy> = {
       title: "容量平台",
       description: "分阶段园区容量、公用工程规划和部署区域。",
       blocks: ["容量", "冷却", "电力", "光纤"],
-      spine: "公用工程规划与分阶段释放路径",
     },
     deliveryGraphic: {
       title: "交付路线图",
@@ -613,17 +611,6 @@ function CapacityPlatformGraphic({
             </div>
           ))}
         </div>
-        <div className="rounded-sm border border-slate-200 bg-white px-4 py-3">
-          <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-steel">
-            {copy.spine}
-          </p>
-          <div className="relative mt-2 h-4">
-            <div className="absolute left-0 right-0 top-1/2 h-px bg-signal/35" />
-            <div className="absolute left-[18%] top-0 h-4 w-px bg-signal/30" />
-            <div className="absolute left-[50%] top-0 h-4 w-px bg-signal/30" />
-            <div className="absolute left-[82%] top-0 h-4 w-px bg-signal/30" />
-          </div>
-        </div>
       </div>
     </div>
   );
@@ -757,13 +744,13 @@ function AustraliaLocationMap() {
   }, []);
 
   return (
-    <div className="map-showcase relative overflow-hidden rounded-xl border border-slate-200/80 p-3 shadow-glow backdrop-blur-2xl xl:p-4">
+    <div className="map-showcase relative overflow-hidden rounded-xl border border-slate-200/80 p-3 shadow-glow backdrop-blur-2xl">
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-white/82 via-white/48 to-signal/10" />
 
       <div className="relative">
         <svg
           aria-label="Australia map with PentaNex campus marker in Melbourne North, Victoria"
-          className="h-[clamp(245px,31vh,315px)] w-full"
+          className="h-[clamp(180px,24vh,225px)] w-full"
           role="img"
           viewBox="0 0 620 360"
         >
@@ -832,20 +819,22 @@ function AustraliaLocationMap() {
             <circle className="location-pulse" cx={sitePoint[0]} cy={sitePoint[1]} fill="none" r="15" stroke="#2d9abc" strokeDasharray="3 6" strokeOpacity="0.58" strokeWidth="1.6" />
             <circle cx={sitePoint[0]} cy={sitePoint[1]} fill="#127cdb" r="4.5" />
             <circle cx={sitePoint[0]} cy={sitePoint[1]} fill="none" r="9" stroke="#127cdb" strokeOpacity="0.5" strokeWidth="3" />
-            <rect
-              fill="url(#locationTag)"
-              filter="url(#softGlass)"
-              height="40"
-              rx="4"
-              stroke="#87cdea"
-              strokeOpacity="0.9"
-              width="218"
-              x={sitePoint[0] + 50}
-              y={sitePoint[1] - 15}
-            />
-            <text fill="#127cdb" fontSize="15.2" fontWeight="500" letterSpacing="0.45" x={sitePoint[0] + 64} y={sitePoint[1] + 11}>
-              Melbourne North, VIC
-            </text>
+            <g className="map-location-label">
+              <rect
+                fill="url(#locationTag)"
+                filter="url(#softGlass)"
+                height="38"
+                rx="4"
+                stroke="#87cdea"
+                strokeOpacity="0.9"
+                width="196"
+                x={sitePoint[0] + 40}
+                y={sitePoint[1] - 14}
+              />
+              <text fill="#127cdb" fontSize="14.2" fontWeight="500" letterSpacing="0.35" x={sitePoint[0] + 52} y={sitePoint[1] + 10}>
+                Melbourne North, VIC
+              </text>
+            </g>
           </g>
         </svg>
       </div>
@@ -959,7 +948,7 @@ export default function Home() {
         {copy.skip}
       </a>
       <header className="sticky top-0 z-50 px-3 pt-3 sm:px-5">
-        <div className="premium-shell mx-auto flex w-full max-w-[1180px] items-center justify-between gap-4 rounded-xl border px-4 py-3 backdrop-blur-2xl">
+        <div className="premium-shell mx-auto flex w-full max-w-[1080px] items-center justify-between gap-4 rounded-xl border px-4 py-2.5 backdrop-blur-2xl">
           <a className="flex items-center gap-3" href="#top" aria-label="PentaNex home">
             <PentanexLogo />
           </a>
@@ -1007,7 +996,7 @@ export default function Home() {
 
         <nav
           aria-label={copy.mobileNavAria}
-          className="premium-shell mx-auto mt-2 flex w-full max-w-[1180px] gap-2 overflow-x-auto rounded-xl border p-2 backdrop-blur-2xl lg:hidden"
+          className="premium-shell mx-auto mt-2 flex w-full max-w-[1080px] gap-2 overflow-x-auto rounded-xl border p-2 backdrop-blur-2xl lg:hidden"
         >
           {tabs.map((tab) => (
             <button
@@ -1050,18 +1039,18 @@ export default function Home() {
         <div className="pointer-events-none absolute left-[8%] top-[16%] -z-10 h-72 w-72 rounded-full bg-signal/10 blur-3xl" />
 
         {activeTab.id === "campus" ? (
-          <div className="panel-fade relative mx-auto grid w-full max-w-[1180px] items-stretch gap-3 lg:grid-cols-[minmax(0,1.04fr)_minmax(0,0.96fr)] xl:gap-4">
+          <div className="panel-fade relative mx-auto grid w-full max-w-[1080px] items-stretch gap-3 lg:grid-cols-[minmax(0,1.04fr)_minmax(0,0.96fr)] xl:gap-4">
             <div className="grid min-h-0 gap-3 xl:gap-4">
               <AustraliaLocationMap />
 
-              <div className="premium-card rounded-xl border p-5 backdrop-blur-2xl xl:p-6">
+              <div className="premium-card rounded-xl border p-4 backdrop-blur-2xl">
                 <div className="section-kicker inline-flex items-center gap-2 rounded-sm border px-3 py-2 text-xs font-semibold uppercase tracking-[0.2em]">
                   <Globe2 size={15} />
                   {copy.infrastructureBadge}
                 </div>
-                <div className="mt-4 max-w-3xl space-y-3">
+                <div className="mt-3 max-w-3xl space-y-2">
                   {copy.infrastructureNarrative.map((paragraph) => (
-                    <p className="text-sm leading-6 text-steel" key={paragraph}>
+                    <p className="text-xs leading-5 text-steel" key={paragraph}>
                       {paragraph}
                     </p>
                   ))}
@@ -1070,10 +1059,10 @@ export default function Home() {
             </div>
 
             <div className="grid min-h-0 gap-3 xl:gap-4">
-              <div className="premium-card rounded-xl border p-4 backdrop-blur-2xl">
+              <div className="premium-card rounded-xl border p-3 backdrop-blur-2xl">
                 <div className="grid gap-2 sm:grid-cols-4">
                   {copy.metrics.map((metric) => (
-                    <div className="premium-card-soft premium-lift rounded-xl border p-4" key={metric.label}>
+                    <div className="premium-card-soft premium-lift rounded-xl border p-3" key={metric.label}>
                       <p className="text-[clamp(0.86rem,1.05vw,1rem)] font-semibold leading-tight text-signal">
                         {metric.value}
                       </p>
@@ -1083,26 +1072,26 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="premium-card flex rounded-xl border p-4 backdrop-blur-2xl xl:p-5">
-                <div className="relative my-auto w-full overflow-hidden rounded-xl border border-slate-200/70 bg-white/95 p-5">
+              <div className="premium-card flex rounded-xl border p-3 backdrop-blur-2xl xl:p-4">
+                <div className="relative my-auto w-full overflow-hidden rounded-xl border border-slate-200/70 bg-white/95 p-4">
                   <div className="image-ribbon" aria-hidden="true" />
                   <div className="section-kicker relative inline-flex items-center gap-2 rounded-sm border px-3 py-2 text-[11px] font-semibold uppercase tracking-[0.18em] shadow-[0_0_20px_rgba(18,124,219,0.10)]">
                     <ActiveIcon size={15} />
                     {localizedActiveTab.panelTitle}
                   </div>
-                  <div className="relative mt-4 space-y-3">
+                  <div className="relative mt-3 space-y-2">
                     {activeBodyParagraphs.map((paragraph) => (
-                      <p className="text-sm leading-6 text-steel" key={paragraph}>
+                      <p className="text-xs leading-5 text-steel" key={paragraph}>
                         {paragraph}
                       </p>
                     ))}
                   </div>
 
-                  <div className="relative mt-5 border-t border-slate-200/80 pt-4">
+                  <div className="relative mt-3 border-t border-slate-200/80 pt-3">
                     <div className="grid grid-cols-5 gap-2">
                       {Array.from({ length: 10 }).map((_, index) => (
                         <span
-                          className="data-hall-cell h-7 rounded-sm border border-slate-300/80 shadow-[inset_0_0_0_1px_rgba(255,255,255,0.92)]"
+                          className="data-hall-cell h-5 rounded-sm border border-slate-300/80 shadow-[inset_0_0_0_1px_rgba(255,255,255,0.92)]"
                           key={`data-hall-${index}`}
                         />
                       ))}
@@ -1116,7 +1105,7 @@ export default function Home() {
             </div>
           </div>
         ) : (
-          <div className="panel-fade relative mx-auto min-w-0 w-full max-w-[1180px]">
+          <div className="panel-fade relative mx-auto min-w-0 w-full max-w-[1080px]">
             <div className="premium-card rounded-xl border p-5 backdrop-blur-2xl xl:p-6">
               <div className="grid min-w-0 items-stretch gap-4 lg:grid-cols-[minmax(0,1.22fr)_minmax(300px,0.78fr)] xl:gap-5">
                 <div className="premium-card-soft min-w-0 flex rounded-md border p-5 backdrop-blur-2xl xl:p-7">
@@ -1207,12 +1196,10 @@ export default function Home() {
       </section>
 
       <footer className="relative z-10 px-3 pb-5 sm:px-5">
-        <div className="deep-footer relative mx-auto w-full max-w-[1180px] rounded-xl border p-5 backdrop-blur-2xl xl:p-6">
+        <div className="deep-footer relative mx-auto w-full max-w-[1080px] rounded-xl border p-5 backdrop-blur-2xl xl:p-6">
           <div className="grid gap-4 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,2.1fr)] lg:items-start">
             <div>
-              <div className="inline-flex items-center gap-3 rounded-md bg-white px-3 py-2 shadow-[0_14px_34px_rgba(0,0,0,0.16)]">
-                <PentanexLogo />
-              </div>
+              <p className="text-xl font-semibold tracking-[-0.01em] text-graphite">PentaNex</p>
               <p className="content-copy-sm mt-4 max-w-md">
                 {copy.footerIntro}
               </p>
