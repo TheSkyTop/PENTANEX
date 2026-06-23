@@ -598,7 +598,7 @@ function AustraliaLocationMap() {
   }, []);
 
   return (
-    <div className="map-showcase relative overflow-hidden rounded-md border border-slate-200/80 p-3 shadow-glow backdrop-blur-2xl xl:p-4">
+    <div className="map-showcase relative overflow-hidden rounded-xl border border-slate-200/80 p-3 shadow-glow backdrop-blur-2xl xl:p-4">
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-white/82 via-white/48 to-signal/10" />
 
       <div className="relative">
@@ -799,14 +799,14 @@ export default function Home() {
         {copy.skip}
       </a>
       <header className="sticky top-0 z-50 px-3 pt-3 sm:px-5">
-        <div className="premium-shell mx-auto flex w-full max-w-[1180px] items-center justify-between gap-4 rounded-md border px-4 py-3 backdrop-blur-2xl">
+        <div className="premium-shell mx-auto flex w-full max-w-[1180px] items-center justify-between gap-4 rounded-xl border px-4 py-3 backdrop-blur-2xl">
           <a className="flex items-center gap-3" href="#top" aria-label="PentaNex home">
             <PentanexLogo />
           </a>
 
           <nav
             aria-label={copy.navAria}
-            className="hidden items-center gap-1 rounded-md border border-slate-200/80 bg-[#f7fbff] p-1 shadow-inner backdrop-blur-2xl lg:flex"
+            className="hidden items-center gap-1 rounded-lg border border-slate-200/80 bg-[#f7fbff] p-1 shadow-inner backdrop-blur-2xl lg:flex"
           >
             {tabs.map((tab) => (
               <button
@@ -825,7 +825,7 @@ export default function Home() {
             ))}
           </nav>
 
-          <div className="hidden items-center justify-end gap-1 rounded-md border border-slate-200/80 bg-[#f7fbff] p-1 shadow-inner backdrop-blur-2xl lg:flex">
+          <div className="hidden items-center justify-end gap-1 rounded-lg border border-slate-200/80 bg-[#f7fbff] p-1 shadow-inner backdrop-blur-2xl lg:flex">
             <span className="sr-only">{copy.languageLabel}</span>
             {languageOptions.map((option) => (
               <button
@@ -847,7 +847,7 @@ export default function Home() {
 
         <nav
           aria-label={copy.mobileNavAria}
-          className="premium-shell mx-auto mt-2 flex w-full max-w-[1180px] gap-2 overflow-x-auto rounded-md border p-2 backdrop-blur-2xl lg:hidden"
+          className="premium-shell mx-auto mt-2 flex w-full max-w-[1180px] gap-2 overflow-x-auto rounded-xl border p-2 backdrop-blur-2xl lg:hidden"
         >
           {tabs.map((tab) => (
             <button
@@ -894,7 +894,7 @@ export default function Home() {
             <div className="grid min-h-0 gap-3 xl:gap-4">
               <AustraliaLocationMap />
 
-              <div className="premium-card rounded-md border p-4 backdrop-blur-2xl xl:p-5">
+              <div className="premium-card rounded-xl border p-5 backdrop-blur-2xl xl:p-6">
                 <div className="section-kicker inline-flex items-center gap-2 rounded-sm border px-3 py-2 text-xs font-semibold uppercase tracking-[0.2em]">
                   <Globe2 size={15} />
                   {copy.infrastructureBadge}
@@ -910,10 +910,10 @@ export default function Home() {
             </div>
 
             <div className="grid min-h-0 gap-3 xl:gap-4">
-              <div className="premium-card rounded-md border p-3 backdrop-blur-2xl">
+              <div className="premium-card rounded-xl border p-4 backdrop-blur-2xl">
                 <div className="grid gap-2 sm:grid-cols-4">
                   {copy.metrics.map((metric) => (
-                    <div className="premium-card-soft premium-lift rounded-md border p-3" key={metric.label}>
+                    <div className="premium-card-soft premium-lift rounded-xl border p-4" key={metric.label}>
                       <p className="text-[clamp(0.86rem,1.05vw,1rem)] font-semibold leading-tight text-signal">
                         {metric.value}
                       </p>
@@ -923,8 +923,8 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="premium-card flex rounded-md border p-3 backdrop-blur-2xl xl:p-4">
-                <div className="relative my-auto w-full overflow-hidden rounded-md border border-slate-200/70 bg-white p-4">
+              <div className="premium-card flex rounded-xl border p-4 backdrop-blur-2xl xl:p-5">
+                <div className="relative my-auto w-full overflow-hidden rounded-xl border border-slate-200/70 bg-white/95 p-5">
                   <div className="image-ribbon" aria-hidden="true" />
                   <div className="section-kicker relative inline-flex items-center gap-2 rounded-sm border px-3 py-2 text-[11px] font-semibold uppercase tracking-[0.18em] shadow-[0_0_20px_rgba(18,124,219,0.10)]">
                     <ActiveIcon size={15} />
@@ -957,7 +957,7 @@ export default function Home() {
           </div>
         ) : (
           <div className="panel-fade relative mx-auto min-w-0 w-full max-w-[1180px]">
-            <div className="premium-card rounded-md border p-4 backdrop-blur-2xl xl:p-5">
+            <div className="premium-card rounded-xl border p-5 backdrop-blur-2xl xl:p-6">
               <div className="grid min-w-0 items-stretch gap-4 lg:grid-cols-[minmax(0,1.22fr)_minmax(300px,0.78fr)] xl:gap-5">
                 <div className="premium-card-soft min-w-0 flex rounded-md border p-5 backdrop-blur-2xl xl:p-7">
                   <div className="mx-auto min-w-0 w-full max-w-3xl">
@@ -1047,7 +1047,7 @@ export default function Home() {
       </section>
 
       <footer className="relative z-10 px-3 pb-5 sm:px-5">
-        <div className="deep-footer relative mx-auto w-full max-w-[1180px] rounded-md border p-4 backdrop-blur-2xl xl:p-5">
+        <div className="deep-footer relative mx-auto w-full max-w-[1180px] rounded-xl border p-5 backdrop-blur-2xl xl:p-6">
           <div className="grid gap-4 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,2.1fr)] lg:items-start">
             <div>
               <div className="inline-flex items-center gap-3 rounded-md bg-white px-3 py-2 shadow-[0_14px_34px_rgba(0,0,0,0.16)]">
@@ -1099,6 +1099,7 @@ export default function Home() {
     </>
   );
 }
+
 
 
 
