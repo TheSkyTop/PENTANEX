@@ -1,63 +1,109 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1800 1050" role="img" aria-label="Blue toned hyperscale data centre server hall">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2200 1280" role="img" aria-label="Bright blue hyperscale data centre server hall corridor">
   <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#08213c"/>
-      <stop offset="0.45" stop-color="#0f4f8a"/>
-      <stop offset="1" stop-color="#dff4fb"/>
+    <linearGradient id="wallBlue" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#05203d"/>
+      <stop offset="0.42" stop-color="#0d4e82"/>
+      <stop offset="1" stop-color="#7fc6e7"/>
     </linearGradient>
-    <linearGradient id="floor" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#d8eff8" stop-opacity="0.18"/>
-      <stop offset="1" stop-color="#ffffff" stop-opacity="0.52"/>
+    <linearGradient id="rackFace" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#06182e"/>
+      <stop offset="0.45" stop-color="#0e3f68"/>
+      <stop offset="1" stop-color="#1b7eb9"/>
     </linearGradient>
-    <linearGradient id="rack" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0" stop-color="#071c34"/>
-      <stop offset="0.48" stop-color="#123b64"/>
-      <stop offset="1" stop-color="#1a6ea9"/>
+    <linearGradient id="rightRackFace" x1="1" y1="0" x2="0" y2="0">
+      <stop offset="0" stop-color="#06182e"/>
+      <stop offset="0.45" stop-color="#0e3f68"/>
+      <stop offset="1" stop-color="#1b7eb9"/>
     </linearGradient>
-    <linearGradient id="rackLight" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#00c6d7" stop-opacity="0.1"/>
-      <stop offset="1" stop-color="#7edaff" stop-opacity="0.6"/>
+    <linearGradient id="floorGlow" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#d9f3ff" stop-opacity="0.25"/>
+      <stop offset="0.45" stop-color="#ffffff" stop-opacity="0.78"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0.98"/>
     </linearGradient>
-    <filter id="soft" x="-30%" y="-30%" width="160%" height="160%">
-      <feGaussianBlur stdDeviation="18"/>
+    <linearGradient id="ceiling" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#bdeaff" stop-opacity="0.5"/>
+      <stop offset="0.35" stop-color="#4aa8d8" stop-opacity="0.28"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="blur24" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="24"/>
     </filter>
+    <filter id="blur42" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="42"/>
+    </filter>
+    <pattern id="rackGrid" width="58" height="58" patternUnits="userSpaceOnUse">
+      <rect width="58" height="58" fill="none"/>
+      <path d="M5 12H53M5 30H53M5 48H53" stroke="#8bdcff" stroke-opacity="0.33" stroke-width="2"/>
+      <rect x="9" y="17" width="7" height="7" fill="#00c6d7" opacity="0.55"/>
+      <rect x="24" y="17" width="7" height="7" fill="#b9efff" opacity="0.38"/>
+      <rect x="40" y="37" width="6" height="6" fill="#79dfff" opacity="0.34"/>
+    </pattern>
+    <pattern id="rackGridSoft" width="62" height="62" patternUnits="userSpaceOnUse">
+      <rect width="62" height="62" fill="none"/>
+      <path d="M7 16H55M7 36H55M7 54H55" stroke="#b7ecff" stroke-opacity="0.25" stroke-width="2"/>
+      <rect x="13" y="21" width="7" height="7" fill="#00c6d7" opacity="0.38"/>
+      <rect x="33" y="41" width="7" height="7" fill="#d8f7ff" opacity="0.30"/>
+    </pattern>
   </defs>
-  <rect width="1800" height="1050" fill="url(#bg)"/>
-  <circle cx="1340" cy="260" r="380" fill="#00c6d7" opacity="0.18" filter="url(#soft)"/>
-  <circle cx="370" cy="160" r="260" fill="#127cdb" opacity="0.24" filter="url(#soft)"/>
-  <path d="M0 760 C360 690 660 735 980 675 C1280 620 1540 625 1800 575 L1800 1050 L0 1050 Z" fill="url(#floor)"/>
-  <g opacity="0.28" stroke="#dff7ff" stroke-width="2">
-    <path d="M220 820 H1600"/>
-    <path d="M300 890 H1510"/>
-    <path d="M390 960 H1410"/>
-    <path d="M690 680 L520 1050"/>
-    <path d="M910 650 L885 1050"/>
-    <path d="M1150 632 L1300 1050"/>
+
+  <rect width="2200" height="1280" fill="#eaf4fb"/>
+  <rect width="2200" height="1280" fill="url(#wallBlue)" opacity="0.78"/>
+
+  <!-- Server-rack walls -->
+  <g opacity="0.98">
+    <path d="M0 0H510L505 1170H0Z" fill="url(#rackFace)"/>
+    <path d="M1690 0H2200V1170H1696Z" fill="url(#rightRackFace)"/>
+    <path d="M95 70H475L453 1145H70Z" fill="url(#rackGrid)" opacity="0.86"/>
+    <path d="M1730 70H2115L2140 1145H1753Z" fill="url(#rackGrid)" opacity="0.86"/>
+    <path d="M525 64H730L690 1070H510Z" fill="url(#rackGridSoft)" opacity="0.42"/>
+    <path d="M1470 64H1675L1692 1070H1510Z" fill="url(#rackGridSoft)" opacity="0.42"/>
   </g>
-  <g opacity="0.95">
-    <path d="M95 238 L430 176 L430 823 L95 899 Z" fill="url(#rack)" opacity="0.92"/>
-    <path d="M1370 152 L1744 230 L1744 884 L1370 808 Z" fill="url(#rack)" opacity="0.9"/>
-    <path d="M507 220 L770 194 L770 746 L507 786 Z" fill="#0b2b4d" opacity="0.7"/>
-    <path d="M1040 190 L1282 215 L1282 782 L1040 742 Z" fill="#0b2b4d" opacity="0.68"/>
+
+  <!-- Rack depth and vertical structure -->
+  <g stroke="#05192f" stroke-opacity="0.42" stroke-width="12">
+    <path d="M72 0V1125"/>
+    <path d="M505 0V1135"/>
+    <path d="M1720 0V1135"/>
+    <path d="M2132 0V1125"/>
   </g>
-  <g opacity="0.52" stroke="#89ddff" stroke-width="3">
-    <path d="M170 300 H382"/>
-    <path d="M170 375 H382"/>
-    <path d="M170 450 H382"/>
-    <path d="M170 525 H382"/>
-    <path d="M170 600 H382"/>
-    <path d="M1438 304 H1685"/>
-    <path d="M1438 386 H1685"/>
-    <path d="M1438 468 H1685"/>
-    <path d="M1438 550 H1685"/>
-    <path d="M1438 632 H1685"/>
+  <g stroke="#8de5ff" stroke-opacity="0.44" stroke-width="4">
+    <path d="M118 0V1120"/>
+    <path d="M462 0V1118"/>
+    <path d="M1762 0V1118"/>
+    <path d="M2087 0V1120"/>
   </g>
-  <g opacity="0.7">
-    <rect x="196" y="325" width="16" height="16" fill="#00c6d7"/>
-    <rect x="236" y="325" width="16" height="16" fill="#7edaff"/>
-    <rect x="1484" y="350" width="16" height="16" fill="#00c6d7"/>
-    <rect x="1530" y="350" width="16" height="16" fill="#7edaff"/>
-    <rect x="1580" y="516" width="16" height="16" fill="#00c6d7"/>
+
+  <!-- Ceiling and light strips -->
+  <path d="M420 0H1780L1548 230H653Z" fill="url(#ceiling)"/>
+  <g opacity="0.8">
+    <path d="M610 52H1586" stroke="#dff9ff" stroke-width="10" stroke-linecap="round" opacity="0.55"/>
+    <path d="M712 120H1480" stroke="#7edaff" stroke-width="5" stroke-linecap="round" opacity="0.35"/>
+    <path d="M832 184H1360" stroke="#ffffff" stroke-width="6" stroke-linecap="round" opacity="0.42"/>
   </g>
-  <path d="M0 0 H1800 V1050 H0 Z" fill="url(#rackLight)" opacity="0.45"/>
+
+  <!-- Bright central aisle -->
+  <path d="M520 638C725 580 942 552 1100 552C1256 552 1474 580 1682 638L2200 1280H0Z" fill="url(#floorGlow)"/>
+  <ellipse cx="1100" cy="814" rx="520" ry="310" fill="#ffffff" opacity="0.75" filter="url(#blur42)"/>
+  <ellipse cx="1100" cy="620" rx="340" ry="150" fill="#c8f4ff" opacity="0.32" filter="url(#blur42)"/>
+
+  <!-- Perspective floor lines -->
+  <g stroke="#87cfea" stroke-opacity="0.28" stroke-width="3">
+    <path d="M650 1280L950 574"/>
+    <path d="M930 1280L1050 560"/>
+    <path d="M1270 1280L1150 560"/>
+    <path d="M1550 1280L1250 574"/>
+    <path d="M260 1010H1940"/>
+    <path d="M380 870H1820"/>
+    <path d="M500 745H1700"/>
+  </g>
+
+  <!-- Light bloom overlays -->
+  <circle cx="1100" cy="430" r="430" fill="#eafcff" opacity="0.36" filter="url(#blur42)"/>
+  <circle cx="318" cy="265" r="240" fill="#00c6d7" opacity="0.14" filter="url(#blur24)"/>
+  <circle cx="1878" cy="265" r="240" fill="#00c6d7" opacity="0.14" filter="url(#blur24)"/>
+
+  <!-- Soft blue wash to keep it bright and corporate -->
+  <rect width="2200" height="1280" fill="#eaf4fb" opacity="0.12"/>
+  <path d="M0 715C320 625 620 575 1100 575C1580 575 1880 625 2200 715V1280H0Z" fill="#ffffff" opacity="0.48"/>
+  <rect width="2200" height="1280" fill="none"/>
 </svg>
