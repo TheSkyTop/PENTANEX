@@ -613,14 +613,16 @@ function CapacityPlatformGraphic({
             </div>
           ))}
         </div>
-        <div className="relative mt-1 h-12 overflow-hidden rounded-sm border border-slate-200 bg-white">
-          <div className="absolute left-4 right-4 top-1/2 h-px bg-signal/35" />
-          <div className="absolute left-[18%] top-3 h-6 w-px bg-signal/30" />
-          <div className="absolute left-[48%] top-3 h-6 w-px bg-signal/30" />
-          <div className="absolute left-[78%] top-3 h-6 w-px bg-signal/30" />
-          <p className="absolute bottom-2 left-4 text-[10px] font-semibold uppercase tracking-[0.16em] text-steel">
+        <div className="rounded-sm border border-slate-200 bg-white px-4 py-3">
+          <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-steel">
             {copy.spine}
           </p>
+          <div className="relative mt-2 h-4">
+            <div className="absolute left-0 right-0 top-1/2 h-px bg-signal/35" />
+            <div className="absolute left-[18%] top-0 h-4 w-px bg-signal/30" />
+            <div className="absolute left-[50%] top-0 h-4 w-px bg-signal/30" />
+            <div className="absolute left-[82%] top-0 h-4 w-px bg-signal/30" />
+          </div>
         </div>
       </div>
     </div>
@@ -1203,8 +1205,6 @@ export default function Home() {
           </div>
         )}
       </section>
-
-      <SeoAuthorityContent />
 
       <footer className="relative z-10 px-3 pb-5 sm:px-5">
         <div className="deep-footer relative mx-auto w-full max-w-[1180px] rounded-xl border p-5 backdrop-blur-2xl xl:p-6">
