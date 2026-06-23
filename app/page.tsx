@@ -30,6 +30,7 @@ const contactEmailDisplay = "Enquiries@pentanex.com.au";
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://pentanex.com.au";
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 const assetPath = (path: string) => `${basePath}${path}`;
+const absoluteAssetUrl = (path: string) => new URL(assetPath(path), siteUrl).toString();
 type Language = "en" | "zh";
 
 const languageOptions: Array<{ id: Language; label: string; shortLabel: string }> = [
@@ -148,6 +149,48 @@ const footerGroups = [
 
 const footerIntro =
   "Developing scalable AI-ready digital infrastructure for hyperscale cloud, accelerated compute, and sovereign enterprise workloads across Australia.";
+
+const seoAuthoritySections = [
+  {
+    title: "980 Hume Freeway Data Centre Campus",
+    body:
+      "The 980 Hume Freeway Data Centre Campus is being positioned as a long-term data centre campus and digital infrastructure platform for Melbourne, Victoria and Australia. The project vision focuses on scalable AI computing infrastructure, high-density data centre capacity, cloud infrastructure, connectivity pathways and energy-integrated campus planning without disclosing confidential tenant, pricing or commercial negotiation details.",
+  },
+  {
+    title: "AI Infrastructure Growth",
+    body:
+      "AI Data Centre Australia demand is increasingly shaped by GPU data centre requirements, accelerated computing, inference growth and enterprise AI adoption. PentaNex is planning digital infrastructure that can support high-density compute environments, future liquid cooling data centre pathways, resilient operations and scalable data centre development over multiple deployment stages.",
+  },
+  {
+    title: "Digital Infrastructure in Australia",
+    body:
+      "Australia is emerging as a strategic location for hyperscale data centre and cloud infrastructure investment. Melbourne and Victoria offer a strong setting for Australian digital infrastructure because large-scale campuses require grid interface planning, fibre connectivity, operational resilience, energy strategy and long-term infrastructure governance.",
+  },
+  {
+    title: "Future of Hyperscale Computing",
+    body:
+      "Hyperscale campus development is shifting from single-building delivery to integrated data centre campus planning. PentaNex approaches data centre development as a digital infrastructure platform, coordinating capacity zones, power and cooling pathways, connectivity, security, customer readiness and expansion optionality for next-generation AI computing infrastructure.",
+  },
+  {
+    title: "Energy Integrated Data Centre Strategy",
+    body:
+      "Energy integrated data centre planning requires alignment between grid connection strategy, renewable and firmed energy pathways, backup systems, cooling plant options and staged customer load growth. PentaNex is focused on disciplined infrastructure planning, risk management and project governance so energy, digital services and campus capacity can mature together.",
+  },
+  {
+    title: "Sustainable Data Centre Development",
+    body:
+      "Sustainable data centre development depends on practical, measurable infrastructure choices: efficient operating envelopes, water-conscious cooling, lifecycle resilience, material coordination, accountable reporting and community-aware delivery. PentaNex does not rely on unsupported certifications or customer claims and presents project information at a responsible planning level.",
+  },
+];
+
+const trustSignals = [
+  "Development capability across staged digital infrastructure planning",
+  "Infrastructure planning expertise for power, cooling, fibre and secure operations",
+  "Energy integration expertise across grid, renewable, firmed and backup pathways",
+  "Project governance, risk management and long-term delivery discipline",
+  "Infrastructure partnerships with utilities, customers, investors and public stakeholders",
+  "Long-term development strategy for AI-ready and hyperscale data centre demand",
+];
 
 const sustainabilitySdgs = [
   { number: "7", label: "Affordable and Clean Energy", color: "#fcc30b" },
@@ -385,30 +428,102 @@ function PentanexLogo() {
 function SiteStructuredData() {
   const structuredData = {
     "@context": "https://schema.org",
-    "@type": "Organization",
-    name: "PentaNex",
-    url: siteUrl,
-    logo: `${siteUrl}/pentanex-logo-full.png`,
-    email: contactEmail,
-    areaServed: "Australia",
-    description:
-      "PentaNex is developing AI-ready digital infrastructure for hyperscale cloud, accelerated compute, enterprise AI, and sovereign workload demand in Australia.",
-    makesOffer: {
-      "@type": "Offer",
-      name: "AI-ready hyperscale data centre campus capacity",
-      areaServed: "Australia",
-      category: "Digital infrastructure",
-    },
-    location: {
-      "@type": "Place",
-      name: "PentaNex Melbourne North campus",
-      address: {
-        "@type": "PostalAddress",
-        addressLocality: "Melbourne North",
-        addressRegion: "VIC",
-        addressCountry: "AU",
+    "@graph": [
+      {
+        "@type": ["Organization", "Corporation"],
+        "@id": `${siteUrl}/#organization`,
+        name: "PentaNex",
+        url: siteUrl,
+        logo: absoluteAssetUrl("/pentanex-logo-full.png"),
+        email: contactEmail,
+        areaServed: {
+          "@type": "Country",
+          name: "Australia",
+        },
+        industry: [
+          "Digital Infrastructure Development",
+          "Data Centre Development",
+          "Infrastructure Development",
+          "AI Infrastructure",
+          "Cloud Infrastructure",
+        ],
+        description:
+          "PentaNex develops large-scale AI-ready data centre campuses and digital infrastructure projects across Australia, supporting hyperscale cloud, GPU computing and next-generation digital services.",
+        knowsAbout: [
+          "AI Data Centre Australia",
+          "Data Centre Developer Australia",
+          "Hyperscale Data Centre",
+          "GPU Data Centre",
+          "Energy Integrated Data Centre",
+          "High Density Data Centre",
+          "Liquid Cooling Data Centre",
+          "Australian Digital Infrastructure",
+        ],
       },
-    },
+      {
+        "@type": ["ProfessionalService", "Organization"],
+        "@id": `${siteUrl}/#professional-service`,
+        name: "PentaNex Digital Infrastructure Development",
+        provider: { "@id": `${siteUrl}/#organization` },
+        areaServed: "Australia",
+        serviceType: [
+          "Data Centre Campus Development",
+          "AI Infrastructure Planning",
+          "Digital Infrastructure Platform Development",
+          "Energy Integrated Data Centre Planning",
+        ],
+      },
+      {
+        "@type": "Project",
+        "@id": `${siteUrl}/#project-980-hume-freeway`,
+        name: "980 Hume Freeway Data Centre Campus",
+        alternateName: "PentaNex Melbourne North Data Centre Campus",
+        description:
+          "A planned Melbourne North data centre campus and digital infrastructure platform for hyperscale cloud, GPU computing, AI infrastructure and sovereign enterprise workloads.",
+        location: {
+          "@type": "Place",
+          name: "Melbourne North, Victoria, Australia",
+          address: {
+            "@type": "PostalAddress",
+            addressLocality: "Melbourne North",
+            addressRegion: "VIC",
+            addressCountry: "AU",
+          },
+          geo: {
+            "@type": "GeoCoordinates",
+            latitude: project.coordinates[1],
+            longitude: project.coordinates[0],
+          },
+        },
+        parentOrganization: { "@id": `${siteUrl}/#organization` },
+        keywords:
+          "980 Hume Freeway Data Centre Campus, Melbourne Data Centre, Victoria Data Centre, Hyperscale Data Centre, AI Computing Infrastructure",
+      },
+      {
+        "@type": "WebSite",
+        "@id": `${siteUrl}/#website`,
+        name: "PentaNex",
+        url: siteUrl,
+        publisher: { "@id": `${siteUrl}/#organization` },
+        inLanguage: "en-AU",
+      },
+      {
+        "@type": "WebPage",
+        "@id": `${siteUrl}/#webpage`,
+        name: "PentaNex | AI Data Centre & Digital Infrastructure Developer Australia",
+        url: siteUrl,
+        isPartOf: { "@id": `${siteUrl}/#website` },
+        about: [
+          { "@id": `${siteUrl}/#organization` },
+          { "@id": `${siteUrl}/#project-980-hume-freeway` },
+        ],
+        primaryImageOfPage: {
+          "@type": "ImageObject",
+          url: absoluteAssetUrl("/hyperscale-data-centre-melbourne.jpg"),
+          caption: "Hyperscale data centre server hall background representing PentaNex digital infrastructure.",
+        },
+      },
+    ],
   };
 
   return (
@@ -416,6 +531,48 @@ function SiteStructuredData() {
       dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
       type="application/ld+json"
     />
+  );
+}
+
+function SeoAuthorityContent() {
+  return (
+    <section className="relative z-10 px-3 pb-3 sm:px-5" aria-labelledby="seo-authority-heading">
+      <div className="premium-card mx-auto w-full max-w-[1180px] rounded-xl border p-5 backdrop-blur-2xl xl:p-6">
+        <div className="section-kicker inline-flex items-center gap-2 rounded-sm border px-3 py-2 text-[11px] font-semibold uppercase tracking-[0.18em]">
+          <CircuitBoard size={15} />
+          Digital Infrastructure Platform
+        </div>
+        <h2 id="seo-authority-heading" className="mt-4 max-w-3xl text-[clamp(1.35rem,2vw,1.9rem)] font-semibold leading-tight text-graphite">
+          AI Data Centre & Digital Infrastructure Development
+        </h2>
+        <p className="mt-3 max-w-4xl text-sm leading-6 text-steel">
+          PentaNex is an Australian AI data centre and digital infrastructure developer focused on large-scale data centre campuses, energy-integrated AI computing facilities, hyperscale cloud infrastructure and next-generation digital services.
+        </p>
+
+        <div className="mt-5 grid gap-3 lg:grid-cols-3">
+          {seoAuthoritySections.map((section) => (
+            <article className="premium-card-soft rounded-md border p-4" key={section.title}>
+              <h3 className="text-sm font-semibold leading-5 text-signal">{section.title}</h3>
+              <p className="mt-3 text-xs leading-6 text-steel">{section.body}</p>
+            </article>
+          ))}
+        </div>
+
+        <div className="mt-5 rounded-md border border-slate-200 bg-white p-4">
+          <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-signal">
+            Trust and Delivery Signals
+          </p>
+          <div className="mt-3 grid gap-2 md:grid-cols-2 xl:grid-cols-3">
+            {trustSignals.map((signal) => (
+              <div className="flex gap-2 rounded-sm border border-slate-200 bg-white p-3" key={signal}>
+                <CheckCircle2 className="mt-0.5 shrink-0 text-power" size={16} />
+                <span className="text-xs leading-5 text-steel">{signal}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
   );
 }
 
@@ -786,8 +943,9 @@ export default function Home() {
     <main
       className="premium-page min-h-screen overflow-x-hidden text-graphite"
       data-language={language}
-      style={{ "--page-bg": `url("${assetPath("/datacenter-hero-photo.jpg")}")` } as CSSProperties}
+      style={{ "--page-bg": `url("${assetPath("/hyperscale-data-centre-melbourne.jpg")}")` } as CSSProperties}
     >
+      <h1 className="sr-only">AI Data Centre & Digital Infrastructure Development</h1>
       <div className="hero-image-wash" aria-hidden="true" />
       <div className="pointer-events-none fixed inset-0 overflow-hidden" aria-hidden="true">
         <div className={`${ambientAccent.left} ambient-drift`} />
@@ -1045,6 +1203,8 @@ export default function Home() {
           </div>
         )}
       </section>
+
+      <SeoAuthorityContent />
 
       <footer className="relative z-10 px-3 pb-5 sm:px-5">
         <div className="deep-footer relative mx-auto w-full max-w-[1180px] rounded-xl border p-5 backdrop-blur-2xl xl:p-6">
