@@ -786,7 +786,7 @@ export default function Home() {
     <main
       className="premium-page min-h-screen overflow-x-hidden text-graphite"
       data-language={language}
-      style={{ "--page-bg": `url("${assetPath("/datacenter-hero.svg")}")` } as CSSProperties}
+      style={{ "--page-bg": `url("${assetPath("/datacenter-hero-photo.jpg")}")` } as CSSProperties}
     >
       <div className="hero-image-wash" aria-hidden="true" />
       <div className="pointer-events-none fixed inset-0 overflow-hidden" aria-hidden="true">

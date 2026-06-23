@@ -1,109 +1,147 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2200 1280" role="img" aria-label="Bright blue hyperscale data centre server hall corridor">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2400 1350" role="img" aria-label="Blue hyperscale data centre server hall corridor">
   <defs>
-    <linearGradient id="wallBlue" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#05203d"/>
-      <stop offset="0.42" stop-color="#0d4e82"/>
-      <stop offset="1" stop-color="#7fc6e7"/>
+    <linearGradient id="base" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0a3157"/>
+      <stop offset="0.36" stop-color="#2a8cc2"/>
+      <stop offset="0.72" stop-color="#e3f4fb"/>
+      <stop offset="1" stop-color="#f8fcff"/>
     </linearGradient>
-    <linearGradient id="rackFace" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0" stop-color="#06182e"/>
-      <stop offset="0.45" stop-color="#0e3f68"/>
-      <stop offset="1" stop-color="#1b7eb9"/>
+    <linearGradient id="leftWall" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#04182c"/>
+      <stop offset="0.16" stop-color="#082d4d"/>
+      <stop offset="0.46" stop-color="#135f91"/>
+      <stop offset="0.78" stop-color="#73c9e8"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0.25"/>
     </linearGradient>
-    <linearGradient id="rightRackFace" x1="1" y1="0" x2="0" y2="0">
-      <stop offset="0" stop-color="#06182e"/>
-      <stop offset="0.45" stop-color="#0e3f68"/>
-      <stop offset="1" stop-color="#1b7eb9"/>
+    <linearGradient id="rightWall" x1="1" y1="0" x2="0" y2="0">
+      <stop offset="0" stop-color="#04182c"/>
+      <stop offset="0.16" stop-color="#082d4d"/>
+      <stop offset="0.46" stop-color="#135f91"/>
+      <stop offset="0.78" stop-color="#73c9e8"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0.25"/>
     </linearGradient>
-    <linearGradient id="floorGlow" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#d9f3ff" stop-opacity="0.25"/>
-      <stop offset="0.45" stop-color="#ffffff" stop-opacity="0.78"/>
-      <stop offset="1" stop-color="#ffffff" stop-opacity="0.98"/>
+    <linearGradient id="floor" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#b9ebfb" stop-opacity="0.42"/>
+      <stop offset="0.42" stop-color="#ffffff" stop-opacity="0.78"/>
+      <stop offset="1" stop-color="#ffffff"/>
     </linearGradient>
     <linearGradient id="ceiling" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#bdeaff" stop-opacity="0.5"/>
-      <stop offset="0.35" stop-color="#4aa8d8" stop-opacity="0.28"/>
+      <stop offset="0" stop-color="#082a4b" stop-opacity="0.82"/>
+      <stop offset="0.48" stop-color="#42a8db" stop-opacity="0.38"/>
       <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
     </linearGradient>
-    <filter id="blur24" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur stdDeviation="24"/>
+    <linearGradient id="doorGlass" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#031525"/>
+      <stop offset="0.48" stop-color="#0b426a"/>
+      <stop offset="1" stop-color="#29a1d1"/>
+    </linearGradient>
+    <linearGradient id="doorFadeLeft" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#031525" stop-opacity="0.95"/>
+      <stop offset="0.7" stop-color="#145f8e" stop-opacity="0.72"/>
+      <stop offset="1" stop-color="#bceeff" stop-opacity="0.18"/>
+    </linearGradient>
+    <linearGradient id="doorFadeRight" x1="1" y1="0" x2="0" y2="0">
+      <stop offset="0" stop-color="#031525" stop-opacity="0.95"/>
+      <stop offset="0.7" stop-color="#145f8e" stop-opacity="0.72"/>
+      <stop offset="1" stop-color="#bceeff" stop-opacity="0.18"/>
+    </linearGradient>
+    <filter id="blur20" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="20"/>
     </filter>
-    <filter id="blur42" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur stdDeviation="42"/>
+    <filter id="blur48" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="48"/>
     </filter>
-    <pattern id="rackGrid" width="58" height="58" patternUnits="userSpaceOnUse">
-      <rect width="58" height="58" fill="none"/>
-      <path d="M5 12H53M5 30H53M5 48H53" stroke="#8bdcff" stroke-opacity="0.33" stroke-width="2"/>
-      <rect x="9" y="17" width="7" height="7" fill="#00c6d7" opacity="0.55"/>
-      <rect x="24" y="17" width="7" height="7" fill="#b9efff" opacity="0.38"/>
-      <rect x="40" y="37" width="6" height="6" fill="#79dfff" opacity="0.34"/>
-    </pattern>
-    <pattern id="rackGridSoft" width="62" height="62" patternUnits="userSpaceOnUse">
-      <rect width="62" height="62" fill="none"/>
-      <path d="M7 16H55M7 36H55M7 54H55" stroke="#b7ecff" stroke-opacity="0.25" stroke-width="2"/>
-      <rect x="13" y="21" width="7" height="7" fill="#00c6d7" opacity="0.38"/>
-      <rect x="33" y="41" width="7" height="7" fill="#d8f7ff" opacity="0.30"/>
-    </pattern>
+    <filter id="neon" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="6"/>
+    </filter>
+    <symbol id="serverBay" viewBox="0 0 132 900">
+      <rect x="0" y="0" width="132" height="900" rx="2" fill="url(#doorGlass)" opacity="0.92"/>
+      <rect x="8" y="20" width="116" height="860" fill="#041b30" opacity="0.28"/>
+      <g stroke-linecap="round">
+        <path d="M18 62H116M18 122H116M18 182H116M18 242H116M18 302H116M18 362H116M18 422H116M18 482H116M18 542H116M18 602H116M18 662H116M18 722H116M18 782H116M18 842H116" stroke="#b8efff" stroke-opacity="0.34" stroke-width="2.6"/>
+        <path d="M22 85H58M72 85H106M28 205H60M78 205H112M24 325H54M72 325H100M30 445H64M80 445H108M26 565H56M74 565H106M24 685H58M74 685H112M30 805H68M82 805H110" stroke="#67d9ff" stroke-opacity="0.45" stroke-width="4"/>
+      </g>
+      <g fill="#cff8ff" opacity="0.75">
+        <rect x="22" y="82" width="8" height="8" rx="1"/>
+        <rect x="76" y="202" width="8" height="8" rx="1"/>
+        <rect x="42" y="322" width="8" height="8" rx="1"/>
+        <rect x="96" y="442" width="8" height="8" rx="1"/>
+        <rect x="28" y="562" width="8" height="8" rx="1"/>
+        <rect x="86" y="682" width="8" height="8" rx="1"/>
+        <rect x="50" y="802" width="8" height="8" rx="1"/>
+      </g>
+      <path d="M14 0V900M118 0V900" stroke="#061626" stroke-opacity="0.58" stroke-width="8"/>
+      <path d="M124 0V900" stroke="#d3f7ff" stroke-opacity="0.22" stroke-width="3"/>
+    </symbol>
   </defs>
 
-  <rect width="2200" height="1280" fill="#eaf4fb"/>
-  <rect width="2200" height="1280" fill="url(#wallBlue)" opacity="0.78"/>
+  <rect width="2400" height="1350" fill="url(#base)"/>
 
-  <!-- Server-rack walls -->
-  <g opacity="0.98">
-    <path d="M0 0H510L505 1170H0Z" fill="url(#rackFace)"/>
-    <path d="M1690 0H2200V1170H1696Z" fill="url(#rightRackFace)"/>
-    <path d="M95 70H475L453 1145H70Z" fill="url(#rackGrid)" opacity="0.86"/>
-    <path d="M1730 70H2115L2140 1145H1753Z" fill="url(#rackGrid)" opacity="0.86"/>
-    <path d="M525 64H730L690 1070H510Z" fill="url(#rackGridSoft)" opacity="0.42"/>
-    <path d="M1470 64H1675L1692 1070H1510Z" fill="url(#rackGridSoft)" opacity="0.42"/>
+  <!-- Realistic aisle structure: dark, detailed racks on both sides. -->
+  <path d="M0 0H720L540 1120H0Z" fill="url(#leftWall)"/>
+  <path d="M1680 0H2400V1120H1860Z" fill="url(#rightWall)"/>
+  <path d="M655 0H865L740 880H565Z" fill="#1a83b5" opacity="0.28"/>
+  <path d="M1535 0H1745L1835 880H1660Z" fill="#1a83b5" opacity="0.28"/>
+
+  <g opacity="0.95">
+    <g transform="translate(0 28) skewY(-2)">
+      <use href="#serverBay" x="16" y="0" width="142" height="1015"/>
+      <use href="#serverBay" x="178" y="0" width="142" height="1015" opacity="0.96"/>
+      <use href="#serverBay" x="340" y="0" width="136" height="990" opacity="0.86"/>
+      <use href="#serverBay" x="495" y="0" width="118" height="925" opacity="0.52"/>
+      <use href="#serverBay" x="625" y="20" width="90" height="800" opacity="0.26"/>
+    </g>
+    <g transform="translate(2400 28) scale(-1 1) skewY(-2)">
+      <use href="#serverBay" x="16" y="0" width="142" height="1015"/>
+      <use href="#serverBay" x="178" y="0" width="142" height="1015" opacity="0.96"/>
+      <use href="#serverBay" x="340" y="0" width="136" height="990" opacity="0.86"/>
+      <use href="#serverBay" x="495" y="0" width="118" height="925" opacity="0.52"/>
+      <use href="#serverBay" x="625" y="20" width="90" height="800" opacity="0.26"/>
+    </g>
   </g>
 
-  <!-- Rack depth and vertical structure -->
-  <g stroke="#05192f" stroke-opacity="0.42" stroke-width="12">
-    <path d="M72 0V1125"/>
-    <path d="M505 0V1135"/>
-    <path d="M1720 0V1135"/>
-    <path d="M2132 0V1125"/>
-  </g>
-  <g stroke="#8de5ff" stroke-opacity="0.44" stroke-width="4">
-    <path d="M118 0V1120"/>
-    <path d="M462 0V1118"/>
-    <path d="M1762 0V1118"/>
-    <path d="M2087 0V1120"/>
+  <!-- Door reflections and light strips. -->
+  <g stroke-linecap="round">
+    <path d="M84 0V1110M558 0V1050M1842 0V1050M2316 0V1110" stroke="#d6f8ff" stroke-width="5" opacity="0.34"/>
+    <path d="M114 76H510M96 164H492M82 254H476M68 346H460M54 442H444M42 542H426M32 646H410M22 754H394M14 866H378" stroke="#b8efff" stroke-width="3" opacity="0.36"/>
+    <path d="M1890 76H2286M1908 164H2304M1924 254H2318M1940 346H2332M1956 442H2346M1974 542H2358M1990 646H2368M2006 754H2378M2022 866H2386" stroke="#b8efff" stroke-width="3" opacity="0.36"/>
+    <path d="M142 102H166M258 166H282M374 256H398M196 352H226M322 448H350M132 548H158M286 652H318M406 758H432" stroke="#dffbff" stroke-width="7" opacity="0.58" filter="url(#neon)"/>
+    <path d="M2234 102H2258M2118 166H2142M2002 256H2026M2174 352H2204M2050 448H2078M2242 548H2268M2082 652H2114M1968 758H1994" stroke="#dffbff" stroke-width="7" opacity="0.58" filter="url(#neon)"/>
   </g>
 
-  <!-- Ceiling and light strips -->
-  <path d="M420 0H1780L1548 230H653Z" fill="url(#ceiling)"/>
-  <g opacity="0.8">
-    <path d="M610 52H1586" stroke="#dff9ff" stroke-width="10" stroke-linecap="round" opacity="0.55"/>
-    <path d="M712 120H1480" stroke="#7edaff" stroke-width="5" stroke-linecap="round" opacity="0.35"/>
-    <path d="M832 184H1360" stroke="#ffffff" stroke-width="6" stroke-linecap="round" opacity="0.42"/>
+  <!-- Ceiling panels and long LED perspective lines. -->
+  <path d="M560 0H1840L1575 280H825Z" fill="url(#ceiling)"/>
+  <g stroke-linecap="round">
+    <path d="M760 0L1022 360" stroke="#ecfdff" stroke-width="13" opacity="0.74" filter="url(#neon)"/>
+    <path d="M1640 0L1378 360" stroke="#ecfdff" stroke-width="13" opacity="0.74" filter="url(#neon)"/>
+    <path d="M970 74H1430" stroke="#b8efff" stroke-width="5" opacity="0.48"/>
+    <path d="M1050 145H1350" stroke="#ffffff" stroke-width="8" opacity="0.52" filter="url(#neon)"/>
+    <path d="M1128 226H1272" stroke="#ffffff" stroke-width="7" opacity="0.44"/>
+  </g>
+  <g stroke="#092d4f" stroke-width="4" opacity="0.24">
+    <path d="M790 34H1610"/>
+    <path d="M865 93H1535"/>
+    <path d="M940 156H1460"/>
+    <path d="M1025 224H1375"/>
   </g>
 
-  <!-- Bright central aisle -->
-  <path d="M520 638C725 580 942 552 1100 552C1256 552 1474 580 1682 638L2200 1280H0Z" fill="url(#floorGlow)"/>
-  <ellipse cx="1100" cy="814" rx="520" ry="310" fill="#ffffff" opacity="0.75" filter="url(#blur42)"/>
-  <ellipse cx="1100" cy="620" rx="340" ry="150" fill="#c8f4ff" opacity="0.32" filter="url(#blur42)"/>
-
-  <!-- Perspective floor lines -->
-  <g stroke="#87cfea" stroke-opacity="0.28" stroke-width="3">
-    <path d="M650 1280L950 574"/>
-    <path d="M930 1280L1050 560"/>
-    <path d="M1270 1280L1150 560"/>
-    <path d="M1550 1280L1250 574"/>
-    <path d="M260 1010H1940"/>
-    <path d="M380 870H1820"/>
-    <path d="M500 745H1700"/>
+  <!-- Polished aisle: bright center, reflective floor, content-readable lower wash. -->
+  <path d="M520 720C740 620 965 575 1200 575C1435 575 1660 620 1880 720L2400 1350H0Z" fill="url(#floor)"/>
+  <ellipse cx="1200" cy="782" rx="640" ry="340" fill="#ffffff" opacity="0.68" filter="url(#blur48)"/>
+  <ellipse cx="1200" cy="490" rx="470" ry="210" fill="#e5fbff" opacity="0.32" filter="url(#blur48)"/>
+  <g stroke-linecap="round" opacity="0.34">
+    <path d="M665 1350L1012 580" stroke="#6ec9eb" stroke-width="3"/>
+    <path d="M930 1350L1100 562" stroke="#b5efff" stroke-width="2"/>
+    <path d="M1470 1350L1300 562" stroke="#b5efff" stroke-width="2"/>
+    <path d="M1735 1350L1388 580" stroke="#6ec9eb" stroke-width="3"/>
+    <path d="M390 1105H2010" stroke="#c8f0fb" stroke-width="5" opacity="0.30"/>
+    <path d="M545 942H1855" stroke="#a7dff1" stroke-width="4" opacity="0.27"/>
+    <path d="M700 800H1700" stroke="#8bd3ed" stroke-width="3" opacity="0.22"/>
   </g>
 
-  <!-- Light bloom overlays -->
-  <circle cx="1100" cy="430" r="430" fill="#eafcff" opacity="0.36" filter="url(#blur42)"/>
-  <circle cx="318" cy="265" r="240" fill="#00c6d7" opacity="0.14" filter="url(#blur24)"/>
-  <circle cx="1878" cy="265" r="240" fill="#00c6d7" opacity="0.14" filter="url(#blur24)"/>
-
-  <!-- Soft blue wash to keep it bright and corporate -->
-  <rect width="2200" height="1280" fill="#eaf4fb" opacity="0.12"/>
-  <path d="M0 715C320 625 620 575 1100 575C1580 575 1880 625 2200 715V1280H0Z" fill="#ffffff" opacity="0.48"/>
-  <rect width="2200" height="1280" fill="none"/>
+  <!-- Site overlay baked into the background: realistic racks at edges, clean center. -->
+  <rect width="2400" height="1350" fill="#eaf4fb" opacity="0.05"/>
+  <rect x="500" y="-40" width="1400" height="1460" fill="#ffffff" opacity="0.18" filter="url(#blur48)"/>
+  <path d="M0 900C350 790 720 735 1200 735C1680 735 2050 790 2400 900V1350H0Z" fill="#ffffff" opacity="0.66"/>
+  <rect width="2400" height="1350" fill="none"/>
 </svg>
