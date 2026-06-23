@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1800 1050" role="img" aria-label="Blue toned hyperscale data centre server hall">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#08213c"/>
+      <stop offset="0.45" stop-color="#0f4f8a"/>
+      <stop offset="1" stop-color="#dff4fb"/>
+    </linearGradient>
+    <linearGradient id="floor" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#d8eff8" stop-opacity="0.18"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0.52"/>
+    </linearGradient>
+    <linearGradient id="rack" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#071c34"/>
+      <stop offset="0.48" stop-color="#123b64"/>
+      <stop offset="1" stop-color="#1a6ea9"/>
+    </linearGradient>
+    <linearGradient id="rackLight" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#00c6d7" stop-opacity="0.1"/>
+      <stop offset="1" stop-color="#7edaff" stop-opacity="0.6"/>
+    </linearGradient>
+    <filter id="soft" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="18"/>
+    </filter>
+  </defs>
+  <rect width="1800" height="1050" fill="url(#bg)"/>
+  <circle cx="1340" cy="260" r="380" fill="#00c6d7" opacity="0.18" filter="url(#soft)"/>
+  <circle cx="370" cy="160" r="260" fill="#127cdb" opacity="0.24" filter="url(#soft)"/>
+  <path d="M0 760 C360 690 660 735 980 675 C1280 620 1540 625 1800 575 L1800 1050 L0 1050 Z" fill="url(#floor)"/>
+  <g opacity="0.28" stroke="#dff7ff" stroke-width="2">
+    <path d="M220 820 H1600"/>
+    <path d="M300 890 H1510"/>
+    <path d="M390 960 H1410"/>
+    <path d="M690 680 L520 1050"/>
+    <path d="M910 650 L885 1050"/>
+    <path d="M1150 632 L1300 1050"/>
+  </g>
+  <g opacity="0.95">
+    <path d="M95 238 L430 176 L430 823 L95 899 Z" fill="url(#rack)" opacity="0.92"/>
+    <path d="M1370 152 L1744 230 L1744 884 L1370 808 Z" fill="url(#rack)" opacity="0.9"/>
+    <path d="M507 220 L770 194 L770 746 L507 786 Z" fill="#0b2b4d" opacity="0.7"/>
+    <path d="M1040 190 L1282 215 L1282 782 L1040 742 Z" fill="#0b2b4d" opacity="0.68"/>
+  </g>
+  <g opacity="0.52" stroke="#89ddff" stroke-width="3">
+    <path d="M170 300 H382"/>
+    <path d="M170 375 H382"/>
+    <path d="M170 450 H382"/>
+    <path d="M170 525 H382"/>
+    <path d="M170 600 H382"/>
+    <path d="M1438 304 H1685"/>
+    <path d="M1438 386 H1685"/>
+    <path d="M1438 468 H1685"/>
+    <path d="M1438 550 H1685"/>
+    <path d="M1438 632 H1685"/>
+  </g>
+  <g opacity="0.7">
+    <rect x="196" y="325" width="16" height="16" fill="#00c6d7"/>
+    <rect x="236" y="325" width="16" height="16" fill="#7edaff"/>
+    <rect x="1484" y="350" width="16" height="16" fill="#00c6d7"/>
+    <rect x="1530" y="350" width="16" height="16" fill="#7edaff"/>
+    <rect x="1580" y="516" width="16" height="16" fill="#00c6d7"/>
+  </g>
+  <path d="M0 0 H1800 V1050 H0 Z" fill="url(#rackLight)" opacity="0.45"/>
+</svg>
