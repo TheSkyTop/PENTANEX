@@ -1,6 +1,6 @@
 ﻿"use client";
 
-import { useEffect, useLayoutEffect, useMemo, useState } from "react";
+import { useEffect, useLayoutEffect, useMemo, useState, type CSSProperties } from "react";
 import {
   CheckCircle2,
   CircuitBoard,
@@ -783,7 +783,11 @@ export default function Home() {
   return (
     <>
     <SiteStructuredData />
-    <main className="premium-page min-h-screen overflow-x-hidden text-graphite" data-language={language}>
+    <main
+      className="premium-page min-h-screen overflow-x-hidden text-graphite"
+      data-language={language}
+      style={{ "--page-bg": `url("${assetPath("/datacenter-hero.svg")}")` } as CSSProperties}
+    >
       <div className="hero-image-wash" aria-hidden="true" />
       <div className="pointer-events-none fixed inset-0 overflow-hidden" aria-hidden="true">
         <div className={`${ambientAccent.left} ambient-drift`} />
@@ -1057,10 +1061,10 @@ export default function Home() {
             <div className="grid min-w-0 gap-3 sm:grid-cols-2 xl:grid-cols-[0.9fr_0.9fr_1fr_1.35fr]">
               {copy.footerGroups.map((group) => (
                 <div
-                  className="rounded-md border border-white/10 bg-white/[0.045] p-4"
+                  className="rounded-md border border-slate-200 bg-white p-4"
                   key={group.heading}
                 >
-                  <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#7edaff]">
+                  <p className="text-xs font-semibold uppercase tracking-[0.2em] text-signal">
                     {group.heading}
                   </p>
                   <div className="mt-3 space-y-2">
@@ -1085,7 +1089,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="mt-5 flex flex-col gap-2 border-t border-white/12 pt-4 text-xs text-white/68 sm:flex-row sm:items-center sm:justify-between">
+          <div className="mt-5 flex flex-col gap-2 border-t border-slate-200/80 pt-4 text-xs text-steel sm:flex-row sm:items-center sm:justify-between">
             <p>{copy.footerCopyright}</p>
             <p>{copy.footerTagline}</p>
           </div>
