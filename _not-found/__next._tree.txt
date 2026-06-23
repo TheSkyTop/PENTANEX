@@ -1,2 +1,2 @@
-:HL["/PENTANEX/_next/static/chunks/01v3ci_hnpvim.css","style"]
-0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"/_not-found","param":null,"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}},"staleTime":300,"buildId":"idDFae9ld-xB1ioOmZB74"}
+:HL["/PENTANEX/_next/static/chunks/0z~5jeqkja9hh.css","style"]
+0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"/_not-found","param":null,"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}},"staleTime":300,"buildId":"ovKIyT8jiabz_jRmH5z7x"}
