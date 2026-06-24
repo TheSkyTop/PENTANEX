@@ -98,6 +98,11 @@ const tabs = [
       "PentaNex treats sustainability as an infrastructure design discipline, focused on operating efficiency, resilient energy strategy, climate-aware design, and long-term environmental performance.",
       "Energy planning coordinates grid connection, renewable supply, firming arrangements, backup systems, and customer load growth as part of one scalable capacity platform.",
       "Cooling, water, operations, materials awareness, community engagement, and accountable reporting are considered together to support a credible hyperscale infrastructure platform.",
+      "For AI-ready infrastructure, sustainability performance needs to be engineered into the campus from the start: efficient plant selection, adaptable cooling pathways, resilient utility planning, and operating envelopes that can respond to changing customer density profiles.",
+      "The planning approach also considers lifecycle outcomes beyond initial construction, including maintainability, replacement cycles, operational monitoring, contractor coordination, and reporting structures that support long-term asset stewardship.",
+      "PentaNex is therefore positioning sustainability as both a design obligation and an operational standard, aligning infrastructure efficiency with customer readiness, resilience expectations, and the broader transition toward lower-emissions digital capacity.",
+      "A practical sustainability pathway for a hyperscale campus also depends on disciplined measurement. Energy use, cooling performance, resilience settings, and operating conditions need to be observable and governable over time rather than treated as static design assumptions.",
+      "This approach helps create a platform that can mature with technology change, customer density requirements, and reporting expectations, while maintaining the reliability standards expected of mission-critical digital infrastructure.",
     ],
     points: ["Renewable and firmed energy integration", "Efficient cooling and water-conscious design", "Lifecycle resilience and accountable reporting"],
     sideNote: "",
@@ -341,6 +346,11 @@ const localizedCopy: Record<Language, PageCopy> = {
           "PentaNex 将可持续性纳入基础设施设计原则，聚焦运营效率、能源韧性、气候适应型设计和长期环境表现。",
           "能源规划协同电网接入、可再生能源、保障性能源安排、备用系统和客户负载增长，服务同一长期容量平台。",
           "冷却、水策略、运营管理、材料意识、社区沟通和透明报告共同支撑可信的超大规模数字基础设施平台。",
+          "对于面向 AI 的基础设施，可持续表现需要从园区初始设计阶段就被纳入工程体系，包括高效设备选型、可适应的冷却路径、韧性公用工程规划，以及能够应对不同客户功率密度需求的运营边界。",
+          "该规划方法也覆盖建设之外的全生命周期议题，包括后期维护、设备更替周期、运营监测、承包商协同以及支持长期资产管理的报告机制。",
+          "因此，PentaNex 将可持续性定位为设计责任与运营标准的结合，使基础设施效率、客户就绪度、韧性要求与更低排放的数字容量发展方向保持一致。",
+          "对超大规模园区而言，真正可执行的可持续路径还依赖持续测量与治理。能耗、冷却表现、韧性设定和运营条件需要在长期内可观测、可管理，而不是停留在一次性的设计假设。",
+          "这种方法有助于平台随技术演进、客户功率密度变化和披露要求提升而持续优化，同时维持关键数字基础设施所需的可靠性标准。",
         ],
         points: ["可再生能源与保障性能源整合", "高效冷却和节水型设计", "生命周期韧性与可审计报告"],
         sideNote: "",
@@ -1011,9 +1021,9 @@ export default function Home() {
                   <Globe2 size={15} />
                   {copy.infrastructureBadge}
                 </div>
-                <div className="mt-3 max-w-3xl space-y-2">
+                <div className="mt-4 max-w-3xl space-y-3">
                   {copy.infrastructureNarrative.map((paragraph) => (
-                    <p className="text-xs leading-5 text-steel" key={paragraph}>
+                    <p className="text-base leading-8 text-steel" key={paragraph}>
                       {paragraph}
                     </p>
                   ))}
@@ -1042,9 +1052,9 @@ export default function Home() {
                     <ActiveIcon size={15} />
                     {localizedActiveTab.panelTitle}
                   </div>
-                  <div className="relative mt-3 space-y-2">
+                  <div className="relative mt-4 space-y-3">
                     {activeBodyParagraphs.map((paragraph) => (
-                      <p className="text-xs leading-5 text-steel" key={paragraph}>
+                      <p className="text-base leading-8 text-steel" key={paragraph}>
                         {paragraph}
                       </p>
                     ))}
