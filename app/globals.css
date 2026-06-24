@@ -47,11 +47,11 @@ a {
 }
 
 .logo-wordmark {
-  color: #173554;
-  font-size: 1.92rem;
-  font-weight: 600;
+  color: #3d6488;
+  font-size: 1.74rem;
+  font-weight: 500;
   line-height: 1;
-  letter-spacing: -0.045em;
+  letter-spacing: -0.02em;
   white-space: nowrap;
   text-rendering: geometricPrecision;
   -webkit-font-smoothing: antialiased;
@@ -566,7 +566,7 @@ footer a.text-steel {
   }
 
   .logo-wordmark {
-    font-size: 1.7rem;
+    font-size: 1.54rem;
   }
 
   .premium-shell,
