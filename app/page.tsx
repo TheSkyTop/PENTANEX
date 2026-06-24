@@ -745,7 +745,7 @@ function AustraliaLocationMap() {
     ) as Feature<Geometry>;
     const projection = geoMercator().fitExtent([[24, 8], [596, 352]], australiaFeature);
     const path = geoPath(projection);
-    const worldProjection = geoNaturalEarth1().fitExtent([[0, 0], [620, 360]], world);
+    const worldProjection = geoNaturalEarth1().fitExtent([[-42, -18], [662, 378]], world);
     const worldPath = geoPath(worldProjection);
 
     return {
@@ -879,29 +879,29 @@ function getRequestedLanguage(): Language {
 
 const ambientAccents: Record<string, { left: string; right: string; inner: string }> = {
   campus: {
-    left: "absolute left-[-10rem] bottom-10 h-[26rem] w-[26rem] rounded-full bg-[#0b6f9f]/[0.055] blur-3xl",
-    right: "absolute right-[-9rem] bottom-[2rem] h-[38rem] w-[38rem] rounded-full bg-[#0b6f9f]/[0.058] blur-[118px]",
-    inner: "absolute right-[7rem] bottom-[9rem] h-[19rem] w-[19rem] rounded-full bg-[#0b6f9f]/[0.026] blur-[88px]",
+    left: "absolute left-[-9rem] bottom-12 h-[22rem] w-[22rem] rounded-full bg-[#0b6f9f]/[0.032] blur-[86px]",
+    right: "absolute right-[-8rem] bottom-[3rem] h-[30rem] w-[30rem] rounded-full bg-[#0b6f9f]/[0.034] blur-[96px]",
+    inner: "absolute right-[8rem] bottom-[10rem] h-[14rem] w-[14rem] rounded-full bg-[#0b6f9f]/[0.015] blur-[62px]",
   },
   capacity: {
-    left: "absolute left-[-13rem] top-[18rem] h-[30rem] w-[30rem] rounded-full bg-[#0b6f9f]/[0.048] blur-[104px]",
-    right: "absolute right-[-11rem] bottom-[5rem] h-[36rem] w-[36rem] rounded-full bg-[#0b6f9f]/[0.055] blur-[118px]",
-    inner: "absolute right-[5rem] bottom-[15rem] h-[17rem] w-[17rem] rounded-full bg-[#0b6f9f]/[0.024] blur-[84px]",
+    left: "absolute left-[-11rem] top-[18rem] h-[24rem] w-[24rem] rounded-full bg-[#0b6f9f]/[0.03] blur-[88px]",
+    right: "absolute right-[-9rem] bottom-[5rem] h-[30rem] w-[30rem] rounded-full bg-[#0b6f9f]/[0.034] blur-[98px]",
+    inner: "absolute right-[6rem] bottom-[15rem] h-[14rem] w-[14rem] rounded-full bg-[#0b6f9f]/[0.014] blur-[60px]",
   },
   delivery: {
-    left: "absolute left-[-12rem] bottom-[9rem] h-[28rem] w-[28rem] rounded-full bg-[#0b6f9f]/[0.052] blur-[104px]",
-    right: "absolute right-[-10rem] bottom-[10rem] h-[34rem] w-[34rem] rounded-full bg-[#0b6f9f]/[0.052] blur-[116px]",
-    inner: "absolute right-[8rem] bottom-[4rem] h-[18rem] w-[18rem] rounded-full bg-[#0b6f9f]/[0.023] blur-[84px]",
+    left: "absolute left-[-10rem] bottom-[10rem] h-[24rem] w-[24rem] rounded-full bg-[#0b6f9f]/[0.03] blur-[90px]",
+    right: "absolute right-[-9rem] bottom-[10rem] h-[30rem] w-[30rem] rounded-full bg-[#0b6f9f]/[0.033] blur-[98px]",
+    inner: "absolute right-[8rem] bottom-[5rem] h-[14rem] w-[14rem] rounded-full bg-[#0b6f9f]/[0.014] blur-[60px]",
   },
   sustainability: {
-    left: "absolute left-[-11rem] top-[24rem] h-[32rem] w-[32rem] rounded-full bg-[#0b6f9f]/[0.05] blur-[112px]",
-    right: "absolute right-[-12rem] bottom-[3rem] h-[40rem] w-[40rem] rounded-full bg-[#0b6f9f]/[0.054] blur-[124px]",
-    inner: "absolute right-[10rem] bottom-[13rem] h-[15rem] w-[15rem] rounded-full bg-[#0b6f9f]/[0.022] blur-[80px]",
+    left: "absolute left-[-10rem] top-[24rem] h-[26rem] w-[26rem] rounded-full bg-[#0b6f9f]/[0.031] blur-[94px]",
+    right: "absolute right-[-10rem] bottom-[4rem] h-[32rem] w-[32rem] rounded-full bg-[#0b6f9f]/[0.034] blur-[102px]",
+    inner: "absolute right-[10rem] bottom-[13rem] h-[13rem] w-[13rem] rounded-full bg-[#0b6f9f]/[0.013] blur-[58px]",
   },
   contact: {
-    left: "absolute left-[-10rem] bottom-[7rem] h-[28rem] w-[28rem] rounded-full bg-[#0b6f9f]/[0.048] blur-[108px]",
-    right: "absolute right-[-10rem] bottom-[7rem] h-[36rem] w-[36rem] rounded-full bg-[#0b6f9f]/[0.056] blur-[118px]",
-    inner: "absolute right-[6rem] bottom-[18rem] h-[16rem] w-[16rem] rounded-full bg-[#0b6f9f]/[0.024] blur-[82px]",
+    left: "absolute left-[-9rem] bottom-[8rem] h-[24rem] w-[24rem] rounded-full bg-[#0b6f9f]/[0.03] blur-[92px]",
+    right: "absolute right-[-9rem] bottom-[7rem] h-[30rem] w-[30rem] rounded-full bg-[#0b6f9f]/[0.034] blur-[100px]",
+    inner: "absolute right-[6rem] bottom-[18rem] h-[13rem] w-[13rem] rounded-full bg-[#0b6f9f]/[0.014] blur-[60px]",
   },
 };
 
@@ -1174,9 +1174,9 @@ export default function Home() {
       <footer className="relative z-10 px-3 pb-5 sm:px-5">
         <div className="deep-footer relative mx-auto w-full max-w-[1120px] rounded-xl border p-5 backdrop-blur-2xl xl:p-6">
           <div className="grid gap-4 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,2.1fr)] lg:items-start">
-            <div>
-              <p className="text-xs font-semibold tracking-[0.2em] text-signal">PentaNex</p>
-              <p className="content-copy-sm mt-4 max-w-md">
+            <div className="pt-[1px]">
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-signal">PENTANEX</p>
+              <p className="content-copy-sm mt-5 max-w-md">
                 {copy.footerIntro}
               </p>
             </div>

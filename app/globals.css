@@ -64,8 +64,8 @@ a {
 
 .premium-page {
   background:
-    linear-gradient(90deg, rgba(8, 53, 91, 0.18) 0%, rgba(234, 246, 255, 0.24) 18%, rgba(255, 255, 255, 0.72) 38%, rgba(255, 255, 255, 0.76) 62%, rgba(234, 246, 255, 0.24) 82%, rgba(8, 53, 91, 0.18) 100%),
-    linear-gradient(180deg, rgba(255, 255, 255, 0.08) 0%, rgba(237, 248, 255, 0.2) 18%, rgba(255, 255, 255, 0.58) 52%, rgba(246, 251, 255, 0.96) 88%, #f6fbff 100%),
+    linear-gradient(90deg, rgba(8, 53, 91, 0.12) 0%, rgba(234, 246, 255, 0.12) 16%, rgba(255, 255, 255, 0.48) 34%, rgba(255, 255, 255, 0.52) 66%, rgba(234, 246, 255, 0.12) 84%, rgba(8, 53, 91, 0.12) 100%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.03) 0%, rgba(237, 248, 255, 0.12) 16%, rgba(255, 255, 255, 0.28) 42%, rgba(245, 250, 254, 0.68) 82%, rgba(246, 251, 255, 0.84) 100%),
     var(--page-bg);
   background-attachment: fixed;
   background-position: center center, center center, center center;
@@ -185,14 +185,6 @@ a {
     linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(247, 251, 255, 0.94) 48%, rgba(234, 244, 251, 0.92) 100%);
   box-shadow: 0 28px 76px rgba(15, 39, 69, 0.13);
   backdrop-filter: blur(18px);
-}
-
-.map-showcase::after {
-  content: "";
-  position: absolute;
-  inset: auto 5% 7% 5%;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(18, 124, 219, 0.28), transparent);
 }
 
 .map-location-label {
