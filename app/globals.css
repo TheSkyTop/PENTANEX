@@ -30,6 +30,34 @@ a {
   text-decoration: none;
 }
 
+.logo-lockup {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.72rem;
+  min-width: 0;
+}
+
+.logo-mark {
+  width: 2.4rem;
+  height: 2.4rem;
+  flex: 0 0 auto;
+  object-fit: contain;
+  transform: translateZ(0);
+  filter: drop-shadow(0 6px 16px rgba(18, 124, 219, 0.12));
+}
+
+.logo-wordmark {
+  color: #173554;
+  font-size: 1.92rem;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -0.045em;
+  white-space: nowrap;
+  text-rendering: geometricPrecision;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 ::selection {
   background: rgba(18, 124, 219, 0.2);
 }
@@ -528,6 +556,19 @@ footer a.text-steel {
 }
 
 @media (max-width: 520px) {
+  .logo-lockup {
+    gap: 0.6rem;
+  }
+
+  .logo-mark {
+    width: 2.15rem;
+    height: 2.15rem;
+  }
+
+  .logo-wordmark {
+    font-size: 1.7rem;
+  }
+
   .premium-shell,
   .premium-card,
   .premium-card-soft,

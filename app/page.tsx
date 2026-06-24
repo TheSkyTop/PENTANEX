@@ -421,11 +421,16 @@ const localizedCopy: Record<Language, PageCopy> = {
 
 function PentanexLogo() {
   return (
-    <img
-      alt="PentaNex"
-      className="h-9 w-auto max-w-[180px] shrink-0 object-contain sm:h-10"
-      src={assetPath("/pentanex-logo-full.png")}
-    />
+    <span className="logo-lockup">
+      <img
+        alt="PentaNex"
+        className="logo-mark"
+        decoding="async"
+        fetchPriority="high"
+        src={assetPath("/pentanex-mark.png")}
+      />
+      <span className="logo-wordmark">PentaNex</span>
+    </span>
   );
 }
 
