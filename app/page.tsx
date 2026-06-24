@@ -67,7 +67,7 @@ const tabs = [
     panelTitle: "Capacity Strategy",
     title: "",
     body: [
-      "The PentaNex capacity strategy is centred on a masterplanned 400 MW + hyperscale campus platform for cloud, AI, accelerated compute, and sovereign enterprise workloads.",
+      "The PentaNex capacity strategy is centred on a masterplanned 400\u00a0MW\u00a0+ hyperscale campus platform for cloud, AI, accelerated compute, and sovereign enterprise workloads.",
       "Capacity is being planned as a staged infrastructure platform rather than a single building, with expandable precincts, resilient utility planning, connectivity diversity, and deployment zones able to scale in line with demand.",
       "For hyperscale and AI customers, the capacity architecture prioritises secure operations, high-density compute readiness, energy and cooling optionality, and predictable release pathways across multiple development phases.",
     ],
@@ -95,10 +95,9 @@ const tabs = [
     panelTitle: "Resilient Infrastructure",
     title: "",
     body: [
-      "PentaNex treats sustainability as an infrastructure design discipline. The campus pathway focuses on operating efficiency, resilient energy strategy, climate-aware design, and environmental performance across development and operations.",
-      "Energy planning is a core design driver. Grid connection, renewable supply, firming arrangements, backup systems, and customer load growth need to be coordinated as part of the same long-term capacity platform.",
-      "Cooling and water strategy are central to AI-ready capacity. The campus approach considers efficient operating envelopes, water-conscious cooling pathways, heat management, and plant optionality for varied customer technology profiles.",
-      "Operational sustainability extends beyond energy use. Secure operations, monitoring and controls, maintenance access, materials awareness, community engagement, and reporting structures all support a credible hyperscale platform.",
+      "PentaNex treats sustainability as an infrastructure design discipline, focused on operating efficiency, resilient energy strategy, climate-aware design, and long-term environmental performance.",
+      "Energy planning coordinates grid connection, renewable supply, firming arrangements, backup systems, and customer load growth as part of one scalable capacity platform.",
+      "Cooling, water, operations, materials awareness, community engagement, and accountable reporting are considered together to support a credible hyperscale infrastructure platform.",
     ],
     points: ["Renewable and firmed energy integration", "Efficient cooling and water-conscious design", "Lifecycle resilience and accountable reporting"],
     sideNote: "",
@@ -315,7 +314,7 @@ const localizedCopy: Record<Language, PageCopy> = {
         panelTitle: "容量策略",
         title: "",
         body: [
-          "PentaNex 的容量策略围绕 400 MW + 总体规划超大规模园区平台展开，面向云平台、AI 训练与推理、加速计算和主权企业工作负载。",
+          "PentaNex 的容量策略围绕 400\u00a0MW\u00a0+ 总体规划超大规模园区平台展开，面向云平台、AI 训练与推理、加速计算和主权企业工作负载。",
           "容量规划采用分阶段基础设施平台模式，而非单体建筑模式，通过容量分区、公用工程走廊、冷却路径、光纤多样性和客户就绪部署区随需求扩展。",
           "面向超大规模和 AI 客户，容量架构重点关注安全运营、高密度计算就绪、能源与冷却可选性，以及跨阶段的可预测容量释放路径。",
         ],
@@ -339,10 +338,9 @@ const localizedCopy: Record<Language, PageCopy> = {
         panelTitle: "韧性与可持续基础设施",
         title: "",
         body: [
-          "PentaNex 将可持续性纳入基础设施设计原则。园区路径聚焦运营效率、能源韧性、气候适应型设计，以及开发和运营周期内的长期环境表现。",
-          "能源规划是核心设计驱动因素。电网接入、可再生能源采购、保障性能源安排、备用系统和客户负载增长，需要在同一长期容量平台内协同推进。",
-          "冷却与水策略对 AI-ready 容量至关重要。园区方案将综合考虑高效运行区间、节水型冷却路径、热管理能力，以及适配不同客户技术配置的设备可选性。",
-          "运营可持续性不止于能源使用。安全运营、监测控制、维护通道、材料管理、社区沟通和报告机制共同支撑可信的超大规模基础设施平台。",
+          "PentaNex 将可持续性纳入基础设施设计原则，聚焦运营效率、能源韧性、气候适应型设计和长期环境表现。",
+          "能源规划协同电网接入、可再生能源、保障性能源安排、备用系统和客户负载增长，服务同一长期容量平台。",
+          "冷却、水策略、运营管理、材料意识、社区沟通和透明报告共同支撑可信的超大规模数字基础设施平台。",
         ],
         points: ["可再生能源与保障性能源整合", "高效冷却和节水型设计", "生命周期韧性与可审计报告"],
         sideNote: "",
@@ -601,11 +599,14 @@ function CapacityPlatformGraphic({
           <span className="h-px bg-slate-200" />
           <span className="h-2 rounded-sm bg-power/70" />
         </div>
-        <div className="grid grid-cols-4 gap-2">
+        <div className="grid grid-cols-4 gap-1.5">
           {copy.blocks.map((label) => (
             <div className="premium-lift rounded-md border border-slate-200 bg-white p-2" key={label}>
               <span className="block h-5 rounded-sm border border-slate-200 bg-white" />
-              <p className="mt-2 text-[10px] font-semibold uppercase tracking-[0.12em] text-steel">
+              <p
+                className="capacity-block-label mt-2 px-0.5 font-semibold uppercase text-steel"
+                style={{ whiteSpace: "nowrap", overflowWrap: "normal", wordBreak: "keep-all" }}
+              >
                 {label}
               </p>
             </div>
@@ -919,11 +920,6 @@ export default function Home() {
     window.history.replaceState(null, "", `#${tab.id}`);
   };
 
-  const selectLanguage = (nextLanguage: Language) => {
-    setLanguage(nextLanguage);
-    window.localStorage.setItem("pentanex-language", nextLanguage);
-  };
-
   useEffect(() => {
     document.documentElement.lang = language === "zh" ? "zh-CN" : "en-AU";
   }, [language]);
@@ -948,7 +944,7 @@ export default function Home() {
         {copy.skip}
       </a>
       <header className="sticky top-0 z-50 px-3 pt-3 sm:px-5">
-        <div className="premium-shell mx-auto flex w-full max-w-[1080px] items-center justify-between gap-4 rounded-xl border px-4 py-2.5 backdrop-blur-2xl">
+        <div className="premium-shell mx-auto flex w-full max-w-[1120px] items-center justify-between gap-4 rounded-xl border px-4 py-2.5 backdrop-blur-2xl">
           <a className="flex items-center gap-3" href="#top" aria-label="PentaNex home">
             <PentanexLogo />
           </a>
@@ -974,29 +970,12 @@ export default function Home() {
             ))}
           </nav>
 
-          <div className="hidden items-center justify-end gap-1 rounded-lg border border-slate-200/80 bg-[#f7fbff] p-1 shadow-inner backdrop-blur-2xl lg:flex">
-            <span className="sr-only">{copy.languageLabel}</span>
-            {languageOptions.map((option) => (
-              <button
-                aria-pressed={language === option.id}
-                className={`rounded-md border px-2.5 py-2 text-xs font-semibold transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-signal ${
-                  language === option.id
-                    ? "border-signal bg-signal text-white shadow-sm"
-                    : "border-slate-200 bg-white text-steel hover:border-signal/45 hover:bg-white hover:text-signal"
-                }`}
-                key={option.id}
-                onClick={() => selectLanguage(option.id)}
-                type="button"
-              >
-                {option.shortLabel}
-              </button>
-            ))}
-          </div>
+          <div className="hidden min-w-[132px] lg:block" aria-hidden="true" />
         </div>
 
         <nav
           aria-label={copy.mobileNavAria}
-          className="premium-shell mx-auto mt-2 flex w-full max-w-[1080px] gap-2 overflow-x-auto rounded-xl border p-2 backdrop-blur-2xl lg:hidden"
+          className="premium-shell mx-auto mt-2 flex w-full max-w-[1120px] gap-2 overflow-x-auto rounded-xl border p-2 backdrop-blur-2xl lg:hidden"
         >
           {tabs.map((tab) => (
             <button
@@ -1013,22 +992,6 @@ export default function Home() {
               {copy.tabs[tab.id].label}
             </button>
           ))}
-          <span className="mx-1 h-8 w-px shrink-0 bg-slate-200" />
-          {languageOptions.map((option) => (
-            <button
-              aria-pressed={language === option.id}
-              className={`shrink-0 rounded-md border px-3 py-2 text-xs font-semibold transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-signal ${
-                language === option.id
-                  ? "border-signal bg-signal text-white shadow-sm"
-                  : "border-slate-200 bg-white text-steel hover:border-signal/45 hover:bg-white hover:text-signal"
-              }`}
-              key={option.id}
-              onClick={() => selectLanguage(option.id)}
-              type="button"
-            >
-              {option.shortLabel}
-            </button>
-          ))}
         </nav>
       </header>
 
@@ -1039,7 +1002,7 @@ export default function Home() {
         <div className="pointer-events-none absolute left-[8%] top-[16%] -z-10 h-72 w-72 rounded-full bg-signal/10 blur-3xl" />
 
         {activeTab.id === "campus" ? (
-          <div className="panel-fade relative mx-auto grid w-full max-w-[1080px] items-stretch gap-3 lg:grid-cols-[minmax(0,1.04fr)_minmax(0,0.96fr)] xl:gap-4">
+          <div className="panel-fade relative mx-auto grid w-full max-w-[1120px] items-stretch gap-3 lg:grid-cols-[minmax(0,1.08fr)_minmax(0,0.92fr)] xl:gap-4">
             <div className="grid min-h-0 gap-3 xl:gap-4">
               <AustraliaLocationMap />
 
@@ -1105,9 +1068,9 @@ export default function Home() {
             </div>
           </div>
         ) : (
-          <div className="panel-fade relative mx-auto min-w-0 w-full max-w-[1080px]">
+          <div className="panel-fade relative mx-auto min-w-0 w-full max-w-[1120px]">
             <div className="premium-card rounded-xl border p-5 backdrop-blur-2xl xl:p-6">
-              <div className="grid min-w-0 items-stretch gap-4 lg:grid-cols-[minmax(0,1.22fr)_minmax(300px,0.78fr)] xl:gap-5">
+              <div className="grid min-w-0 items-stretch gap-4 lg:grid-cols-[minmax(0,1.3fr)_minmax(290px,0.7fr)] xl:gap-5">
                 <div className="premium-card-soft min-w-0 flex rounded-md border p-5 backdrop-blur-2xl xl:p-7">
                   <div className="mx-auto min-w-0 w-full max-w-3xl">
                     <div className="section-kicker inline-flex items-center gap-2 rounded-sm border px-3 py-2 text-[11px] font-semibold uppercase tracking-[0.18em] shadow-[0_0_20px_rgba(18,124,219,0.10)]">
@@ -1196,7 +1159,7 @@ export default function Home() {
       </section>
 
       <footer className="relative z-10 px-3 pb-5 sm:px-5">
-        <div className="deep-footer relative mx-auto w-full max-w-[1080px] rounded-xl border p-5 backdrop-blur-2xl xl:p-6">
+        <div className="deep-footer relative mx-auto w-full max-w-[1120px] rounded-xl border p-5 backdrop-blur-2xl xl:p-6">
           <div className="grid gap-4 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,2.1fr)] lg:items-start">
             <div>
               <p className="text-xs font-semibold tracking-[0.2em] text-signal">PentaNex</p>

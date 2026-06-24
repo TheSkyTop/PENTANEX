@@ -79,7 +79,19 @@ a {
 .premium-page p,
 .premium-page span,
 .premium-page a {
-  overflow-wrap: anywhere;
+  overflow-wrap: break-word;
+  word-break: normal;
+}
+
+.capacity-block-label {
+  display: block;
+  text-align: center;
+  white-space: nowrap;
+  word-break: keep-all !important;
+  overflow-wrap: normal !important;
+  letter-spacing: 0.02em;
+  line-height: 1;
+  font-size: 6px;
 }
 
 .section-kicker {
