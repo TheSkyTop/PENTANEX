@@ -27,8 +27,12 @@ const project = {
 
 const contactEmail = "enquiries@pentanex.com.au";
 const contactEmailDisplay = "Enquiries@pentanex.com.au";
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://pentanex.com.au";
-const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+const isGitHubPages = process.env.GITHUB_PAGES === "true";
+const siteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL ??
+  (isGitHubPages ? "https://theskytop.github.io/PENTANEX" : "https://www.pentanex.com.au");
+const basePath =
+  process.env.NEXT_PUBLIC_BASE_PATH ?? (isGitHubPages ? "/PENTANEX" : "");
 const assetPath = (path: string) => `${basePath}${path}`;
 const absoluteAssetUrl = (path: string) => new URL(assetPath(path), siteUrl).toString();
 type Language = "en" | "zh";

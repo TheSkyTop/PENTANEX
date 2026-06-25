@@ -1,8 +1,14 @@
 ﻿import type { Metadata, Viewport } from "next";
 import "./globals.css";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.pentanex.com.au";
-const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+const isGitHubPages = process.env.GITHUB_PAGES === "true";
+const basePath =
+  process.env.NEXT_PUBLIC_BASE_PATH ?? (isGitHubPages ? "/PENTANEX" : "");
+const siteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL ??
+  (isGitHubPages
+    ? "https://theskytop.github.io/PENTANEX"
+    : "https://www.pentanex.com.au");
 const assetPath = (path: string) => `${basePath}${path}`;
 
 export const metadata: Metadata = {
