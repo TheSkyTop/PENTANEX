@@ -1,7 +1,7 @@
 ﻿import type { Metadata, Viewport } from "next";
 import "./globals.css";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://pentanex.com.au";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.pentanex.com.au";
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 const assetPath = (path: string) => `${basePath}${path}`;
 
@@ -102,6 +102,12 @@ export default function RootLayout({
   return (
     <html lang="en-AU">
       <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html:
+              "(function(){var host=window.location.hostname.replace(/\\.$/,'');if(host==='pentanex.com.au'){var target='https://www.pentanex.com.au'+window.location.pathname+window.location.search+window.location.hash;if(window.location.href!==target){window.location.replace(target);}}})();",
+          }}
+        />
       </head>
       <body>{children}</body>
     </html>
