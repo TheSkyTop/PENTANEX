@@ -74,11 +74,12 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
+      { url: assetPath("/favicon.ico"), sizes: "any" },
       { url: assetPath("/pentanex-mark.png"), sizes: "32x32", type: "image/png" },
       { url: assetPath("/pentanex-mark.png"), sizes: "192x192", type: "image/png" },
       { url: assetPath("/pentanex-mark.png"), sizes: "512x512", type: "image/png" },
     ],
-    shortcut: assetPath("/pentanex-mark.png"),
+    shortcut: assetPath("/favicon.ico"),
     apple: assetPath("/apple-touch-icon.png"),
   },
   manifest: assetPath("/site.webmanifest"),
